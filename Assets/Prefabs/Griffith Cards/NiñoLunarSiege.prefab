@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7864796696855744689}
   - component: {fileID: -8685221749707409148}
   - component: {fileID: 4683987653209347040}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: "Ni\xF1oLunarSiege"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 6921214806547384730}
   - component: {fileID: 8389217385333424892}
   - component: {fileID: 2058379005174119517}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

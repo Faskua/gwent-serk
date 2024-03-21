@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7864796696855744689}
   - component: {fileID: 5022405889231413082}
   - component: {fileID: 5874452650652346777}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: EclipseSiege
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 40, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2414841766627963137
 CanvasRenderer:
@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 6921214806547384730}
   - component: {fileID: 8389217385333424892}
   - component: {fileID: 2058379005174119517}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

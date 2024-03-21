@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6099817514949345133}
   - component: {fileID: 4788217989180837130}
   - component: {fileID: 268683134839137134}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 5329582893060820928}
   - component: {fileID: 3553454932940865172}
   - component: {fileID: 7562495234262887413}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Mule1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

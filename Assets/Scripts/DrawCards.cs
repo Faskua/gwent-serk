@@ -50,7 +50,7 @@ public class DrawCards : MonoBehaviour
     {
         for (int i= 0; i < 10; i ++)
         {
-            GameObject card = Instantiate(Mazo[0], new Vector2(0,0), Quaternion.identity);
+            GameObject card = Instantiate(Mazo[Random.Range(0, Mazo.Count)], new Vector2(0,0), Quaternion.identity);
             card.transform.SetParent(Hand.transform, false);
             Mazo.RemoveAt(0);
         }
