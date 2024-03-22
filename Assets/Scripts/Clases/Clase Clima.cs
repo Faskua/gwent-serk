@@ -5,15 +5,30 @@ using UnityEngine;
 public class ClaseClima : MonoBehaviour
 {
     public string Name;
-    public string Descrption;
-    void Start()
-    {
-        
-    }
+    public string Description;
+    //  public GameObject Card;
+    // public GameObject Info;
+    // public GameObject DescriptionText;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+    // void Awake()
+    // {
+    //     DescriptionText = GameObject.Find("DescriptionText");
+    // }
+    
+    // public void MouseEnter()
+    // {
+    //     Info.GetComponent<TextMeshPro>.Text Input = Card.GetComponent<Clase Clima>.Name + ". " + Card.GetComponent<Clase Clima>.Description;
+    //     GameObject CardInfo = Instantiate(Info);
+    //     CardInfo.transform.position = DescriptionText.transform.position;
+    //     CardInfo.transform.SetParent(DescriptionText.transform, false);
+    // }
+
+
+    // public void MouseExit()
+    // {
+    //     Destroy(CardInfo);
+    // }
+
+
 }
