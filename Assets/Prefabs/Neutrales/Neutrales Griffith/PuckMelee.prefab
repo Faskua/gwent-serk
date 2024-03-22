@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 2488089951224571021}
   - component: {fileID: 607747705277300151}
   - component: {fileID: 2474962376689265415}
-  - component: {fileID: 3763595929854881525}
+  - component: {fileID: 6909792772536178085}
+  - component: {fileID: 3724212645767636683}
+  - component: {fileID: -6742404298033558410}
   m_Layer: 6
   m_Name: PuckMelee
   m_TagString: Untagged
@@ -123,8 +125,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3763595929854881525}
-        m_TargetAssemblyTypeName: EClimageMelee, Assembly-CSharp
+      - m_Target: {fileID: 3724212645767636683}
+        m_TargetAssemblyTypeName: Emelee, Assembly-CSharp
         m_MethodName: PlayCard
         m_Mode: 1
         m_Arguments:
@@ -151,7 +153,52 @@ MonoBehaviour:
   Description: "El verdadero protagonista de la historia. Devuelve a tu mano la carta
     m\xE1s poderosa en la franja de Cuerpo a Cuerpo."
   Power: 1
---- !u!114 &3763595929854881525
+--- !u!61 &6909792772536178085
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5664656029312683538}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 40, y: 50}
+  m_EdgeRadius: 0
+--- !u!114 &3724212645767636683
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,11 +207,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 5664656029312683538}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b185e927ea9d104fa53e583b8c7b035, type: 3}
+  m_Script: {fileID: 11500000, guid: b5974bed6b67da64bbd71f628d65b5e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Card: {fileID: 5664656029312683538}
   Zone: {fileID: 0}
+--- !u!50 &-6742404298033558410
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5664656029312683538}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 7
 --- !u!1 &9207481536674564373
 GameObject:
   m_ObjectHideFlags: 0
