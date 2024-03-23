@@ -6,6 +6,7 @@ public class Esiege : MonoBehaviour
 {
     public GameObject Card;
     public GameObject Zone;
+    private bool jugable = true;
 
     // Start is called before the first frame update
     void Start()
@@ -15,9 +16,12 @@ public class Esiege : MonoBehaviour
 
     public void PlayCard()
     {
+        if(jugable)
+        {
         Card.transform.SetParent(Zone.transform, false);
         Card.transform.position = Zone.transform.position;
-        
+        jugable = false;
+        }
     }
 
     // Update is called once per frame

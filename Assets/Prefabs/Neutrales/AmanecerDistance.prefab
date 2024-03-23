@@ -146,10 +146,12 @@ GameObject:
   - component: {fileID: 5456894520157802730}
   - component: {fileID: 8682828968310956283}
   - component: {fileID: 8090543112057938874}
-  - component: {fileID: 8678812007760124394}
+  - component: {fileID: 3007040059845471328}
   - component: {fileID: 8459751613537510003}
   - component: {fileID: -3098526989565965765}
   - component: {fileID: -8741781272626353862}
+  - component: {fileID: 2861239894645069456}
+  - component: {fileID: 7393395372689935534}
   m_Layer: 6
   m_Name: AmanecerDistance
   m_TagString: Untagged
@@ -271,7 +273,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8678812007760124394
+--- !u!114 &3007040059845471328
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -280,11 +282,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 7889376949394653752}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c50d6077989e8046861463aee9ea7db, type: 3}
+  m_Script: {fileID: 11500000, guid: 466702ee058d23d4186ce6208f66a7f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Amanecer
-  Descrption: Nulifica los efectos de clima de la franja de distancia
+  Power: 0
+  DescriptionNskill: Despeje. Elimina los efectos de las cartas de clima
+  Lider: .
+  Faction: Sacrificios
+  Type: .
+  Frange: 0
+  Affected: .
 --- !u!114 &8459751613537510003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,3 +379,62 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!114 &2861239894645069456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7889376949394653752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde165b018780ec4a9ff0476275f170d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Canvas: {fileID: 0}
+  ZoomCard: {fileID: 7889376949394653752}
+--- !u!114 &7393395372689935534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7889376949394653752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2861239894645069456}
+          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
+          m_MethodName: OnHoverEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2861239894645069456}
+          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
+          m_MethodName: OnHoverExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

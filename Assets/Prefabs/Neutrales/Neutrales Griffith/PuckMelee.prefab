@@ -13,9 +13,12 @@ GameObject:
   - component: {fileID: 2488089951224571021}
   - component: {fileID: 607747705277300151}
   - component: {fileID: 2474962376689265415}
+  - component: {fileID: -4932372499719809693}
   - component: {fileID: 6909792772536178085}
   - component: {fileID: 3724212645767636683}
   - component: {fileID: -6742404298033558410}
+  - component: {fileID: 6499744767834383606}
+  - component: {fileID: 4604897917814813797}
   m_Layer: 6
   m_Name: PuckMelee
   m_TagString: Untagged
@@ -153,6 +156,27 @@ MonoBehaviour:
   Description: "El verdadero protagonista de la historia. Devuelve a tu mano la carta
     m\xE1s poderosa en la franja de Cuerpo a Cuerpo."
   Power: 1
+--- !u!114 &-4932372499719809693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5664656029312683538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 466702ee058d23d4186ce6208f66a7f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Puck
+  Power: 1
+  DescriptionNskill: "El verdadero protagonista de la historia. Devuelve a tu mano
+    la carta m\xE1s poderosa en la franja de Cuerpo a Cuerpo."
+  Lider: .
+  Faction: Falconia
+  Type: .
+  Frange: 0
+  Affected: .
 --- !u!61 &6909792772536178085
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -239,6 +263,65 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!114 &6499744767834383606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5664656029312683538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde165b018780ec4a9ff0476275f170d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Canvas: {fileID: 0}
+  ZoomCard: {fileID: 5664656029312683538}
+--- !u!114 &4604897917814813797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5664656029312683538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6499744767834383606}
+          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
+          m_MethodName: OnHoverEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6499744767834383606}
+          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
+          m_MethodName: OnHoverExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &9207481536674564373
 GameObject:
   m_ObjectHideFlags: 0

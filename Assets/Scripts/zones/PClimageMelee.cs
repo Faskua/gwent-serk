@@ -6,6 +6,7 @@ public class PClimageMelee : MonoBehaviour
 {
     public GameObject Card;
     public GameObject MeleeZone;
+    private bool jugable = true;
 
     // Start is called before the first frame update
     void Start()
@@ -15,8 +16,12 @@ public class PClimageMelee : MonoBehaviour
 
     public void PlayCard()
     {
+        if(jugable)
+        {
         Card.transform.SetParent(MeleeZone.transform, true);
         Card.transform.position = MeleeZone.transform.position;
+        jugable = false;
+        }
         
     }
 
