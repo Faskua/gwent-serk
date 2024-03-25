@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: -3563631757066715928}
   - component: {fileID: -8263745007792370335}
   - component: {fileID: -9213916631141156667}
-  - component: {fileID: 420871619524210778}
   - component: {fileID: -859658434721715790}
   m_Layer: 6
   m_Name: EclipseMelee
@@ -166,6 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Eclipse
+  OriginalPower: 0
   Power: 0
   DescriptionNskill: 'Maldito Griffith. Resta 1 de fuerza a cada carta en todas las
     filas '
@@ -173,7 +173,8 @@ MonoBehaviour:
   Faction: Sacrificios
   Type: .
   Frange: 0
-  Affected: .
+  Affected: 0
+  Sumada: 0
 --- !u!61 &-8263745007792370335
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -246,20 +247,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
---- !u!114 &420871619524210778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5664656029312683538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fde165b018780ec4a9ff0476275f170d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Canvas: {fileID: 0}
-  ZoomCard: {fileID: 5664656029312683538}
 --- !u!114 &-859658434721715790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,7 +264,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 420871619524210778}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
           m_MethodName: OnHoverEnter
           m_Mode: 1
@@ -293,7 +280,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 420871619524210778}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
           m_MethodName: OnHoverExit
           m_Mode: 1

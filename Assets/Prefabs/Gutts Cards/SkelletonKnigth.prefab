@@ -150,7 +150,6 @@ GameObject:
   - component: {fileID: 3553454932940865172}
   - component: {fileID: 440072831396639759}
   - component: {fileID: -3983807531410035511}
-  - component: {fileID: 1813545953386652944}
   - component: {fileID: -8390024256717726035}
   m_Layer: 6
   m_Name: SkelletonKnigth
@@ -300,6 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: 'Caballero de la Calavera '
+  OriginalPower: 8
   Power: 8
   DescriptionNskill: "Este tipo est\xE1 roto, pero aparece convenientemente cuando
     est\xE1 la mano de dios\u2026 sospechoso. Elimina 1 carta del tablero del rival
@@ -309,6 +309,7 @@ MonoBehaviour:
   Type: oro
   Frange: 1
   Affected: 0
+  Sumada: 0
 --- !u!61 &440072831396639759
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -381,20 +382,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
---- !u!114 &1813545953386652944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3560637067181593745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fde165b018780ec4a9ff0476275f170d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Canvas: {fileID: 0}
-  ZoomCard: {fileID: 3560637067181593745}
 --- !u!114 &-8390024256717726035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,7 +399,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1813545953386652944}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
           m_MethodName: OnHoverEnter
           m_Mode: 1
@@ -428,7 +415,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1813545953386652944}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
           m_MethodName: OnHoverExit
           m_Mode: 1

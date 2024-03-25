@@ -150,7 +150,6 @@ GameObject:
   - component: {fileID: 2249535237519885227}
   - component: {fileID: 1356093472052987870}
   - component: {fileID: -4389631303928333546}
-  - component: {fileID: -8456676617538265153}
   - component: {fileID: 5073236336096784521}
   m_Layer: 6
   m_Name: Rosine1
@@ -286,6 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Rosine, La Falsa Elfa
+  OriginalPower: 4
   Power: 4
   DescriptionNskill: "Ella solo quer\xEDa ser Tinkerbell, matar a todas esas personas
     por diversi\xF3n no era parte del plan :c"
@@ -294,6 +294,7 @@ MonoBehaviour:
   Type: plata
   Frange: 2
   Affected: 0
+  Sumada: 0
 --- !u!114 &2249535237519885227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,21 +381,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 40, y: 50}
   m_EdgeRadius: 0
---- !u!114 &-8456676617538265153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3560637067181593745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fde165b018780ec4a9ff0476275f170d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Canvas: {fileID: 0}
-  ZoomCard: {fileID: 3560637067181593745}
-  EnemyHand: {fileID: 0}
 --- !u!114 &5073236336096784521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,7 +398,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: -8456676617538265153}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
           m_MethodName: OnHoverEnter
           m_Mode: 1
@@ -428,7 +414,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: -8456676617538265153}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
           m_MethodName: OnHoverExit
           m_Mode: 1

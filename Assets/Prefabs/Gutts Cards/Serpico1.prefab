@@ -150,7 +150,6 @@ GameObject:
   - component: {fileID: 3553454932940865172}
   - component: {fileID: 3127679182022586656}
   - component: {fileID: 8984383396561276623}
-  - component: {fileID: 2038484390432706170}
   - component: {fileID: -8068461772891358751}
   m_Layer: 6
   m_Name: Serpico1
@@ -300,6 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Serpico
+  OriginalPower: 4
   Power: 4
   DescriptionNskill: "Por dudar entre si proceder con el incesto o no se qued\xF3
     con las ganas y ahora morir\xE1 virgen."
@@ -308,6 +308,7 @@ MonoBehaviour:
   Type: plata
   Frange: 1
   Affected: 0
+  Sumada: 0
 --- !u!61 &3127679182022586656
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -380,20 +381,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
---- !u!114 &2038484390432706170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3560637067181593745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fde165b018780ec4a9ff0476275f170d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Canvas: {fileID: 0}
-  ZoomCard: {fileID: 3560637067181593745}
 --- !u!114 &-8068461772891358751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,7 +398,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2038484390432706170}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
           m_MethodName: OnHoverEnter
           m_Mode: 1
@@ -427,7 +414,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2038484390432706170}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
           m_MethodName: OnHoverExit
           m_Mode: 1

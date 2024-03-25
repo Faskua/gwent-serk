@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class CardInfo : MonoBehaviour
 {/*
-
     public GameObject Card;
     public Text Info;
     

@@ -150,8 +150,6 @@ GameObject:
   - component: {fileID: 7562495234262887413}
   - component: {fileID: 6443654395464458325}
   - component: {fileID: -3696318050679096766}
-  - component: {fileID: -7495282366421410346}
-  - component: {fileID: -7793436767979327936}
   m_Layer: 6
   m_Name: BSerpiente1
   m_TagString: Untagged
@@ -286,6 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "Bar\xF3n Serpiente"
+  OriginalPower: 3
   Power: 3
   DescriptionNskill: "No hay complicaci\xF3n aqu\xED, Mitad Bar\xF3n, Mitad Serpiente."
   Lider: no lider
@@ -293,6 +292,7 @@ MonoBehaviour:
   Type: plata
   Frange: 1
   Affected: 0
+  Sumada: 0
 --- !u!114 &7562495234262887413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,63 +379,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 40, y: 50}
   m_EdgeRadius: 0
---- !u!114 &-7495282366421410346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3560637067181593745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fde165b018780ec4a9ff0476275f170d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Canvas: {fileID: 0}
-  ZoomCard: {fileID: 3560637067181593745}
-  EnemyHand: {fileID: 0}
---- !u!114 &-7793436767979327936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3560637067181593745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: -7495282366421410346}
-          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
-          m_MethodName: OnHoverEnter
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: -7495282366421410346}
-          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
-          m_MethodName: OnHoverExit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2

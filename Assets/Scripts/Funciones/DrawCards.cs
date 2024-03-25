@@ -49,10 +49,17 @@ public class DrawCards : MonoBehaviour
     public void OnClick()
     {
         for (int i= 0; i < 10; i ++)
-        {
-            GameObject card = Instantiate(Mazo[Random.Range(0, Mazo.Count)], new Vector2(0,0), Quaternion.identity);
+        { //cojo la ultima carta y despues de usarla la borro
+            if(Mazo.Count > 0)
+            {
+            GameObject card = Instantiate(Mazo[Mazo.Count - 1], new Vector2(0,0), Quaternion.identity);
             card.transform.SetParent(Hand.transform, false);
-            Mazo.RemoveAt(0);
+            Mazo.RemoveAt(Mazo.Count - 1);
+            }
+            else 
+            {
+                break;
+            }
         }
     }
 
@@ -99,22 +106,14 @@ public class DrawCards : MonoBehaviour
         Mazo.Add(Card35);
         Mazo.Add(Card36);
 
-        Shuffle(Mazo); //las barajeo desde el principio
-       
+
+     //en este pedacito de aqui barajeo el mazo pasandolo a array y despues a lista
+     // Random random = new();
+     // random.Shuffle(Mazo.ToArray);
     }
 
 
-       public static List <GameObject> Shuffle(List<GameObject> deck) //metodo pra barajear las cartas del mazo 
-    {
-        List <GameObject> mazo = new List<GameObject>();
-
-        foreach(GameObject card in deck)
-        {
-            int position = Random.Range(0, deck.Count);
-            mazo.Add((position == mazo.Count) ? card : deck[position]);
-        }
-        return mazo;
-    }  
+    
 
     // Update is called once per frame
     void Update()

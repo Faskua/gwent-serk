@@ -150,7 +150,6 @@ GameObject:
   - component: {fileID: 3553454932940865172}
   - component: {fileID: -4816036210948226907}
   - component: {fileID: 5399968307655233125}
-  - component: {fileID: -4723315020275870058}
   - component: {fileID: 4201549811483314766}
   m_Layer: 6
   m_Name: Guttsjugable
@@ -300,6 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "Gutts, El Espadach\xEDn Negro"
+  OriginalPower: 10
   Power: 10
   DescriptionNskill: "H\xE1bil luchador con una cierta inclinaci\xF3n hacia el color
     negro y mucho, mucho desarrollo de personaje."
@@ -308,6 +308,7 @@ MonoBehaviour:
   Type: oro
   Frange: 1
   Affected: 0
+  Sumada: 0
 --- !u!61 &-4816036210948226907
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -380,20 +381,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
---- !u!114 &-4723315020275870058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3560637067181593745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fde165b018780ec4a9ff0476275f170d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Canvas: {fileID: 0}
-  ZoomCard: {fileID: 3560637067181593745}
 --- !u!114 &4201549811483314766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,7 +398,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: -4723315020275870058}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
           m_MethodName: OnHoverEnter
           m_Mode: 1
@@ -427,7 +414,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: -4723315020275870058}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
           m_MethodName: OnHoverExit
           m_Mode: 1
