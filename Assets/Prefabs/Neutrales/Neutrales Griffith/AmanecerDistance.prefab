@@ -147,10 +147,11 @@ GameObject:
   - component: {fileID: 8682828968310956283}
   - component: {fileID: 8090543112057938874}
   - component: {fileID: 8760749900083027561}
-  - component: {fileID: 1944490956412416781}
   - component: {fileID: 6600391099005779515}
   - component: {fileID: -6310526739581265296}
   - component: {fileID: -8069473065988852188}
+  - component: {fileID: 4712346059085792665}
+  - component: {fileID: -1625002043287494235}
   m_Layer: 6
   m_Name: AmanecerDistance
   m_TagString: Untagged
@@ -260,8 +261,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1944490956412416781}
-        m_TargetAssemblyTypeName: EClimageDistance, Assembly-CSharp
+      - m_Target: {fileID: -1625002043287494235}
+        m_TargetAssemblyTypeName: JugarCarta, Assembly-CSharp
         m_MethodName: PlayCard
         m_Mode: 1
         m_Arguments:
@@ -287,27 +288,14 @@ MonoBehaviour:
   Name: Amanecer
   OriginalPower: 0
   Power: 0
-  DescriptionNskill: Despeje. Elimina los efectos de las cartas de clima
+  DescriptionNskill: Despeje. Elimina los efectos de las cartas de clima en la franja
+    de Distancia
   Lider: .
   Faction: Falconia
   Type: .
-  Frange: 0
+  Frange: 5
   Affected: 0
   Sumada: 0
---- !u!114 &1944490956412416781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffe71974c03d58b43acf68faa96ef18c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Card: {fileID: 7889376949394653752}
-  Zone: {fileID: 0}
 --- !u!61 &6600391099005779515
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -397,9 +385,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
-          m_MethodName: OnHoverEnter
+        - m_Target: {fileID: 4712346059085792665}
+          m_TargetAssemblyTypeName: CardInfo, Assembly-CSharp
+          m_MethodName: MouseEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -413,9 +401,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
-          m_MethodName: OnHoverExit
+        - m_Target: {fileID: 4712346059085792665}
+          m_TargetAssemblyTypeName: CardInfo, Assembly-CSharp
+          m_MethodName: MouseExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -425,3 +413,45 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &4712346059085792665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7889376949394653752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b73f25973fa6a3458c65eeebffd91dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Card: {fileID: 7889376949394653752}
+  InfoText: {fileID: 9087890962933944297, guid: ba2b26a9d414617469433e8fd4c5d7f0, type: 3}
+--- !u!114 &-1625002043287494235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7889376949394653752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccaa1dcd57d66f4cba63448c1855250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Card: {fileID: 7889376949394653752}
+  Turn: 1
+  PMelee: {fileID: 0}
+  PDistance: {fileID: 0}
+  PSiege: {fileID: 0}
+  EMelee: {fileID: 0}
+  EDistance: {fileID: 0}
+  ESiege: {fileID: 0}
+  pCmelee: {fileID: 0}
+  pCdistance: {fileID: 0}
+  pCsiege: {fileID: 0}
+  eCmelee: {fileID: 0}
+  eCdistance: {fileID: 0}
+  eCsiege: {fileID: 0}
+  Bloqueo1: {fileID: 0}
+  Bloqueo2: {fileID: 0}

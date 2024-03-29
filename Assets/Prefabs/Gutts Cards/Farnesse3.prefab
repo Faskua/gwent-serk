@@ -147,10 +147,11 @@ GameObject:
   - component: {fileID: 3169215666809330722}
   - component: {fileID: 5329582893060820928}
   - component: {fileID: 3553454932940865172}
-  - component: {fileID: 2635401197262493032}
   - component: {fileID: 6660012711966073441}
   - component: {fileID: 8765562309094247059}
   - component: {fileID: 1832724506932644788}
+  - component: {fileID: 1094674238856058234}
+  - component: {fileID: -4652681916969316065}
   m_Layer: 6
   m_Name: Farnesse3
   m_TagString: Untagged
@@ -260,8 +261,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2635401197262493032}
-        m_TargetAssemblyTypeName: Pdistance, Assembly-CSharp
+      - m_Target: {fileID: -4652681916969316065}
+        m_TargetAssemblyTypeName: JugarCarta, Assembly-CSharp
         m_MethodName: PlayCard
         m_Mode: 1
         m_Arguments:
@@ -294,20 +295,6 @@ MonoBehaviour:
   Frange: 2
   Affected: 0
   Sumada: 0
---- !u!114 &2635401197262493032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3560637067181593745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57090097b00dacd4092a69d79c14b1ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Card: {fileID: 3560637067181593745}
-  Zone: {fileID: 0}
 --- !u!61 &6660012711966073441
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -397,9 +384,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
-          m_MethodName: OnHoverEnter
+        - m_Target: {fileID: 1094674238856058234}
+          m_TargetAssemblyTypeName: CardInfo, Assembly-CSharp
+          m_MethodName: MouseEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -413,9 +400,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
-          m_MethodName: OnHoverExit
+        - m_Target: {fileID: 1094674238856058234}
+          m_TargetAssemblyTypeName: CardInfo, Assembly-CSharp
+          m_MethodName: MouseExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -425,3 +412,45 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1094674238856058234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560637067181593745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b73f25973fa6a3458c65eeebffd91dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Card: {fileID: 3560637067181593745}
+  InfoText: {fileID: 9087890962933944297, guid: ba2b26a9d414617469433e8fd4c5d7f0, type: 3}
+--- !u!114 &-4652681916969316065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560637067181593745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccaa1dcd57d66f4cba63448c1855250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Card: {fileID: 3560637067181593745}
+  Turn: 1
+  PMelee: {fileID: 0}
+  PDistance: {fileID: 0}
+  PSiege: {fileID: 0}
+  EMelee: {fileID: 0}
+  EDistance: {fileID: 0}
+  ESiege: {fileID: 0}
+  pCmelee: {fileID: 0}
+  pCdistance: {fileID: 0}
+  pCsiege: {fileID: 0}
+  eCmelee: {fileID: 0}
+  eCdistance: {fileID: 0}
+  eCsiege: {fileID: 0}
+  Bloqueo1: {fileID: 0}
+  Bloqueo2: {fileID: 0}

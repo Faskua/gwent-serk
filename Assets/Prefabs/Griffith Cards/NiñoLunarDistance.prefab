@@ -147,10 +147,11 @@ GameObject:
   - component: {fileID: 8682828968310956283}
   - component: {fileID: 8090543112057938874}
   - component: {fileID: -3516318409676878978}
-  - component: {fileID: -5921739508790282956}
   - component: {fileID: 1274105858388788028}
   - component: {fileID: 4899079509354102622}
   - component: {fileID: 838227346511313878}
+  - component: {fileID: -8378309641483771430}
+  - component: {fileID: -935804558246245846}
   m_Layer: 6
   m_Name: "Ni\xF1oLunarDistance"
   m_TagString: Untagged
@@ -176,7 +177,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 40, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5456894520157802730
 CanvasRenderer:
@@ -260,8 +261,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -5921739508790282956}
-        m_TargetAssemblyTypeName: Pdistance, Assembly-CSharp
+      - m_Target: {fileID: -935804558246245846}
+        m_TargetAssemblyTypeName: JugarCarta, Assembly-CSharp
         m_MethodName: PlayCard
         m_Mode: 1
         m_Arguments:
@@ -288,27 +289,13 @@ MonoBehaviour:
   OriginalPower: 2
   Power: 2
   DescriptionNskill: "Tengo sentimientos encontrados con este ni\xF1o. Juega en la
-    franja de distancia enemiga pero te permite robar 1 carta del mazo."
+    franja de distancia enemiga pero te permite robar 2 carta del mazo."
   Lider: .
   Faction: Sacrificios
   Type: .
-  Frange: 0
+  Frange: 9
   Affected: 0
   Sumada: 0
---- !u!114 &-5921739508790282956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57090097b00dacd4092a69d79c14b1ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Card: {fileID: 7889376949394653752}
-  Zone: {fileID: 0}
 --- !u!50 &1274105858388788028
 Rigidbody2D:
   serializedVersion: 4
@@ -398,9 +385,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
-          m_MethodName: OnHoverEnter
+        - m_Target: {fileID: -8378309641483771430}
+          m_TargetAssemblyTypeName: CardInfo, Assembly-CSharp
+          m_MethodName: MouseEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -414,9 +401,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
-          m_MethodName: OnHoverExit
+        - m_Target: {fileID: -8378309641483771430}
+          m_TargetAssemblyTypeName: CardInfo, Assembly-CSharp
+          m_MethodName: MouseExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -426,3 +413,45 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &-8378309641483771430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7889376949394653752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b73f25973fa6a3458c65eeebffd91dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Card: {fileID: 7889376949394653752}
+  InfoText: {fileID: 9087890962933944297, guid: ba2b26a9d414617469433e8fd4c5d7f0, type: 3}
+--- !u!114 &-935804558246245846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7889376949394653752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccaa1dcd57d66f4cba63448c1855250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Card: {fileID: 7889376949394653752}
+  Turn: 1
+  PMelee: {fileID: 0}
+  PDistance: {fileID: 0}
+  PSiege: {fileID: 0}
+  EMelee: {fileID: 0}
+  EDistance: {fileID: 0}
+  ESiege: {fileID: 0}
+  pCmelee: {fileID: 0}
+  pCdistance: {fileID: 0}
+  pCsiege: {fileID: 0}
+  eCmelee: {fileID: 0}
+  eCdistance: {fileID: 0}
+  eCsiege: {fileID: 0}
+  Bloqueo1: {fileID: 0}
+  Bloqueo2: {fileID: 0}

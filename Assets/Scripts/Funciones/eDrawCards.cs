@@ -42,17 +42,22 @@ public class eDrawCards : MonoBehaviour
     public GameObject Card36;
 
     public GameObject Hand;
+    public bool robo = false;
 
     public List <GameObject> Mazo = new List <GameObject>();
 
 
     public void Clicked()
     {
+        if(robo == false)
+        {
         for (int i= 0; i < 10; i ++)
         {
             GameObject card = Instantiate(Mazo[Random.Range(0,Mazo.Count)], new Vector2(0,0), Quaternion.identity);
             card.transform.SetParent(Hand.transform, false);
            // Mazo.RemoveAt(0);
+        }
+        robo = true;
         }
     }
 

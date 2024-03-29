@@ -12,11 +12,12 @@ GameObject:
   - component: {fileID: 5774441439495646829}
   - component: {fileID: 2488089951224571021}
   - component: {fileID: 607747705277300151}
-  - component: {fileID: 4945786019164667871}
   - component: {fileID: -3563631757066715928}
   - component: {fileID: -8263745007792370335}
   - component: {fileID: -9213916631141156667}
   - component: {fileID: -859658434721715790}
+  - component: {fileID: 2403428395642425917}
+  - component: {fileID: -6732807583337407079}
   m_Layer: 6
   m_Name: EclipseMelee
   m_TagString: Untagged
@@ -126,8 +127,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4945786019164667871}
-        m_TargetAssemblyTypeName: PClimageMelee, Assembly-CSharp
+      - m_Target: {fileID: -6732807583337407079}
+        m_TargetAssemblyTypeName: JugarCarta, Assembly-CSharp
         m_MethodName: PlayCard
         m_Mode: 1
         m_Arguments:
@@ -138,20 +139,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4945786019164667871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5664656029312683538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12f6c3132eaaae54c87895eff5d8d527, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Card: {fileID: 5664656029312683538}
-  MeleeZone: {fileID: 0}
 --- !u!114 &-3563631757066715928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,12 +154,12 @@ MonoBehaviour:
   Name: Eclipse
   OriginalPower: 0
   Power: 0
-  DescriptionNskill: 'Maldito Griffith. Resta 1 de fuerza a cada carta en todas las
-    filas '
+  DescriptionNskill: Maldito Griffith. Reduce uno de poder a todas las cartas en
+    la franja de Cuerpo a Cuerpo
   Lider: .
   Faction: Sacrificios
   Type: .
-  Frange: 0
+  Frange: 4
   Affected: 0
   Sumada: 0
 --- !u!61 &-8263745007792370335
@@ -264,9 +251,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
-          m_MethodName: OnHoverEnter
+        - m_Target: {fileID: 2403428395642425917}
+          m_TargetAssemblyTypeName: CardInfo, Assembly-CSharp
+          m_MethodName: MouseEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -280,9 +267,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
-          m_MethodName: OnHoverExit
+        - m_Target: {fileID: 2403428395642425917}
+          m_TargetAssemblyTypeName: CardInfo, Assembly-CSharp
+          m_MethodName: MouseExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -292,6 +279,48 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &2403428395642425917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5664656029312683538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b73f25973fa6a3458c65eeebffd91dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Card: {fileID: 5664656029312683538}
+  InfoText: {fileID: 9087890962933944297, guid: ba2b26a9d414617469433e8fd4c5d7f0, type: 3}
+--- !u!114 &-6732807583337407079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5664656029312683538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccaa1dcd57d66f4cba63448c1855250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Card: {fileID: 5664656029312683538}
+  Turn: 1
+  PMelee: {fileID: 0}
+  PDistance: {fileID: 0}
+  PSiege: {fileID: 0}
+  EMelee: {fileID: 0}
+  EDistance: {fileID: 0}
+  ESiege: {fileID: 0}
+  pCmelee: {fileID: 0}
+  pCdistance: {fileID: 0}
+  pCsiege: {fileID: 0}
+  eCmelee: {fileID: 0}
+  eCdistance: {fileID: 0}
+  eCsiege: {fileID: 0}
+  Bloqueo1: {fileID: 0}
+  Bloqueo2: {fileID: 0}
 --- !u!1 &9207481536674564373
 GameObject:
   m_ObjectHideFlags: 0

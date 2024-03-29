@@ -42,24 +42,25 @@ public class DrawCards : MonoBehaviour
     public GameObject Card36;
 
     public GameObject Hand;
+    public bool robo = false;
 
     public List <GameObject> Mazo = new List <GameObject>();
 
 
     public void OnClick()
     {
+        if(robo == false)
+        {
         for (int i= 0; i < 10; i ++)
         { //cojo la ultima carta y despues de usarla la borro
             if(Mazo.Count > 0)
             {
-            GameObject card = Instantiate(Mazo[Mazo.Count - 1], new Vector2(0,0), Quaternion.identity);
+            GameObject card = Instantiate(Mazo[Random.Range (0, Mazo.Count)], new Vector2(0,0), Quaternion.identity);
             card.transform.SetParent(Hand.transform, false);
-            Mazo.RemoveAt(Mazo.Count - 1);
+           // Mazo.RemoveAt(Mazo.Count - 1);
             }
-            else 
-            {
-                break;
-            }
+        }
+        robo = true;
         }
     }
 

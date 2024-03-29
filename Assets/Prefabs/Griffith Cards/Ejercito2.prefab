@@ -147,9 +147,11 @@ GameObject:
   - component: {fileID: 3169215666809330722}
   - component: {fileID: 5329582893060820928}
   - component: {fileID: 3553454932940865172}
-  - component: {fileID: 6830685087187807857}
   - component: {fileID: 5273490355232306465}
   - component: {fileID: -8798913909096343045}
+  - component: {fileID: -4555889569532548424}
+  - component: {fileID: 860589573891852754}
+  - component: {fileID: 1401520672605334528}
   m_Layer: 6
   m_Name: Ejercito2
   m_TagString: Untagged
@@ -259,8 +261,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6830685087187807857}
-        m_TargetAssemblyTypeName: Esiege, Assembly-CSharp
+      - m_Target: {fileID: 1401520672605334528}
+        m_TargetAssemblyTypeName: JugarCarta, Assembly-CSharp
         m_MethodName: PlayCard
         m_Mode: 1
         m_Arguments:
@@ -293,20 +295,6 @@ MonoBehaviour:
   Frange: 3
   Affected: 0
   Sumada: 0
---- !u!114 &6830685087187807857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3560637067181593745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b893134ae01ff54a97082f6cec89ed0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Card: {fileID: 3560637067181593745}
-  Zone: {fileID: 0}
 --- !u!50 &5273490355232306465
 Rigidbody2D:
   serializedVersion: 4
@@ -379,3 +367,90 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 40, y: 50}
   m_EdgeRadius: 0
+--- !u!114 &-4555889569532548424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560637067181593745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b73f25973fa6a3458c65eeebffd91dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Card: {fileID: 3560637067181593745}
+  InfoText: {fileID: 9087890962933944297, guid: ba2b26a9d414617469433e8fd4c5d7f0, type: 3}
+--- !u!114 &860589573891852754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560637067181593745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: -4555889569532548424}
+          m_TargetAssemblyTypeName: CardInfo, Assembly-CSharp
+          m_MethodName: MouseEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: -4555889569532548424}
+          m_TargetAssemblyTypeName: CardInfo, Assembly-CSharp
+          m_MethodName: MouseExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1401520672605334528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560637067181593745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccaa1dcd57d66f4cba63448c1855250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Card: {fileID: 3560637067181593745}
+  Turn: 1
+  PMelee: {fileID: 0}
+  PDistance: {fileID: 0}
+  PSiege: {fileID: 0}
+  EMelee: {fileID: 0}
+  EDistance: {fileID: 0}
+  ESiege: {fileID: 0}
+  pCmelee: {fileID: 0}
+  pCdistance: {fileID: 0}
+  pCsiege: {fileID: 0}
+  eCmelee: {fileID: 0}
+  eCdistance: {fileID: 0}
+  eCsiege: {fileID: 0}
+  Bloqueo1: {fileID: 0}
+  Bloqueo2: {fileID: 0}

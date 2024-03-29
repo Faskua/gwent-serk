@@ -147,10 +147,11 @@ GameObject:
   - component: {fileID: 8682828968310956283}
   - component: {fileID: 8090543112057938874}
   - component: {fileID: 3409776802199416650}
-  - component: {fileID: -3105469608513822924}
   - component: {fileID: -2737960283742147218}
   - component: {fileID: -854134647856025981}
   - component: {fileID: -4641751491413373002}
+  - component: {fileID: 6308433592582237249}
+  - component: {fileID: -35097760765913601}
   m_Layer: 6
   m_Name: EclipseDistance
   m_TagString: Untagged
@@ -260,8 +261,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -3105469608513822924}
-        m_TargetAssemblyTypeName: PClimageDistance, Assembly-CSharp
+      - m_Target: {fileID: -35097760765913601}
+        m_TargetAssemblyTypeName: JugarCarta, Assembly-CSharp
         m_MethodName: PlayCard
         m_Mode: 1
         m_Arguments:
@@ -287,28 +288,14 @@ MonoBehaviour:
   Name: Eclipse
   OriginalPower: 0
   Power: 0
-  DescriptionNskill: 'Maldito Griffith. Resta 1 de fuerza a cada carta en todas las
-    filas '
+  DescriptionNskill: Maldito Griffith. Reduce uno de poder a todas las cartas en
+    la franja de Distancia
   Lider: .
   Faction: Sacrificios
   Type: .
-  Frange: 0
+  Frange: 5
   Affected: 0
   Sumada: 0
---- !u!114 &-3105469608513822924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f6165f7497d4b247bbef04d556eb77c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Card: {fileID: 7889376949394653752}
-  Zone: {fileID: 0}
 --- !u!61 &-2737960283742147218
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -398,9 +385,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
-          m_MethodName: OnHoverEnter
+        - m_Target: {fileID: 6308433592582237249}
+          m_TargetAssemblyTypeName: CardInfo, Assembly-CSharp
+          m_MethodName: MouseEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -414,9 +401,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
-          m_MethodName: OnHoverExit
+        - m_Target: {fileID: 6308433592582237249}
+          m_TargetAssemblyTypeName: CardInfo, Assembly-CSharp
+          m_MethodName: MouseExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -426,3 +413,45 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &6308433592582237249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7889376949394653752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b73f25973fa6a3458c65eeebffd91dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Card: {fileID: 7889376949394653752}
+  InfoText: {fileID: 9087890962933944297, guid: ba2b26a9d414617469433e8fd4c5d7f0, type: 3}
+--- !u!114 &-35097760765913601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7889376949394653752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccaa1dcd57d66f4cba63448c1855250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Card: {fileID: 7889376949394653752}
+  Turn: 1
+  PMelee: {fileID: 0}
+  PDistance: {fileID: 0}
+  PSiege: {fileID: 0}
+  EMelee: {fileID: 0}
+  EDistance: {fileID: 0}
+  ESiege: {fileID: 0}
+  pCmelee: {fileID: 0}
+  pCdistance: {fileID: 0}
+  pCsiege: {fileID: 0}
+  eCmelee: {fileID: 0}
+  eCdistance: {fileID: 0}
+  eCsiege: {fileID: 0}
+  Bloqueo1: {fileID: 0}
+  Bloqueo2: {fileID: 0}

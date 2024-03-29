@@ -13,10 +13,11 @@ GameObject:
   - component: {fileID: 5625984581664527604}
   - component: {fileID: 7864796696855744689}
   - component: {fileID: 609271693970732723}
-  - component: {fileID: -1750510598480558252}
   - component: {fileID: 4128712281801953114}
   - component: {fileID: 2821233311977546342}
   - component: {fileID: -5274656968205827752}
+  - component: {fileID: 603003189149662783}
+  - component: {fileID: 178293369746225609}
   m_Layer: 6
   m_Name: "Ni\xF1oLunarSiege"
   m_TagString: Untagged
@@ -126,8 +127,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -1750510598480558252}
-        m_TargetAssemblyTypeName: Esiege, Assembly-CSharp
+      - m_Target: {fileID: 178293369746225609}
+        m_TargetAssemblyTypeName: JugarCarta, Assembly-CSharp
         m_MethodName: PlayCard
         m_Mode: 1
         m_Arguments:
@@ -154,27 +155,13 @@ MonoBehaviour:
   OriginalPower: 2
   Power: 2
   DescriptionNskill: "Tengo sentimientos encontrados con este ni\xF1o. Juega en la
-    franja de asedio enemiga pero te permite robar 1 carta del mazo. "
+    franja de asedio enemiga pero te permite robar 2 carta del mazo. "
   Lider: .
   Faction: Sacrificios
   Type: .
-  Frange: 0
+  Frange: 8
   Affected: 0
   Sumada: 0
---- !u!114 &-1750510598480558252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3525376186561288315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b893134ae01ff54a97082f6cec89ed0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Card: {fileID: 3525376186561288315}
-  Zone: {fileID: 0}
 --- !u!61 &4128712281801953114
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -264,9 +251,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
-          m_MethodName: OnHoverEnter
+        - m_Target: {fileID: 603003189149662783}
+          m_TargetAssemblyTypeName: CardInfo, Assembly-CSharp
+          m_MethodName: MouseEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -280,9 +267,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
-          m_MethodName: OnHoverExit
+        - m_Target: {fileID: 603003189149662783}
+          m_TargetAssemblyTypeName: CardInfo, Assembly-CSharp
+          m_MethodName: MouseExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -292,6 +279,48 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &603003189149662783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525376186561288315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b73f25973fa6a3458c65eeebffd91dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Card: {fileID: 3525376186561288315}
+  InfoText: {fileID: 9087890962933944297, guid: ba2b26a9d414617469433e8fd4c5d7f0, type: 3}
+--- !u!114 &178293369746225609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525376186561288315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccaa1dcd57d66f4cba63448c1855250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Card: {fileID: 3525376186561288315}
+  Turn: 1
+  PMelee: {fileID: 0}
+  PDistance: {fileID: 0}
+  PSiege: {fileID: 0}
+  EMelee: {fileID: 0}
+  EDistance: {fileID: 0}
+  ESiege: {fileID: 0}
+  pCmelee: {fileID: 0}
+  pCdistance: {fileID: 0}
+  pCsiege: {fileID: 0}
+  eCmelee: {fileID: 0}
+  eCdistance: {fileID: 0}
+  eCsiege: {fileID: 0}
+  Bloqueo1: {fileID: 0}
+  Bloqueo2: {fileID: 0}
 --- !u!1 &8113310705187874826
 GameObject:
   m_ObjectHideFlags: 0
