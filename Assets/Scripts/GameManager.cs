@@ -10,16 +10,23 @@ public class GameManager : MonoBehaviour
     public string PointsGutts;
     public Text WinsGriffithText;
     public string PointsGriffith;
+    public Text GanadorText;
 
+
+    private bool PartidaTerminada = false;
     private int VictoriasGutts = 0;
     private int VictoriasGriffith = 0;
     private int Mano1;
     private int Mano2;
     private bool Eroba;
+    private bool Eroba2;
+    private bool Eroba3;
     private bool Proba;
+    private bool Proba2;
+    private bool Proba3;
 
 
-    public void WhoWin()
+    public void WhoWon()
     {
         if(Ronda == 1 && Mano1 == 0 && Mano2 == 0 && Proba && Eroba)
         {
@@ -38,6 +45,42 @@ public class GameManager : MonoBehaviour
             }
             Ronda += 1;
         }
+
+        if(Ronda == 2 && Mano1 == 0 && Mano2 == 0 && Proba2 && Eroba2)
+        {
+            int ptsGutts = int.Parse(PointsGutts);
+            int ptsGriffith = int.Parse(PointsGriffith);
+            if(ptsGutts >= ptsGriffith)
+            {
+                VictoriasGutts += 1;
+                WinsGuttsText.text = VictoriasGutts.ToString();
+            }
+
+            if(ptsGriffith >= ptsGutts)
+            {
+                VictoriasGriffith += 1;
+                WinsGriffithText.text = VictoriasGriffith.ToString();
+            }
+            Ronda += 1;
+        }
+
+        if(Ronda == 3 && Mano1 == 0 && Mano2 == 0 && Proba3 && Eroba3)
+        {
+            int ptsGutts = int.Parse(PointsGutts);
+            int ptsGriffith = int.Parse(PointsGriffith);
+            if(ptsGutts >= ptsGriffith)
+            {
+                VictoriasGutts += 1;
+                WinsGuttsText.text = VictoriasGutts.ToString();
+            }
+
+            if(ptsGriffith >= ptsGutts)
+            {
+                VictoriasGriffith += 1;
+                WinsGriffithText.text = VictoriasGriffith.ToString();
+            }
+            Ronda = 0;
+        }
     }
   
     void Update()
@@ -50,5 +93,30 @@ public class GameManager : MonoBehaviour
 
         Eroba = GameObject.Find("EnemyDeck").GetComponent<eDrawCards>().robo;
         Proba = GameObject.Find("PlayerDeck").GetComponent<DrawCards>().robo;
+        Eroba2 = GameObject.Find("EnemyDeck").GetComponent<eDrawCards>().robo2;
+        Proba2 = GameObject.Find("PlayerDeck").GetComponent<DrawCards>().robo2;
+        Eroba3 = GameObject.Find("EnemyDeck").GetComponent<eDrawCards>().robo3;
+        Proba3 = GameObject.Find("PlayerDeck").GetComponent<DrawCards>().robo3;
+
+
+
+                    //Decidiendo el ganador
+        if(PartidaTerminada == false && VictoriasGutts == 2)
+        {
+            PartidaTerminada = true;
+            GanadorText.text = "Gutts Ha Ganado!!";
+        }
+
+        if(PartidaTerminada == false && VictoriasGriffith == 2)
+        {
+            PartidaTerminada = true;
+            GanadorText.text = "Griffith Ha Ganado!!";
+        }
+
+        if(PartidaTerminada == false && VictoriasGutts == VictoriasGriffith && VictoriasGriffith == 2)
+        {
+            PartidaTerminada = true;
+            GanadorText.text = "Empate!!";
+        }
     }
 }

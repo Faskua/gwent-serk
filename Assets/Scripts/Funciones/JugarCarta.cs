@@ -8,6 +8,8 @@ public class JugarCarta : MonoBehaviour
     public GameObject Card; //la carta a jugar
     public bool Turn = true; //controlador del turno
    //las zonas
+   public GameObject PHand;
+   public GameObject EHand;
     public GameObject PMelee;
     public GameObject PDistance;
     public GameObject PSiege;
@@ -23,6 +25,7 @@ public class JugarCarta : MonoBehaviour
     //el objeto que voy a utilizar para tapar la mano enemiga
     public GameObject Bloqueo1;
     public GameObject Bloqueo2;
+    private List<GameObject> mazo;
 
 
     void Start()
@@ -39,6 +42,8 @@ public class JugarCarta : MonoBehaviour
         eCmelee = GameObject.Find("eMeleeClimage");
         eCdistance = GameObject.Find("eDistanceClimage");
         eCsiege = GameObject.Find("eSiegeClimage");
+        PHand = GameObject.Find("PlayerHand");
+        EHand = GameObject.Find("EnemyHand");
     }
 
     public void PlayCard()
@@ -272,9 +277,35 @@ public class JugarCarta : MonoBehaviour
     }
 
 
+    public void Danan()
+    {
+      for(int i = 0; i < 2; i++)
+      {
+         if(mazo.Count > 2)
+         {
+            GameObject Cartas = Instantiate(mazo[Random.Range (0, mazo.Count)], new Vector2(0,0), Quaternion.identity);
+            Cartas.transform.SetParent(PHand.transform, false);
+         }
+      }
+    }
+    public void NLunarGriffith()
+    {
+      for(int i = 0; i < 2; i++)
+      {
+         if(mazo.Count > 2)
+         {
+            GameObject Cartas = Instantiate(mazo[Random.Range (0, mazo.Count)], new Vector2(0,0), Quaternion.identity);
+            Cartas.transform.SetParent(EHand.transform, false);
+         }
+      }
+    }
+
+
+
 
     void Update()
     {
       Turn = GameObject.Find("TurnCounter").GetComponent<SetTurn>().Turno;
+      mazo = GameObject.Find("PlayerDeck").GetComponent<DrawCards>().Mazo;
     }
 }

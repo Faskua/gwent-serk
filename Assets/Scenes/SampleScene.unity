@@ -401,6 +401,85 @@ MonoBehaviour:
   Turno: 1
   Bloqueo1: {fileID: 1212540087}
   Bloqueo2: {fileID: 2046982237}
+--- !u!1 &340415380
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 340415381}
+  - component: {fileID: 340415383}
+  - component: {fileID: 340415382}
+  m_Layer: 0
+  m_Name: Ganador
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &340415381
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340415380}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.7710369}
+  m_LocalScale: {x: 0.41666663, y: 0.41666663, z: 0.41666663}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 822533956}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.00085449, y: 20.765532}
+  m_SizeDelta: {x: 1325.8, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &340415382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340415380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.23486009, g: 0.78616345, b: 0.36247665, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
+    m_FontSize: 80
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 100
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &340415383
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340415380}
+  m_CullTransparentMesh: 1
 --- !u!1 &400175767
 GameObject:
   m_ObjectHideFlags: 0
@@ -1075,6 +1154,7 @@ RectTransform:
   - {fileID: 400175768}
   - {fileID: 684915975}
   - {fileID: 1615451630}
+  - {fileID: 340415381}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1593,7 +1673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8679245, g: 0.7778568, b: 0.7778568, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1601,7 +1681,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 2230732570650464555, guid: 5b526c99abe480d4084728c7067c3c8c, type: 3}
+    m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -1864,7 +1944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8679245, g: 0.7778568, b: 0.7778568, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1872,7 +1952,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 2230732570650464555, guid: 5b526c99abe480d4084728c7067c3c8c, type: 3}
+    m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -1893,6 +1973,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476077346}
   m_CullTransparentMesh: 1
+--- !u!1 &1489257208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1489257211}
+  - component: {fileID: 1489257210}
+  - component: {fileID: 1489257209}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1489257209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489257208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1489257210
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489257208}
+  m_CullTransparentMesh: 1
+--- !u!224 &1489257211
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489257208}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.6156486}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1991, y: 245}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1615451629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1929,8 +2088,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 240.14, y: 0.69998}
-  m_SizeDelta: {x: 106.6, y: 24.295}
+  m_AnchoredPosition: {x: 337.78, y: 0.1444}
+  m_SizeDelta: {x: 298.66, y: 1079.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1615451631
 MonoBehaviour:
@@ -1949,6 +2108,7 @@ MonoBehaviour:
   PointsGutts: 0
   WinsGriffithText: {fileID: 1228042473}
   PointsGriffith: 0
+  GanadorText: {fileID: 340415382}
 --- !u!114 &1615451632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1962,7 +2122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.29559743, g: 0.0046477285, b: 0.0046477285, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2033,7 +2193,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1615451631}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: WhoWin
+        m_MethodName: WhoWon
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2232,8 +2392,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 337.83, y: 0.12499}
-  m_SizeDelta: {x: 123.24, y: 449.75}
+  m_AnchoredPosition: {x: 337.76, y: 0.12499}
+  m_SizeDelta: {x: 124.49, y: 449.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2027938378
 MonoBehaviour:
@@ -2772,6 +2932,9 @@ MonoBehaviour:
   Card36: {fileID: 5664656029312683538, guid: 705784adac58170409226f802db8ba09, type: 3}
   Hand: {fileID: 2620992458847555637}
   robo: 0
+  robo2: 0
+  robo3: 0
+  GanadorText: {fileID: 340415382}
   Mazo:
   - {fileID: 3560637067181593745, guid: 4449d1bd2b59d44468c4838396819250, type: 3}
   - {fileID: 3560637067181593745, guid: ef8e1844229c4114888d3bc71e37e491, type: 3}
@@ -2794,7 +2957,7 @@ GameObject:
   - component: {fileID: 7918130211766982311}
   m_Layer: 7
   m_Name: PlayerSiege
-  m_TagString: Untagged
+  m_TagString: PlayerSiege
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2942,6 +3105,7 @@ GameObject:
   - component: {fileID: 5735300404419619995}
   - component: {fileID: 3339646868892242583}
   - component: {fileID: 8410903791471441096}
+  - component: {fileID: 8410903791471441097}
   m_Layer: 5
   m_Name: Gutts
   m_TagString: Untagged
@@ -3171,8 +3335,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Griffith
   DescriptionNskill: "El Karma es mi novio, el Karma es un dios, el Karma es la brisa
-    en mi cabello el fin de se-mana. Usa la carta m\xE1s fuerte del rival como sacrificio
-    y la elimina."
+    en mi cabello el fin de se-mana. Usa la carta m\xE1s d\xE9bil del rival en cada
+    franjal como sacrificio y las elimina."
   Lider: "L\xEDder"
   Faction: Falconia
 --- !u!114 &3104731320769789302
@@ -3305,7 +3469,7 @@ GameObject:
   - component: {fileID: 8801089096562390754}
   m_Layer: 7
   m_Name: PlayerDistance
-  m_TagString: Untagged
+  m_TagString: PlayerDistance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3500,6 +3664,7 @@ GameObject:
   - component: {fileID: 6503028367349801138}
   - component: {fileID: 9095506259416843904}
   - component: {fileID: 9095506259416843905}
+  - component: {fileID: 9095506259416843906}
   m_Layer: 7
   m_Name: pMeleeClimage
   m_TagString: Untagged
@@ -3809,7 +3974,7 @@ GameObject:
   - component: {fileID: 7865218616817989932}
   m_Layer: 7
   m_Name: PlayerMelee
-  m_TagString: Untagged
+  m_TagString: PlayerMelee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4225,6 +4390,7 @@ GameObject:
   - component: {fileID: 2830205027555221502}
   - component: {fileID: 82628171425249929}
   - component: {fileID: 6261066698752691799}
+  - component: {fileID: 6261066698752691800}
   m_Layer: 7
   m_Name: eSiegeClimage
   m_TagString: Untagged
@@ -4277,6 +4443,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 45, y: 49}
   m_EdgeRadius: 0
+--- !u!114 &6261066698752691800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6261066698752691798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c50d6077989e8046861463aee9ea7db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardsinFrange: []
+  Faction: Falconia
+  CementerioGutts: {fileID: 5547082403907602565}
+  CementerioGriffith: {fileID: 8508807551043385797}
 --- !u!222 &6393420245546951012
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4379,6 +4561,9 @@ MonoBehaviour:
   Card36: {fileID: 5664656029312683538, guid: 5d4925c213a16d6498a0713d92b8dc89, type: 3}
   Hand: {fileID: 4640591801909705808}
   robo: 0
+  robo2: 0
+  robo3: 0
+  GanadorText: {fileID: 340415382}
   Mazo: []
 --- !u!224 &6690151016664280221
 RectTransform:
@@ -4511,9 +4696,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dee7af79f4304a4788530cc6684f4bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cementerio: {fileID: 0}
+  CementerioEnemigo: {fileID: 0}
   CardsinFrange: []
   Suma: 0
   puntuationText: {fileID: 964871762}
+  Faction: Falconia
+  CementerioGutts: {fileID: 5547082403907602565}
+  CementerioGriffith: {fileID: 8508807551043385797}
 --- !u!224 &7015868641416766459
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4545,6 +4735,7 @@ GameObject:
   - component: {fileID: 1711826754405362268}
   - component: {fileID: 8618061419740192156}
   - component: {fileID: 8618061419740192157}
+  - component: {fileID: 8618061419740192158}
   m_Layer: 7
   m_Name: eDistanceClimage
   m_TagString: Untagged
@@ -4564,6 +4755,7 @@ GameObject:
   - component: {fileID: 1642529723050426637}
   - component: {fileID: 7160319852636887204}
   - component: {fileID: 7201967691187475678}
+  - component: {fileID: 7201967691187475679}
   m_Layer: 7
   m_Name: pDistanceClimage
   m_TagString: Untagged
@@ -4701,7 +4893,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 45, y: 49}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4712,8 +4904,24 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 40, y: 50}
   m_EdgeRadius: 0
+--- !u!114 &7201967691187475679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7146081869717827128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c50d6077989e8046861463aee9ea7db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardsinFrange: []
+  Faction: Sacrificios
+  CementerioGutts: {fileID: 5547082403907602565}
+  CementerioGriffith: {fileID: 8508807551043385797}
 --- !u!224 &7457443457514413276
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4776,7 +4984,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 901010932489369039}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8410903791471441097}
+        m_TargetAssemblyTypeName: GuttsHabilidad, Assembly-CSharp
+        m_MethodName: Habilidad
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7759488010465113821
 GameObject:
   m_ObjectHideFlags: 0
@@ -4789,6 +5009,7 @@ GameObject:
   - component: {fileID: 8545667682465432474}
   - component: {fileID: 7996943050709679451}
   - component: {fileID: 8545667682465432475}
+  - component: {fileID: 8545667682465432476}
   m_Layer: 7
   m_Name: eMeleeClimage
   m_TagString: Untagged
@@ -4872,9 +5093,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dee7af79f4304a4788530cc6684f4bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cementerio: {fileID: 0}
+  CementerioEnemigo: {fileID: 0}
   CardsinFrange: []
   Suma: 0
   puntuationText: {fileID: 400857918}
+  Faction: Sacrificios
+  CementerioGutts: {fileID: 5547082403907602565}
+  CementerioGriffith: {fileID: 8508807551043385797}
 --- !u!222 &7918130211766982309
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4940,9 +5166,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dee7af79f4304a4788530cc6684f4bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cementerio: {fileID: 0}
+  CementerioEnemigo: {fileID: 0}
   CardsinFrange: []
   Suma: 0
   puntuationText: {fileID: 119181454}
+  Faction: Sacrificios
+  CementerioGutts: {fileID: 5547082403907602565}
+  CementerioGriffith: {fileID: 8508807551043385797}
 --- !u!224 &7928487155454882892
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5226,9 +5457,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dee7af79f4304a4788530cc6684f4bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cementerio: {fileID: 0}
+  CementerioEnemigo: {fileID: 0}
   CardsinFrange: []
   Suma: 0
   puntuationText: {fileID: 1625739855}
+  Faction: Falconia
+  CementerioGutts: {fileID: 5547082403907602565}
+  CementerioGriffith: {fileID: 8508807551043385797}
 --- !u!1 &8053156944966218017
 GameObject:
   m_ObjectHideFlags: 0
@@ -5262,6 +5498,7 @@ GameObject:
   - component: {fileID: 3074226420201405668}
   - component: {fileID: 3210813832489253288}
   - component: {fileID: 8695992237680143795}
+  - component: {fileID: 8695992237680143796}
   m_Layer: 5
   m_Name: Griffith
   m_TagString: Untagged
@@ -5439,6 +5676,20 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &8410903791471441097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983711660184546237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a648fcc69cb7b744995cce4acf8dbcfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carta: {fileID: 3560637067181593745, guid: 4a126a248eebdb1418e06d2717f8584d, type: 3}
+  CuerpoaCuerpo: {fileID: 4731123878094247953}
 --- !u!224 &8416148791982156967
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5470,6 +5721,7 @@ GameObject:
   - component: {fileID: 7998410451551555069}
   - component: {fileID: 4214501211711999414}
   - component: {fileID: 8719132336659222088}
+  - component: {fileID: 8719132336659222089}
   m_Layer: 7
   m_Name: pSiegeClimage
   m_TagString: Untagged
@@ -5573,7 +5825,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 45, y: 49}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5584,8 +5836,24 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 40, y: 50}
   m_EdgeRadius: 0
+--- !u!114 &8545667682465432476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7759488010465113821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c50d6077989e8046861463aee9ea7db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardsinFrange: []
+  Faction: Falconia
+  CementerioGutts: {fileID: 5547082403907602565}
+  CementerioGriffith: {fileID: 8508807551043385797}
 --- !u!114 &8583942703267130310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5685,6 +5953,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 45, y: 49}
   m_EdgeRadius: 0
+--- !u!114 &8618061419740192158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7091884440202679464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c50d6077989e8046861463aee9ea7db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardsinFrange: []
+  Faction: Falconia
+  CementerioGutts: {fileID: 5547082403907602565}
+  CementerioGriffith: {fileID: 8508807551043385797}
 --- !u!114 &8695992237680143794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5728,7 +6012,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5183784503842821991}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8695992237680143796}
+        m_TargetAssemblyTypeName: GriffithHabilidad, Assembly-CSharp
+        m_MethodName: Efecto
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8695992237680143795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5774,6 +6070,21 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &8695992237680143796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8202366025468206505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbcb7fa0a2ab14542a08b3f7d14a0780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CC: {fileID: 0}
+  D: {fileID: 0}
+  S: {fileID: 0}
 --- !u!224 &8719132336659222087
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5838,6 +6149,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 45, y: 49}
   m_EdgeRadius: 0
+--- !u!114 &8719132336659222089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8461893633009026424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c50d6077989e8046861463aee9ea7db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardsinFrange: []
+  Faction: Sacrificios
+  CementerioGutts: {fileID: 5547082403907602565}
+  CementerioGriffith: {fileID: 8508807551043385797}
 --- !u!114 &8801089096562390752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5925,9 +6252,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dee7af79f4304a4788530cc6684f4bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cementerio: {fileID: 0}
+  CementerioEnemigo: {fileID: 0}
   CardsinFrange: []
   Suma: 0
   puntuationText: {fileID: 2031355174}
+  Faction: Sacrificios
+  CementerioGutts: {fileID: 5547082403907602565}
+  CementerioGriffith: {fileID: 8508807551043385797}
 --- !u!222 &8985420228870722428
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6087,7 +6419,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 45, y: 49}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -6098,8 +6430,24 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 40, y: 50}
   m_EdgeRadius: 0
+--- !u!114 &9095506259416843906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3947281568728242012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c50d6077989e8046861463aee9ea7db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CardsinFrange: []
+  Faction: Sacrificios
+  CementerioGutts: {fileID: 5547082403907602565}
+  CementerioGriffith: {fileID: 8508807551043385797}
 --- !u!1 &9097363451034465081
 GameObject:
   m_ObjectHideFlags: 0
@@ -6183,9 +6531,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dee7af79f4304a4788530cc6684f4bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cementerio: {fileID: 0}
+  CementerioEnemigo: {fileID: 0}
   CardsinFrange: []
   Suma: 0
   puntuationText: {fileID: 866888262}
+  Faction: Falconia
+  CementerioGutts: {fileID: 5547082403907602565}
+  CementerioGriffith: {fileID: 8508807551043385797}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -6194,3 +6547,4 @@ SceneRoots:
   - {fileID: 822533956}
   - {fileID: 514391799}
   - {fileID: 306996806}
+  - {fileID: 1489257211}

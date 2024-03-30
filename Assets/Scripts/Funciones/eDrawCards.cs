@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class eDrawCards : MonoBehaviour
 {
@@ -43,6 +44,10 @@ public class eDrawCards : MonoBehaviour
 
     public GameObject Hand;
     public bool robo = false;
+    public bool robo2 = false;
+    public bool robo3 = false;
+    public Text GanadorText;
+    private int Ronda = 1;
 
     public List <GameObject> Mazo = new List <GameObject>();
 
@@ -58,6 +63,28 @@ public class eDrawCards : MonoBehaviour
            // Mazo.RemoveAt(0);
         }
         robo = true;
+        }
+
+        if(robo2 == false && Ronda == 2)
+        {
+        for (int i= 0; i < 10; i ++)
+        {
+            GameObject card = Instantiate(Mazo[Random.Range(0,Mazo.Count)], new Vector2(0,0), Quaternion.identity);
+            card.transform.SetParent(Hand.transform, false);
+           // Mazo.RemoveAt(0);
+        }
+        robo2 = true;
+        }
+
+        if(robo3 == false && Ronda == 3 && GanadorText.text == "")
+        {
+        for (int i= 0; i < 10; i ++)
+        {
+            GameObject card = Instantiate(Mazo[Random.Range(0,Mazo.Count)], new Vector2(0,0), Quaternion.identity);
+            card.transform.SetParent(Hand.transform, false);
+           // Mazo.RemoveAt(0);
+        }
+        robo3 = true;
         }
     }
 
@@ -125,6 +152,6 @@ public class eDrawCards : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Ronda = GameObject.Find("GameManager").GetComponent<GameManager>().Ronda;
     }
 }
