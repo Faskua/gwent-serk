@@ -14,9 +14,11 @@ public class ClaseCarta : MonoBehaviour
     public string Faction; //campo para guardar la faccion
     public string Type; //campo para guardar si es de oro o plata
     public int Frange; // campo para guardar la franja en la que se juega la carta
+    public string Franja; // para mostrar la franja de la carta en el juego
     public bool Affected = false; //campo para saber si la carta esta siendo afectada por un clima
     
     public bool Sumada = false; // para saber si ya esta sumada en la franja
+    public bool ShierkeAfectada = false;
         
     }
 

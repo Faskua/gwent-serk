@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 8738272486671237090}
   - component: {fileID: 2800937630153293347}
   - component: {fileID: -4230487152521838299}
+  - component: {fileID: 367482536675802302}
   m_Layer: 6
   m_Name: Irvine1
   m_TagString: Untagged
@@ -273,6 +274,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 367482536675802302}
+        m_TargetAssemblyTypeName: IrvineHabilidad, Assembly-CSharp
+        m_MethodName: Efecto
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3553454932940865172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,13 +302,15 @@ MonoBehaviour:
   OriginalPower: 5
   Power: 5
   DescriptionNskill: "Punter\xEDa bestial, pero se viste como Peter Pan. Elimina
-    la carta con menos poder del rival."
+    la carta con menos poder del rival en la franja de Distancia."
   Lider: no lider
   Faction: Falconia
   Type: plata
   Frange: 2
+  Franja: Distancia
   Affected: 0
   Sumada: 0
+  ShierkeAfectada: 0
 --- !u!50 &-4689055976176828319
 Rigidbody2D:
   serializedVersion: 4
@@ -441,6 +456,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Card: {fileID: 3560637067181593745}
   Turn: 1
+  jugable: 1
+  PHand: {fileID: 0}
+  EHand: {fileID: 0}
   PMelee: {fileID: 0}
   PDistance: {fileID: 0}
   PSiege: {fileID: 0}
@@ -455,3 +473,17 @@ MonoBehaviour:
   eCsiege: {fileID: 0}
   Bloqueo1: {fileID: 0}
   Bloqueo2: {fileID: 0}
+--- !u!114 &367482536675802302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560637067181593745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0798251a43200fe47b720b36ba8cec2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jugable: 0
+  PlayerD: {fileID: 0}

@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: -8829591340811061367}
   - component: {fileID: -5624247110597784431}
   - component: {fileID: -1565526049794255602}
+  - component: {fileID: -5920656998108883737}
   m_Layer: 6
   m_Name: FuriaMelee
   m_TagString: Untagged
@@ -139,6 +140,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: -5920656998108883737}
+        m_TargetAssemblyTypeName: Furia, Assembly-CSharp
+        m_MethodName: Efecto
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4394963160422171084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,10 +170,12 @@ MonoBehaviour:
   DescriptionNskill: Aumenta 1 de Fuerza por carta en la franja de Cuerpo a Cuerpo
   Lider: .
   Faction: Falconia
-  Type: .
+  Type: Clima
   Frange: 4
+  Franja: Cuerpo a Cuerpo
   Affected: 0
   Sumada: 0
+  ShierkeAfectada: 0
 --- !u!61 &7775509306781267135
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -306,6 +321,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Card: {fileID: 5664656029312683538}
   Turn: 1
+  jugable: 1
+  PHand: {fileID: 0}
+  EHand: {fileID: 0}
   PMelee: {fileID: 0}
   PDistance: {fileID: 0}
   PSiege: {fileID: 0}
@@ -320,6 +338,25 @@ MonoBehaviour:
   eCsiege: {fileID: 0}
   Bloqueo1: {fileID: 0}
   Bloqueo2: {fileID: 0}
+--- !u!114 &-5920656998108883737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5664656029312683538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 810e02be81660394dae592e3606d264c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pCC: {fileID: 0}
+  pD: {fileID: 0}
+  pS: {fileID: 0}
+  eCC: {fileID: 0}
+  eD: {fileID: 0}
+  eS: {fileID: 0}
+  jugable: 0
 --- !u!1 &9207481536674564373
 GameObject:
   m_ObjectHideFlags: 0

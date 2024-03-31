@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 1223198871583106105}
   - component: {fileID: 5174719130028032390}
   - component: {fileID: -7205967388702336348}
+  - component: {fileID: 5239630493759178237}
   m_Layer: 6
   m_Name: FuriaDistance
   m_TagString: Untagged
@@ -273,6 +274,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5239630493759178237}
+        m_TargetAssemblyTypeName: Furia, Assembly-CSharp
+        m_MethodName: Efecto
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-6312363871602823893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,10 +304,12 @@ MonoBehaviour:
   DescriptionNskill: Aumenta 1 de Fuerza por carta en la franja de Distancia
   Lider: .
   Faction: Falconia
-  Type: .
+  Type: Clima
   Frange: 5
+  Franja: Distancia
   Affected: 0
   Sumada: 0
+  ShierkeAfectada: 0
 --- !u!61 &-8077597474939054748
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -440,6 +455,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Card: {fileID: 7889376949394653752}
   Turn: 1
+  jugable: 1
+  PHand: {fileID: 0}
+  EHand: {fileID: 0}
   PMelee: {fileID: 0}
   PDistance: {fileID: 0}
   PSiege: {fileID: 0}
@@ -454,3 +472,22 @@ MonoBehaviour:
   eCsiege: {fileID: 0}
   Bloqueo1: {fileID: 0}
   Bloqueo2: {fileID: 0}
+--- !u!114 &5239630493759178237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7889376949394653752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 810e02be81660394dae592e3606d264c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pCC: {fileID: 0}
+  pD: {fileID: 0}
+  pS: {fileID: 0}
+  eCC: {fileID: 0}
+  eD: {fileID: 0}
+  eS: {fileID: 0}
+  jugable: 0

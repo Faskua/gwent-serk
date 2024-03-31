@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: -8390024256717726035}
   - component: {fileID: 4165336528837733034}
   - component: {fileID: -2103519994083910740}
+  - component: {fileID: 962525287791784978}
   m_Layer: 6
   m_Name: SkelletonKnigth
   m_TagString: Untagged
@@ -273,6 +274,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 962525287791784978}
+        m_TargetAssemblyTypeName: SkelletonKnightHabilidad, Assembly-CSharp
+        m_MethodName: Efecto
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3553454932940865172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,14 +302,16 @@ MonoBehaviour:
   OriginalPower: 8
   Power: 8
   DescriptionNskill: "Este tipo est\xE1 roto, pero aparece convenientemente cuando
-    est\xE1 la mano de dios\u2026 sospechoso. Elimina 1 carta del tablero del rival
-    al azar."
+    est\xE1 la mano de dios\u2026 sospechoso. Elimina la carta m\xE1s fuerte de la
+    franja de Cuerpo a Cuerpo del rival"
   Lider: no lider
   Faction: Sacrificios
   Type: oro
   Frange: 1
+  Franja: Cuerpo a Cuerpo
   Affected: 0
   Sumada: 0
+  ShierkeAfectada: 0
 --- !u!61 &440072831396639759
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -442,6 +457,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Card: {fileID: 3560637067181593745}
   Turn: 1
+  jugable: 1
+  PHand: {fileID: 0}
+  EHand: {fileID: 0}
   PMelee: {fileID: 0}
   PDistance: {fileID: 0}
   PSiege: {fileID: 0}
@@ -456,3 +474,17 @@ MonoBehaviour:
   eCsiege: {fileID: 0}
   Bloqueo1: {fileID: 0}
   Bloqueo2: {fileID: 0}
+--- !u!114 &962525287791784978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560637067181593745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 682514683070ad0478a584e535636d46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyCC: {fileID: 0}
+  jugable: 0

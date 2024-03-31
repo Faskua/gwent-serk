@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: -4641751491413373002}
   - component: {fileID: 6308433592582237249}
   - component: {fileID: -35097760765913601}
+  - component: {fileID: -7146133105366460708}
   m_Layer: 6
   m_Name: EclipseDistance
   m_TagString: Untagged
@@ -273,6 +274,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: -7146133105366460708}
+        m_TargetAssemblyTypeName: Eclipse, Assembly-CSharp
+        m_MethodName: Efecto
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3409776802199416650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,10 +305,11 @@ MonoBehaviour:
     la franja de Distancia
   Lider: .
   Faction: Sacrificios
-  Type: .
+  Type: Clima
   Frange: 5
   Affected: 0
   Sumada: 0
+  ShierkeAfectada: 0
 --- !u!61 &-2737960283742147218
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -441,6 +455,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Card: {fileID: 7889376949394653752}
   Turn: 1
+  jugable: 1
+  PHand: {fileID: 0}
+  EHand: {fileID: 0}
   PMelee: {fileID: 0}
   PDistance: {fileID: 0}
   PSiege: {fileID: 0}
@@ -455,3 +472,22 @@ MonoBehaviour:
   eCsiege: {fileID: 0}
   Bloqueo1: {fileID: 0}
   Bloqueo2: {fileID: 0}
+--- !u!114 &-7146133105366460708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7889376949394653752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 787bf3eab6f1151479f7b5d2fca7e4d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pCC: {fileID: 0}
+  pD: {fileID: 0}
+  pS: {fileID: 0}
+  eCC: {fileID: 0}
+  eD: {fileID: 0}
+  eS: {fileID: 0}
+  jugable: 0

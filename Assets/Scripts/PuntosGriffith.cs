@@ -14,10 +14,9 @@ public class PuntosGriffith : MonoBehaviour
     
     void Update()
     {
-        if (sumagriffith != eCC.GetComponent<ClaseFranja>().Suma + eD.GetComponent<ClaseFranja>().Suma + eS.GetComponent<ClaseFranja>().Suma)
-        {
-            sumagriffith = eCC.GetComponent<ClaseFranja>().Suma + eD.GetComponent<ClaseFranja>().Suma + eS.GetComponent<ClaseFranja>().Suma;
-            griffithText.text = sumagriffith.ToString();  
-        }
+        int semisuma = 0;
+        semisuma = eCC.GetComponent<ClaseFranja>().Suma + eD.GetComponent<ClaseFranja>().Suma + eS.GetComponent<ClaseFranja>().Suma;
+        sumagriffith = semisuma;
+        griffithText.text = sumagriffith.ToString();  
     }
 }

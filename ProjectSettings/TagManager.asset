@@ -7,6 +7,11 @@ TagManager:
   - PlayerMelee
   - PlayerDistance
   - PlayerSiege
+  - EnemyMelee
+  - EnemyDistance
+  - EnemySiege
+  - PlayerHand
+  - EnemyHand
   layers:
   - Default
   - TransparentFX

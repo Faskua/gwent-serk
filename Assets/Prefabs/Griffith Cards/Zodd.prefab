@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: -351033148283353133}
   - component: {fileID: 3705995057511464296}
   - component: {fileID: -5065715523809729667}
+  - component: {fileID: 5260846361998090382}
   m_Layer: 6
   m_Name: Zodd
   m_TagString: Untagged
@@ -273,6 +274,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 5260846361998090382}
+        m_TargetAssemblyTypeName: ZoddHabilidad, Assembly-CSharp
+        m_MethodName: Efecto
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3553454932940865172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,15 +301,17 @@ MonoBehaviour:
   Name: Zodd, El Inmortal
   OriginalPower: 8
   Power: 8
-  DescriptionNskill: "El guardaespaldas personal de Griffith (el caballero de la
-    calavera es su crush). Limpia la franja con menos cartas (no vac\xEDa) sin distinguir
-    entre amigo o enemigo"
+  DescriptionNskill: El guardaespaldas personal de Griffith (el caballero de la calavera
+    es su crush). Destruye por completo una franja enemiga que tenga entre 1 y 3
+    cartas
   Lider: no lider
   Faction: Falconia
   Type: oro
   Frange: 1
+  Franja: Cuerpo a Cuerpo
   Affected: 0
   Sumada: 0
+  ShierkeAfectada: 0
 --- !u!50 &-8287138505074506330
 Rigidbody2D:
   serializedVersion: 4
@@ -442,6 +457,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Card: {fileID: 3560637067181593745}
   Turn: 1
+  jugable: 1
+  PHand: {fileID: 0}
+  EHand: {fileID: 0}
   PMelee: {fileID: 0}
   PDistance: {fileID: 0}
   PSiege: {fileID: 0}
@@ -456,3 +474,19 @@ MonoBehaviour:
   eCsiege: {fileID: 0}
   Bloqueo1: {fileID: 0}
   Bloqueo2: {fileID: 0}
+--- !u!114 &5260846361998090382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560637067181593745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06ff5b586c5ffc044b292fd63c869431, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jugable: 0
+  CC: {fileID: 0}
+  D: {fileID: 0}
+  S: {fileID: 0}

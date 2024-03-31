@@ -7,6 +7,7 @@ public class ClaseMano : MonoBehaviour
      private GameObject Cardentry;
      public List<GameObject> CardsinFrange;
      public int Cartas = 0;
+     public bool rendido = false;
 
      private void OnCollisionEnter2D(Collision2D collision) //cuando colisionan mete las cartas en la lista de la franja 
      {

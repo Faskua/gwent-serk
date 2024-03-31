@@ -7,6 +7,7 @@ public class JugarCarta : MonoBehaviour
 {
     public GameObject Card; //la carta a jugar
     public bool Turn = true; //controlador del turno
+    public bool jugable = true;
    //las zonas
    public GameObject PHand;
    public GameObject EHand;
@@ -26,6 +27,7 @@ public class JugarCarta : MonoBehaviour
     public GameObject Bloqueo1;
     public GameObject Bloqueo2;
     private List<GameObject> mazo;
+    private List<GameObject> mazoenemigo;
 
 
     void Start()
@@ -50,8 +52,6 @@ public class JugarCarta : MonoBehaviour
     {
         if(Card.GetComponent<ClaseCarta>().Faction == "Sacrificios" && Card.GetComponent<ClaseCarta>().Frange == 1 && Turn == true)
         {
-            bool jugable = true;
-
             if(jugable)
             {
             Card.transform.SetParent(PMelee.transform, false);
@@ -62,7 +62,6 @@ public class JugarCarta : MonoBehaviour
 
          if(Card.GetComponent<ClaseCarta>().Faction == "Sacrificios" && Card.GetComponent<ClaseCarta>().Frange == 2 && Turn == true)
          {
-            bool jugable = true;
             if(jugable)
             {
                 Card.transform.SetParent(PDistance.transform, false);
@@ -73,7 +72,6 @@ public class JugarCarta : MonoBehaviour
 
          if(Card.GetComponent<ClaseCarta>().Faction == "Sacrificios" && Card.GetComponent<ClaseCarta>().Frange == 3 && Turn == true)
          {
-            bool jugable = true;
             if(jugable)
             {
             Card.transform.SetParent(PSiege.transform, false);
@@ -84,7 +82,6 @@ public class JugarCarta : MonoBehaviour
 
          if(Card.GetComponent<ClaseCarta>().Faction == "Sacrificios" && Card.GetComponent<ClaseCarta>().Frange == 4 && Turn == true)
          {
-            bool jugable = true;
             if(jugable)
             {
             Card.transform.SetParent(pCmelee.transform, true);
@@ -95,7 +92,6 @@ public class JugarCarta : MonoBehaviour
 
           if(Card.GetComponent<ClaseCarta>().Faction == "Sacrificios" && Card.GetComponent<ClaseCarta>().Frange == 5 && Turn == true)
          {
-            bool jugable = true;
             if(jugable)
             {
             Card.transform.SetParent(pCdistance.transform, true);
@@ -106,7 +102,6 @@ public class JugarCarta : MonoBehaviour
 
            if(Card.GetComponent<ClaseCarta>().Faction == "Sacrificios" && Card.GetComponent<ClaseCarta>().Frange == 6 && Turn == true)
          {
-            bool jugable = true;
             if(jugable)
             {
             Card.transform.SetParent(pCsiege.transform, true);
@@ -119,7 +114,6 @@ public class JugarCarta : MonoBehaviour
 
             if(Card.GetComponent<ClaseCarta>().Faction == "Falconia" && Card.GetComponent<ClaseCarta>().Frange == 1 && Turn == false)
          {
-            bool jugable = true;
             if(jugable)
             {
             Card.transform.SetParent(EMelee.transform, false);
@@ -130,7 +124,6 @@ public class JugarCarta : MonoBehaviour
 
             if(Card.GetComponent<ClaseCarta>().Faction == "Falconia" && Card.GetComponent<ClaseCarta>().Frange == 2 && Turn == false)
          {
-            bool jugable = true;
             if(jugable)
             {
             Card.transform.SetParent(EDistance.transform, false);
@@ -141,7 +134,6 @@ public class JugarCarta : MonoBehaviour
 
              if(Card.GetComponent<ClaseCarta>().Faction == "Falconia" && Card.GetComponent<ClaseCarta>().Frange == 3 && Turn == false)
          {
-            bool jugable = true;
             if(jugable)
             {
             Card.transform.SetParent(ESiege.transform, false);
@@ -152,7 +144,6 @@ public class JugarCarta : MonoBehaviour
 
              if(Card.GetComponent<ClaseCarta>().Faction == "Falconia" && Card.GetComponent<ClaseCarta>().Frange == 4 && Turn == false)
          {
-            bool jugable = true;
             if(jugable)
             {
             Card.transform.SetParent(eCmelee.transform, true);
@@ -163,7 +154,6 @@ public class JugarCarta : MonoBehaviour
 
             if(Card.GetComponent<ClaseCarta>().Faction == "Falconia" && Card.GetComponent<ClaseCarta>().Frange == 5 && Turn == false)
          {
-            bool jugable = true;
             if(jugable)
             {
             Card.transform.SetParent(eCdistance.transform, true);
@@ -174,7 +164,6 @@ public class JugarCarta : MonoBehaviour
 
          if(Card.GetComponent<ClaseCarta>().Faction == "Falconia" && Card.GetComponent<ClaseCarta>().Frange == 6 && Turn == false)
          {
-            bool jugable = true;
             if(jugable)
             {
             Card.transform.SetParent(eCsiege.transform, true);
@@ -186,7 +175,6 @@ public class JugarCarta : MonoBehaviour
                //a partir de aqui es para jugar a la carta espia
          if(Card.GetComponent<ClaseCarta>().Frange == 7 && Turn)  
          {
-            bool jugable = true;
             if(jugable)
             {
             Card.transform.SetParent(EDistance.transform, false);
@@ -197,7 +185,6 @@ public class JugarCarta : MonoBehaviour
 
          if(Card.GetComponent<ClaseCarta>().Frange == 8 && Turn)
          {
-            bool jugable = true;
             if(jugable)
             {
             Card.transform.SetParent(ESiege.transform, false);
@@ -208,7 +195,6 @@ public class JugarCarta : MonoBehaviour
 
          if(Card.GetComponent<ClaseCarta>().Frange == 9 && Turn == false)
          {
-            bool jugable = true;
             if(jugable)
             {
                 Card.transform.SetParent(PDistance.transform, false);
@@ -219,7 +205,6 @@ public class JugarCarta : MonoBehaviour
 
          if(Card.GetComponent<ClaseCarta>().Frange == 10 && Turn == false)
          {
-            bool jugable = true;
             if(jugable)
             {
             Card.transform.SetParent(PSiege.transform, false);
@@ -232,8 +217,6 @@ public class JugarCarta : MonoBehaviour
                //y a partir de aqui es para jugar al sennuelo
           if(Card.GetComponent<ClaseCarta>().Frange == 11 && Turn)
         {
-            bool jugable = true;
-
             if(jugable)
             {
             Card.transform.SetParent(PMelee.transform, false);
@@ -244,7 +227,6 @@ public class JugarCarta : MonoBehaviour
 
           if(Card.GetComponent<ClaseCarta>().Frange == 12 && Turn)
          {
-            bool jugable = true;
             if(jugable)
             {
                 Card.transform.SetParent(PDistance.transform, false);
@@ -255,7 +237,6 @@ public class JugarCarta : MonoBehaviour
 
           if(Card.GetComponent<ClaseCarta>().Frange == 13 && Turn == false)
          {
-            bool jugable = true;
             if(jugable)
             {
             Card.transform.SetParent(EMelee.transform, false);
@@ -266,7 +247,6 @@ public class JugarCarta : MonoBehaviour
 
           if(Card.GetComponent<ClaseCarta>().Frange == 14 && Turn == false)
          {
-            bool jugable = true;
             if(jugable)
             {
             Card.transform.SetParent(EDistance.transform, false);
@@ -277,7 +257,7 @@ public class JugarCarta : MonoBehaviour
     }
 
 
-    public void Danan()
+    public void NlunarGutts()
     {
       for(int i = 0; i < 2; i++)
       {
@@ -294,7 +274,7 @@ public class JugarCarta : MonoBehaviour
       {
          if(mazo.Count > 2)
          {
-            GameObject Cartas = Instantiate(mazo[Random.Range (0, mazo.Count)], new Vector2(0,0), Quaternion.identity);
+            GameObject Cartas = Instantiate(mazoenemigo[Random.Range (0, mazoenemigo.Count)], new Vector2(0,0), Quaternion.identity);
             Cartas.transform.SetParent(EHand.transform, false);
          }
       }
@@ -307,5 +287,6 @@ public class JugarCarta : MonoBehaviour
     {
       Turn = GameObject.Find("TurnCounter").GetComponent<SetTurn>().Turno;
       mazo = GameObject.Find("PlayerDeck").GetComponent<DrawCards>().Mazo;
+      mazoenemigo = GameObject.Find("EnemyDeck").GetComponent<eDrawCards>().Mazo;
     }
 }

@@ -167,13 +167,15 @@ MonoBehaviour:
   OriginalPower: 2
   Power: 2
   DescriptionNskill: "Tengo sentimientos encontrados con este ni\xF1o. Juega en la
-    franja de distancia enemiga pero te permite robar 2 carta del mazo."
+    franja de Asedio enemiga pero te permite robar 2 carta del mazo."
   Lider: .
   Faction: Sacrificios
   Type: .
   Frange: 10
+  Franja: Asedio
   Affected: 0
   Sumada: 0
+  ShierkeAfectada: 0
 --- !u!50 &3167500788843390546
 Rigidbody2D:
   serializedVersion: 4
@@ -319,6 +321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Card: {fileID: 3525376186561288315}
   Turn: 1
+  jugable: 1
   PHand: {fileID: 0}
   EHand: {fileID: 0}
   PMelee: {fileID: 0}

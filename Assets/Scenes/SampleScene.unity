@@ -398,7 +398,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b19afed411f564996dad74194ed9e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Ronda: 1
   Turno: 1
+  PlayerHand: {fileID: 0}
+  EnemyHand: {fileID: 0}
   Bloqueo1: {fileID: 1212540087}
   Bloqueo2: {fileID: 2046982237}
 --- !u!1 &340415380
@@ -451,7 +454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.23486009, g: 0.78616345, b: 0.36247665, a: 1}
+  m_Color: {r: 0.95686275, g: 0.76007295, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1155,6 +1158,7 @@ RectTransform:
   - {fileID: 684915975}
   - {fileID: 1615451630}
   - {fileID: 340415381}
+  - {fileID: 1841741641}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1673,7 +1677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.95686275, g: 0.76007295, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1944,7 +1948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.95686275, g: 0.76007295, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2109,6 +2113,8 @@ MonoBehaviour:
   WinsGriffithText: {fileID: 1228042473}
   PointsGriffith: 0
   GanadorText: {fileID: 340415382}
+  playerRendido: 0
+  enemyRendido: 0
 --- !u!114 &1615451632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2358,6 +2364,156 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1674035597}
   m_CullTransparentMesh: 1
+--- !u!1 &1841741640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1841741641}
+  - component: {fileID: 1841741645}
+  - component: {fileID: 1841741644}
+  - component: {fileID: 1841741643}
+  - component: {fileID: 1841741642}
+  m_Layer: 0
+  m_Name: Rendirse
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1841741641
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841741640}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -6.4504523}
+  m_LocalScale: {x: 0.41666663, y: 0.41666663, z: 0.41666663}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 822533956}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -338.52, y: -0.00018167}
+  m_SizeDelta: {x: 299.08, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1841741642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841741640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 322db8d6a06fc174fa7be1e6c21b0c93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Turn: 0
+  Ronda: 0
+  CompRonda: 1
+  PlayerHand: {fileID: 0}
+  EnemyHand: {fileID: 0}
+--- !u!114 &1841741643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841741640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1841741644
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841741640}
+  m_CullTransparentMesh: 1
+--- !u!114 &1841741645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841741640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1841741642}
+        m_TargetAssemblyTypeName: Rendirse, Assembly-CSharp
+        m_MethodName: SeRinde
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2027938376
 GameObject:
   m_ObjectHideFlags: 0
@@ -3235,7 +3391,7 @@ GameObject:
   - component: {fileID: 5995226356405061603}
   m_Layer: 7
   m_Name: PlayerHand
-  m_TagString: Untagged
+  m_TagString: PlayerHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3336,7 +3492,7 @@ MonoBehaviour:
   Name: Griffith
   DescriptionNskill: "El Karma es mi novio, el Karma es un dios, el Karma es la brisa
     en mi cabello el fin de se-mana. Usa la carta m\xE1s d\xE9bil del rival en cada
-    franjal como sacrificio y las elimina."
+    franja como sacrificio y las elimina."
   Lider: "L\xEDder"
   Faction: Falconia
 --- !u!114 &3104731320769789302
@@ -3704,8 +3860,6 @@ GameObject:
   - component: {fileID: 1978024328902231105}
   - component: {fileID: 8354165693888265257}
   - component: {fileID: 6689681266201984234}
-  - component: {fileID: 6541234624738536670}
-  - component: {fileID: 4852116025770172624}
   m_Layer: 5
   m_Name: EnemyDeck
   m_TagString: Untagged
@@ -3894,7 +4048,7 @@ GameObject:
   - component: {fileID: 9105790343338871292}
   m_Layer: 7
   m_Name: EnemyMelee
-  m_TagString: Untagged
+  m_TagString: EnemyMelee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3923,7 +4077,7 @@ GameObject:
   - component: {fileID: 7928487155454882894}
   m_Layer: 7
   m_Name: EnemyHand
-  m_TagString: Untagged
+  m_TagString: EnemyHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3979,18 +4133,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4852116025770172624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4125072734533094340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f74aedd71d9a4f55b3ce499326d45fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4864057724247514654
 GameObject:
   m_ObjectHideFlags: 0
@@ -4295,6 +4437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardsinFrange: []
   Cartas: 0
+  rendido: 0
 --- !u!61 &5995226356405061603
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4499,18 +4642,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3947281568728242012}
   m_CullTransparentMesh: 1
---- !u!114 &6541234624738536670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4125072734533094340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6689681266201984234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4626,7 +4757,7 @@ GameObject:
   - component: {fileID: 6991608093987300278}
   m_Layer: 7
   m_Name: EnemySiege
-  m_TagString: Untagged
+  m_TagString: EnemySiege
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4696,14 +4827,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dee7af79f4304a4788530cc6684f4bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cementerio: {fileID: 0}
-  CementerioEnemigo: {fileID: 0}
   CardsinFrange: []
   Suma: 0
   puntuationText: {fileID: 964871762}
   Faction: Falconia
+  franja: 3
   CementerioGutts: {fileID: 5547082403907602565}
   CementerioGriffith: {fileID: 8508807551043385797}
+  PlayerHand: {fileID: 0}
+  EnemyHand: {fileID: 0}
 --- !u!224 &7015868641416766459
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5093,14 +5225,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dee7af79f4304a4788530cc6684f4bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cementerio: {fileID: 0}
-  CementerioEnemigo: {fileID: 0}
   CardsinFrange: []
   Suma: 0
   puntuationText: {fileID: 400857918}
   Faction: Sacrificios
+  franja: 1
   CementerioGutts: {fileID: 5547082403907602565}
   CementerioGriffith: {fileID: 8508807551043385797}
+  PlayerHand: {fileID: 0}
+  EnemyHand: {fileID: 0}
 --- !u!222 &7918130211766982309
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5166,14 +5299,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dee7af79f4304a4788530cc6684f4bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cementerio: {fileID: 0}
-  CementerioEnemigo: {fileID: 0}
   CardsinFrange: []
   Suma: 0
   puntuationText: {fileID: 119181454}
   Faction: Sacrificios
+  franja: 3
   CementerioGutts: {fileID: 5547082403907602565}
   CementerioGriffith: {fileID: 8508807551043385797}
+  PlayerHand: {fileID: 0}
+  EnemyHand: {fileID: 0}
 --- !u!224 &7928487155454882892
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5207,6 +5341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CardsinFrange: []
   Cartas: 0
+  rendido: 0
 --- !u!61 &7928487155454882894
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5395,7 +5530,7 @@ GameObject:
   - component: {fileID: 8023062548810158516}
   m_Layer: 7
   m_Name: EnemyDistance
-  m_TagString: Untagged
+  m_TagString: EnemyDistance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5457,14 +5592,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dee7af79f4304a4788530cc6684f4bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cementerio: {fileID: 0}
-  CementerioEnemigo: {fileID: 0}
   CardsinFrange: []
   Suma: 0
   puntuationText: {fileID: 1625739855}
   Faction: Falconia
+  franja: 2
   CementerioGutts: {fileID: 5547082403907602565}
   CementerioGriffith: {fileID: 8508807551043385797}
+  PlayerHand: {fileID: 0}
+  EnemyHand: {fileID: 0}
 --- !u!1 &8053156944966218017
 GameObject:
   m_ObjectHideFlags: 0
@@ -6252,14 +6388,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dee7af79f4304a4788530cc6684f4bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cementerio: {fileID: 0}
-  CementerioEnemigo: {fileID: 0}
   CardsinFrange: []
   Suma: 0
   puntuationText: {fileID: 2031355174}
   Faction: Sacrificios
+  franja: 2
   CementerioGutts: {fileID: 5547082403907602565}
   CementerioGriffith: {fileID: 8508807551043385797}
+  PlayerHand: {fileID: 0}
+  EnemyHand: {fileID: 0}
 --- !u!222 &8985420228870722428
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6531,14 +6668,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dee7af79f4304a4788530cc6684f4bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cementerio: {fileID: 0}
-  CementerioEnemigo: {fileID: 0}
   CardsinFrange: []
   Suma: 0
   puntuationText: {fileID: 866888262}
   Faction: Falconia
+  franja: 1
   CementerioGutts: {fileID: 5547082403907602565}
   CementerioGriffith: {fileID: 8508807551043385797}
+  PlayerHand: {fileID: 0}
+  EnemyHand: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

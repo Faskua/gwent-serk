@@ -70,7 +70,7 @@ public class DrawCards : MonoBehaviour
 
          if(robo2 == false && Ronda == 2)
         {
-        for (int i= 0; i < 10; i ++)
+        for (int i= 0; i < 3; i ++)
         { //cojo la ultima carta y despues de usarla la borro
             if(Mazo.Count > 0)
             {
@@ -84,7 +84,7 @@ public class DrawCards : MonoBehaviour
 
          if(robo3 == false && Ronda == 3 && GanadorText.text == "")
         {
-        for (int i= 0; i < 10; i ++)
+        for (int i= 0; i < 4; i ++)
         { //cojo la ultima carta y despues de usarla la borro
             if(Mazo.Count > 0)
             {

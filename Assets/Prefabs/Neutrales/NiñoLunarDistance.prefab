@@ -275,7 +275,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: -1405262890548719974}
         m_TargetAssemblyTypeName: JugarCarta, Assembly-CSharp
-        m_MethodName: Danan
+        m_MethodName: NlunarGutts
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -301,13 +301,14 @@ MonoBehaviour:
   OriginalPower: 2
   Power: 2
   DescriptionNskill: "Tengo sentimientos encontrados con este ni\xF1o. Juega en la
-    franja de distancia enemiga pero te permite robar 2 carta del mazo."
+    franja de Distancia enemiga pero te permite robar 2 carta del mazo."
   Lider: .
   Faction: Sacrificios
-  Type: .
+  Type: "Esp\xEDa"
   Frange: 7
   Affected: 0
   Sumada: 0
+  ShierkeAfectada: 0
 --- !u!61 &8126076695777203189
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -453,6 +454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Card: {fileID: 7889376949394653752}
   Turn: 1
+  jugable: 1
   PHand: {fileID: 0}
   EHand: {fileID: 0}
   PMelee: {fileID: 0}

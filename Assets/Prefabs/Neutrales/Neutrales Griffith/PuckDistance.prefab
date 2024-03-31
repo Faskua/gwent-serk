@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: -5540038655477112970}
   - component: {fileID: -9022882917636401322}
   - component: {fileID: -6606633979272188201}
+  - component: {fileID: 5523821674099233462}
   m_Layer: 6
   m_Name: PuckDistance
   m_TagString: Untagged
@@ -273,6 +274,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5523821674099233462}
+        m_TargetAssemblyTypeName: Puck, Assembly-CSharp
+        m_MethodName: Efecto
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6896244382170184309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,10 +305,12 @@ MonoBehaviour:
     la carta m\xE1s poderosa en la franja de Distancia."
   Lider: .
   Faction: Falconia
-  Type: .
+  Type: "Se\xF1uelo"
   Frange: 14
+  Franja: Distancia
   Affected: 0
   Sumada: 0
+  ShierkeAfectada: 0
 --- !u!61 &7129654605348748850
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -441,6 +456,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Card: {fileID: 7889376949394653752}
   Turn: 1
+  jugable: 1
+  PHand: {fileID: 0}
+  EHand: {fileID: 0}
   PMelee: {fileID: 0}
   PDistance: {fileID: 0}
   PSiege: {fileID: 0}
@@ -455,3 +473,20 @@ MonoBehaviour:
   eCsiege: {fileID: 0}
   Bloqueo1: {fileID: 0}
   Bloqueo2: {fileID: 0}
+--- !u!114 &5523821674099233462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7889376949394653752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0c7eb1eb0080774bb98d8bb3b98a48b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pCC: {fileID: 0}
+  pD: {fileID: 0}
+  eCC: {fileID: 0}
+  eD: {fileID: 0}
+  jugable: 0

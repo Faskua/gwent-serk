@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 5006155734190811804}
   - component: {fileID: 3828932350093535638}
   - component: {fileID: -6050609226369868605}
+  - component: {fileID: -1116008372252164320}
   m_Layer: 6
   m_Name: AmanecerMelee
   m_TagString: Untagged
@@ -139,6 +140,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: -1116008372252164320}
+        m_TargetAssemblyTypeName: Amanecer, Assembly-CSharp
+        m_MethodName: Efecto
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-4527240343422719648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,10 +171,11 @@ MonoBehaviour:
     de Cuerpo a Cuerpo
   Lider: .
   Faction: Sacrificios
-  Type: .
+  Type: Clima
   Frange: 4
   Affected: 0
   Sumada: 0
+  ShierkeAfectada: 0
 --- !u!61 &-6509927854067991267
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -307,6 +321,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Card: {fileID: 5664656029312683538}
   Turn: 1
+  jugable: 1
+  PHand: {fileID: 0}
+  EHand: {fileID: 0}
   PMelee: {fileID: 0}
   PDistance: {fileID: 0}
   PSiege: {fileID: 0}
@@ -321,6 +338,25 @@ MonoBehaviour:
   eCsiege: {fileID: 0}
   Bloqueo1: {fileID: 0}
   Bloqueo2: {fileID: 0}
+--- !u!114 &-1116008372252164320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5664656029312683538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1800bde5c3c8648bd60bc61a2188bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pCC: {fileID: 0}
+  pD: {fileID: 0}
+  pS: {fileID: 0}
+  eCC: {fileID: 0}
+  eD: {fileID: 0}
+  eS: {fileID: 0}
+  jugable: 0
 --- !u!1 &9207481536674564373
 GameObject:
   m_ObjectHideFlags: 0

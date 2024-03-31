@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: -3297174813494056236}
   - component: {fileID: 18208963098738256}
   - component: {fileID: -366365510611175033}
+  - component: {fileID: 244278766317386960}
   m_Layer: 6
   m_Name: Danan
   m_TagString: Untagged
@@ -273,9 +274,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: -366365510611175033}
-        m_TargetAssemblyTypeName: JugarCarta, Assembly-CSharp
-        m_MethodName: Danan
+      - m_Target: {fileID: 244278766317386960}
+        m_TargetAssemblyTypeName: DananHabilidad, Assembly-CSharp
+        m_MethodName: Efecto
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -301,13 +302,16 @@ MonoBehaviour:
   OriginalPower: 6
   Power: 6
   DescriptionNskill: "Una elfa psic\xF3loga al parecer super poderosa que me arregl\xF3
-    el trauma de Casca (a medias). Permite robar 2 carta del mazo"
+    el trauma de Casca (a medias). Iguala todas las cartas del tablero al promedio
+    entre ellas"
   Lider: no lider
   Faction: Sacrificios
   Type: oro
   Frange: 3
+  Franja: Asedio
   Affected: 0
   Sumada: 0
+  ShierkeAfectada: 0
 --- !u!61 &-8224720702810068448
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -453,6 +457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Card: {fileID: 3560637067181593745}
   Turn: 1
+  jugable: 1
   PHand: {fileID: 0}
   EHand: {fileID: 0}
   PMelee: {fileID: 0}
@@ -469,3 +474,22 @@ MonoBehaviour:
   eCsiege: {fileID: 0}
   Bloqueo1: {fileID: 0}
   Bloqueo2: {fileID: 0}
+--- !u!114 &244278766317386960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560637067181593745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3fcc72bf4468d746a495eb27f33e840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pCC: {fileID: 0}
+  pD: {fileID: 0}
+  pS: {fileID: 0}
+  eCC: {fileID: 0}
+  eD: {fileID: 0}
+  eS: {fileID: 0}
+  jugable: 0

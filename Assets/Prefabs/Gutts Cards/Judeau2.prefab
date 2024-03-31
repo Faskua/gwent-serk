@@ -293,8 +293,10 @@ MonoBehaviour:
   Faction: Sacrificios
   Type: plata
   Frange: 2
+  Franja: Distancia
   Affected: 0
   Sumada: 0
+  ShierkeAfectada: 0
 --- !u!61 &3755809828174825916
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -440,6 +442,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Card: {fileID: 3560637067181593745}
   Turn: 1
+  jugable: 1
+  PHand: {fileID: 0}
+  EHand: {fileID: 0}
   PMelee: {fileID: 0}
   PDistance: {fileID: 0}
   PSiege: {fileID: 0}

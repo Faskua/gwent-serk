@@ -67,7 +67,7 @@ public class eDrawCards : MonoBehaviour
 
         if(robo2 == false && Ronda == 2)
         {
-        for (int i= 0; i < 10; i ++)
+        for (int i= 0; i < 3; i ++)
         {
             GameObject card = Instantiate(Mazo[Random.Range(0,Mazo.Count)], new Vector2(0,0), Quaternion.identity);
             card.transform.SetParent(Hand.transform, false);
@@ -78,7 +78,7 @@ public class eDrawCards : MonoBehaviour
 
         if(robo3 == false && Ronda == 3 && GanadorText.text == "")
         {
-        for (int i= 0; i < 10; i ++)
+        for (int i= 0; i < 4; i ++)
         {
             GameObject card = Instantiate(Mazo[Random.Range(0,Mazo.Count)], new Vector2(0,0), Quaternion.identity);
             card.transform.SetParent(Hand.transform, false);

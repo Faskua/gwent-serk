@@ -15,10 +15,9 @@ public class Puntos : MonoBehaviour
 
     void Update()
     {
-        if(sumagutts != pCC.GetComponent<ClaseFranja>().Suma + pD.GetComponent<ClaseFranja>().Suma + pS.GetComponent<ClaseFranja>().Suma)
-        {
-            sumagutts = pCC.GetComponent<ClaseFranja>().Suma + pD.GetComponent<ClaseFranja>().Suma + pS.GetComponent<ClaseFranja>().Suma;
-            guttsText.text = sumagutts.ToString();
-        }    
+        int semisuma = 0;
+        semisuma = pCC.GetComponent<ClaseFranja>().Suma + pD.GetComponent<ClaseFranja>().Suma + pS.GetComponent<ClaseFranja>().Suma;
+        sumagutts = semisuma;
+        guttsText.text = sumagutts.ToString();
     }
 }

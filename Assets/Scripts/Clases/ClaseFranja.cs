@@ -10,8 +10,12 @@ public class ClaseFranja : MonoBehaviour
     public int Suma = 0;
     public Text puntuationText;
     public string Faction;
+    public int franja;
     public GameObject CementerioGutts;
     public GameObject CementerioGriffith;
+    public GameObject PlayerHand;
+    public GameObject EnemyHand;
+
     private int ComprobadordeRonda = 1;
     private int Ronda = 1;
     private bool efectogrunbeld = true;
@@ -53,13 +57,154 @@ public class ClaseFranja : MonoBehaviour
         }
     }
 
-
-    void Start()
+    public void SkelletonKnight()
     {
-        
+        if(CardsinFrange.Count == 1 || CardsinFrange.Count > 1)
+        {
+            int mayor = CardsinFrange[0].GetComponent<ClaseCarta>().Power;
+            for(int i = 0; i < CardsinFrange.Count; i++)
+            {
+                mayor = Mathf.Max(mayor, CardsinFrange[i].GetComponent<ClaseCarta>().Power);
+            }
+            foreach(GameObject card in CardsinFrange)
+            {
+                if(card.GetComponent<ClaseCarta>().Power == mayor)
+                {
+                    card.transform.position = CementerioGriffith.transform.position;
+                    card.transform.SetParent(CementerioGriffith.transform, true);
+                    CardsinFrange.Remove(card);
+                    break;
+                }
+            }
+        }
     }
 
-    void Update()
+    public void Irvine()
+    {
+        if(CardsinFrange.Count == 1 || CardsinFrange.Count > 1)
+        {
+            int menor = CardsinFrange[0].GetComponent<ClaseCarta>().Power;
+            for(int i = 0; i < CardsinFrange.Count; i++)
+            {
+                menor = Mathf.Min(menor, CardsinFrange[i].GetComponent<ClaseCarta>().Power);
+            }
+            foreach(GameObject card in CardsinFrange)
+            {
+                if(card.GetComponent<ClaseCarta>().Power == menor)
+                {
+                    card.transform.position = CementerioGutts.transform.position;
+                    card.transform.SetParent(CementerioGutts.transform, true);
+                    CardsinFrange.Remove(card);
+                    break;
+                }
+            }
+        }
+    }
+
+    public int Danan()
+    {
+        int promedio = 0;
+        foreach(GameObject carta in CardsinFrange)
+        {
+            promedio += carta.GetComponent<ClaseCarta>().Power;
+        }
+        return promedio;
+    }
+    public void AplicarDanan(int poder)
+    {
+        foreach(GameObject carta in CardsinFrange)
+        {
+            carta.GetComponent<ClaseCarta>().Power = poder;
+        }
+    }
+
+    public void Flora()
+    {
+        foreach(GameObject Carta in CardsinFrange)
+        {
+            if(Carta.GetComponent<ClaseCarta>().Name == "Shierke" && Carta.GetComponent<ClaseCarta>().ShierkeAfectada == false)
+            {
+                Carta.GetComponent<ClaseCarta>().Power += 2;
+                Carta.GetComponent<ClaseCarta>().ShierkeAfectada = true;
+                break;
+            }
+        }
+    }
+
+    public void Zodd(int Franja)
+    {
+        if(CardsinFrange.Count == Franja)
+        {
+            foreach(GameObject carta in CardsinFrange)
+            {
+                carta.transform.position = CementerioGutts.transform.position;
+                carta.transform.SetParent(CementerioGutts.transform, true);
+            }
+            CardsinFrange.Clear();
+        }
+    }
+
+    public void Eclipse()
+    {
+        foreach(GameObject carta in CardsinFrange)
+        {
+            carta.GetComponent<ClaseCarta>().Power = 1;
+        }
+    }
+
+    public void Furia()
+    {
+        foreach(GameObject card in CardsinFrange)
+        {
+            if(card.GetComponent<ClaseCarta>().Affected == false)
+            {
+                card.GetComponent<ClaseCarta>().Affected = true;
+                card.GetComponent<ClaseCarta>().Power += 1;
+            }
+        }
+    }
+
+    public void Amanecer()
+    {
+        foreach(GameObject card in CardsinFrange)
+        {
+            card.GetComponent<ClaseCarta>().Affected = false;
+            card.GetComponent<ClaseCarta>().Power = card.GetComponent<ClaseCarta>().OriginalPower;
+        }
+    }
+
+    public void Puck()
+    {
+        if(CardsinFrange.Count == 1 || CardsinFrange.Count > 1)
+        {
+        int mayor = CardsinFrange[0].GetComponent<ClaseCarta>().Power;
+        for(int i = 0; i < CardsinFrange.Count; i++)
+        {
+            mayor = Mathf.Max(mayor, CardsinFrange[i].GetComponent<ClaseCarta>().Power);
+        }
+        foreach(GameObject card in CardsinFrange)
+        {
+            if(card.GetComponent<ClaseCarta>().Power == mayor && card.GetComponent<ClaseCarta>().Faction == "Sacrificios")
+            {
+                card.transform.SetParent(PlayerHand.transform, false);
+                card.transform.position = PlayerHand.transform.position;
+                card.GetComponent<JugarCarta>().jugable = true;
+                CardsinFrange.Remove(card);
+            }
+            if(card.GetComponent<ClaseCarta>().Power == mayor && card.GetComponent<ClaseCarta>().Faction == "Falconia")
+            {
+                card.transform.SetParent(EnemyHand.transform, false);
+                card.transform.position = EnemyHand.transform.position;
+                card.GetComponent<JugarCarta>().jugable = true;
+                CardsinFrange.Remove(card);
+            }
+            break;
+        }
+        }
+    }
+    
+
+    void Update() //lo tengo todo muy regado aqui
     {
         sumaparcial = 0;
         for(int i = 0; i < CardsinFrange.Count; i++) // suma
@@ -67,10 +212,13 @@ public class ClaseFranja : MonoBehaviour
             sumaparcial += CardsinFrange[i].GetComponent<ClaseCarta>().Power;
         }
         Suma = sumaparcial;
-        puntuationText.text = Suma.ToString();
+        puntuationText.text = Suma.ToString();  //termina la suma
 
         Ronda =  GameObject.Find("GameManager").GetComponent<GameManager>().Ronda;
+        PlayerHand = GameObject.Find("PlayerHand");
+        EnemyHand = GameObject.Find("EnemyHand");
 
+                //cuando termina la ronda reinicio todo y mando las cartas al cementerio correspondiente
         if(ComprobadordeRonda != Ronda)
         {
             ComprobadordeRonda = Ronda;
