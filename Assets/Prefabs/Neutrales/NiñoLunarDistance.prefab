@@ -306,9 +306,11 @@ MonoBehaviour:
   Faction: Sacrificios
   Type: "Esp\xEDa"
   Frange: 7
+  Franja: Distancia
   Affected: 0
   Sumada: 0
   ShierkeAfectada: 0
+  repartida: 0
 --- !u!61 &8126076695777203189
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -48,9 +48,24 @@ public class eDrawCards : MonoBehaviour
     public bool robo3 = false;
     public Text GanadorText;
     private int Ronda = 1;
+    private int position = 0;
 
     public List <GameObject> Mazo = new List <GameObject>();
 
+    public void verificadordeCarta() //vaya con recursividad para que vean que soy de los que atiende en las conferencias del profe juan pablo.
+    {
+        position = Random.Range(0, Mazo.Count);
+        if(Mazo[position].GetComponent<ClaseCarta>().repartida == false)
+        {
+            GameObject card = Instantiate(Mazo[position], new Vector2(0,0), Quaternion.identity);
+            card.transform.SetParent(Hand.transform, false);
+            Mazo[position].GetComponent<ClaseCarta>().repartida = true;
+        }
+        else
+        {
+            verificadordeCarta();
+        }
+    }
 
     public void Clicked()
     {
@@ -58,9 +73,7 @@ public class eDrawCards : MonoBehaviour
         {
         for (int i= 0; i < 10; i ++)
         {
-            GameObject card = Instantiate(Mazo[Random.Range(0,Mazo.Count)], new Vector2(0,0), Quaternion.identity);
-            card.transform.SetParent(Hand.transform, false);
-           // Mazo.RemoveAt(0);
+            verificadordeCarta();
         }
         robo = true;
         }
@@ -69,9 +82,7 @@ public class eDrawCards : MonoBehaviour
         {
         for (int i= 0; i < 3; i ++)
         {
-            GameObject card = Instantiate(Mazo[Random.Range(0,Mazo.Count)], new Vector2(0,0), Quaternion.identity);
-            card.transform.SetParent(Hand.transform, false);
-           // Mazo.RemoveAt(0);
+            verificadordeCarta();
         }
         robo2 = true;
         }
@@ -80,9 +91,7 @@ public class eDrawCards : MonoBehaviour
         {
         for (int i= 0; i < 4; i ++)
         {
-            GameObject card = Instantiate(Mazo[Random.Range(0,Mazo.Count)], new Vector2(0,0), Quaternion.identity);
-            card.transform.SetParent(Hand.transform, false);
-           // Mazo.RemoveAt(0);
+            verificadordeCarta();
         }
         robo3 = true;
         }
@@ -131,7 +140,10 @@ public class eDrawCards : MonoBehaviour
         Mazo.Add(Card35);
         Mazo.Add(Card36);
 
-        // Shuffle(Mazo); //las barajeo desde el principio
+       foreach(GameObject card in Mazo)
+        {
+            card.GetComponent<ClaseCarta>().repartida = false;
+        }
        
     }
 

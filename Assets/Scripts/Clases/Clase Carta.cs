@@ -18,7 +18,8 @@ public class ClaseCarta : MonoBehaviour
     public bool Affected = false; //campo para saber si la carta esta siendo afectada por un clima
     
     public bool Sumada = false; // para saber si ya esta sumada en la franja
-    public bool ShierkeAfectada = false;
+    public bool ShierkeAfectada = false; //para la habilidad de flora
+    public bool repartida = false; // para arreglar el problema del mazo
         
     }
 

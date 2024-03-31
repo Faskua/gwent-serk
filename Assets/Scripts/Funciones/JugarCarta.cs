@@ -28,6 +28,7 @@ public class JugarCarta : MonoBehaviour
     public GameObject Bloqueo2;
     private List<GameObject> mazo;
     private List<GameObject> mazoenemigo;
+    private int position= 0;
 
 
     void Start()
@@ -256,15 +257,41 @@ public class JugarCarta : MonoBehaviour
          }
     }
 
-
+    public void verificador()
+    {
+        position = Random.Range(0, mazo.Count);
+        if(mazo[position].GetComponent<ClaseCarta>().repartida == false)
+        {
+            GameObject card = Instantiate(mazo[position], new Vector2(0,0), Quaternion.identity);
+            card.transform.SetParent(PHand.transform, false);
+            mazo[position].GetComponent<ClaseCarta>().repartida = true;
+        }
+        else
+        {
+            verificador();
+        }
+    }
+     public void verificadorenemigo() 
+    {
+        position = Random.Range(0, mazoenemigo.Count);
+        if(mazoenemigo[position].GetComponent<ClaseCarta>().repartida == false)
+        {
+            GameObject card = Instantiate(mazoenemigo[position], new Vector2(0,0), Quaternion.identity);
+            card.transform.SetParent(EHand.transform, false);
+            mazoenemigo[position].GetComponent<ClaseCarta>().repartida = true;
+        }
+        else
+        {
+            verificadorenemigo();
+        }
+    }
     public void NlunarGutts()
     {
       for(int i = 0; i < 2; i++)
       {
          if(mazo.Count > 2)
          {
-            GameObject Cartas = Instantiate(mazo[Random.Range (0, mazo.Count)], new Vector2(0,0), Quaternion.identity);
-            Cartas.transform.SetParent(PHand.transform, false);
+            verificador();
          }
       }
     }
@@ -272,10 +299,9 @@ public class JugarCarta : MonoBehaviour
     {
       for(int i = 0; i < 2; i++)
       {
-         if(mazo.Count > 2)
+         if(mazoenemigo.Count > 2)
          {
-            GameObject Cartas = Instantiate(mazoenemigo[Random.Range (0, mazoenemigo.Count)], new Vector2(0,0), Quaternion.identity);
-            Cartas.transform.SetParent(EHand.transform, false);
+            verificadorenemigo();
          }
       }
     }

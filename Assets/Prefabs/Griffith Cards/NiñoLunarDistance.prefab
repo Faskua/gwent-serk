@@ -310,6 +310,7 @@ MonoBehaviour:
   Affected: 0
   Sumada: 0
   ShierkeAfectada: 0
+  repartida: 0
 --- !u!50 &1274105858388788028
 Rigidbody2D:
   serializedVersion: 4

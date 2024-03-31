@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SetTurn : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class SetTurn : MonoBehaviour
     public ClaseMano EnemyHand;
     public GameObject Bloqueo1;
     public GameObject Bloqueo2;
+    public Text GuttsrendidoText;
+    public Text GriffithrendidoText;
     private int Mano1 = 0;
     private int Mano2 = 0;
     private int comparator1 = 0;
@@ -52,10 +55,27 @@ public class SetTurn : MonoBehaviour
         if(PlayerHand.rendido)
         {
             Turno = false;
+            GuttsrendidoText.text = "Gutts Se Ha Rendido";
         }
+        else
+        {
+            GuttsrendidoText.text = "";
+        }
+
         if(EnemyHand.rendido)
         {
             Turno = true;
+            GriffithrendidoText.text = "Griffith Se Ha Rendido";
+        }
+        else
+        {
+            GriffithrendidoText.text = "";
+        }
+        
+        if(EnemyHand.rendido && PlayerHand.rendido)
+        {
+            bloqueo2.sizeDelta = new Vector2(550, 55);
+            bloqueo1.sizeDelta = new Vector2(550, 55);
         }
 
 

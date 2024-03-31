@@ -39,11 +39,14 @@ public class ClaseFranja : MonoBehaviour
     {
         if(Faction == "Sacrificios")
         {
+            if(CardsinFrange.Count == 1 || CardsinFrange.Count > 1)
+            {
             int menor = CardsinFrange[0].GetComponent<ClaseCarta>().Power;
             for(int i = 0; i < CardsinFrange.Count; i++)
             {
                 menor = Mathf.Min(menor, CardsinFrange[i].GetComponent<ClaseCarta>().Power);
             }
+            
             foreach(GameObject cartas in CardsinFrange)
             {
                 if(cartas.GetComponent<ClaseCarta>().Power == menor)
@@ -53,6 +56,7 @@ public class ClaseFranja : MonoBehaviour
                     CardsinFrange.Remove(cartas);
                     break;
                 }
+            }
             }
         }
     }
@@ -133,14 +137,20 @@ public class ClaseFranja : MonoBehaviour
 
     public void Zodd(int Franja)
     {
-        if(CardsinFrange.Count == Franja)
+        if(CardsinFrange.Count == 1 || CardsinFrange.Count > 1)
         {
-            foreach(GameObject carta in CardsinFrange)
+            if(CardsinFrange.Count < 4)
             {
-                carta.transform.position = CementerioGutts.transform.position;
-                carta.transform.SetParent(CementerioGutts.transform, true);
+                if(CardsinFrange.Count == Franja)
+                {
+                foreach(GameObject carta in CardsinFrange)
+                {
+                    carta.transform.position = CementerioGutts.transform.position;
+                    carta.transform.SetParent(CementerioGutts.transform, true);
+                }
+                CardsinFrange.Clear();
+                }
             }
-            CardsinFrange.Clear();
         }
     }
 

@@ -302,8 +302,8 @@ MonoBehaviour:
   OriginalPower: 8
   Power: 8
   DescriptionNskill: El guardaespaldas personal de Griffith (el caballero de la calavera
-    es su crush). Destruye por completo una franja enemiga que tenga entre 1 y 3
-    cartas
+    es su crush). Destruye por completo la franja enemiga con menos cartas (Solo
+    funciona entre 1 y 3 cartas).
   Lider: no lider
   Faction: Falconia
   Type: oro
@@ -312,6 +312,7 @@ MonoBehaviour:
   Affected: 0
   Sumada: 0
   ShierkeAfectada: 0
+  repartida: 0
 --- !u!50 &-8287138505074506330
 Rigidbody2D:
   serializedVersion: 4

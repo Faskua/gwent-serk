@@ -177,6 +177,7 @@ MonoBehaviour:
   Affected: 0
   Sumada: 0
   ShierkeAfectada: 0
+  repartida: 0
 --- !u!61 &5826427090254399053
 BoxCollider2D:
   m_ObjectHideFlags: 0

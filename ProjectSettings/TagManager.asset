@@ -12,6 +12,8 @@ TagManager:
   - EnemySiege
   - PlayerHand
   - EnemyHand
+  - PlayerDeck
+  - EnemyDeck
   layers:
   - Default
   - TransparentFX

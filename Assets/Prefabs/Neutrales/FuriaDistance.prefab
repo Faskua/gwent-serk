@@ -306,9 +306,11 @@ MonoBehaviour:
   Faction: Sacrificios
   Type: Clima
   Frange: 5
+  Franja: Distancia
   Affected: 0
   Sumada: 0
   ShierkeAfectada: 0
+  repartida: 0
 --- !u!61 &-6631975111124132315
 BoxCollider2D:
   m_ObjectHideFlags: 0

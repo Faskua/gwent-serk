@@ -48,22 +48,32 @@ public class DrawCards : MonoBehaviour
     public bool robo3 = false;
     public Text GanadorText;
     private int Ronda = 1; 
+    private int position = 0;
 
     public List <GameObject> Mazo = new List <GameObject>();
 
 
+    public void verificadordeCarta() //vaya con recursividad para que vean que soy de los que atiende en las conferencias del profe juan pablo.
+    {
+        position = Random.Range(0, Mazo.Count);
+        if(Mazo[position].GetComponent<ClaseCarta>().repartida == false)
+        {
+            GameObject card = Instantiate(Mazo[position], new Vector2(0,0), Quaternion.identity);
+            card.transform.SetParent(Hand.transform, false);
+            Mazo[position].GetComponent<ClaseCarta>().repartida = true;
+        }
+        else
+        {
+            verificadordeCarta();
+        }
+    }
     public void OnClick()
     {
         if(robo == false)
         {
         for (int i= 0; i < 10; i ++)
-        { //cojo la ultima carta y despues de usarla la borro
-            if(Mazo.Count > 0)
-            {
-            GameObject card = Instantiate(Mazo[Random.Range (0, Mazo.Count)], new Vector2(0,0), Quaternion.identity);
-            card.transform.SetParent(Hand.transform, false);
-           // Mazo.RemoveAt(Mazo.Count - 1);
-            }
+        { 
+            verificadordeCarta();
         }
         robo = true;
         }
@@ -71,13 +81,8 @@ public class DrawCards : MonoBehaviour
          if(robo2 == false && Ronda == 2)
         {
         for (int i= 0; i < 3; i ++)
-        { //cojo la ultima carta y despues de usarla la borro
-            if(Mazo.Count > 0)
-            {
-            GameObject card = Instantiate(Mazo[Random.Range (0, Mazo.Count)], new Vector2(0,0), Quaternion.identity);
-            card.transform.SetParent(Hand.transform, false);
-           // Mazo.RemoveAt(Mazo.Count - 1);
-            }
+        {
+            verificadordeCarta();
         }
         robo2 = true;
         }
@@ -85,13 +90,8 @@ public class DrawCards : MonoBehaviour
          if(robo3 == false && Ronda == 3 && GanadorText.text == "")
         {
         for (int i= 0; i < 4; i ++)
-        { //cojo la ultima carta y despues de usarla la borro
-            if(Mazo.Count > 0)
-            {
-            GameObject card = Instantiate(Mazo[Random.Range (0, Mazo.Count)], new Vector2(0,0), Quaternion.identity);
-            card.transform.SetParent(Hand.transform, false);
-           // Mazo.RemoveAt(Mazo.Count - 1);
-            }
+        { 
+            verificadordeCarta();
         }
         robo3 = true;
         }
@@ -140,16 +140,15 @@ public class DrawCards : MonoBehaviour
         Mazo.Add(Card35);
         Mazo.Add(Card36);
 
-
-     //en este pedacito de aqui barajeo el mazo pasandolo a array y despues a lista
-     // Random random = new();
-     // random.Shuffle(Mazo.ToArray);
+    foreach(GameObject card in Mazo)
+        {
+            card.GetComponent<ClaseCarta>().repartida = false;
+        }
     }
 
 
     
 
-    // Update is called once per frame
     void Update()
     {
         Ronda = GameObject.Find("GameManager").GetComponent<GameManager>().Ronda;
