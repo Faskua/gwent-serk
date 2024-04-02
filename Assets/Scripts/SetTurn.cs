@@ -13,6 +13,10 @@ public class SetTurn : MonoBehaviour
     public GameObject Bloqueo2;
     public Text GuttsrendidoText;
     public Text GriffithrendidoText;
+    public bool Guttsusado;
+    public bool Griffithusado;
+    private int gutts = 1;
+    private int griffith = 1;
     private int Mano1 = 0;
     private int Mano2 = 0;
     private int comparator1 = 0;
@@ -37,7 +41,9 @@ public class SetTurn : MonoBehaviour
 
     void Update()
     {
-        
+        Guttsusado = GameObject.Find("Gutts").GetComponent<GuttsHabilidad>().Utilizada;
+        Griffithusado = GameObject.Find("Griffith").GetComponent<GriffithHabilidad>().Usada;
+
         PlayerHand = GameObject.FindGameObjectWithTag("PlayerHand").GetComponent<ClaseMano>();
         EnemyHand = GameObject.FindGameObjectWithTag("EnemyHand").GetComponent<ClaseMano>();
 
@@ -52,7 +58,19 @@ public class SetTurn : MonoBehaviour
         Mano1 = GameObject.Find("PlayerHand").GetComponent<ClaseMano>().Cartas;
         Mano2 = GameObject.Find("EnemyHand").GetComponent<ClaseMano>().Cartas;
 
-        if(PlayerHand.rendido)
+        if(Guttsusado && gutts == 1) // cambiando el turno cuando se usen las habilidades de jefe
+        {
+            gutts += 1;
+            Turno = false;
+        }
+        if(Griffithusado && griffith == 1)
+        {
+            griffith += 1;
+            Turno = true;
+        }
+
+
+        if(PlayerHand.rendido) //cuando el jugador se rinda siempre le toca al oponente y aparece el cartel de rendido
         {
             Turno = false;
             GuttsrendidoText.text = "Gutts Se Ha Rendido";
@@ -72,7 +90,7 @@ public class SetTurn : MonoBehaviour
             GriffithrendidoText.text = "";
         }
         
-        if(EnemyHand.rendido && PlayerHand.rendido)
+        if(EnemyHand.rendido && PlayerHand.rendido) //cuanso se rinden ambos no se pueden ver las cartas de ninguna mano
         {
             bloqueo2.sizeDelta = new Vector2(550, 55);
             bloqueo1.sizeDelta = new Vector2(550, 55);

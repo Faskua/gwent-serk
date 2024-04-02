@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class GuttsHabilidad : MonoBehaviour
 {
-    public GameObject carta;
-    public GameObject CuerpoaCuerpo;
-    private bool Utilizada = false;
-    private bool turn;
+    public ClaseFranja CC;
+    public bool Utilizada = false;
+    public bool turn;
 
     public void Habilidad()
     {
         if(Utilizada == false && turn)
         {
-            GameObject Gutts = Instantiate(carta, new Vector2(0,0), Quaternion.identity);
-            Gutts.transform.SetParent(CuerpoaCuerpo.transform, false);
-            Gutts.transform.position = CuerpoaCuerpo.transform.position;
+            CC.Gutts();
             Utilizada = true;
         }
     }
@@ -23,5 +20,6 @@ public class GuttsHabilidad : MonoBehaviour
     void Update()
     {
         turn = GameObject.Find("TurnCounter").GetComponent<SetTurn>().Turno;
+        CC = GameObject.FindGameObjectWithTag("PlayerMelee").GetComponent<ClaseFranja>();
     }
 }

@@ -298,7 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 466702ee058d23d4186ce6208f66a7f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Danan
+  Name: Danan, Reina de los Elfos
   OriginalPower: 6
   Power: 6
   DescriptionNskill: "Una elfa psic\xF3loga al parecer super poderosa que me arregl\xF3

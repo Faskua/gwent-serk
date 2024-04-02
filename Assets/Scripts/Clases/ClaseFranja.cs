@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ClaseFranja : MonoBehaviour
 {
     private GameObject Cardentry;
+    public GameObject cartagutts;
     public List<GameObject> CardsinFrange;
     public int Suma = 0;
     public Text puntuationText;
@@ -15,6 +16,7 @@ public class ClaseFranja : MonoBehaviour
     public GameObject CementerioGriffith;
     public GameObject PlayerHand;
     public GameObject EnemyHand;
+    public GameObject CuerpoaCuerpo;
 
     private int ComprobadordeRonda = 1;
     private int Ronda = 1;
@@ -57,6 +59,20 @@ public class ClaseFranja : MonoBehaviour
                     break;
                 }
             }
+            }
+        }
+    }
+
+    public void Gutts()
+    {
+        foreach(GameObject Carta in CardsinFrange)
+        {
+            if(Carta.GetComponent<ClaseCarta>().Name == "Casca")
+            {
+                GameObject Gutts = Instantiate(cartagutts, new Vector2(0,0), Quaternion.identity);
+                Gutts.transform.SetParent(CuerpoaCuerpo.transform, false);
+                Gutts.transform.position = CuerpoaCuerpo.transform.position;
+                break;
             }
         }
     }
@@ -216,6 +232,11 @@ public class ClaseFranja : MonoBehaviour
 
     void Update() //lo tengo todo muy regado aqui
     {
+        Ronda =  GameObject.Find("GameManager").GetComponent<GameManager>().Ronda;
+        PlayerHand = GameObject.Find("PlayerHand");
+        EnemyHand = GameObject.Find("EnemyHand");
+
+
         sumaparcial = 0;
         for(int i = 0; i < CardsinFrange.Count; i++) // suma
         {
@@ -223,11 +244,7 @@ public class ClaseFranja : MonoBehaviour
         }
         Suma = sumaparcial;
         puntuationText.text = Suma.ToString();  //termina la suma
-
-        Ronda =  GameObject.Find("GameManager").GetComponent<GameManager>().Ronda;
-        PlayerHand = GameObject.Find("PlayerHand");
-        EnemyHand = GameObject.Find("EnemyHand");
-
+        
                 //cuando termina la ronda reinicio todo y mando las cartas al cementerio correspondiente
         if(ComprobadordeRonda != Ronda)
         {

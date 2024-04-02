@@ -8,7 +8,7 @@ public class GriffithHabilidad : MonoBehaviour
     public ClaseFranja D; 
     public ClaseFranja S; 
 
-    private bool Usada = false;
+    public bool Usada = false;
 
     public void Efecto()
     {

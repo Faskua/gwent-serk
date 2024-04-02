@@ -267,11 +267,15 @@ public class GameManager : MonoBehaviour
             PartidaTerminada = true;
             GanadorText.text = "Gutts Ha Ganado!!";
         }
-
-        if(PartidaTerminada == false && VictoriasGriffith == 2)
+        else if(PartidaTerminada == false && VictoriasGriffith == 2)
         {
             PartidaTerminada = true;
             GanadorText.text = "Griffith Ha Ganado!!";
+        }
+        else if(PartidaTerminada == false && VictoriasGutts == VictoriasGriffith && VictoriasGriffith == 2)
+        {
+            PartidaTerminada = true;
+            GanadorText.text = "Empate";
         }
     }
 }
