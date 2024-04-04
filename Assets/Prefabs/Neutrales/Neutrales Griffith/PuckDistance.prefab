@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 6896244382170184309}
   - component: {fileID: 7129654605348748850}
   - component: {fileID: 4394905512900058306}
+  - component: {fileID: -4378231510310145225}
   - component: {fileID: -5540038655477112970}
   - component: {fileID: -9022882917636401322}
   - component: {fileID: -6606633979272188201}
@@ -384,6 +385,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!114 &-4378231510310145225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7889376949394653752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde165b018780ec4a9ff0476275f170d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Griffith: {fileID: 0}
+  ZoomCard: {fileID: 7889376949394653752}
 --- !u!114 &-5540038655477112970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,6 +428,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: -4378231510310145225}
+          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
+          m_MethodName: OnHoverEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -420,6 +447,18 @@ MonoBehaviour:
         - m_Target: {fileID: -9022882917636401322}
           m_TargetAssemblyTypeName: CardInfo, Assembly-CSharp
           m_MethodName: MouseExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: -4378231510310145225}
+          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
+          m_MethodName: OnHoverExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -458,6 +497,9 @@ MonoBehaviour:
   Card: {fileID: 7889376949394653752}
   Turn: 1
   jugable: 1
+  PartidaTerminada: 0
+  griffithrend: 0
+  guttsrend: 0
   PHand: {fileID: 0}
   EHand: {fileID: 0}
   PMelee: {fileID: 0}

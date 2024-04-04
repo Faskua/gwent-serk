@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 6489624989842413697}
   - component: {fileID: -3469096976151722266}
   - component: {fileID: -9220369010358358615}
+  - component: {fileID: 8041770107275757949}
   - component: {fileID: 4943574702796202119}
   - component: {fileID: 789835706127610035}
   - component: {fileID: -5481822000036218406}
@@ -301,7 +302,8 @@ MonoBehaviour:
   Name: "Soldados de la banda del Halc\xF3n"
   OriginalPower: 2
   Power: 2
-  DescriptionNskill: "Valeros\xEDsimos mercenarios (c mueren todos)."
+  DescriptionNskill: "Valeros\xEDsimos mercenarios (c mueren todos). Multiplica su
+    poder por cada \"Soldados de la Banda del Halc\xF3n\" en la franja de Asedio"
   Lider: no lider
   Faction: Sacrificios
   Type: plata
@@ -412,6 +414,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 8041770107275757949}
+          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
+          m_MethodName: OnHoverEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -428,6 +442,32 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 8041770107275757949}
+          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
+          m_MethodName: OnHoverExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &8041770107275757949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560637067181593745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde165b018780ec4a9ff0476275f170d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Griffith: {fileID: 0}
+  ZoomCard: {fileID: 3560637067181593745}
 --- !u!114 &4943574702796202119
 MonoBehaviour:
   m_ObjectHideFlags: 0

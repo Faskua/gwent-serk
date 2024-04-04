@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: -4020071119857330868}
   - component: {fileID: 6916727851057008672}
   - component: {fileID: -182482631640483303}
+  - component: {fileID: 5403405633326301002}
   - component: {fileID: 5641087197101349441}
   m_Layer: 6
   m_Name: Grunbeld
@@ -288,8 +289,8 @@ MonoBehaviour:
   Name: "Grunbeld, El Drag\xF3n de Fuego"
   OriginalPower: 6
   Power: 6
-  DescriptionNskill: Unga Unga Yo Ser Grande, Yo Ser Fuerte. Activa un aumento en
-    la franja de asedio
+  DescriptionNskill: Unga Unga Yo Ser Grande, Yo Ser Fuerte. Activa un aumento de
+    2 puntos de fuerza en la franja de asedio propia
   Lider: no lider
   Faction: Falconia
   Type: oro
@@ -400,6 +401,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 5403405633326301002}
+          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
+          m_MethodName: OnHoverEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -407,6 +420,18 @@ MonoBehaviour:
         - m_Target: {fileID: -182482631640483303}
           m_TargetAssemblyTypeName: CardInfo, Assembly-CSharp
           m_MethodName: MouseExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 5403405633326301002}
+          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
+          m_MethodName: OnHoverExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -430,6 +455,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Card: {fileID: 3560637067181593745}
   InfoText: {fileID: 9087890962933944297, guid: ba2b26a9d414617469433e8fd4c5d7f0, type: 3}
+--- !u!114 &5403405633326301002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560637067181593745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde165b018780ec4a9ff0476275f170d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Griffith: {fileID: 0}
+  ZoomCard: {fileID: 3560637067181593745}
 --- !u!114 &5641087197101349441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,6 +484,9 @@ MonoBehaviour:
   Card: {fileID: 3560637067181593745}
   Turn: 1
   jugable: 1
+  PartidaTerminada: 0
+  griffithrend: 0
+  guttsrend: 0
   PHand: {fileID: 0}
   EHand: {fileID: 0}
   PMelee: {fileID: 0}

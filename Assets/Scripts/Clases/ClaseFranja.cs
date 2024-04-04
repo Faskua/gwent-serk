@@ -21,6 +21,7 @@ public class ClaseFranja : MonoBehaviour
     private int ComprobadordeRonda = 1;
     private int Ronda = 1;
     private bool efectogrunbeld = true;
+    private bool efectolocus = true;
     private int sumaparcial = 0;
 
      private void OnCollisionEnter2D(Collision2D collision) //cuando colisionan mete las cartas en la lista de la franja 
@@ -33,7 +34,7 @@ public class ClaseFranja : MonoBehaviour
     {
       foreach(GameObject Card in CardsinFrange)
       {
-         Card.GetComponent<ClaseCarta>().Power +=1;
+         Card.GetComponent<ClaseCarta>().Power +=2;
       }
     }
 
@@ -229,11 +230,38 @@ public class ClaseFranja : MonoBehaviour
         }
     }
 
-    public void Ejercitos()
+    public int Ejercitos()
     {
+        int CantCartas = 1;
+
         if(CardsinFrange.Count == 1 || CardsinFrange.Count > 1)
         {
+        foreach (GameObject card in CardsinFrange)
+        {
+            if(card.GetComponent<ClaseCarta>().Name == "Soldados de la banda del Halcón")
+            {
+                CantCartas +=1;
+            }
+        }
+
+        foreach (GameObject card in CardsinFrange)
+        {
+            if(card.GetComponent<ClaseCarta>().Name == "Ejército Demoníaco")
+            {
+                CantCartas +=1;
+            }
+        }
+        }
+        
+        return CantCartas;
+    }
+
+    public void AplicarEjercitos()
+    {
         int CantCartas = 1;
+
+        if(CardsinFrange.Count == 1 || CardsinFrange.Count > 1)
+        {
         foreach (GameObject card in CardsinFrange)
         {
             if(card.GetComponent<ClaseCarta>().Name == "Soldados de la banda del Halcón")
@@ -265,7 +293,14 @@ public class ClaseFranja : MonoBehaviour
         }
         }
     }
-    
+
+    public void Locus()
+    {
+        foreach(GameObject Card in CardsinFrange)
+      {
+         Card.GetComponent<ClaseCarta>().Power +=1;
+      }
+    }
 
     void Update() //lo tengo todo muy regado aqui
     {
@@ -318,6 +353,16 @@ public class ClaseFranja : MonoBehaviour
             {
                 efectogrunbeld = false;
                Grunbeld();
+            }
+        }
+
+                 //efecto de Locus
+        foreach(GameObject card in CardsinFrange)
+        {
+            if(card.GetComponent<ClaseCarta>().Name == "Locus, Caballero de Luz de Luna" && efectolocus)
+            {
+                efectolocus = false;
+               Locus();
             }
         }
     }

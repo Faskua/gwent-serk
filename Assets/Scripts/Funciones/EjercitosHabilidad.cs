@@ -7,6 +7,7 @@ public class EjercitosHabilidad : MonoBehaviour
     public ClaseFranja pS;
     public ClaseFranja eS;
     public bool jugable;
+    private int poder;
 
     public void Efecto()
     {
@@ -14,12 +15,15 @@ public class EjercitosHabilidad : MonoBehaviour
         {
         if(gameObject.GetComponent<ClaseCarta>().Name == "Soldados de la banda del Halcón")
         {
-            pS.Ejercitos();
+            poder = pS.Ejercitos();
+            pS.AplicarEjercitos();
         }
         if(gameObject.GetComponent<ClaseCarta>().Name == "Ejército Demoníaco")
         {
-            eS.Ejercitos();
+            poder = eS.Ejercitos();
+            eS.AplicarEjercitos();
         }
+        gameObject.GetComponent<ClaseCarta>().Power = gameObject.GetComponent<ClaseCarta>().OriginalPower * poder;
         }
     }
 

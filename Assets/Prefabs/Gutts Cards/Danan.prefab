@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: -8224720702810068448}
   - component: {fileID: -8032658617354348807}
   - component: {fileID: -3297174813494056236}
+  - component: {fileID: -4110756730681005551}
   - component: {fileID: 18208963098738256}
   - component: {fileID: -366365510611175033}
   - component: {fileID: 244278766317386960}
@@ -414,6 +415,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: -4110756730681005551}
+          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
+          m_MethodName: OnHoverEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -430,6 +443,32 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: -4110756730681005551}
+          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
+          m_MethodName: OnHoverExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &-4110756730681005551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560637067181593745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde165b018780ec4a9ff0476275f170d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Griffith: {fileID: 0}
+  ZoomCard: {fileID: 3560637067181593745}
 --- !u!114 &18208963098738256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,6 +498,9 @@ MonoBehaviour:
   Card: {fileID: 3560637067181593745}
   Turn: 1
   jugable: 1
+  PartidaTerminada: 0
+  griffithrend: 0
+  guttsrend: 0
   PHand: {fileID: 0}
   EHand: {fileID: 0}
   PMelee: {fileID: 0}

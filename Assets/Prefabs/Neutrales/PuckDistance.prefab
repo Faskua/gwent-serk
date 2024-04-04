@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 1272296040536665126}
   - component: {fileID: 661488519625049229}
   - component: {fileID: -1319280228095521518}
+  - component: {fileID: 1556018600788294771}
   - component: {fileID: 6757886465707938954}
   - component: {fileID: -162545841667157814}
   - component: {fileID: -6554588388267024689}
@@ -311,7 +312,7 @@ MonoBehaviour:
   Affected: 0
   Sumada: 0
   ShierkeAfectada: 0
-  repartida: 0
+  repartida: 1
 --- !u!61 &1272296040536665126
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -413,6 +414,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1556018600788294771}
+          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
+          m_MethodName: OnHoverEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -429,6 +442,32 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1556018600788294771}
+          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
+          m_MethodName: OnHoverExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1556018600788294771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7889376949394653752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde165b018780ec4a9ff0476275f170d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Griffith: {fileID: 0}
+  ZoomCard: {fileID: 7889376949394653752}
 --- !u!114 &6757886465707938954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,6 +497,9 @@ MonoBehaviour:
   Card: {fileID: 7889376949394653752}
   Turn: 1
   jugable: 1
+  PartidaTerminada: 0
+  griffithrend: 0
+  guttsrend: 0
   PHand: {fileID: 0}
   EHand: {fileID: 0}
   PMelee: {fileID: 0}

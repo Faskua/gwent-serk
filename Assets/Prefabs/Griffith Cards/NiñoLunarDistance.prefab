@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: 4899079509354102622}
   - component: {fileID: 838227346511313878}
   - component: {fileID: -8378309641483771430}
+  - component: {fileID: -2739084473968443181}
   - component: {fileID: -935804558246245846}
   m_Layer: 6
   m_Name: "Ni\xF1oLunarDistance"
@@ -412,6 +413,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: -2739084473968443181}
+          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
+          m_MethodName: OnHoverEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -419,6 +432,18 @@ MonoBehaviour:
         - m_Target: {fileID: -8378309641483771430}
           m_TargetAssemblyTypeName: CardInfo, Assembly-CSharp
           m_MethodName: MouseExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: -2739084473968443181}
+          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
+          m_MethodName: OnHoverExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -442,6 +467,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Card: {fileID: 7889376949394653752}
   InfoText: {fileID: 9087890962933944297, guid: ba2b26a9d414617469433e8fd4c5d7f0, type: 3}
+--- !u!114 &-2739084473968443181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7889376949394653752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde165b018780ec4a9ff0476275f170d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Griffith: {fileID: 0}
+  ZoomCard: {fileID: 7889376949394653752}
 --- !u!114 &-935804558246245846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,6 +496,9 @@ MonoBehaviour:
   Card: {fileID: 7889376949394653752}
   Turn: 1
   jugable: 1
+  PartidaTerminada: 0
+  griffithrend: 0
+  guttsrend: 0
   PHand: {fileID: 0}
   EHand: {fileID: 0}
   PMelee: {fileID: 0}

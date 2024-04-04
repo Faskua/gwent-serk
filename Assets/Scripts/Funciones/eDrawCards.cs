@@ -49,6 +49,7 @@ public class eDrawCards : MonoBehaviour
     public Text GanadorText;
     private int Ronda = 1;
     private int position = 0;
+    public Text RobasteText;
 
     public List <GameObject> Mazo = new List <GameObject>();
 
@@ -76,6 +77,7 @@ public class eDrawCards : MonoBehaviour
             verificadordeCarta();
         }
         robo = true;
+        RobasteText.text = "Ya Robaste";
         }
 
         if(robo2 == false && Ronda == 2)
@@ -85,6 +87,7 @@ public class eDrawCards : MonoBehaviour
             verificadordeCarta();
         }
         robo2 = true;
+        RobasteText.text = "Ya Robaste";
         }
 
         if(robo3 == false && Ronda == 3 && GanadorText.text == "")
@@ -94,6 +97,7 @@ public class eDrawCards : MonoBehaviour
             verificadordeCarta();
         }
         robo3 = true;
+        RobasteText.text = "Ya Robaste";
         }
     }
 

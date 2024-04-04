@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 7124858683414686008}
   - component: {fileID: -1668290730005193905}
   - component: {fileID: 4164239235322568733}
+  - component: {fileID: 6311963867002853616}
   - component: {fileID: 8058233244142586161}
   - component: {fileID: 8768143588943388421}
   - component: {fileID: 6698228730466307540}
@@ -301,7 +302,8 @@ MonoBehaviour:
   Name: "Ej\xE9rcito Demon\xEDaco"
   OriginalPower: 2
   Power: 2
-  DescriptionNskill: "Estos pibes est\xE1n loqu\xEDsimos lo que vean se lo comen."
+  DescriptionNskill: "Estos pibes est\xE1n loqu\xEDsimos lo que vean se lo comen.
+    Multiplica su poder por cada \"Ej\xE9rcito Demon\xEDaco\" en la franja de Asedio"
   Lider: no lider
   Faction: Falconia
   Type: plata
@@ -310,7 +312,7 @@ MonoBehaviour:
   Affected: 0
   Sumada: 0
   ShierkeAfectada: 0
-  repartida: 0
+  repartida: 1
 --- !u!50 &7124858683414686008
 Rigidbody2D:
   serializedVersion: 4
@@ -397,6 +399,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Card: {fileID: 3560637067181593745}
   InfoText: {fileID: 9087890962933944297, guid: ba2b26a9d414617469433e8fd4c5d7f0, type: 3}
+--- !u!114 &6311963867002853616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560637067181593745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde165b018780ec4a9ff0476275f170d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Griffith: {fileID: 0}
+  ZoomCard: {fileID: 3560637067181593745}
 --- !u!114 &8058233244142586161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,6 +442,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 6311963867002853616}
+          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
+          m_MethodName: OnHoverEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -433,6 +461,18 @@ MonoBehaviour:
         - m_Target: {fileID: 4164239235322568733}
           m_TargetAssemblyTypeName: CardInfo, Assembly-CSharp
           m_MethodName: MouseExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 6311963867002853616}
+          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
+          m_MethodName: OnHoverExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

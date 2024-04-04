@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 3692348888060432311}
   - component: {fileID: 7334614641249439495}
   - component: {fileID: 8922128336338818381}
+  - component: {fileID: -4558005188189928953}
   - component: {fileID: 2520814687624447266}
   - component: {fileID: 3974260992992350816}
   - component: {fileID: -5851340842558920227}
@@ -301,7 +302,8 @@ MonoBehaviour:
   Name: "Soldados de la banda del Halc\xF3n"
   OriginalPower: 2
   Power: 2
-  DescriptionNskill: "Valeros\xEDsimos mercenarios (c mueren todos)."
+  DescriptionNskill: "Valeros\xEDsimos mercenarios (c mueren todos). Multiplica su
+    poder por cada \"Soldados de la Banda del Halc\xF3n\" en la franja de Asedio"
   Lider: no lider
   Faction: Sacrificios
   Type: plata
@@ -310,7 +312,7 @@ MonoBehaviour:
   Affected: 0
   Sumada: 0
   ShierkeAfectada: 0
-  repartida: 0
+  repartida: 1
 --- !u!61 &3692348888060432311
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -412,6 +414,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: -4558005188189928953}
+          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
+          m_MethodName: OnHoverEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -428,6 +442,32 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: -4558005188189928953}
+          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
+          m_MethodName: OnHoverExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &-4558005188189928953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560637067181593745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde165b018780ec4a9ff0476275f170d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Griffith: {fileID: 0}
+  ZoomCard: {fileID: 3560637067181593745}
 --- !u!114 &2520814687624447266
 MonoBehaviour:
   m_ObjectHideFlags: 0
