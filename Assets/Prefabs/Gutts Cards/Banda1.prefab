@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: -9220369010358358615}
   - component: {fileID: 4943574702796202119}
   - component: {fileID: 789835706127610035}
+  - component: {fileID: -5481822000036218406}
   m_Layer: 6
   m_Name: Banda1
   m_TagString: Untagged
@@ -273,6 +274,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: -5481822000036218406}
+        m_TargetAssemblyTypeName: EjercitosHabilidad, Assembly-CSharp
+        m_MethodName: Efecto
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3553454932940865172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,8 +299,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "Soldados de la banda del Halc\xF3n"
-  OriginalPower: 6
-  Power: 6
+  OriginalPower: 2
+  Power: 2
   DescriptionNskill: "Valeros\xEDsimos mercenarios (c mueren todos)."
   Lider: no lider
   Faction: Sacrificios
@@ -444,6 +457,9 @@ MonoBehaviour:
   Card: {fileID: 3560637067181593745}
   Turn: 1
   jugable: 1
+  PartidaTerminada: 0
+  griffithrend: 0
+  guttsrend: 0
   PHand: {fileID: 0}
   EHand: {fileID: 0}
   PMelee: {fileID: 0}
@@ -460,3 +476,18 @@ MonoBehaviour:
   eCsiege: {fileID: 0}
   Bloqueo1: {fileID: 0}
   Bloqueo2: {fileID: 0}
+--- !u!114 &-5481822000036218406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560637067181593745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff2c56ad88290241b8df0712a01f2db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pS: {fileID: 0}
+  eS: {fileID: 0}
+  jugable: 0

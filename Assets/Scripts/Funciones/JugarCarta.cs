@@ -7,7 +7,11 @@ public class JugarCarta : MonoBehaviour
 {
     public GameObject Card; //la carta a jugar
     public bool Turn = true; //controlador del turno
-    public bool jugable = true;
+   public bool jugable = true;
+   public bool PartidaTerminada;
+   public bool griffithrend;
+   public bool guttsrend;
+
    //las zonas
    public GameObject PHand;
    public GameObject EHand;
@@ -47,11 +51,14 @@ public class JugarCarta : MonoBehaviour
         eCsiege = GameObject.Find("eSiegeClimage");
         PHand = GameObject.Find("PlayerHand");
         EHand = GameObject.Find("EnemyHand");
+        PartidaTerminada = GameObject.Find("GameManager").GetComponent<GameManager>().PartidaTerminada;
     }
 
     public void PlayCard()
     {
-        if(Card.GetComponent<ClaseCarta>().Faction == "Sacrificios" && Card.GetComponent<ClaseCarta>().Frange == 1 && Turn == true)
+       if(PartidaTerminada == false)
+       {
+        if(Card.GetComponent<ClaseCarta>().Faction == "Sacrificios" && Card.GetComponent<ClaseCarta>().Frange == 1 && Turn == true && guttsrend == false)
         {
             if(jugable)
             {
@@ -61,7 +68,7 @@ public class JugarCarta : MonoBehaviour
             }
         }
 
-         if(Card.GetComponent<ClaseCarta>().Faction == "Sacrificios" && Card.GetComponent<ClaseCarta>().Frange == 2 && Turn == true)
+         if(Card.GetComponent<ClaseCarta>().Faction == "Sacrificios" && Card.GetComponent<ClaseCarta>().Frange == 2 && Turn == true && guttsrend == false)
          {
             if(jugable)
             {
@@ -71,7 +78,7 @@ public class JugarCarta : MonoBehaviour
             }
          }
 
-         if(Card.GetComponent<ClaseCarta>().Faction == "Sacrificios" && Card.GetComponent<ClaseCarta>().Frange == 3 && Turn == true)
+         if(Card.GetComponent<ClaseCarta>().Faction == "Sacrificios" && Card.GetComponent<ClaseCarta>().Frange == 3 && Turn == true && guttsrend == false)
          {
             if(jugable)
             {
@@ -81,7 +88,7 @@ public class JugarCarta : MonoBehaviour
             }   
          }
 
-         if(Card.GetComponent<ClaseCarta>().Faction == "Sacrificios" && Card.GetComponent<ClaseCarta>().Frange == 4 && Turn == true)
+         if(Card.GetComponent<ClaseCarta>().Faction == "Sacrificios" && Card.GetComponent<ClaseCarta>().Frange == 4 && Turn == true && guttsrend == false)
          {
             if(jugable)
             {
@@ -91,7 +98,7 @@ public class JugarCarta : MonoBehaviour
             }   
          }
 
-          if(Card.GetComponent<ClaseCarta>().Faction == "Sacrificios" && Card.GetComponent<ClaseCarta>().Frange == 5 && Turn == true)
+          if(Card.GetComponent<ClaseCarta>().Faction == "Sacrificios" && Card.GetComponent<ClaseCarta>().Frange == 5 && Turn == true && guttsrend == false)
          {
             if(jugable)
             {
@@ -101,7 +108,7 @@ public class JugarCarta : MonoBehaviour
             }   
          }
 
-           if(Card.GetComponent<ClaseCarta>().Faction == "Sacrificios" && Card.GetComponent<ClaseCarta>().Frange == 6 && Turn == true)
+           if(Card.GetComponent<ClaseCarta>().Faction == "Sacrificios" && Card.GetComponent<ClaseCarta>().Frange == 6 && Turn == true && guttsrend == false)
          {
             if(jugable)
             {
@@ -113,7 +120,7 @@ public class JugarCarta : MonoBehaviour
 
 
 
-            if(Card.GetComponent<ClaseCarta>().Faction == "Falconia" && Card.GetComponent<ClaseCarta>().Frange == 1 && Turn == false)
+            if(Card.GetComponent<ClaseCarta>().Faction == "Falconia" && Card.GetComponent<ClaseCarta>().Frange == 1 && Turn == false && griffithrend == false)
          {
             if(jugable)
             {
@@ -123,7 +130,7 @@ public class JugarCarta : MonoBehaviour
             }   
          }
 
-            if(Card.GetComponent<ClaseCarta>().Faction == "Falconia" && Card.GetComponent<ClaseCarta>().Frange == 2 && Turn == false)
+            if(Card.GetComponent<ClaseCarta>().Faction == "Falconia" && Card.GetComponent<ClaseCarta>().Frange == 2 && Turn == false && griffithrend == false)
          {
             if(jugable)
             {
@@ -133,7 +140,7 @@ public class JugarCarta : MonoBehaviour
             }   
          }
 
-             if(Card.GetComponent<ClaseCarta>().Faction == "Falconia" && Card.GetComponent<ClaseCarta>().Frange == 3 && Turn == false)
+             if(Card.GetComponent<ClaseCarta>().Faction == "Falconia" && Card.GetComponent<ClaseCarta>().Frange == 3 && Turn == false && griffithrend == false)
          {
             if(jugable)
             {
@@ -143,7 +150,7 @@ public class JugarCarta : MonoBehaviour
             }   
          }
 
-             if(Card.GetComponent<ClaseCarta>().Faction == "Falconia" && Card.GetComponent<ClaseCarta>().Frange == 4 && Turn == false)
+             if(Card.GetComponent<ClaseCarta>().Faction == "Falconia" && Card.GetComponent<ClaseCarta>().Frange == 4 && Turn == false && griffithrend == false)
          {
             if(jugable)
             {
@@ -153,7 +160,7 @@ public class JugarCarta : MonoBehaviour
             }   
          }
 
-            if(Card.GetComponent<ClaseCarta>().Faction == "Falconia" && Card.GetComponent<ClaseCarta>().Frange == 5 && Turn == false)
+            if(Card.GetComponent<ClaseCarta>().Faction == "Falconia" && Card.GetComponent<ClaseCarta>().Frange == 5 && Turn == false && griffithrend == false)
          {
             if(jugable)
             {
@@ -163,7 +170,7 @@ public class JugarCarta : MonoBehaviour
             }   
          }
 
-         if(Card.GetComponent<ClaseCarta>().Faction == "Falconia" && Card.GetComponent<ClaseCarta>().Frange == 6 && Turn == false)
+         if(Card.GetComponent<ClaseCarta>().Faction == "Falconia" && Card.GetComponent<ClaseCarta>().Frange == 6 && Turn == false && griffithrend == false)
          {
             if(jugable)
             {
@@ -174,7 +181,7 @@ public class JugarCarta : MonoBehaviour
          }
 
                //a partir de aqui es para jugar a la carta espia
-         if(Card.GetComponent<ClaseCarta>().Frange == 7 && Turn)  
+         if(Card.GetComponent<ClaseCarta>().Frange == 7 && Turn && guttsrend == false)  
          {
             if(jugable)
             {
@@ -184,7 +191,7 @@ public class JugarCarta : MonoBehaviour
             }   
          }
 
-         if(Card.GetComponent<ClaseCarta>().Frange == 8 && Turn)
+         if(Card.GetComponent<ClaseCarta>().Frange == 8 && Turn && guttsrend == false)
          {
             if(jugable)
             {
@@ -194,7 +201,7 @@ public class JugarCarta : MonoBehaviour
             }   
          }
 
-         if(Card.GetComponent<ClaseCarta>().Frange == 9 && Turn == false)
+         if(Card.GetComponent<ClaseCarta>().Frange == 9 && Turn == false && griffithrend == false)
          {
             if(jugable)
             {
@@ -204,7 +211,7 @@ public class JugarCarta : MonoBehaviour
             }
          }
 
-         if(Card.GetComponent<ClaseCarta>().Frange == 10 && Turn == false)
+         if(Card.GetComponent<ClaseCarta>().Frange == 10 && Turn == false && griffithrend == false)
          {
             if(jugable)
             {
@@ -216,7 +223,7 @@ public class JugarCarta : MonoBehaviour
 
 
                //y a partir de aqui es para jugar al sennuelo
-          if(Card.GetComponent<ClaseCarta>().Frange == 11 && Turn)
+          if(Card.GetComponent<ClaseCarta>().Frange == 11 && Turn && guttsrend == false)
         {
             if(jugable)
             {
@@ -226,7 +233,7 @@ public class JugarCarta : MonoBehaviour
             }
         } 
 
-          if(Card.GetComponent<ClaseCarta>().Frange == 12 && Turn)
+          if(Card.GetComponent<ClaseCarta>().Frange == 12 && Turn && guttsrend == false)
          {
             if(jugable)
             {
@@ -236,7 +243,7 @@ public class JugarCarta : MonoBehaviour
             }
          } 
 
-          if(Card.GetComponent<ClaseCarta>().Frange == 13 && Turn == false)
+          if(Card.GetComponent<ClaseCarta>().Frange == 13 && Turn == false && griffithrend == false)
          {
             if(jugable)
             {
@@ -246,7 +253,7 @@ public class JugarCarta : MonoBehaviour
             }   
          }
 
-          if(Card.GetComponent<ClaseCarta>().Frange == 14 && Turn == false)
+          if(Card.GetComponent<ClaseCarta>().Frange == 14 && Turn == false && griffithrend == false)
          {
             if(jugable)
             {
@@ -255,6 +262,7 @@ public class JugarCarta : MonoBehaviour
              jugable = false;
             }   
          }
+       } 
     }
 
     public void verificador()
@@ -314,5 +322,7 @@ public class JugarCarta : MonoBehaviour
       Turn = GameObject.Find("TurnCounter").GetComponent<SetTurn>().Turno;
       mazo = GameObject.Find("PlayerDeck").GetComponent<DrawCards>().Mazo;
       mazoenemigo = GameObject.Find("EnemyDeck").GetComponent<eDrawCards>().Mazo;
+      griffithrend = GameObject.Find("EnemyHand").GetComponent<ClaseMano>().rendido;
+      guttsrend = GameObject.Find("PlayerHand").GetComponent<ClaseMano>().rendido;
     }
 }

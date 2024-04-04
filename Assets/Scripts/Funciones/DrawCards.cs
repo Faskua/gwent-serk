@@ -89,7 +89,7 @@ public class DrawCards : MonoBehaviour
 
          if(robo3 == false && Ronda == 3 && GanadorText.text == "")
         {
-        for (int i= 0; i < 4; i ++)
+        for (int i= 0; i < 2; i ++)
         { 
             verificadordeCarta();
         }

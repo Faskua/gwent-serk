@@ -659,7 +659,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 81.933, y: -0.76502}
+  m_AnchoredPosition: {x: 59.750027, y: -0.76502}
   m_SizeDelta: {x: 854.72, y: 80.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &340415382
@@ -1281,7 +1281,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 160.54, y: -55.12}
+  m_AnchoredPosition: {x: 160.54, y: -58.59}
   m_SizeDelta: {x: 433.29, y: 75.16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &749169537
@@ -2418,6 +2418,7 @@ MonoBehaviour:
   GanadorText: {fileID: 340415382}
   playerRendido: 0
   enemyRendido: 0
+  PartidaTerminada: 0
 --- !u!114 &1615451632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2681,7 +2682,7 @@ GameObject:
   - component: {fileID: 1743829177}
   - component: {fileID: 1743829176}
   m_Layer: 5
-  m_Name: Exit
+  m_Name: Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3711,6 +3712,7 @@ GameObject:
   - component: {fileID: 3339646868892242583}
   - component: {fileID: 8410903791471441096}
   - component: {fileID: 8410903791471441097}
+  - component: {fileID: 8410903791471441098}
   m_Layer: 5
   m_Name: Gutts
   m_TagString: Untagged
@@ -6092,6 +6094,7 @@ GameObject:
   - component: {fileID: 3210813832489253288}
   - component: {fileID: 8695992237680143795}
   - component: {fileID: 8695992237680143796}
+  - component: {fileID: 8695992237680143797}
   m_Layer: 5
   m_Name: Griffith
   m_TagString: Untagged
@@ -6253,6 +6256,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 8410903791471441098}
+          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
+          m_MethodName: OnHoverEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -6260,6 +6275,18 @@ MonoBehaviour:
         - m_Target: {fileID: 3339646868892242583}
           m_TargetAssemblyTypeName: CardInfoL, Assembly-CSharp
           m_MethodName: MouseExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 8410903791471441098}
+          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
+          m_MethodName: OnHoverExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -6284,6 +6311,20 @@ MonoBehaviour:
   CC: {fileID: 0}
   Utilizada: 0
   turn: 0
+--- !u!114 &8410903791471441098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983711660184546237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde165b018780ec4a9ff0476275f170d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Griffith: {fileID: 0}
+  ZoomCard: {fileID: 1983711660184546237}
 --- !u!224 &8416148791982156967
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6648,6 +6689,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 8695992237680143797}
+          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
+          m_MethodName: OnHoverEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -6655,6 +6708,18 @@ MonoBehaviour:
         - m_Target: {fileID: 3210813832489253288}
           m_TargetAssemblyTypeName: CardInfoL, Assembly-CSharp
           m_MethodName: MouseExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 8695992237680143797}
+          m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
+          m_MethodName: OnHoverExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -6679,7 +6744,22 @@ MonoBehaviour:
   CC: {fileID: 0}
   D: {fileID: 0}
   S: {fileID: 0}
+  turn: 0
   Usada: 0
+--- !u!114 &8695992237680143797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8202366025468206505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde165b018780ec4a9ff0476275f170d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Griffith: {fileID: 0}
+  ZoomCard: {fileID: 8202366025468206505}
 --- !u!224 &8719132336659222087
 RectTransform:
   m_ObjectHideFlags: 0

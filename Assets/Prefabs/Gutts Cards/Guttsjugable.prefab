@@ -286,8 +286,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "Gutts, El Espadach\xEDn Negro"
-  OriginalPower: 12
-  Power: 12
+  OriginalPower: 10
+  Power: 10
   DescriptionNskill: "H\xE1bil luchador con una cierta inclinaci\xF3n hacia el color
     negro y mucho, mucho desarrollo de personaje."
   Lider: lider
@@ -445,6 +445,7 @@ MonoBehaviour:
   Card: {fileID: 3560637067181593745}
   Turn: 1
   jugable: 1
+  PartidaTerminada: 0
   PHand: {fileID: 0}
   EHand: {fileID: 0}
   PMelee: {fileID: 0}

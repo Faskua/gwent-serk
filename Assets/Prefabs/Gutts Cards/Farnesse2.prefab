@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 2978988515488310838}
   - component: {fileID: 5788371797497613597}
   - component: {fileID: -3181758988150417840}
+  - component: {fileID: 6901422096482013661}
   m_Layer: 6
   m_Name: Farnesse2
   m_TagString: Untagged
@@ -273,6 +274,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 6901422096482013661}
+        m_TargetAssemblyTypeName: FarnesseHabilidad, Assembly-CSharp
+        m_MethodName: Efecto
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3553454932940865172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,7 +301,8 @@ MonoBehaviour:
   Name: Farnesse
   OriginalPower: 1
   Power: 1
-  DescriptionNskill: La piba de los fetiches raros (super turbio)
+  DescriptionNskill: La piba de los fetiches raros (super turbio). Invoca una carta
+    de clima en la franja de Distancia
   Lider: no lider
   Faction: Sacrificios
   Type: plata
@@ -297,7 +311,7 @@ MonoBehaviour:
   Affected: 0
   Sumada: 0
   ShierkeAfectada: 0
-  repartida: 0
+  repartida: 1
 --- !u!61 &-5714656083242451501
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -444,6 +458,9 @@ MonoBehaviour:
   Card: {fileID: 3560637067181593745}
   Turn: 1
   jugable: 1
+  PartidaTerminada: 0
+  griffithrend: 0
+  guttsrend: 0
   PHand: {fileID: 0}
   EHand: {fileID: 0}
   PMelee: {fileID: 0}
@@ -460,3 +477,19 @@ MonoBehaviour:
   eCsiege: {fileID: 0}
   Bloqueo1: {fileID: 0}
   Bloqueo2: {fileID: 0}
+--- !u!114 &6901422096482013661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560637067181593745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16555c4ca23d2ee4bb68a98140f2d546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DistanciaClima: {fileID: 0}
+  Clima: {fileID: 7889376949394653752, guid: c2aa57b9aaea092409563f779056f0c5, type: 3}
+  eD: {fileID: 0}
+  pD: {fileID: 0}

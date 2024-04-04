@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     public bool playerRendido;
     public bool enemyRendido;
-    private bool PartidaTerminada = false;
+    public bool PartidaTerminada = false;
     private int VictoriasGutts = 0;
     private int VictoriasGriffith = 0;
     private int Mano1;
@@ -262,7 +262,12 @@ public class GameManager : MonoBehaviour
 
 
                     //Decidiendo el ganador
-        if(PartidaTerminada == false && VictoriasGutts == 2)
+        if(PartidaTerminada == false && VictoriasGutts == VictoriasGriffith && VictoriasGriffith == 2)
+        {
+            PartidaTerminada = true;
+            GanadorText.text = "Empate";
+        }
+        else if(PartidaTerminada == false && VictoriasGutts == 2)
         {
             PartidaTerminada = true;
             GanadorText.text = "Gutts Ha Ganado!!";
@@ -271,11 +276,6 @@ public class GameManager : MonoBehaviour
         {
             PartidaTerminada = true;
             GanadorText.text = "Griffith Ha Ganado!!";
-        }
-        else if(PartidaTerminada == false && VictoriasGutts == VictoriasGriffith && VictoriasGriffith == 2)
-        {
-            PartidaTerminada = true;
-            GanadorText.text = "Empate";
         }
     }
 }

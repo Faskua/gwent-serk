@@ -228,6 +228,43 @@ public class ClaseFranja : MonoBehaviour
         }
         }
     }
+
+    public void Ejercitos()
+    {
+        if(CardsinFrange.Count == 1 || CardsinFrange.Count > 1)
+        {
+        int CantCartas = 1;
+        foreach (GameObject card in CardsinFrange)
+        {
+            if(card.GetComponent<ClaseCarta>().Name == "Soldados de la banda del Halcón")
+            {
+                CantCartas +=1;
+            }
+        }
+        foreach (GameObject card in CardsinFrange)
+        {
+            if(card.GetComponent<ClaseCarta>().Name == "Soldados de la banda del Halcón")
+            {
+                card.GetComponent<ClaseCarta>().Power = card.GetComponent<ClaseCarta>().OriginalPower * CantCartas;
+            }
+        }
+
+        foreach (GameObject card in CardsinFrange)
+        {
+            if(card.GetComponent<ClaseCarta>().Name == "Ejército Demoníaco")
+            {
+                CantCartas +=1;
+            }
+        }
+        foreach (GameObject card in CardsinFrange)
+        {
+            if(card.GetComponent<ClaseCarta>().Name == "Ejército Demoníaco")
+            {
+                card.GetComponent<ClaseCarta>().Power = card.GetComponent<ClaseCarta>().OriginalPower * CantCartas;
+            }
+        }
+        }
+    }
     
 
     void Update() //lo tengo todo muy regado aqui

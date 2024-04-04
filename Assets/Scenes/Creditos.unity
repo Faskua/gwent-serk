@@ -761,9 +761,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "BETA TESTERS\nSylvia Karla Fonseca\nAlejandro Garc\xEDa Ruiz\nCOLABORADORES\nSylvia
-    Karla Fonseca\nAdri\xE1n Xavier Brioso\nArian Conde\nAna Laura Hern\xE1ndez\nJavier
-    Arias\nEli, Lia y Ray\nCaf\xE9\nM. S Farzan \nThe gamedev Traum"
+  m_Text: "BETA TESTERS\nSylvia Karla Fonseca\nAlejandro Garc\xEDa Ruiz\nArian Conde\nLianet
+    Garc\xEDa\nCOLABORADORES\nSylvia Karla Fonseca\nAdri\xE1n Xavier Brioso\nAna
+    Laura Hern\xE1ndez\nJavier Arias\nEli y Ray\nCaf\xE9\nM. S Farzan \nThe gamedev
+    Traum"
 --- !u!222 &1520356899
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -58,42 +58,15 @@ public class SetTurn : MonoBehaviour
         Mano1 = GameObject.Find("PlayerHand").GetComponent<ClaseMano>().Cartas;
         Mano2 = GameObject.Find("EnemyHand").GetComponent<ClaseMano>().Cartas;
 
-        if(Guttsusado && gutts == 1) // cambiando el turno cuando se usen las habilidades de jefe
+        if(Turno && Guttsusado && gutts == 1) // cambiando el turno cuando se usen las habilidades de jefe
         {
             gutts += 1;
             Turno = false;
         }
-        if(Griffithusado && griffith == 1)
+        if(Turno == false && Griffithusado && griffith == 1)
         {
             griffith += 1;
             Turno = true;
-        }
-
-
-        if(PlayerHand.rendido) //cuando el jugador se rinda siempre le toca al oponente y aparece el cartel de rendido
-        {
-            Turno = false;
-            GuttsrendidoText.text = "Gutts Se Ha Rendido";
-        }
-        else
-        {
-            GuttsrendidoText.text = "";
-        }
-
-        if(EnemyHand.rendido)
-        {
-            Turno = true;
-            GriffithrendidoText.text = "Griffith Se Ha Rendido";
-        }
-        else
-        {
-            GriffithrendidoText.text = "";
-        }
-        
-        if(EnemyHand.rendido && PlayerHand.rendido) //cuanso se rinden ambos no se pueden ver las cartas de ninguna mano
-        {
-            bloqueo2.sizeDelta = new Vector2(550, 55);
-            bloqueo1.sizeDelta = new Vector2(550, 55);
         }
 
 
@@ -145,5 +118,31 @@ public class SetTurn : MonoBehaviour
             Turno = true;
         }
        }
+
+       if(PlayerHand.rendido) //cuando el jugador se rinda siempre le toca al oponente y aparece el cartel de rendido
+        {
+            Turno = false;
+            GuttsrendidoText.text = "Gutts Se Ha Rendido";
+        }
+        else
+        {
+            GuttsrendidoText.text = "";
+        }
+
+        if(EnemyHand.rendido)
+        {
+            Turno = true;
+            GriffithrendidoText.text = "Griffith Se Ha Rendido";
+        }
+        else
+        {
+            GriffithrendidoText.text = "";
+        }
+        
+        if(EnemyHand.rendido && PlayerHand.rendido) //cuanso se rinden ambos no se pueden ver las cartas de ninguna mano
+        {
+            bloqueo2.sizeDelta = new Vector2(550, 55);
+            bloqueo1.sizeDelta = new Vector2(550, 55);
+        }
     }
 }

@@ -7,12 +7,13 @@ public class GriffithHabilidad : MonoBehaviour
     public ClaseFranja CC; 
     public ClaseFranja D; 
     public ClaseFranja S; 
+    public bool turn;
 
     public bool Usada = false;
 
     public void Efecto()
     {
-        if(Usada == false)
+        if(Usada == false && turn == false)
         {
             CC.Griffith();
             D.Griffith();
@@ -27,5 +28,6 @@ public class GriffithHabilidad : MonoBehaviour
         CC = GameObject.FindGameObjectWithTag("PlayerMelee").GetComponent<ClaseFranja>();
         D = GameObject.FindGameObjectWithTag("PlayerDistance").GetComponent<ClaseFranja>();
         S = GameObject.FindGameObjectWithTag("PlayerSiege").GetComponent<ClaseFranja>();
+        turn = GameObject.Find("TurnCounter").GetComponent<SetTurn>().Turno;
     }
 }
