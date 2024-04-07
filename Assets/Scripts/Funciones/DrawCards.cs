@@ -46,10 +46,10 @@ public class DrawCards : MonoBehaviour
     public bool robo = false;
     public bool robo2 = false;
     public bool robo3 = false;
-    public Text GanadorText;
     private int Ronda = 1; 
     private int position = 0;
-    public Text RobasteText;
+    private Animator animator;
+    private bool Turn;
 
     public List <GameObject> Mazo = new List <GameObject>();
 
@@ -70,40 +70,46 @@ public class DrawCards : MonoBehaviour
     }
     public void OnClick()
     {
+        if(Turn)
+        {
         if(robo == false)
         {
+            animator.SetTrigger("JRepartir");
         for (int i= 0; i < 10; i ++)
         { 
             verificadordeCarta();
         }
         robo = true;
-        RobasteText.text = "Ya Robaste";
         }
 
          if(robo2 == false && Ronda == 2)
         {
+            animator.SetTrigger("JRepartir3");
         for (int i= 0; i < 3; i ++)
         {
             verificadordeCarta();
         }
         robo2 = true;
-        RobasteText.text = "Ya Robaste";
         }
 
-         if(robo3 == false && Ronda == 3 && GanadorText.text == "")
+         if(robo3 == false && Ronda == 3)
         {
+            animator.SetTrigger("JRepartir2");
         for (int i= 0; i < 2; i ++)
         { 
             verificadordeCarta();
         }
         robo3 = true;
-        RobasteText.text = "Ya Robaste";
+        }
         }
     }
 
 
+    void Awake()
+    {
+        animator = gameObject.GetComponent<Animator>();
+    }
 
-    // Start is called before the first frame update
     void Start()
     {
         
@@ -156,5 +162,6 @@ public class DrawCards : MonoBehaviour
     void Update()
     {
         Ronda = GameObject.Find("GameManager").GetComponent<GameManager>().Ronda;
+        Turn = GameObject.Find("TurnCounter").GetComponent<SetTurn>().Turno;
     }
 }

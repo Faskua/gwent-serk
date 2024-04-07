@@ -26,4 +26,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tuto4.unity
     guid: b39939298e7d0cf4f831a401b16f1d64
+  - enabled: 1
+    path: Assets/Scenes/GanaGutts.unity
+    guid: 53467412490cf674684b4c4ae51961bd
+  - enabled: 1
+    path: Assets/Scenes/GanaGriffith.unity
+    guid: d3acc15374aa4964b83cf4c912903bc5
+  - enabled: 1
+    path: Assets/Scenes/Empate.unity
+    guid: 02da4f286b22b324788cffa0d405078f
   m_configObjects: {}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,8 +12,6 @@ public class GameManager : MonoBehaviour
     public Text WinsGriffithText;
     public string PointsGriffith;
     public Text GanadorText;
-    public Text GuttsRoboText;
-    public Text GriffithRoboText;
 
 
     public bool playerRendido;
@@ -48,8 +47,6 @@ public class GameManager : MonoBehaviour
                 WinsGriffithText.text = VictoriasGriffith.ToString();
             }
             Ronda += 1;
-            GuttsRoboText.text = "";
-            GriffithRoboText.text = "";
         }
         if(Ronda == 1 && playerRendido && enemyRendido && Proba && Eroba) //ambos se rindieron
         {
@@ -67,8 +64,6 @@ public class GameManager : MonoBehaviour
                 WinsGriffithText.text = VictoriasGriffith.ToString();
             }
             Ronda += 1;
-            GuttsRoboText.text = "";
-            GriffithRoboText.text = "";
         }
         if(Ronda == 1 && playerRendido && Mano2 == 0 && Proba && Eroba)  //gutts se rindio y griffith no tiene cartas
         {
@@ -86,8 +81,6 @@ public class GameManager : MonoBehaviour
                 WinsGriffithText.text = VictoriasGriffith.ToString();
             }
             Ronda += 1;
-            GuttsRoboText.text = "";
-            GriffithRoboText.text = "";
         }
         if(Ronda == 1 && Mano1 == 0 && enemyRendido && Proba && Eroba)  //gutts no tiene cartas y griffith se rindio
         {
@@ -105,8 +98,6 @@ public class GameManager : MonoBehaviour
                 WinsGriffithText.text = VictoriasGriffith.ToString();
             }
             Ronda += 1;
-            GuttsRoboText.text = "";
-            GriffithRoboText.text = "";
         }
 
                     //segunda ronda
@@ -126,8 +117,6 @@ public class GameManager : MonoBehaviour
                 WinsGriffithText.text = VictoriasGriffith.ToString();
             }
             Ronda += 1;
-            GuttsRoboText.text = "";
-            GriffithRoboText.text = "";
         }
         if(Ronda == 2 && playerRendido && enemyRendido && Proba2 && Eroba2)
         {
@@ -145,8 +134,6 @@ public class GameManager : MonoBehaviour
                 WinsGriffithText.text = VictoriasGriffith.ToString();
             }
             Ronda += 1;
-            GuttsRoboText.text = "";
-            GriffithRoboText.text = "";
         }
         if(Ronda == 2 && playerRendido && Mano2 == 0 && Proba2 && Eroba2)
         {
@@ -164,8 +151,6 @@ public class GameManager : MonoBehaviour
                 WinsGriffithText.text = VictoriasGriffith.ToString();
             }
             Ronda += 1;
-            GuttsRoboText.text = "";
-            GriffithRoboText.text = "";
         }
         if(Ronda == 2 && Mano1 == 0 && enemyRendido && Proba2 && Eroba2)
         {
@@ -183,8 +168,6 @@ public class GameManager : MonoBehaviour
                 WinsGriffithText.text = VictoriasGriffith.ToString();
             }
             Ronda += 1;
-            GuttsRoboText.text = "";
-            GriffithRoboText.text = "";
         }
 
                     //tercera ronda
@@ -204,8 +187,6 @@ public class GameManager : MonoBehaviour
                 WinsGriffithText.text = VictoriasGriffith.ToString();
             }
             Ronda = 0;
-            GuttsRoboText.text = "";
-            GriffithRoboText.text = "";
         }
          if(Ronda == 3 && playerRendido && enemyRendido && Proba3 && Eroba3)
         {
@@ -223,8 +204,6 @@ public class GameManager : MonoBehaviour
                 WinsGriffithText.text = VictoriasGriffith.ToString();
             }
             Ronda = 0;
-            GuttsRoboText.text = "";
-            GriffithRoboText.text = "";
         }
          if(Ronda == 3 && playerRendido && Mano2 == 0 && Proba3 && Eroba3)
         {
@@ -242,8 +221,6 @@ public class GameManager : MonoBehaviour
                 WinsGriffithText.text = VictoriasGriffith.ToString();
             }
             Ronda = 0;
-            GuttsRoboText.text = "";
-            GriffithRoboText.text = "";
         }
          if(Ronda == 3 && Mano1 == 0 && enemyRendido && Proba3 && Eroba3)
         {
@@ -261,8 +238,6 @@ public class GameManager : MonoBehaviour
                 WinsGriffithText.text = VictoriasGriffith.ToString();
             }
             Ronda = 0;
-            GuttsRoboText.text = "";
-            GriffithRoboText.text = "";
         }
     }
   
@@ -291,17 +266,18 @@ public class GameManager : MonoBehaviour
         if(PartidaTerminada == false && VictoriasGutts == VictoriasGriffith && VictoriasGriffith == 2)
         {
             PartidaTerminada = true;
-            GanadorText.text = "Empate";
+            SceneManager.LoadScene(9);
         }
         else if(PartidaTerminada == false && VictoriasGutts == 2)
         {
             PartidaTerminada = true;
-            GanadorText.text = "Gutts Ha Ganado!!";
+            Debug.Log("ghg");
+            SceneManager.LoadScene(7);
         }
         else if(PartidaTerminada == false && VictoriasGriffith == 2)
         {
             PartidaTerminada = true;
-            GanadorText.text = "Griffith Ha Ganado!!";
+            SceneManager.LoadScene(8);
         }
     }
 }

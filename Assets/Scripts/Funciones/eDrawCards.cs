@@ -49,7 +49,8 @@ public class eDrawCards : MonoBehaviour
     public Text GanadorText;
     private int Ronda = 1;
     private int position = 0;
-    public Text RobasteText;
+    private bool Turn;
+    private Animator animator;
 
     public List <GameObject> Mazo = new List <GameObject>();
 
@@ -70,40 +71,46 @@ public class eDrawCards : MonoBehaviour
 
     public void Clicked()
     {
+        if(Turn == false)
+        {
         if(robo == false)
         {
+            animator.SetTrigger("ERepartir");
         for (int i= 0; i < 10; i ++)
         {
             verificadordeCarta();
         }
         robo = true;
-        RobasteText.text = "Ya Robaste";
         }
 
         if(robo2 == false && Ronda == 2)
         {
+            animator.SetTrigger("ERepartir3");
         for (int i= 0; i < 3; i ++)
         {
             verificadordeCarta();
         }
         robo2 = true;
-        RobasteText.text = "Ya Robaste";
         }
 
-        if(robo3 == false && Ronda == 3 && GanadorText.text == "")
+        if(robo3 == false && Ronda == 3)
         {
+            animator.SetTrigger("ERepartir2");
         for (int i= 0; i < 4; i ++)
         {
             verificadordeCarta();
         }
         robo3 = true;
-        RobasteText.text = "Ya Robaste";
+        }
         }
     }
 
+    void Awake()
+    {
+        animator = gameObject.GetComponent<Animator>();
+    }
 
 
-    // Start is called before the first frame update
     void Start()
     {
         
@@ -151,23 +158,9 @@ public class eDrawCards : MonoBehaviour
        
     }
 
-
-    // public static void Shuffle(List<GameObject> baraja) //metodo pra barajear las cartas del mazo 
-    // {
-    //     var n = baraja.Count;
-    //     var rnd = new Random();
-    //     for( int i = n - 1; i>0; i--)
-    //     {
-    //         var j = rnd.Next(0,i);
-    //         var temp = baraja[i];
-    //         baraja[i] = baraja[j];
-    //         baraja[j] = temp;
-    //     }
-    // }
-
-    // Update is called once per frame
     void Update()
     {
         Ronda = GameObject.Find("GameManager").GetComponent<GameManager>().Ronda;
+        Turn = GameObject.Find("TurnCounter").GetComponent<SetTurn>().Turno;
     }
 }
