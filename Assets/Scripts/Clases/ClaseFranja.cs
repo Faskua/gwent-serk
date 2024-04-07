@@ -8,6 +8,7 @@ public class ClaseFranja : MonoBehaviour
     private GameObject Cardentry;
     public GameObject cartagutts;
     public List<GameObject> CardsinFrange;
+    public int Cartas = 0;
     public int Suma = 0;
     public Text puntuationText;
     public string Faction;
@@ -28,6 +29,7 @@ public class ClaseFranja : MonoBehaviour
     {
         Cardentry = collision.gameObject;
         CardsinFrange.Add(Cardentry);
+        Cartas += 1;
     }
 
     public void Grunbeld()
@@ -175,7 +177,10 @@ public class ClaseFranja : MonoBehaviour
     {
         foreach(GameObject carta in CardsinFrange)
         {
-            carta.GetComponent<ClaseCarta>().Power = 1;
+            if(carta.GetComponent<ClaseCarta>().Type != "oro")
+            {
+                carta.GetComponent<ClaseCarta>().Power = 1;
+            }
         }
     }
 
@@ -183,10 +188,13 @@ public class ClaseFranja : MonoBehaviour
     {
         foreach(GameObject card in CardsinFrange)
         {
+            if(card.GetComponent<ClaseCarta>().Type != "oro")
+            {
             if(card.GetComponent<ClaseCarta>().Affected == false)
             {
                 card.GetComponent<ClaseCarta>().Affected = true;
                 card.GetComponent<ClaseCarta>().Power += 1;
+            }
             }
         }
     }
@@ -331,6 +339,7 @@ public class ClaseFranja : MonoBehaviour
                 CardsinFrange.Clear();
                  Suma = 0;
                 puntuationText.text = Suma.ToString();
+                Cartas = 0;
             }
 
              if(Faction == "Falconia")
@@ -343,6 +352,7 @@ public class ClaseFranja : MonoBehaviour
                 CardsinFrange.Clear();
                 Suma = 0;
                 puntuationText.text = Suma.ToString();
+                Cartas = 0;
             }
         }
  

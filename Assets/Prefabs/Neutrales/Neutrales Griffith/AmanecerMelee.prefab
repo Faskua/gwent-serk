@@ -169,7 +169,7 @@ MonoBehaviour:
   OriginalPower: 0
   Power: 0
   DescriptionNskill: Despeje. Elimina los efectos de las cartas de clima en la franja
-    de Cuerpo a Cuerpo
+    propia de Cuerpo a Cuerpo
   Lider: .
   Faction: Falconia
   Type: Clima
@@ -178,7 +178,7 @@ MonoBehaviour:
   Affected: 0
   Sumada: 0
   ShierkeAfectada: 0
-  repartida: 0
+  repartida: 1
 --- !u!61 &-6338083616255988259
 BoxCollider2D:
   m_ObjectHideFlags: 0

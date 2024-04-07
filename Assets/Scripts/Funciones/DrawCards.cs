@@ -85,7 +85,7 @@ public class DrawCards : MonoBehaviour
          if(robo2 == false && Ronda == 2)
         {
             animator.SetTrigger("JRepartir3");
-        for (int i= 0; i < 3; i ++)
+        for (int i= 0; i < 2; i ++)
         {
             verificadordeCarta();
         }

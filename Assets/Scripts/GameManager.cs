@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     private bool Proba;
     private bool Proba2;
     private bool Proba3;
+    public bool Ganador2da = true;
+    public bool Ganador1ra = true;
 
 
     public void WhoWon()
@@ -39,12 +41,14 @@ public class GameManager : MonoBehaviour
             {
                 VictoriasGutts += 1;
                 WinsGuttsText.text = VictoriasGutts.ToString();
+                Ganador1ra = true;
             }
 
             if(ptsGriffith >= ptsGutts)
             {
                 VictoriasGriffith += 1;
                 WinsGriffithText.text = VictoriasGriffith.ToString();
+                Ganador1ra = false;
             }
             Ronda += 1;
         }
@@ -56,12 +60,14 @@ public class GameManager : MonoBehaviour
             {
                 VictoriasGutts += 1;
                 WinsGuttsText.text = VictoriasGutts.ToString();
+                Ganador1ra = true;
             }
 
             if(ptsGriffith >= ptsGutts)
             {
                 VictoriasGriffith += 1;
                 WinsGriffithText.text = VictoriasGriffith.ToString();
+                Ganador1ra = false;
             }
             Ronda += 1;
         }
@@ -73,12 +79,14 @@ public class GameManager : MonoBehaviour
             {
                 VictoriasGutts += 1;
                 WinsGuttsText.text = VictoriasGutts.ToString();
+                Ganador1ra = true;
             }
 
             if(ptsGriffith >= ptsGutts)
             {
                 VictoriasGriffith += 1;
                 WinsGriffithText.text = VictoriasGriffith.ToString();
+                Ganador1ra = false;
             }
             Ronda += 1;
         }
@@ -90,12 +98,14 @@ public class GameManager : MonoBehaviour
             {
                 VictoriasGutts += 1;
                 WinsGuttsText.text = VictoriasGutts.ToString();
+                Ganador1ra = true;
             }
 
             if(ptsGriffith >= ptsGutts)
             {
                 VictoriasGriffith += 1;
                 WinsGriffithText.text = VictoriasGriffith.ToString();
+                Ganador1ra = false;
             }
             Ronda += 1;
         }
@@ -109,12 +119,14 @@ public class GameManager : MonoBehaviour
             {
                 VictoriasGutts += 1;
                 WinsGuttsText.text = VictoriasGutts.ToString();
+                Ganador2da = true;
             }
 
             if(ptsGriffith >= ptsGutts)
             {
                 VictoriasGriffith += 1;
                 WinsGriffithText.text = VictoriasGriffith.ToString();
+                Ganador2da = false;
             }
             Ronda += 1;
         }
@@ -126,12 +138,14 @@ public class GameManager : MonoBehaviour
             {
                 VictoriasGutts += 1;
                 WinsGuttsText.text = VictoriasGutts.ToString();
+                Ganador2da = true;
             }
 
             if(ptsGriffith >= ptsGutts)
             {
                 VictoriasGriffith += 1;
                 WinsGriffithText.text = VictoriasGriffith.ToString();
+                Ganador2da = false;
             }
             Ronda += 1;
         }
@@ -143,12 +157,14 @@ public class GameManager : MonoBehaviour
             {
                 VictoriasGutts += 1;
                 WinsGuttsText.text = VictoriasGutts.ToString();
+                Ganador2da = true;
             }
 
             if(ptsGriffith >= ptsGutts)
             {
                 VictoriasGriffith += 1;
                 WinsGriffithText.text = VictoriasGriffith.ToString();
+                Ganador2da = false;
             }
             Ronda += 1;
         }
@@ -160,12 +176,14 @@ public class GameManager : MonoBehaviour
             {
                 VictoriasGutts += 1;
                 WinsGuttsText.text = VictoriasGutts.ToString();
+                Ganador2da = true;
             }
 
             if(ptsGriffith >= ptsGutts)
             {
                 VictoriasGriffith += 1;
                 WinsGriffithText.text = VictoriasGriffith.ToString();
+                Ganador2da = false;
             }
             Ronda += 1;
         }
@@ -271,7 +289,6 @@ public class GameManager : MonoBehaviour
         else if(PartidaTerminada == false && VictoriasGutts == 2)
         {
             PartidaTerminada = true;
-            Debug.Log("ghg");
             SceneManager.LoadScene(7);
         }
         else if(PartidaTerminada == false && VictoriasGriffith == 2)

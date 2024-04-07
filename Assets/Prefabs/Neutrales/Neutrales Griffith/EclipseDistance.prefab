@@ -303,7 +303,7 @@ MonoBehaviour:
   OriginalPower: 0
   Power: 0
   DescriptionNskill: Maldito Griffith. Reduce uno de poder a todas las cartas en
-    la franja de Distancia
+    ambas franjas de Distancia
   Lider: .
   Faction: Falconia
   Type: Clima
@@ -312,7 +312,7 @@ MonoBehaviour:
   Affected: 0
   Sumada: 0
   ShierkeAfectada: 0
-  repartida: 1
+  repartida: 0
 --- !u!61 &5559838329033616514
 BoxCollider2D:
   m_ObjectHideFlags: 0

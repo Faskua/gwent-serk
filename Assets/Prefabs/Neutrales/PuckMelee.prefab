@@ -169,7 +169,7 @@ MonoBehaviour:
   OriginalPower: 1
   Power: 1
   DescriptionNskill: "El verdadero protagonista de la historia. Devuelve a tu mano
-    la carta m\xE1s poderosa en la franja de Cuerpo a Cuerpo."
+    la carta m\xE1s poderosa en la franja propia de Cuerpo a Cuerpo."
   Lider: .
   Faction: Sacrificios
   Type: "Se\xF1uelo"

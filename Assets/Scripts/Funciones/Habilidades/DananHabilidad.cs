@@ -17,13 +17,23 @@ public class DananHabilidad : MonoBehaviour
     {
         if(jugable)
         {
+            //cant de poder en cada franja
             int p1 = pCC.Danan();
             int p2 = pD.Danan();
             int p3 = pS.Danan();
             int p4 = eCC.Danan();
             int p5 = eD.Danan();
             int p6 = eS.Danan();
-            int poder = (p1 + p2 + p3 + p4 + p5 + p6)/6;
+            //cant de cartas
+            int C1 = pCC.Cartas;
+            int C2 = pD.Cartas;
+            int C3 = pS.Cartas;
+            int C4 = eCC.Cartas;
+            int C5 = eD.Cartas;
+            int C6 = eS.Cartas;
+
+            //promedio
+            int poder = (p1 + p2 + p3 + p4 + p5 + p6)/(C1 + C2 + C3 + C4 + C5 + C6);
 
             pCC.AplicarDanan(poder);
             pD.AplicarDanan(poder);

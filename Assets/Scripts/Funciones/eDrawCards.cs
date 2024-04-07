@@ -86,7 +86,7 @@ public class eDrawCards : MonoBehaviour
         if(robo2 == false && Ronda == 2)
         {
             animator.SetTrigger("ERepartir3");
-        for (int i= 0; i < 3; i ++)
+        for (int i= 0; i < 2; i ++)
         {
             verificadordeCarta();
         }
@@ -96,7 +96,7 @@ public class eDrawCards : MonoBehaviour
         if(robo3 == false && Ronda == 3)
         {
             animator.SetTrigger("ERepartir2");
-        for (int i= 0; i < 4; i ++)
+        for (int i= 0; i < 2; i ++)
         {
             verificadordeCarta();
         }

@@ -31,6 +31,10 @@ public class SetTurn : MonoBehaviour
     private bool Proba2;
     private bool Proba3;
 
+    private bool Ganador1ra;
+    private bool Ganador2da;
+    private int rondita = 2;
+
 
     void Start()
     {
@@ -41,6 +45,9 @@ public class SetTurn : MonoBehaviour
 
     void Update()
     {
+        Ganador1ra = GameObject.Find("GameManager").GetComponent<GameManager>().Ganador1ra;
+        Ganador2da = GameObject.Find("GameManager").GetComponent<GameManager>().Ganador2da;
+
         Guttsusado = GameObject.Find("Gutts").GetComponent<GuttsHabilidad>().Utilizada;
         Griffithusado = GameObject.Find("Griffith").GetComponent<GriffithHabilidad>().Usada;
 
@@ -143,6 +150,28 @@ public class SetTurn : MonoBehaviour
         {
             bloqueo2.sizeDelta = new Vector2(550, 55);
             bloqueo1.sizeDelta = new Vector2(550, 55);
+        }
+
+        //decidiendo de quien es el truno al inicio de la segunda y tercera ronda
+        if(Ronda == rondita && Ganador1ra)
+        {
+            rondita +=1;
+            Turno = true;
+        }
+        else if(Ronda == rondita && Ganador1ra == false)
+        {
+            rondita +=1;
+            Turno = false;
+        }
+        else if(Ronda == rondita && Ganador2da)
+        {
+            rondita +=1;
+            Turno = true;
+        }
+        else if(Ronda == rondita && Ganador2da == false)
+        {
+            rondita +=1;
+            Turno = false;
         }
     }
 }

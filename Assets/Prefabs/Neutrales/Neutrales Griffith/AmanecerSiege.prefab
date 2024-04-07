@@ -169,7 +169,7 @@ MonoBehaviour:
   OriginalPower: 0
   Power: 0
   DescriptionNskill: Despeje. Elimina los efectos de las cartas de clima en la franja
-    de Asedio
+    propia de Asedio
   Lider: .
   Faction: Falconia
   Type: Clima

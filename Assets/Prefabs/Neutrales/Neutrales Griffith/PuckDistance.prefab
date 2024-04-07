@@ -303,7 +303,7 @@ MonoBehaviour:
   OriginalPower: 1
   Power: 1
   DescriptionNskill: "El verdadero protagonista de la historia. Devuelve a tu mano
-    la carta m\xE1s poderosa en la franja de Distancia."
+    la carta m\xE1s poderosa en la franja propia de Distancia."
   Lider: .
   Faction: Falconia
   Type: "Se\xF1uelo"

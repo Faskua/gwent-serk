@@ -303,7 +303,7 @@ MonoBehaviour:
   OriginalPower: 0
   Power: 0
   DescriptionNskill: Despeje. Elimina los efectos de las cartas de clima en la franja
-    de Distancia
+    propia de Distancia
   Lider: .
   Faction: Falconia
   Type: Clima

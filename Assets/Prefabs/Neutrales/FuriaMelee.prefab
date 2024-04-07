@@ -168,7 +168,8 @@ MonoBehaviour:
   Name: Furia
   OriginalPower: 0
   Power: 0
-  DescriptionNskill: Aumenta 1 de Fuerza por carta en la  franja de Cuerpo a Cuerpo
+  DescriptionNskill: Aumenta 1 de Fuerza por carta en la  franja propia de Cuerpo
+    a Cuerpo
   Lider: .
   Faction: Sacrificios
   Type: Clima
@@ -177,7 +178,7 @@ MonoBehaviour:
   Affected: 0
   Sumada: 0
   ShierkeAfectada: 0
-  repartida: 0
+  repartida: 1
 --- !u!61 &-202950040908876285
 BoxCollider2D:
   m_ObjectHideFlags: 0

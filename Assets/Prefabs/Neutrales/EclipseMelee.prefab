@@ -169,7 +169,7 @@ MonoBehaviour:
   OriginalPower: 0
   Power: 0
   DescriptionNskill: Maldito Griffith. Reduce uno de poder a todas las cartas en
-    la franja de Cuerpo a Cuerpo
+    ambas franjas de Cuerpo a Cuerpo
   Lider: .
   Faction: Sacrificios
   Type: Clima
@@ -178,7 +178,7 @@ MonoBehaviour:
   Affected: 0
   Sumada: 0
   ShierkeAfectada: 0
-  repartida: 0
+  repartida: 1
 --- !u!61 &-8263745007792370335
 BoxCollider2D:
   m_ObjectHideFlags: 0

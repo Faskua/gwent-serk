@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5665194212983489423
+--- !u!1 &1226830260519181480
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,50 +8,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4856629973006459743}
-  - component: {fileID: 2465305433935339336}
-  - component: {fileID: 1018789901735737540}
-  m_Layer: 6
+  - component: {fileID: 2565811937060982297}
+  - component: {fileID: 7585722525967429806}
+  - component: {fileID: 3697903983663760033}
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &4856629973006459743
+--- !u!224 &2565811937060982297
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5665194212983489423}
+  m_GameObject: {fileID: 1226830260519181480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1383204260448752303}
+  m_Father: {fileID: 6358605797178037146}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &2465305433935339336
+--- !u!222 &7585722525967429806
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5665194212983489423}
+  m_GameObject: {fileID: 1226830260519181480}
   m_CullTransparentMesh: 1
---- !u!114 &1018789901735737540
+--- !u!114 &3697903983663760033
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5665194212983489423}
+  m_GameObject: {fileID: 1226830260519181480}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &7889376949394653752
+--- !u!1 &5465410762468663202
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,60 +142,57 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1383204260448752303}
-  - component: {fileID: 5456894520157802730}
-  - component: {fileID: 8682828968310956283}
-  - component: {fileID: 8090543112057938874}
-  - component: {fileID: -715555428711121801}
-  - component: {fileID: -6631975111124132315}
-  - component: {fileID: -9200241590667041122}
-  - component: {fileID: 4579686647831551623}
-  - component: {fileID: -5918989091827768444}
-  - component: {fileID: 1749704812214722485}
-  - component: {fileID: 4997035280496323305}
-  - component: {fileID: 5711456492881018732}
-  m_Layer: 6
-  m_Name: FuriaDistance
+  - component: {fileID: 6358605797178037146}
+  - component: {fileID: 8935940217538945509}
+  - component: {fileID: 3057789880874557670}
+  - component: {fileID: 8472895778574713999}
+  - component: {fileID: 7888409088807258076}
+  - component: {fileID: 6210781551465195679}
+  - component: {fileID: 2300757373276497314}
+  - component: {fileID: 4857379214384041290}
+  - component: {fileID: 311387979038805034}
+  m_Layer: 5
+  m_Name: Griffith
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1383204260448752303
+--- !u!224 &6358605797178037146
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
+  m_GameObject: {fileID: 5465410762468663202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4856629973006459743}
+  - {fileID: 2565811937060982297}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -241.9, y: 123.5}
   m_SizeDelta: {x: 40, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &5456894520157802730
+--- !u!222 &8935940217538945509
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
+  m_GameObject: {fileID: 5465410762468663202}
   m_CullTransparentMesh: 1
---- !u!114 &8682828968310956283
+--- !u!114 &3057789880874557670
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
+  m_GameObject: {fileID: 5465410762468663202}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -209,7 +206,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 11a7c51aef1038f4ea591384919d47ec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45fdc9a0a33bf4b459b6cab50a6e8434, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -219,13 +216,13 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8090543112057938874
+--- !u!114 &8472895778574713999
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
+  m_GameObject: {fileID: 5465410762468663202}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -259,24 +256,12 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 8682828968310956283}
+  m_TargetGraphic: {fileID: 3057789880874557670}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4997035280496323305}
-        m_TargetAssemblyTypeName: JugarCarta, Assembly-CSharp
-        m_MethodName: PlayCard
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5711456492881018732}
-        m_TargetAssemblyTypeName: Furia, Assembly-CSharp
+      - m_Target: {fileID: 4857379214384041290}
+        m_TargetAssemblyTypeName: GriffithHabilidad, Assembly-CSharp
         m_MethodName: Efecto
         m_Mode: 1
         m_Arguments:
@@ -287,110 +272,45 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &-715555428711121801
+--- !u!114 &7888409088807258076
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
+  m_GameObject: {fileID: 5465410762468663202}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 466702ee058d23d4186ce6208f66a7f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 0bf33404568d4754898a91d7667ee620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Furia
-  OriginalPower: 0
-  Power: 0
-  DescriptionNskill: Aumenta 1 de Fuerza por carta en la franja propia de Distancia
-  Lider: .
-  Faction: Sacrificios
-  Type: Clima
-  Frange: 5
-  Franja: Distancia
-  Affected: 0
-  Sumada: 0
-  ShierkeAfectada: 0
-  repartida: 0
---- !u!61 &-6631975111124132315
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 40, y: 50}
-  m_EdgeRadius: 0
---- !u!50 &-9200241590667041122
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 7
---- !u!114 &4579686647831551623
+  Name: Griffith
+  DescriptionNskill: "El Karma es mi novio, el Karma es un dios, el Karma es la brisa
+    en mi cabello el fin de se-mana. Usa la carta m\xE1s d\xE9bil del rival en cada
+    franja como sacrificio y las elimina."
+  Lider: "L\xEDder"
+  Faction: Falconia
+--- !u!114 &6210781551465195679
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
+  m_GameObject: {fileID: 5465410762468663202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0fc7a042209cb549a56e598dbd67d5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Card: {fileID: 5465410762468663202}
+  InfoText: {fileID: 9087890962933944297, guid: ba2b26a9d414617469433e8fd4c5d7f0, type: 3}
+--- !u!114 &2300757373276497314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5465410762468663202}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
@@ -401,8 +321,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1749704812214722485}
-          m_TargetAssemblyTypeName: CardInfo, Assembly-CSharp
+        - m_Target: {fileID: 6210781551465195679}
+          m_TargetAssemblyTypeName: CardInfoL, Assembly-CSharp
           m_MethodName: MouseEnter
           m_Mode: 1
           m_Arguments:
@@ -413,7 +333,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: -5918989091827768444}
+        - m_Target: {fileID: 311387979038805034}
           m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
           m_MethodName: OnHoverEnter
           m_Mode: 1
@@ -429,8 +349,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1749704812214722485}
-          m_TargetAssemblyTypeName: CardInfo, Assembly-CSharp
+        - m_Target: {fileID: 6210781551465195679}
+          m_TargetAssemblyTypeName: CardInfoL, Assembly-CSharp
           m_MethodName: MouseExit
           m_Mode: 1
           m_Arguments:
@@ -441,7 +361,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: -5918989091827768444}
+        - m_Target: {fileID: 311387979038805034}
           m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
           m_MethodName: OnHoverExit
           m_Mode: 1
@@ -453,84 +373,34 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &-5918989091827768444
+--- !u!114 &4857379214384041290
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
+  m_GameObject: {fileID: 5465410762468663202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbcb7fa0a2ab14542a08b3f7d14a0780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CC: {fileID: 0}
+  D: {fileID: 0}
+  S: {fileID: 0}
+  turn: 0
+  Usada: 0
+--- !u!114 &311387979038805034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5465410762468663202}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fde165b018780ec4a9ff0476275f170d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Griffith: {fileID: 0}
-  ZoomCard: {fileID: 7889376949394653752}
---- !u!114 &1749704812214722485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b73f25973fa6a3458c65eeebffd91dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Card: {fileID: 7889376949394653752}
-  InfoText: {fileID: 9087890962933944297, guid: ba2b26a9d414617469433e8fd4c5d7f0, type: 3}
---- !u!114 &4997035280496323305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ccaa1dcd57d66f4cba63448c1855250, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Card: {fileID: 7889376949394653752}
-  Turn: 1
-  jugable: 1
-  PartidaTerminada: 0
-  griffithrend: 0
-  guttsrend: 0
-  PHand: {fileID: 0}
-  EHand: {fileID: 0}
-  PMelee: {fileID: 0}
-  PDistance: {fileID: 0}
-  PSiege: {fileID: 0}
-  EMelee: {fileID: 0}
-  EDistance: {fileID: 0}
-  ESiege: {fileID: 0}
-  pCmelee: {fileID: 0}
-  pCdistance: {fileID: 0}
-  pCsiege: {fileID: 0}
-  eCmelee: {fileID: 0}
-  eCdistance: {fileID: 0}
-  eCsiege: {fileID: 0}
-  Bloqueo1: {fileID: 0}
-  Bloqueo2: {fileID: 0}
---- !u!114 &5711456492881018732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 810e02be81660394dae592e3606d264c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pCC: {fileID: 0}
-  pD: {fileID: 0}
-  pS: {fileID: 0}
-  eCC: {fileID: 0}
-  eD: {fileID: 0}
-  eS: {fileID: 0}
-  jugable: 0
+  ZoomCard: {fileID: 5465410762468663202}

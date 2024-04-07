@@ -35,7 +35,6 @@ public class Puck : MonoBehaviour
 
     void Update()
     {
-        
        jugable = gameObject.GetComponent<JugarCarta>().jugable;
        pCC = GameObject.FindGameObjectWithTag("PlayerMelee").GetComponent<ClaseFranja>(); 
        pD = GameObject.FindGameObjectWithTag("PlayerDistance").GetComponent<ClaseFranja>(); 

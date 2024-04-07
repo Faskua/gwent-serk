@@ -303,7 +303,7 @@ MonoBehaviour:
   OriginalPower: 0
   Power: 0
   DescriptionNskill: Despeje. Elimina los efectos de las cartas de clima en la franja
-    de distancia
+    propia de distancia
   Lider: .
   Faction: Sacrificios
   Type: Clima
@@ -312,7 +312,7 @@ MonoBehaviour:
   Affected: 0
   Sumada: 0
   ShierkeAfectada: 0
-  repartida: 0
+  repartida: 1
 --- !u!61 &-3098526989565965765
 BoxCollider2D:
   m_ObjectHideFlags: 0

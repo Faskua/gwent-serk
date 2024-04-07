@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5665194212983489423
+--- !u!1 &231148846883483273
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,50 +8,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4856629973006459743}
-  - component: {fileID: 2465305433935339336}
-  - component: {fileID: 1018789901735737540}
-  m_Layer: 6
+  - component: {fileID: 1696274623093643061}
+  - component: {fileID: 7294435531715362623}
+  - component: {fileID: 3758550533704686660}
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &4856629973006459743
+--- !u!224 &1696274623093643061
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5665194212983489423}
+  m_GameObject: {fileID: 231148846883483273}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1383204260448752303}
+  m_Father: {fileID: 3634633005862784182}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &2465305433935339336
+--- !u!222 &7294435531715362623
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5665194212983489423}
+  m_GameObject: {fileID: 231148846883483273}
   m_CullTransparentMesh: 1
---- !u!114 &1018789901735737540
+--- !u!114 &3758550533704686660
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5665194212983489423}
+  m_GameObject: {fileID: 231148846883483273}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &7889376949394653752
+--- !u!1 &3164935401490516858
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,60 +142,58 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1383204260448752303}
-  - component: {fileID: 5456894520157802730}
-  - component: {fileID: 8682828968310956283}
-  - component: {fileID: 8090543112057938874}
-  - component: {fileID: -715555428711121801}
-  - component: {fileID: -6631975111124132315}
-  - component: {fileID: -9200241590667041122}
-  - component: {fileID: 4579686647831551623}
-  - component: {fileID: -5918989091827768444}
-  - component: {fileID: 1749704812214722485}
-  - component: {fileID: 4997035280496323305}
-  - component: {fileID: 5711456492881018732}
-  m_Layer: 6
-  m_Name: FuriaDistance
+  - component: {fileID: 3634633005862784182}
+  - component: {fileID: 8657170745577413577}
+  - component: {fileID: 6824345973542288605}
+  - component: {fileID: 5958908855899476036}
+  - component: {fileID: 2092070073428229581}
+  - component: {fileID: 250226531673426159}
+  - component: {fileID: 3756378517990216000}
+  - component: {fileID: 7086109969201223020}
+  - component: {fileID: 2286408814793706258}
+  - component: {fileID: 6107414818680108586}
+  m_Layer: 5
+  m_Name: Gutts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1383204260448752303
+--- !u!224 &3634633005862784182
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
+  m_GameObject: {fileID: 3164935401490516858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4856629973006459743}
+  - {fileID: 1696274623093643061}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -241.9, y: -122.873116}
   m_SizeDelta: {x: 40, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &5456894520157802730
+--- !u!222 &8657170745577413577
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
+  m_GameObject: {fileID: 3164935401490516858}
   m_CullTransparentMesh: 1
---- !u!114 &8682828968310956283
+--- !u!114 &6824345973542288605
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
+  m_GameObject: {fileID: 3164935401490516858}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -209,7 +207,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 11a7c51aef1038f4ea591384919d47ec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a08c27271b2c3ad4a819099a79b30f12, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -219,13 +217,13 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8090543112057938874
+--- !u!114 &5958908855899476036
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
+  m_GameObject: {fileID: 3164935401490516858}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -259,13 +257,13 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 8682828968310956283}
+  m_TargetGraphic: {fileID: 6824345973542288605}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4997035280496323305}
-        m_TargetAssemblyTypeName: JugarCarta, Assembly-CSharp
-        m_MethodName: PlayCard
+      - m_Target: {fileID: 7086109969201223020}
+        m_TargetAssemblyTypeName: GuttsHabilidad, Assembly-CSharp
+        m_MethodName: Habilidad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -275,122 +273,44 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5711456492881018732}
-        m_TargetAssemblyTypeName: Furia, Assembly-CSharp
-        m_MethodName: Efecto
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &-715555428711121801
+--- !u!114 &2092070073428229581
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
+  m_GameObject: {fileID: 3164935401490516858}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 466702ee058d23d4186ce6208f66a7f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 0bf33404568d4754898a91d7667ee620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Furia
-  OriginalPower: 0
-  Power: 0
-  DescriptionNskill: Aumenta 1 de Fuerza por carta en la franja propia de Distancia
-  Lider: .
+  Name: "Gutts, El Espadach\xEDn Negro"
+  DescriptionNskill: "H\xE1bil luchador con una cierta inclinaci\xF3n hacia el color
+    negro y mucho, mucho desarrollo de personaje. Entra en el tablero a luchar"
+  Lider: "L\xEDder"
   Faction: Sacrificios
-  Type: Clima
-  Frange: 5
-  Franja: Distancia
-  Affected: 0
-  Sumada: 0
-  ShierkeAfectada: 0
-  repartida: 0
---- !u!61 &-6631975111124132315
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 40, y: 50}
-  m_EdgeRadius: 0
---- !u!50 &-9200241590667041122
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 7
---- !u!114 &4579686647831551623
+--- !u!114 &250226531673426159
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
+  m_GameObject: {fileID: 3164935401490516858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0fc7a042209cb549a56e598dbd67d5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Card: {fileID: 3164935401490516858}
+  InfoText: {fileID: 9087890962933944297, guid: ba2b26a9d414617469433e8fd4c5d7f0, type: 3}
+--- !u!114 &3756378517990216000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3164935401490516858}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
@@ -401,8 +321,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1749704812214722485}
-          m_TargetAssemblyTypeName: CardInfo, Assembly-CSharp
+        - m_Target: {fileID: 250226531673426159}
+          m_TargetAssemblyTypeName: CardInfoL, Assembly-CSharp
           m_MethodName: MouseEnter
           m_Mode: 1
           m_Arguments:
@@ -413,9 +333,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: -5918989091827768444}
+        - m_Target: {fileID: 2286408814793706258}
           m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
-          m_MethodName: OnHoverEnter
+          m_MethodName: AnimEnter
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -429,8 +349,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1749704812214722485}
-          m_TargetAssemblyTypeName: CardInfo, Assembly-CSharp
+        - m_Target: {fileID: 250226531673426159}
+          m_TargetAssemblyTypeName: CardInfoL, Assembly-CSharp
           m_MethodName: MouseExit
           m_Mode: 1
           m_Arguments:
@@ -441,9 +361,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: -5918989091827768444}
+        - m_Target: {fileID: 2286408814793706258}
           m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
-          m_MethodName: OnHoverExit
+          m_MethodName: 
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -453,84 +373,53 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &-5918989091827768444
+--- !u!114 &7086109969201223020
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
+  m_GameObject: {fileID: 3164935401490516858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a648fcc69cb7b744995cce4acf8dbcfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CC: {fileID: 0}
+  Utilizada: 0
+  turn: 0
+--- !u!114 &2286408814793706258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3164935401490516858}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fde165b018780ec4a9ff0476275f170d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Griffith: {fileID: 0}
-  ZoomCard: {fileID: 7889376949394653752}
---- !u!114 &1749704812214722485
-MonoBehaviour:
+  ZoomCard: {fileID: 3164935401490516858}
+--- !u!95 &6107414818680108586
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
+  m_GameObject: {fileID: 3164935401490516858}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b73f25973fa6a3458c65eeebffd91dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Card: {fileID: 7889376949394653752}
-  InfoText: {fileID: 9087890962933944297, guid: ba2b26a9d414617469433e8fd4c5d7f0, type: 3}
---- !u!114 &4997035280496323305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ccaa1dcd57d66f4cba63448c1855250, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Card: {fileID: 7889376949394653752}
-  Turn: 1
-  jugable: 1
-  PartidaTerminada: 0
-  griffithrend: 0
-  guttsrend: 0
-  PHand: {fileID: 0}
-  EHand: {fileID: 0}
-  PMelee: {fileID: 0}
-  PDistance: {fileID: 0}
-  PSiege: {fileID: 0}
-  EMelee: {fileID: 0}
-  EDistance: {fileID: 0}
-  ESiege: {fileID: 0}
-  pCmelee: {fileID: 0}
-  pCdistance: {fileID: 0}
-  pCsiege: {fileID: 0}
-  eCmelee: {fileID: 0}
-  eCdistance: {fileID: 0}
-  eCsiege: {fileID: 0}
-  Bloqueo1: {fileID: 0}
-  Bloqueo2: {fileID: 0}
---- !u!114 &5711456492881018732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889376949394653752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 810e02be81660394dae592e3606d264c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pCC: {fileID: 0}
-  pD: {fileID: 0}
-  pS: {fileID: 0}
-  eCC: {fileID: 0}
-  eD: {fileID: 0}
-  eS: {fileID: 0}
-  jugable: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9d269266011343e499e24382f4558fd1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

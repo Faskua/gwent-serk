@@ -168,7 +168,8 @@ MonoBehaviour:
   Name: Furia
   OriginalPower: 0
   Power: 0
-  DescriptionNskill: Aumenta 1 de Fuerza por carta en la franja de Cuerpo a Cuerpo
+  DescriptionNskill: Aumenta 1 de Fuerza por carta en la franja propia de Cuerpo
+    a Cuerpo
   Lider: .
   Faction: Falconia
   Type: Clima
