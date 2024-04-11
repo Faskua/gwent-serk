@@ -9,14 +9,16 @@ public class Rendirse : MonoBehaviour
     public int CompRonda = 1;
     public ClaseMano PlayerHand;
     public ClaseMano EnemyHand;
+    private bool robaJ;
+    private bool robaE;
 
     public void SeRinde()
     {
-        if(Turn)
+        if(Turn && robaJ)
         {
             PlayerHand.rendido = true;
         }
-        if(Turn == false)
+        if(Turn == false && robaE)
         {
             EnemyHand.rendido = true;
         }
@@ -28,7 +30,8 @@ public class Rendirse : MonoBehaviour
         PlayerHand = GameObject.FindGameObjectWithTag("PlayerHand").GetComponent<ClaseMano>();
         EnemyHand = GameObject.FindGameObjectWithTag("EnemyHand").GetComponent<ClaseMano>();
         Ronda = GameObject.Find("TurnCounter").GetComponent<SetTurn>().Ronda;
-
+        robaJ = GameObject.Find("PlayerDeck").GetComponent<DrawCards>().robo;
+        robaE = GameObject.Find("EnemyDeck").GetComponent<eDrawCards>().robo;
         if(CompRonda != Ronda)
         {
             CompRonda = Ronda;

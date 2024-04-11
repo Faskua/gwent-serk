@@ -49,6 +49,7 @@ public class DrawCards : MonoBehaviour
     private int Ronda = 1; 
     private int position = 0;
     private Animator animator;
+    private AudioSource Seffect;
     private bool Turn;
 
     public List <GameObject> Mazo = new List <GameObject>();
@@ -80,6 +81,7 @@ public class DrawCards : MonoBehaviour
             verificadordeCarta();
         }
         robo = true;
+        Seffect.Play();
         }
 
          if(robo2 == false && Ronda == 2)
@@ -90,6 +92,7 @@ public class DrawCards : MonoBehaviour
             verificadordeCarta();
         }
         robo2 = true;
+        Seffect.Play();
         }
 
          if(robo3 == false && Ronda == 3)
@@ -100,6 +103,7 @@ public class DrawCards : MonoBehaviour
             verificadordeCarta();
         }
         robo3 = true;
+        Seffect.Play();
         }
         }
     }
@@ -108,6 +112,7 @@ public class DrawCards : MonoBehaviour
     void Awake()
     {
         animator = gameObject.GetComponent<Animator>();
+        Seffect = gameObject.GetComponent<AudioSource>();
     }
 
     void Start()

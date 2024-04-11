@@ -27,8 +27,16 @@ public class GameManager : MonoBehaviour
     private bool Proba;
     private bool Proba2;
     private bool Proba3;
-    public bool Ganador2da = true;
-    public bool Ganador1ra = true;
+    public bool Ganador2da;
+    public bool Ganador1ra;
+    public Text nextround;
+    private Animator animnext;
+
+
+    void Awake()
+    {
+        animnext = nextround.GetComponent<Animator>();
+    }
 
 
     public void WhoWon()
@@ -51,6 +59,7 @@ public class GameManager : MonoBehaviour
                 Ganador1ra = false;
             }
             Ronda += 1;
+            animnext.SetTrigger("shownext");
         }
         if(Ronda == 1 && playerRendido && enemyRendido && Proba && Eroba) //ambos se rindieron
         {
@@ -70,6 +79,7 @@ public class GameManager : MonoBehaviour
                 Ganador1ra = false;
             }
             Ronda += 1;
+            animnext.SetTrigger("shownext");
         }
         if(Ronda == 1 && playerRendido && Mano2 == 0 && Proba && Eroba)  //gutts se rindio y griffith no tiene cartas
         {
@@ -89,6 +99,7 @@ public class GameManager : MonoBehaviour
                 Ganador1ra = false;
             }
             Ronda += 1;
+            animnext.SetTrigger("shownext");
         }
         if(Ronda == 1 && Mano1 == 0 && enemyRendido && Proba && Eroba)  //gutts no tiene cartas y griffith se rindio
         {
@@ -108,6 +119,7 @@ public class GameManager : MonoBehaviour
                 Ganador1ra = false;
             }
             Ronda += 1;
+            animnext.SetTrigger("shownext");
         }
 
                     //segunda ronda
@@ -129,6 +141,7 @@ public class GameManager : MonoBehaviour
                 Ganador2da = false;
             }
             Ronda += 1;
+            animnext.SetTrigger("shownext");
         }
         if(Ronda == 2 && playerRendido && enemyRendido && Proba2 && Eroba2)
         {
@@ -148,6 +161,7 @@ public class GameManager : MonoBehaviour
                 Ganador2da = false;
             }
             Ronda += 1;
+            animnext.SetTrigger("shownext");
         }
         if(Ronda == 2 && playerRendido && Mano2 == 0 && Proba2 && Eroba2)
         {
@@ -167,6 +181,7 @@ public class GameManager : MonoBehaviour
                 Ganador2da = false;
             }
             Ronda += 1;
+            animnext.SetTrigger("shownext");
         }
         if(Ronda == 2 && Mano1 == 0 && enemyRendido && Proba2 && Eroba2)
         {
@@ -186,6 +201,7 @@ public class GameManager : MonoBehaviour
                 Ganador2da = false;
             }
             Ronda += 1;
+            animnext.SetTrigger("shownext");
         }
 
                     //tercera ronda

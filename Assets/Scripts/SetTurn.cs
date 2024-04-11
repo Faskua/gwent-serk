@@ -65,6 +65,28 @@ public class SetTurn : MonoBehaviour
         Mano1 = GameObject.Find("PlayerHand").GetComponent<ClaseMano>().Cartas;
         Mano2 = GameObject.Find("EnemyHand").GetComponent<ClaseMano>().Cartas;
 
+         //decidiendo de quien es el truno al inicio de la segunda y tercera ronda
+        if(Ronda == rondita && Ganador1ra)
+        {
+            rondita +=1;
+            Turno = true;
+        }
+        else if(Ronda == rondita && Ganador1ra == false)
+        {
+            rondita +=1;
+            Turno = false;
+        }
+        else if(Ronda == rondita && Ganador2da)
+        {
+            rondita +=1;
+            Turno = true;
+        }
+        else if(Ronda == rondita && Ganador2da == false)
+        {
+            rondita +=1;
+            Turno = false;
+        }
+
         if(Turno && Guttsusado && gutts == 1) // cambiando el turno cuando se usen las habilidades de jefe
         {
             gutts += 1;
@@ -81,7 +103,7 @@ public class SetTurn : MonoBehaviour
        {
         bloqueo2.sizeDelta = new Vector2(0, 0);
         bloqueo1.sizeDelta = new Vector2(550, 55);
-        if(Mano1 == 0 && Ronda == 1 && Proba)
+        if(Mano1 == 0 && Ronda == 1 && Proba) //esto es para cuando te quedes sin cartas le toque solo al oponente
         {
             Turno = false;
         }
@@ -150,28 +172,6 @@ public class SetTurn : MonoBehaviour
         {
             bloqueo2.sizeDelta = new Vector2(550, 55);
             bloqueo1.sizeDelta = new Vector2(550, 55);
-        }
-
-        //decidiendo de quien es el truno al inicio de la segunda y tercera ronda
-        if(Ronda == rondita && Ganador1ra)
-        {
-            rondita +=1;
-            Turno = true;
-        }
-        else if(Ronda == rondita && Ganador1ra == false)
-        {
-            rondita +=1;
-            Turno = false;
-        }
-        else if(Ronda == rondita && Ganador2da)
-        {
-            rondita +=1;
-            Turno = true;
-        }
-        else if(Ronda == rondita && Ganador2da == false)
-        {
-            rondita +=1;
-            Turno = false;
         }
     }
 }

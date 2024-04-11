@@ -51,6 +51,7 @@ public class eDrawCards : MonoBehaviour
     private int position = 0;
     private bool Turn;
     private Animator animator;
+    private AudioSource sEffect;
 
     public List <GameObject> Mazo = new List <GameObject>();
 
@@ -78,9 +79,10 @@ public class eDrawCards : MonoBehaviour
             animator.SetTrigger("ERepartir");
         for (int i= 0; i < 10; i ++)
         {
-            verificadordeCarta();
+           verificadordeCarta();
         }
         robo = true;
+        sEffect.Play();
         }
 
         if(robo2 == false && Ronda == 2)
@@ -88,9 +90,10 @@ public class eDrawCards : MonoBehaviour
             animator.SetTrigger("ERepartir3");
         for (int i= 0; i < 2; i ++)
         {
-            verificadordeCarta();
+           verificadordeCarta();
         }
         robo2 = true;
+        sEffect.Play();
         }
 
         if(robo3 == false && Ronda == 3)
@@ -98,16 +101,19 @@ public class eDrawCards : MonoBehaviour
             animator.SetTrigger("ERepartir2");
         for (int i= 0; i < 2; i ++)
         {
-            verificadordeCarta();
+           verificadordeCarta();
         }
         robo3 = true;
+        sEffect.Play();
         }
         }
     }
 
+
     void Awake()
     {
         animator = gameObject.GetComponent<Animator>();
+        sEffect = gameObject.GetComponent<AudioSource>();
     }
 
 

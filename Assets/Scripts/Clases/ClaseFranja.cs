@@ -224,6 +224,7 @@ public class ClaseFranja : MonoBehaviour
                 card.transform.SetParent(PlayerHand.transform, false);
                 card.transform.position = PlayerHand.transform.position;
                 card.GetComponent<JugarCarta>().jugable = true;
+                card.GetComponent<ClaseCarta>().Power = card.GetComponent<ClaseCarta>().OriginalPower;
                 CardsinFrange.Remove(card);
             }
             if(card.GetComponent<ClaseCarta>().Power == mayor && card.GetComponent<ClaseCarta>().Faction == "Falconia")
@@ -231,6 +232,7 @@ public class ClaseFranja : MonoBehaviour
                 card.transform.SetParent(EnemyHand.transform, false);
                 card.transform.position = EnemyHand.transform.position;
                 card.GetComponent<JugarCarta>().jugable = true;
+                card.GetComponent<ClaseCarta>().Power = card.GetComponent<ClaseCarta>().OriginalPower;
                 CardsinFrange.Remove(card);
             }
             break;
