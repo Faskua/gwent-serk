@@ -209,7 +209,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fbd0679b71f44774aacae09899bb4355, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 57c323c628a2e0344a1caeba4a768f70, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -288,8 +288,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "Gutts, El Espadach\xEDn Negro"
-  OriginalPower: 10
-  Power: 10
+  OriginalPower: 13
+  Power: 13
   DescriptionNskill: "H\xE1bil luchador con una cierta inclinaci\xF3n hacia el color
     negro y mucho, mucho desarrollo de personaje."
   Lider: lider

@@ -15,6 +15,13 @@ TagManager:
   - PlayerDeck
   - EnemyDeck
   - BackgroundMusic
+  - TurnCounter
+  - pClimageM
+  - pClimageD
+  - pClimageS
+  - eClimageM
+  - eClimageD
+  - eClimageS
   layers:
   - Default
   - TransparentFX

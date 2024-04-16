@@ -7,6 +7,7 @@ public class IniciarPartida : MonoBehaviour
 {
     public Animator Transition;
 
+//son los mismos de abajo pero con retraso para dar tiempo a la animacion
     public void AnimComienzo()
     {
         Transition.SetTrigger("Start");
@@ -39,6 +40,12 @@ public class IniciarPartida : MonoBehaviour
         Transition.SetTrigger("Start");
         Invoke("Tutorial4", 1);
     }
+    
+    public void AnimTuto5()
+    {
+        Transition.SetTrigger("Start");
+        Invoke("Tutorial5", 1);
+    }
     public void AnimMenu()
     {
         Transition.SetTrigger("Start");
@@ -50,6 +57,7 @@ public class IniciarPartida : MonoBehaviour
     }
 
 
+//estos metodos no los voy a explicar, son para cambiar de escena
     public void ComenzarJuego()
     {
         SceneManager.LoadScene(1);
@@ -78,6 +86,11 @@ public class IniciarPartida : MonoBehaviour
     public void Tutorial4()
     {
         SceneManager.LoadScene(6);
+    }
+
+    public void Tutorial5()
+    {
+        SceneManager.LoadScene(7);
     }
 
     public void Menu()

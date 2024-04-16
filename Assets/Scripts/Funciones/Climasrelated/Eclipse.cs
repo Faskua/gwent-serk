@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Eclipse : MonoBehaviour
 {
-    public ClaseFranja pCC;
+    public ClaseFranja pCC; //las franjas
     public ClaseFranja pD;
     public ClaseFranja pS;
     public ClaseFranja eCC;
     public ClaseFranja eD;
     public ClaseFranja eS;
-    public bool jugable;
+    public bool jugable; //booleano de si la carta ya se jugo
 
     public void Efecto()
     {
         if(jugable)
         {
-            if(gameObject.GetComponent<ClaseCarta>().Frange == 4)
+            if(gameObject.GetComponent<ClaseCarta>().Frange == 4) //en cada caso llamo a la franja correspondiente y su homologa
             {
                 pCC.Eclipse();
                 eCC.Eclipse();
@@ -37,7 +37,7 @@ public class Eclipse : MonoBehaviour
     void Update()
     {
        jugable = gameObject.GetComponent<JugarCarta>().jugable;
-       pCC = GameObject.FindGameObjectWithTag("PlayerMelee").GetComponent<ClaseFranja>(); 
+       pCC = GameObject.FindGameObjectWithTag("PlayerMelee").GetComponent<ClaseFranja>(); //busco las zonas
        pD = GameObject.FindGameObjectWithTag("PlayerDistance").GetComponent<ClaseFranja>(); 
        pS = GameObject.FindGameObjectWithTag("PlayerSiege").GetComponent<ClaseFranja>(); 
        eCC = GameObject.FindGameObjectWithTag("EnemyMelee").GetComponent<ClaseFranja>(); 

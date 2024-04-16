@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ClaseClima : MonoBehaviour
 {
-     private GameObject Cardentry;
+     private GameObject Cardentry; //el objeto que colisiona
      public List<GameObject> CardsinFrange;
      public string Faction;
      public GameObject CementerioGutts;
@@ -23,7 +23,7 @@ public class ClaseClima : MonoBehaviour
      {
             Ronda =  GameObject.Find("GameManager").GetComponent<GameManager>().Ronda;
 
-        if(ComprobadordeRonda != Ronda)
+        if(ComprobadordeRonda != Ronda) //cuando se termina la ronda se van para el cementerioa
         {
             ComprobadordeRonda = Ronda;
             if(Faction == "Sacrificios")

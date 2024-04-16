@@ -155,6 +155,7 @@ GameObject:
   - component: {fileID: 5950011039044125210}
   - component: {fileID: 1613124836347969958}
   - component: {fileID: 6455007786799794989}
+  - component: {fileID: 3869550353632350153}
   m_Layer: 6
   m_Name: EclipseDistance
   m_TagString: Untagged
@@ -313,7 +314,7 @@ MonoBehaviour:
   Affected: 0
   Sumada: 0
   ShierkeAfectada: 0
-  repartida: 0
+  repartida: 1
 --- !u!61 &5559838329033616514
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -460,6 +461,22 @@ MonoBehaviour:
         - m_Target: {fileID: 4965533533871977441}
           m_TargetAssemblyTypeName: CardZoom, Assembly-CSharp
           m_MethodName: OnHoverEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3869550353632350153}
+          m_TargetAssemblyTypeName: JDevolver, Assembly-CSharp
+          m_MethodName: Devolver
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -632,3 +649,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3869550353632350153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7889376949394653752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef232646949922489542c0a4c42e179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manojugador: {fileID: 0}
+  manoenemiga: {fileID: 0}
+  mazojugador: {fileID: 0}
+  mazoenemigo: {fileID: 0}
+  ZonaDeCarta: {fileID: 0}
+  ZonaDeDescrp: {fileID: 0}

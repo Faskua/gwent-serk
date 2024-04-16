@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class FarnesseHabilidad : MonoBehaviour
 {
-    public GameObject DistanciaClima;
-    public GameObject Clima;
+    public GameObject DistanciaClima;//el clima que se instancia
+    public GameObject Clima;//la franja
     public ClaseFranja eD;
     public ClaseFranja pD;
     private bool jugable;
+    private bool selected = false;
 
     public void Efecto()
     {
-        if(jugable)
+        if(jugable && selected)
         {
-        GameObject Carta = Instantiate(Clima, new Vector2(0,0), Quaternion.identity);
+        GameObject Carta = Instantiate(Clima, new Vector2(0,0), Quaternion.identity);//se instancia el climay se mueve a la franja
         Carta.transform.SetParent(DistanciaClima.transform, false);
-        pD.Eclipse();
+        Carta.transform.position = DistanciaClima.transform.position;
+        pD.Eclipse();//se activa el efecto de clima en las franjas
         eD.Eclipse();
         }
     }
@@ -28,6 +30,7 @@ public class FarnesseHabilidad : MonoBehaviour
 
     void Update()
     {
+        selected = GameObject.Find("CartasGutts").GetComponent<GuttsCards>().GuttsSelected;
         jugable = gameObject.GetComponent<JugarCarta>().jugable;
         pD = GameObject.FindGameObjectWithTag("PlayerDistance").GetComponent<ClaseFranja>(); 
         eD = GameObject.FindGameObjectWithTag("EnemyDistance").GetComponent<ClaseFranja>(); 

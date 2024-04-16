@@ -16,7 +16,7 @@ public class Furia : MonoBehaviour
     {
         if(jugable)
         {
-            if(gameObject.GetComponent<ClaseCarta>().Frange == 4 && gameObject.GetComponent<ClaseCarta>().Faction == "Sacrificios")
+            if(gameObject.GetComponent<ClaseCarta>().Frange == 4 && gameObject.GetComponent<ClaseCarta>().Faction == "Sacrificios")//se aplica el metodod de furia en cada franja particular
             {
                 pCC.Furia();
             }

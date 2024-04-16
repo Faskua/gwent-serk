@@ -285,6 +285,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 3002380999514745326, guid: 66dd8a3a53c877045bd5c24d135038e0, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4971763179132837848, guid: 66dd8a3a53c877045bd5c24d135038e0, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -673,7 +677,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 365389815}
         m_TargetAssemblyTypeName: IniciarPartida, Assembly-CSharp
-        m_MethodName: AnimTuto1
+        m_MethodName: AnimTuto2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -877,7 +881,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 461845397}
         m_TargetAssemblyTypeName: IniciarPartida, Assembly-CSharp
-        m_MethodName: AnimTuto3
+        m_MethodName: AnimTuto4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -997,8 +1001,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'AMANECER
 
-    Se activa solo en una franja propia y anula tanto el efecto
-    del Eclipse como el de la Furia'
+    Cuando es jugada esta carta, todas las cartas de Clima(Eclipse)
+    son eliminadas y mandadas al cementerio'
 --- !u!222 &484901350
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1526,10 +1530,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'FURIA
-
-    Se activa solo en una franja propia y aumenta 1 de poder a
-    cada carta en la franja'
+  m_Text: "FURIA\nSe activa solo en una franja propia y aumenta 1 de poder a cada
+    carta en la franja(El efecto tambi\xE9n se aplica a las cartas que se jueguen
+    despu\xE9s)."
 --- !u!222 &1054778883
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1759,7 +1762,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "ECLIPSE\nEsta carta act\xFAa en ambas franjas, tanto propia como rival.
-    Reduce a 1 el poder de cada carta en la franja"
+    Reduce a 1 el poder de cada carta en la franja(El efecto tambi\xE9n se aplica
+    a las cartas que se jueguen despu\xE9s)."
 --- !u!222 &1498879092
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1825,7 +1829,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7da618f5a207bd34aa9b34552cf63961, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 946ba4436c0d2dd4db0bbec347d21dcb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

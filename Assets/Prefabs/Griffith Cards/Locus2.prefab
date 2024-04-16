@@ -154,6 +154,8 @@ GameObject:
   - component: {fileID: 369362954465424768}
   - component: {fileID: 8595029249511286603}
   - component: {fileID: -4755624825753864846}
+  - component: {fileID: -415409211494060685}
+  - component: {fileID: 9108041241874906027}
   m_Layer: 6
   m_Name: Locus2
   m_TagString: Untagged
@@ -275,6 +277,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: -415409211494060685}
+        m_TargetAssemblyTypeName: LocusHabilidad, Assembly-CSharp
+        m_MethodName: Efecto
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3553454932940865172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,10 +311,11 @@ MonoBehaviour:
   Type: plata
   Frange: 1
   Franja: Cuerpo a Cuerpo
-  Affected: 0
+  BustEffect: 0
+  WeatherEffect: 0
   Sumada: 0
   ShierkeAfectada: 0
-  repartida: 0
+  repartida: 1
 --- !u!50 &-6804536823531244809
 Rigidbody2D:
   serializedVersion: 4
@@ -442,6 +457,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9108041241874906027}
+          m_TargetAssemblyTypeName: JDevolver, Assembly-CSharp
+          m_MethodName: Devolver
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &5311139153369802525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,8 +519,6 @@ MonoBehaviour:
   PartidaTerminada: 0
   griffithrend: 0
   guttsrend: 0
-  PHand: {fileID: 0}
-  EHand: {fileID: 0}
   PMelee: {fileID: 0}
   PDistance: {fileID: 0}
   PSiege: {fileID: 0}
@@ -600,3 +629,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-415409211494060685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560637067181593745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70fa0e09e8087c142a3c18b36659d48a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  furia: {fileID: 5664656029312683538, guid: 0875b53c9a7f8ac4f9827966938f6877, type: 3}
+  cuerpo: {fileID: 0}
+  EnemyMelee: {fileID: 0}
+--- !u!114 &9108041241874906027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560637067181593745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef232646949922489542c0a4c42e179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manojugador: {fileID: 0}
+  manoenemiga: {fileID: 0}
+  mazojugador: {fileID: 0}
+  mazoenemigo: {fileID: 0}
+  ZonaDeCarta: {fileID: 0}
+  ZonaDeDescrp: {fileID: 0}

@@ -288,7 +288,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: "Gutts, El Espadach\xEDn Negro"
   DescriptionNskill: "H\xE1bil luchador con una cierta inclinaci\xF3n hacia el color
-    negro y mucho, mucho desarrollo de personaje. Entra en el tablero a luchar"
+    negro y mucho, mucho desarrollo de personaje. Entra en el tablero a luchar si
+    se encuentra Casca jugando"
   Lider: "L\xEDder"
   Faction: Sacrificios
 --- !u!114 &250226531673426159

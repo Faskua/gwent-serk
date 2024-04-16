@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class ClaseMano : MonoBehaviour
 {
-     private GameObject Cardentry;
+     private GameObject Cardentry; //objeto que colisiona
      public List<GameObject> CardsinFrange;
      public int Cartas = 0;
-     public bool rendido = false;
+     public int CartasDevueltas = 0;
+     public bool rendido = false;//booleano para guardar si el jugador se rinde o no
 
      private void OnCollisionEnter2D(Collision2D collision) //cuando colisionan mete las cartas en la lista de la franja 
      {

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class eDrawCards : MonoBehaviour
-{
+{//es lo mismo que el drawcards pero para el enemigo
     public GameObject Card1;
     public GameObject Card2;
     public GameObject Card3;
@@ -42,7 +42,8 @@ public class eDrawCards : MonoBehaviour
     public GameObject Card35;
     public GameObject Card36;
 
-    public GameObject Hand;
+    private GameObject Hand;
+    private int compCartas = 0;
     public bool robo = false;
     public bool robo2 = false;
     public bool robo3 = false;
@@ -69,42 +70,55 @@ public class eDrawCards : MonoBehaviour
             verificadordeCarta();
         }
     }
-
+    public void AnimClick()
+    {
+        if( Turn == false )
+        {animator.SetTrigger("ERepartir");
+        sEffect.Play();
+        Invoke("Clicked", 1);}
+    }
     public void Clicked()
     {
         if(Turn == false)
         {
+            compCartas = Hand.GetComponent<ClaseMano>().Cartas;
         if(robo == false)
         {
-            animator.SetTrigger("ERepartir");
         for (int i= 0; i < 10; i ++)
         {
-           verificadordeCarta();
+           if(compCartas < 10)
+            {
+            verificadordeCarta();
+            compCartas += 1;
+            }
         }
         robo = true;
-        sEffect.Play();
         }
 
         if(robo2 == false && Ronda == 2)
         {
-            animator.SetTrigger("ERepartir3");
         for (int i= 0; i < 2; i ++)
         {
-           verificadordeCarta();
+           if(compCartas < 10)
+            {
+            verificadordeCarta();
+            compCartas += 1;
+            }
         }
         robo2 = true;
-        sEffect.Play();
         }
 
         if(robo3 == false && Ronda == 3)
         {
-            animator.SetTrigger("ERepartir2");
         for (int i= 0; i < 2; i ++)
         {
-           verificadordeCarta();
+           if(compCartas < 10)
+            {
+            verificadordeCarta();
+            compCartas += 1;
+            }
         }
         robo3 = true;
-        sEffect.Play();
         }
         }
     }
@@ -115,8 +129,6 @@ public class eDrawCards : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
         sEffect = gameObject.GetComponent<AudioSource>();
     }
-
-
     void Start()
     {
         
@@ -159,13 +171,15 @@ public class eDrawCards : MonoBehaviour
 
        foreach(GameObject card in Mazo)
         {
+            card.GetComponent<ClaseCarta>().BustEffect = false;
+            card.GetComponent<ClaseCarta>().WeatherEffect = false;
             card.GetComponent<ClaseCarta>().repartida = false;
         }
        
     }
-
     void Update()
     {
+        Hand = GameObject.Find("EnemyHand");
         Ronda = GameObject.Find("GameManager").GetComponent<GameManager>().Ronda;
         Turn = GameObject.Find("TurnCounter").GetComponent<SetTurn>().Turno;
     }

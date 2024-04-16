@@ -11,21 +11,26 @@ public class Rendirse : MonoBehaviour
     public ClaseMano EnemyHand;
     private bool robaJ;
     private bool robaE;
+   // private bool griffElige;
+    //private bool guttsElige;
 
     public void SeRinde()
     {
-        if(Turn && robaJ)
+        if(Turn && robaJ)// && guttsElige)
         {
             PlayerHand.rendido = true;
         }
-        if(Turn == false && robaE)
+        if(Turn == false && robaE )//&& griffElige)
         {
             EnemyHand.rendido = true;
         }
     }
 
     void Update()
-    {
+    {   
+        //guttsElige = GameObject.Find("CartasGutts").GetComponent<chosencardsgutts>().chosecards;
+        //griffElige = GameObject.Find("CartasGriffith").GetComponent<chosencardsgrif>().chosecards;
+
         Turn = GameObject.Find("TurnCounter").GetComponent<SetTurn>().Turno;
         PlayerHand = GameObject.FindGameObjectWithTag("PlayerHand").GetComponent<ClaseMano>();
         EnemyHand = GameObject.FindGameObjectWithTag("EnemyHand").GetComponent<ClaseMano>();

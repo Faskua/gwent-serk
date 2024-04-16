@@ -6,6 +6,6 @@ public class SoundIdentifyer : MonoBehaviour
 {
     void Start()
     {
-        GameObject.FindGameObjectWithTag("BackgroundMusic").GetComponent<SoundController>().PlaySong();
+        GameObject.FindGameObjectWithTag("BackgroundMusic").GetComponent<SoundController>().PlaySong(); 
     }
 }

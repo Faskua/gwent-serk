@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 7770697046811179200}
   - component: {fileID: -3570545642727627455}
   - component: {fileID: -3339826387644768543}
+  - component: {fileID: -8739619836850166283}
   m_Layer: 6
   m_Name: EclipseSiege
   m_TagString: Untagged
@@ -321,6 +322,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: -8739619836850166283}
+          m_TargetAssemblyTypeName: JDevolver, Assembly-CSharp
+          m_MethodName: Devolver
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &7244622268412587725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,6 +515,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-8739619836850166283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525376186561288315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef232646949922489542c0a4c42e179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manojugador: {fileID: 0}
+  manoenemiga: {fileID: 0}
+  mazojugador: {fileID: 0}
+  mazoenemigo: {fileID: 0}
+  ZonaDeCarta: {fileID: 0}
+  ZonaDeDescrp: {fileID: 0}
 --- !u!1 &8113310705187874826
 GameObject:
   m_ObjectHideFlags: 0

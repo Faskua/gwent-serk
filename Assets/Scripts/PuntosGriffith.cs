@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class PuntosGriffith : MonoBehaviour
 {
-    public Text griffithText; 
+    public Text griffithText;  //text donde guardo los puntos totales de griffith
+    //recibo las 3 zonas de griffith
     public GameObject eCC;
     public GameObject eD;
     public GameObject eS;
@@ -15,8 +16,8 @@ public class PuntosGriffith : MonoBehaviour
     void Update()
     {
         int semisuma = 0;
-        semisuma = eCC.GetComponent<ClaseFranja>().Suma + eD.GetComponent<ClaseFranja>().Suma + eS.GetComponent<ClaseFranja>().Suma;
+        semisuma = eCC.GetComponent<ClaseFranja>().Suma + eD.GetComponent<ClaseFranja>().Suma + eS.GetComponent<ClaseFranja>().Suma; //sumo las sumas particulares de cada zona 
         sumagriffith = semisuma;
-        griffithText.text = sumagriffith.ToString();  
+        griffithText.text = sumagriffith.ToString();  //la pongo en el text
     }
 }

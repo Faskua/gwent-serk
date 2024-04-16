@@ -9,10 +9,11 @@ public class Puck : MonoBehaviour
     public ClaseFranja eCC;
     public ClaseFranja eD;
     public bool jugable;
+    private bool selected = false;
 
     public void Efecto()
     {
-        if(jugable)
+        if(jugable && selected) //llamando a los metodos de puck que tengo en cada franja
         {
             if(gameObject.GetComponent<ClaseCarta>().Faction == "Sacrificios" && gameObject.GetComponent<ClaseCarta>().Frange == 11)
             {
@@ -35,6 +36,7 @@ public class Puck : MonoBehaviour
 
     void Update()
     {
+       selected = GameObject.Find("CartasGutts").GetComponent<GuttsCards>().GuttsSelected;
        jugable = gameObject.GetComponent<JugarCarta>().jugable;
        pCC = GameObject.FindGameObjectWithTag("PlayerMelee").GetComponent<ClaseFranja>(); 
        pD = GameObject.FindGameObjectWithTag("PlayerDistance").GetComponent<ClaseFranja>(); 

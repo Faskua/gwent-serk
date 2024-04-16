@@ -16,7 +16,7 @@ public class CardInfoL : MonoBehaviour
     }
 
      public void MouseEnter()
-    {
+    {//es lo mismo que el otro pero con otros valores
         InfoText.text = Card.GetComponent<CartasdeLider>().Name + ". LÍDER DE FACCIÓN. DESCRIPCIÓN: " + Card.GetComponent<CartasdeLider>().DescriptionNskill + ". FACCIÓN: " + Card.GetComponent<CartasdeLider>().Faction;
         Information = Instantiate(InfoText, new Vector2(0,0), Quaternion.identity);
         Information.transform.SetParent(DescriptionText.transform, false);
@@ -25,6 +25,6 @@ public class CardInfoL : MonoBehaviour
 
     public void MouseExit()
     {
-       Destroy(Information);
+       Destroy(Information.gameObject);
     }
 }

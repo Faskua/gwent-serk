@@ -18,11 +18,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Tuto.unity
     guid: 55a05f033cce918448d8689cd94d5348
   - enabled: 1
+    path: Assets/Scenes/Gutts y Griffith.unity
+    guid: c6c69493d72bdfa43ad06e6d36cd98f0
+  - enabled: 1
     path: Assets/Scenes/Tuto2.unity
     guid: 05518b24e49693b46bb07147899eedce
   - enabled: 1
     path: Assets/Scenes/Tuto3.unity
-    guid: 441d960b81e419645811a98a4cc903a1
+    guid: 8cde9d0169181e24d90d90b42d1c3519
   - enabled: 1
     path: Assets/Scenes/Tuto4.unity
     guid: b39939298e7d0cf4f831a401b16f1d64

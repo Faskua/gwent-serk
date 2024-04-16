@@ -10,7 +10,7 @@ public class ERendirse : MonoBehaviour
     public ClaseMano PlayerHand;
     public ClaseMano EnemyHand;
 
-    public void SeRinde()
+    public void SeRinde()//si se activa cuando el turno es verdadero vuelve verdadero el booleano de que se rindio gutts, lo mismo con griffith
     {
         if(Turn)
         {
@@ -29,7 +29,7 @@ public class ERendirse : MonoBehaviour
         EnemyHand = GameObject.FindGameObjectWithTag("EnemyHand").GetComponent<ClaseMano>();
         Ronda = GameObject.Find("TurnCounter").GetComponent<SetTurn>().Ronda;
 
-        if(CompRonda != Ronda)
+        if(CompRonda != Ronda) //cuando hay cambio de ronda se regresa a falso los booleanos de rendido
         {
             CompRonda = Ronda;
             PlayerHand.rendido = false;

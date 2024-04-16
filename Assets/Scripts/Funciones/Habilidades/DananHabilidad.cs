@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class DananHabilidad : MonoBehaviour
 {
-    public ClaseFranja pCC;
+    public ClaseFranja pCC; //las franjas
     public ClaseFranja pD;
     public ClaseFranja pS;
     public ClaseFranja eCC;
     public ClaseFranja eD;
     public ClaseFranja eS;
     public bool jugable;
+    private bool selected = false;
     
 
     public void Efecto()
     {
-        if(jugable)
+        if(jugable && selected)
         {
             //cant de poder en cada franja
             int p1 = pCC.Danan();
@@ -42,12 +43,12 @@ public class DananHabilidad : MonoBehaviour
             eD.AplicarDanan(poder);
             eS.AplicarDanan(poder);
 
-            gameObject.GetComponent<ClaseCarta>().Power = poder;
         }
     }
 
     void Update()
     {
+       selected = GameObject.Find("CartasGutts").GetComponent<GuttsCards>().GuttsSelected;
        pCC = GameObject.FindGameObjectWithTag("PlayerMelee").GetComponent<ClaseFranja>(); 
        pD = GameObject.FindGameObjectWithTag("PlayerDistance").GetComponent<ClaseFranja>(); 
        pS = GameObject.FindGameObjectWithTag("PlayerSiege").GetComponent<ClaseFranja>(); 

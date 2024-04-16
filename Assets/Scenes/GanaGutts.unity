@@ -1049,6 +1049,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 232333844}
     m_Modifications:
     - target: {fileID: 1402859811004761572, guid: a05d09a295359ab45b533e063f7579a9, type: 3}
+      propertyPath: Priority
+      value: 103
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402859811004761572, guid: a05d09a295359ab45b533e063f7579a9, type: 3}
       propertyPath: m_Volume
       value: 0.15
       objectReference: {fileID: 0}
@@ -1056,6 +1060,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: e6d4aa4b00ca3044381d642b8b1f697f, type: 3}
+    - target: {fileID: 1402859811004761572, guid: a05d09a295359ab45b533e063f7579a9, type: 3}
+      propertyPath: BypassReverbZones
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5688764673087657844, guid: a05d09a295359ab45b533e063f7579a9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
