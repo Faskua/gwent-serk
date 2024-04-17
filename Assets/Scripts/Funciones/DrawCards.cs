@@ -40,8 +40,6 @@ public class DrawCards : MonoBehaviour
     public GameObject Card32;
     public GameObject Card33;
     public GameObject Card34;
-    public GameObject Card35;
-    public GameObject Card36;
 
     private GameObject Hand;
     private int compCartas = 0;
@@ -167,8 +165,6 @@ public class DrawCards : MonoBehaviour
         Mazo.Add(Card32);
         Mazo.Add(Card33);
         Mazo.Add(Card34);
-        Mazo.Add(Card35);
-        Mazo.Add(Card36);
 
     foreach(GameObject card in Mazo)//al principio de la partida hace que todas las cartas sean repartibles, y que se pueda usar el metodo de clima y aumento
         {

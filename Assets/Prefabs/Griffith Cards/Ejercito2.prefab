@@ -311,10 +311,11 @@ MonoBehaviour:
   Type: plata
   Frange: 3
   Franja: Asedio
-  Affected: 0
+  BustEffect: 0
+  WeatherEffect: 0
   Sumada: 0
   ShierkeAfectada: 0
-  repartida: 1
+  repartida: 0
 --- !u!50 &5273490355232306465
 Rigidbody2D:
   serializedVersion: 4
@@ -518,8 +519,6 @@ MonoBehaviour:
   PartidaTerminada: 0
   griffithrend: 0
   guttsrend: 0
-  PHand: {fileID: 0}
-  EHand: {fileID: 0}
   PMelee: {fileID: 0}
   PDistance: {fileID: 0}
   PSiege: {fileID: 0}

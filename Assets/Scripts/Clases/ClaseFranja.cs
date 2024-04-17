@@ -17,21 +17,18 @@ public class ClaseFranja : MonoBehaviour
     public int franja;
     public bool AfectadoPorClima = false;//booleano para activar el eclipse
     public bool AfectadoPorAumento = false;//booleano par activar la furia
+    public int cantMule = 0;
+    public int compMule = 0;
 
     private GameObject Cardentry;//objeto que colisiona
     private GameObject PlayerHand;//las manos
     private GameObject EnemyHand;
     private int ComprobadordeRonda = 1;
     private int Ronda = 1;
+    private bool efectoMule;
     private bool efectogrunbeld;//booleano para parar la habilidad de grunbeld
     private int sumaparcial = 0;
     private bool selected = false; //para que no se ejecute el efecto sin que se hayan aceptado las cartas 
-    private ClaseFranja pCC; //las 6 franjas
-    private ClaseFranja pD;
-    private ClaseFranja pS;
-    private ClaseFranja eCC;
-    private ClaseFranja eD;
-    private ClaseFranja eS;
 
      private void OnCollisionEnter2D(Collision2D collision) //cuando colisionan mete las cartas en la lista de la franja 
     {
@@ -47,31 +44,6 @@ public class ClaseFranja : MonoBehaviour
          {Card.GetComponent<ClaseCarta>().Power +=2;}
       }
     }
-    public void Griffith()
-    {
-        if(Faction == "Sacrificios")
-        {
-            if(CardsinFrange.Count == 1 || CardsinFrange.Count > 1)
-            {
-            int menor = CardsinFrange[0].GetComponent<ClaseCarta>().Power;
-            for(int i = 0; i < CardsinFrange.Count; i++)//en este for busco la carta con menos poder
-            {
-                menor = Mathf.Min(menor, CardsinFrange[i].GetComponent<ClaseCarta>().Power);
-            }
-            
-            foreach(GameObject cartas in CardsinFrange)
-            {
-                if(cartas.GetComponent<ClaseCarta>().Power == menor)//encuentro la carta mas debil, la muevo del cementerio y la borro de la lista
-                {
-                    cartas.transform.SetParent(CementerioGutts.transform, true);
-                    cartas.transform.position = CementerioGutts.transform.position;
-                    CardsinFrange.Remove(cartas);
-                    break;
-                }
-            }
-            }
-        }
-    }
     public void Gutts()
     {
         foreach(GameObject Carta in CardsinFrange)
@@ -81,29 +53,51 @@ public class ClaseFranja : MonoBehaviour
                 GameObject Gutts = Instantiate(cartagutts, new Vector2(0,0), Quaternion.identity);
                 Gutts.transform.SetParent(CuerpoaCuerpo.transform, false);
                 Gutts.transform.position = CuerpoaCuerpo.transform.position;
-                break;
+                Cartas += 1;
+                return;
             }
         }
     }
+
+    public int  Casca()
+    {
+        if(CardsinFrange.Count >= 1)
+        {
+        int menor = CardsinFrange[0].GetComponent<ClaseCarta>().Power; // saca la carta con menos poder
+            for(int i = 0; i < CardsinFrange.Count; i++)
+            {
+                menor = Mathf.Min(menor, CardsinFrange[i].GetComponent<ClaseCarta>().Power);
+            }
+        return menor;
+        }
+        else{return 3000;} // si la franja esta vacia devuelve 3000
+    }
+
+    public void AplicarCasca(int puntos)
+    {
+        foreach (var card in CardsinFrange) //si coincide alguna carta con el parametro que recibe, la manda al cementerio
+        {
+            if(card.GetComponent<ClaseCarta>().Power == puntos)
+            {
+                card.transform.position = CementerioGriffith.transform.position;
+                card.transform.SetParent(CementerioGriffith.transform, true);
+                CardsinFrange.Remove(card);
+                Cartas -= 1;
+                return;
+            }
+        }
+    }
+
     public void SkelletonKnight()
     {
         if(CardsinFrange.Count == 1 || CardsinFrange.Count > 1)
         {
-            int mayor = CardsinFrange[0].GetComponent<ClaseCarta>().Power;
-            for(int i = 0; i < CardsinFrange.Count; i++)//aqui busco el mayor
-            {
-                mayor = Mathf.Max(mayor, CardsinFrange[i].GetComponent<ClaseCarta>().Power);
-            }
-            foreach(GameObject card in CardsinFrange)
-            {
-                if(card.GetComponent<ClaseCarta>().Power == mayor)//cuando encuentre el mayor la mueve al cementerio y la elimina de la lista
-                {
-                    card.transform.position = CementerioGriffith.transform.position;
-                    card.transform.SetParent(CementerioGriffith.transform, true);
-                    CardsinFrange.Remove(card);
-                    break;
-                }
-            }
+            int Rand = Random.Range(0, CardsinFrange.Count);
+            CardsinFrange[Rand].transform.position = CementerioGriffith.transform.position;
+            CardsinFrange[Rand].transform.SetParent(CementerioGriffith.transform, true);
+            CardsinFrange.Remove(CardsinFrange[Rand]);
+            
+                Cartas -= 1;
         }
     }
     public void Irvine()
@@ -122,9 +116,11 @@ public class ClaseFranja : MonoBehaviour
                     card.transform.position = CementerioGutts.transform.position;
                     card.transform.SetParent(CementerioGutts.transform, true);
                     CardsinFrange.Remove(card);
-                    break;
+                    return;
                 }
             }
+            
+                Cartas -= 1;
         }
     }
     public int Danan() //con este metodo primero sumo todas las cartas de la franja y lo devuelvo para utilizarlo en otro script
@@ -171,6 +167,8 @@ public class ClaseFranja : MonoBehaviour
                 CardsinFrange.Clear();
                 }
             }
+            
+                Cartas = 0;
         }
     }
     public void Eclipse()
@@ -252,7 +250,7 @@ public class ClaseFranja : MonoBehaviour
         
         return CantCartas;
     }
-    public void AplicarEjercitos() //en este metod hago lo mismo pero aqui despues multiplico el poder original de la carta por la cantidad de cartas que hay
+    public void AplicarEjercitos() //en este metodo hago lo mismo pero aqui despues multiplico el poder original de la carta por la cantidad de cartas que hay
     {
         int CantCartas = 1;
 
@@ -289,30 +287,51 @@ public class ClaseFranja : MonoBehaviour
         }
         }
     }
-    // public void Locus()
-    // {
-    //     if(CardsinFrange.Count == 1 || CardsinFrange.Count > 1)
-    //     {
-    //         foreach(GameObject Card in CardsinFrange)
-    //     {
-    //     if(Card.GetComponent<ClaseCarta>().Type == "plata")
-    //      {Card.GetComponent<ClaseCarta>().Power +=1;}
-    //     }
-    //     }
-    // }
+    public int ObtenerMayor()
+    {
+        int mayor = 0;
+        foreach(GameObject carta in CardsinFrange) //literal obtener el mayor
+        {
+            mayor = Mathf.Max(mayor, carta.GetComponent<ClaseCarta>().Power);
+        }
+        return mayor;
+    }
+
+    public void EliminarMayor(int puntos)
+    {
+        if(CardsinFrange.Count == 1 || CardsinFrange.Count > 1)
+        {
+            foreach(GameObject card in CardsinFrange)
+            {
+                if(card.GetComponent<ClaseCarta>().Power == puntos && Faction == "Sacrificios") //si la carta carta mayor es de sacrificios lo manda al primer cementerio
+                {
+                    card.transform.position = CementerioGutts.transform.position;
+                    card.transform.SetParent(CementerioGutts.transform, true);
+                    CardsinFrange.Remove(card);
+                    return;
+                }
+                else if(card.GetComponent<ClaseCarta>().Power == puntos && Faction == "Falconia") // sino, lo manda al segundo
+                {
+                    card.transform.position = CementerioGriffith.transform.position;
+                    card.transform.SetParent(CementerioGriffith.transform, true);
+                    CardsinFrange.Remove(card);
+                    return;
+                }
+            }
+        }
+    }
+    
+    void Start()
+    {
+        cantMule = 0;
+        compMule = 0;
+    }
     void Update() //lo tengo todo muy regado aqui
     {
         selected = GameObject.Find("CartasGriffith").GetComponent<GriffCards>().GrifSelected; //busco el booleano para no usar a grunbeld desde antes de elegir
         Ronda =  GameObject.Find("GameManager").GetComponent<GameManager>().Ronda;
         PlayerHand = GameObject.Find("PlayerHand");
         EnemyHand = GameObject.Find("EnemyHand");
-        Cartas = CardsinFrange.Count;
-       pCC = GameObject.FindGameObjectWithTag("PlayerMelee").GetComponent<ClaseFranja>();  //busco las 6 franjas
-       pD = GameObject.FindGameObjectWithTag("PlayerDistance").GetComponent<ClaseFranja>(); 
-       pS = GameObject.FindGameObjectWithTag("PlayerSiege").GetComponent<ClaseFranja>(); 
-       eCC = GameObject.FindGameObjectWithTag("EnemyMelee").GetComponent<ClaseFranja>(); 
-       eD = GameObject.FindGameObjectWithTag("EnemyDistance").GetComponent<ClaseFranja>(); 
-       eS = GameObject.FindGameObjectWithTag("EnemySiege").GetComponent<ClaseFranja>();  
 
 
         sumaparcial = 0;
@@ -351,19 +370,11 @@ public class ClaseFranja : MonoBehaviour
                 Suma = 0;
                 puntuationText.text = Suma.ToString();
             }
-            //aqui reinicio todas las franjas para que puedan ser afectadas por climas o aumentos
-            pCC.AfectadoPorAumento = false;
-            pCC.AfectadoPorClima = false;
-            pD.AfectadoPorAumento = false;
-            pD.AfectadoPorClima = false;
-            pS.AfectadoPorAumento = false;
-            pS.AfectadoPorClima = false;
-            eCC.AfectadoPorAumento = false;
-            eCC.AfectadoPorClima = false;
-            eD.AfectadoPorAumento = false;
-            eD.AfectadoPorClima = false;
-            eS.AfectadoPorAumento = false;
-            eS.AfectadoPorClima = false;
+            //aqui reinicio la franja para que pueda ser afectada por climas o aumentos
+            AfectadoPorAumento = false;
+            AfectadoPorClima = false;
+            cantMule = 0;
+            compMule = 0;
         }
  
         //efecto de grunbeld
@@ -376,6 +387,27 @@ public class ClaseFranja : MonoBehaviour
             }
         }
 
+        //efecto Mule
+        compMule = 0;
+        foreach (GameObject item in CardsinFrange) //busco por todas las cartas de la franja y guardo la cantidad de mule
+        {
+            if(item.GetComponent<ClaseCarta>().Name == "Mule Wolflame")
+            {
+                compMule += 1;
+            }
+        }
+        cantMule = compMule;
+        if(cantMule == 3)
+        {
+        foreach(GameObject card in CardsinFrange) //si son 3, le sumo 2 de poder a cada uno
+        {
+            if(card.GetComponent<ClaseCarta>().Name == "Mule Wolflame" && efectoMule && selected)
+            {
+                efectoMule = false;
+                card.GetComponent<ClaseCarta>().Power += 2;
+            }
+        }
+        }
 
         //efecto continuo de Clima
         if(AfectadoPorClima)

@@ -291,13 +291,15 @@ MonoBehaviour:
   Name: Mule Wolflame
   OriginalPower: 1
   Power: 1
-  DescriptionNskill: "jaja la ni\xF1era"
+  DescriptionNskill: "jaja la ni\xF1era.Si se encuentran los 3 Mule en el campo se
+    le suma 2 de poder a cada uno"
   Lider: no lider
   Faction: Falconia
   Type: plata
   Frange: 1
   Franja: Cuerpo a Cuerpo
-  Affected: 0
+  BustEffect: 0
+  WeatherEffect: 0
   Sumada: 0
   ShierkeAfectada: 0
   repartida: 0
@@ -504,8 +506,6 @@ MonoBehaviour:
   PartidaTerminada: 0
   griffithrend: 0
   guttsrend: 0
-  PHand: {fileID: 0}
-  EHand: {fileID: 0}
   PMelee: {fileID: 0}
   PDistance: {fileID: 0}
   PSiege: {fileID: 0}

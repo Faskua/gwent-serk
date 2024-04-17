@@ -155,6 +155,7 @@ GameObject:
   - component: {fileID: -6408631806450606430}
   - component: {fileID: 4406102890453347164}
   - component: {fileID: 807752432185595798}
+  - component: {fileID: 762035564564841419}
   m_Layer: 6
   m_Name: Rosine3
   m_TagString: Untagged
@@ -276,6 +277,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 762035564564841419}
+        m_TargetAssemblyTypeName: Rosine, Assembly-CSharp
+        m_MethodName: Efecto
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3553454932940865172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,16 +305,18 @@ MonoBehaviour:
   OriginalPower: 4
   Power: 4
   DescriptionNskill: "Ella solo quer\xEDa ser Tinkerbell, matar a todas esas personas
-    por diversi\xF3n no era parte del plan :c"
+    por diversi\xF3n no era parte del plan :c. No distingue de aliados o enemigos
+    y elimina la carta m\xE1s poderosa en el campo"
   Lider: no lider
   Faction: Falconia
   Type: plata
   Frange: 2
   Franja: Distancia
-  Affected: 0
+  BustEffect: 0
+  WeatherEffect: 0
   Sumada: 0
   ShierkeAfectada: 0
-  repartida: 1
+  repartida: 0
 --- !u!50 &191165619554689082
 Rigidbody2D:
   serializedVersion: 4
@@ -505,8 +520,6 @@ MonoBehaviour:
   PartidaTerminada: 0
   griffithrend: 0
   guttsrend: 0
-  PHand: {fileID: 0}
-  EHand: {fileID: 0}
   PMelee: {fileID: 0}
   PDistance: {fileID: 0}
   PSiege: {fileID: 0}
@@ -635,3 +648,22 @@ MonoBehaviour:
   mazoenemigo: {fileID: 0}
   ZonaDeCarta: {fileID: 0}
   ZonaDeDescrp: {fileID: 0}
+--- !u!114 &762035564564841419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560637067181593745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fb7ebc80eaff0a469637751d1435876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerCC: {fileID: 0}
+  PlayerD: {fileID: 0}
+  PlayerS: {fileID: 0}
+  EnemyCC: {fileID: 0}
+  EnemyD: {fileID: 0}
+  EnemyS: {fileID: 0}
+  jugable: 0

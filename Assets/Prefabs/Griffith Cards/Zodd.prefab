@@ -302,8 +302,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Zodd, El Inmortal
-  OriginalPower: 8
-  Power: 8
+  OriginalPower: 7
+  Power: 7
   DescriptionNskill: El guardaespaldas personal de Griffith (el caballero de la calavera
     es su crush). Destruye por completo la franja enemiga con menos cartas (Solo
     funciona entre 1 y 3 cartas).
@@ -312,7 +312,8 @@ MonoBehaviour:
   Type: oro
   Frange: 1
   Franja: Cuerpo a Cuerpo
-  Affected: 0
+  BustEffect: 0
+  WeatherEffect: 0
   Sumada: 0
   ShierkeAfectada: 0
   repartida: 0
@@ -519,8 +520,6 @@ MonoBehaviour:
   PartidaTerminada: 0
   griffithrend: 0
   guttsrend: 0
-  PHand: {fileID: 0}
-  EHand: {fileID: 0}
   PMelee: {fileID: 0}
   PDistance: {fileID: 0}
   PSiege: {fileID: 0}

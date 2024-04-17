@@ -1722,7 +1722,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bd18555c044b33a48afe4d342d6730ae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cee640a763371544b80599ef9b9eb5dd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2607,12 +2607,11 @@ MonoBehaviour:
   PointsGutts: 0
   WinsGriffithText: {fileID: 1228042473}
   PointsGriffith: 0
-  GanadorText: {fileID: 0}
+  GanadorRondas: 
+  nextround: {fileID: 1656424621}
   playerRendido: 0
   enemyRendido: 0
   PartidaTerminada: 0
-  GanadorRondas: 
-  nextround: {fileID: 1656424621}
 --- !u!114 &1615451632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4004,7 +4003,7 @@ MonoBehaviour:
   Card13: {fileID: 3560637067181593745, guid: 3eb1880f95c73654789a7663030b4ebf, type: 3}
   Card14: {fileID: 3560637067181593745, guid: 7cbc295d6b89f654b88fb3707d7b425b, type: 3}
   Card15: {fileID: 3560637067181593745, guid: 4bf8ae16e18a85342987410ba8206090, type: 3}
-  Card16: {fileID: 3560637067181593745, guid: 39c3d03df4a36cc46b849e743e055fd0, type: 3}
+  Card16: {fileID: 7889376949394653752, guid: f98732f696852f049ab0939b5b0a3b49, type: 3}
   Card17: {fileID: 3560637067181593745, guid: 896ed66b81d41c4498f246de05125cbc, type: 3}
   Card18: {fileID: 3560637067181593745, guid: c07202736d39adb42a4e2c26a2e0ecbf, type: 3}
   Card19: {fileID: 3560637067181593745, guid: 244f07ee15782c1428304145706805ef, type: 3}
@@ -4014,7 +4013,7 @@ MonoBehaviour:
   Card23: {fileID: 3560637067181593745, guid: 4449d1bd2b59d44468c4838396819250, type: 3}
   Card24: {fileID: 7889376949394653752, guid: bf003531b4ea7f04baac3a4c0dc5e032, type: 3}
   Card25: {fileID: 5664656029312683538, guid: 4fa3ddaa0563eef418b8a779aed13d7e, type: 3}
-  Card26: {fileID: 3525376186561288315, guid: 20435d19745b35c46b4fe20bbefd13e8, type: 3}
+  Card26: {fileID: 5664656029312683538, guid: 705784adac58170409226f802db8ba09, type: 3}
   Card27: {fileID: 7889376949394653752, guid: c2aa57b9aaea092409563f779056f0c5, type: 3}
   Card28: {fileID: 5664656029312683538, guid: e10cb6115183ec842a25467a7a6ae1ae, type: 3}
   Card29: {fileID: 3525376186561288315, guid: 2cc8c784a9035a649b2428fd9a4779c9, type: 3}
@@ -4023,8 +4022,6 @@ MonoBehaviour:
   Card32: {fileID: 3525376186561288315, guid: 9edde39155c328c458a5ccc3affb3746, type: 3}
   Card33: {fileID: 7889376949394653752, guid: a0391088c6434c64c94471664ca91bcb, type: 3}
   Card34: {fileID: 3525376186561288315, guid: fd9dace849472c44d9b2bd993d01a9fd, type: 3}
-  Card35: {fileID: 7889376949394653752, guid: f98732f696852f049ab0939b5b0a3b49, type: 3}
-  Card36: {fileID: 5664656029312683538, guid: 705784adac58170409226f802db8ba09, type: 3}
   robo: 0
   robo2: 0
   robo3: 0
@@ -4161,7 +4158,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bd18555c044b33a48afe4d342d6730ae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cee640a763371544b80599ef9b9eb5dd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5502,9 +5499,11 @@ GameObject:
   - component: {fileID: 7164578055878551404}
   - component: {fileID: 3790675449485917251}
   - component: {fileID: 2656523499921743733}
-  m_Layer: 5
+  - component: {fileID: 7164578055878551406}
+  - component: {fileID: 7164578055878551405}
+  m_Layer: 7
   m_Name: PlayerCemetery
-  m_TagString: Untagged
+  m_TagString: PlayerCemetery
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6026,19 +6025,17 @@ MonoBehaviour:
   Card21: {fileID: 3525376186561288315, guid: 10678a27fb668614ba2dd8278db6e870, type: 3}
   Card22: {fileID: 3560637067181593745, guid: 82652cc505d966b489afd9a1c4be013d, type: 3}
   Card23: {fileID: 3560637067181593745, guid: fe7cdd58cd463e040a37b5fd24634953, type: 3}
-  Card24: {fileID: 3560637067181593745, guid: 5be981122b4e14c4f8f190394ad33bde, type: 3}
+  Card24: {fileID: 7889376949394653752, guid: 57d3a0e7485c86d40a1a1a635b0bd505, type: 3}
   Card25: {fileID: 3560637067181593745, guid: d01af4184a8ee4e49b62dfd8d3e1a3fa, type: 3}
   Card26: {fileID: 7889376949394653752, guid: c93e27fdebaae7542aaeec9039311bc5, type: 3}
   Card27: {fileID: 5664656029312683538, guid: 983291dd24d10994e9ac1e0b9dd8e66e, type: 3}
-  Card28: {fileID: 3525376186561288315, guid: 40072603ceb732f4aaf7ea582c11c9ad, type: 3}
+  Card28: {fileID: 5664656029312683538, guid: 5d4925c213a16d6498a0713d92b8dc89, type: 3}
   Card29: {fileID: 7889376949394653752, guid: d6fde4e885125c34882420b89dc5919d, type: 3}
   Card30: {fileID: 5664656029312683538, guid: 8b01c65929b75c54a8eea4b4ddc855dc, type: 3}
   Card31: {fileID: 3525376186561288315, guid: 3b45356912e1f4543ba50a9ba14b99ca, type: 3}
   Card32: {fileID: 7889376949394653752, guid: a16a85966617e3f489c9800014bf1869, type: 3}
   Card33: {fileID: 5664656029312683538, guid: 0875b53c9a7f8ac4f9827966938f6877, type: 3}
   Card34: {fileID: 3525376186561288315, guid: 511ac90fc3829f14482bbe03257ccde9, type: 3}
-  Card35: {fileID: 7889376949394653752, guid: 57d3a0e7485c86d40a1a1a635b0bd505, type: 3}
-  Card36: {fileID: 5664656029312683538, guid: 5d4925c213a16d6498a0713d92b8dc89, type: 3}
   robo: 0
   robo2: 0
   robo3: 0
@@ -6284,6 +6281,8 @@ MonoBehaviour:
   franja: 3
   AfectadoPorClima: 0
   AfectadoPorAumento: 0
+  cantMule: 0
+  compMule: 0
 --- !u!224 &7015868641416766459
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6392,6 +6391,65 @@ RectTransform:
   m_AnchoredPosition: {x: 240.00002, y: -124}
   m_SizeDelta: {x: 43.7657, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!61 &7164578055878551405
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5547082403907602565}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 43.7657, y: 50}
+  m_EdgeRadius: 0
+--- !u!114 &7164578055878551406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5547082403907602565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42b8fe371e9341f44ba756322d718626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeadCards: []
+  Mano: {fileID: 2620992458847555637}
 --- !u!114 &7178289571492536282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6741,6 +6799,8 @@ MonoBehaviour:
   franja: 1
   AfectadoPorClima: 0
   AfectadoPorAumento: 0
+  cantMule: 0
+  compMule: 0
 --- !u!222 &7918130211766982309
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6818,6 +6878,8 @@ MonoBehaviour:
   franja: 3
   AfectadoPorClima: 0
   AfectadoPorAumento: 0
+  cantMule: 0
+  compMule: 0
 --- !u!224 &7928487155454882892
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7123,6 +7185,8 @@ MonoBehaviour:
   franja: 2
   AfectadoPorClima: 0
   AfectadoPorAumento: 0
+  cantMule: 0
+  compMule: 0
 --- !u!1 &8053156944966218017
 GameObject:
   m_ObjectHideFlags: 0
@@ -7158,6 +7222,7 @@ GameObject:
   - component: {fileID: 8695992237680143795}
   - component: {fileID: 8695992237680143796}
   - component: {fileID: 8695992237680143797}
+  - component: {fileID: 8695992237680143798}
   m_Layer: 5
   m_Name: Griffith
   m_TagString: Untagged
@@ -7689,13 +7754,74 @@ GameObject:
   - component: {fileID: 8248697174407064137}
   - component: {fileID: 1494284197699482282}
   - component: {fileID: 1290890721364288309}
-  m_Layer: 5
+  - component: {fileID: 8508807551043385798}
+  - component: {fileID: 8508807551043385799}
+  m_Layer: 7
   m_Name: EnemyCemetery
-  m_TagString: Untagged
+  m_TagString: EnemyCemetery
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8508807551043385798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8508807551043385797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42b8fe371e9341f44ba756322d718626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeadCards: []
+  Mano: {fileID: 4640591801909705808}
+--- !u!61 &8508807551043385799
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8508807551043385797}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 43.7657, y: 50}
+  m_EdgeRadius: 0
 --- !u!224 &8519388249025505838
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8036,9 +8162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbcb7fa0a2ab14542a08b3f7d14a0780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CC: {fileID: 0}
-  D: {fileID: 0}
-  S: {fileID: 0}
+  cementerioGriff: {fileID: 0}
   turn: 0
   Usada: 0
 --- !u!114 &8695992237680143797
@@ -8055,6 +8179,102 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Griffith: {fileID: 0}
   ZoomCard: {fileID: 8202366025468206505}
+--- !u!82 &8695992237680143798
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8202366025468206505}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ed8d9d7e9992c324eb0077faa641f81f, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!224 &8719132336659222087
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8234,6 +8454,8 @@ MonoBehaviour:
   franja: 2
   AfectadoPorClima: 0
   AfectadoPorAumento: 0
+  cantMule: 0
+  compMule: 0
 --- !u!222 &8821453957505842887
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8675,6 +8897,8 @@ MonoBehaviour:
   franja: 1
   AfectadoPorClima: 0
   AfectadoPorAumento: 0
+  cantMule: 0
+  compMule: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

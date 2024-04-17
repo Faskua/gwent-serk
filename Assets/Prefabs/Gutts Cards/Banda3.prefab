@@ -315,7 +315,7 @@ MonoBehaviour:
   WeatherEffect: 0
   Sumada: 0
   ShierkeAfectada: 0
-  repartida: 0
+  repartida: 1
 --- !u!61 &3692348888060432311
 BoxCollider2D:
   m_ObjectHideFlags: 0

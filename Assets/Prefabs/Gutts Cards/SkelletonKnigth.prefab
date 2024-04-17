@@ -305,14 +305,15 @@ MonoBehaviour:
   OriginalPower: 8
   Power: 8
   DescriptionNskill: "Este tipo est\xE1 roto, pero aparece convenientemente cuando
-    est\xE1 la mano de dios\u2026 sospechoso. Elimina la carta m\xE1s fuerte de la
-    franja de Cuerpo a Cuerpo del rival"
+    est\xE1 la mano de dios\u2026 sospechoso. Elimina una carta al azar en el campo
+    del rival"
   Lider: no lider
   Faction: Sacrificios
   Type: oro
   Frange: 1
   Franja: Cuerpo a Cuerpo
-  Affected: 0
+  BustEffect: 0
+  WeatherEffect: 0
   Sumada: 0
   ShierkeAfectada: 0
   repartida: 1
@@ -519,8 +520,6 @@ MonoBehaviour:
   PartidaTerminada: 0
   griffithrend: 0
   guttsrend: 0
-  PHand: {fileID: 0}
-  EHand: {fileID: 0}
   PMelee: {fileID: 0}
   PDistance: {fileID: 0}
   PSiege: {fileID: 0}
@@ -548,6 +547,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyCC: {fileID: 0}
+  EnemyD: {fileID: 0}
+  EnemyS: {fileID: 0}
   jugable: 0
 --- !u!82 &6227286666691563401
 AudioSource:

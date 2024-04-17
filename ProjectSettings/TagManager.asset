@@ -22,6 +22,8 @@ TagManager:
   - eClimageM
   - eClimageD
   - eClimageS
+  - PlayerCemetery
+  - EnemyCemetery
   layers:
   - Default
   - TransparentFX

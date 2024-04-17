@@ -286,9 +286,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Griffith
-  DescriptionNskill: "El Karma es mi novio, el Karma es un dios, el Karma es la brisa
-    en mi cabello el fin de se-mana. Usa la carta m\xE1s d\xE9bil del rival en cada
-    franja como sacrificio y las elimina."
+  DescriptionNskill: El Karma es mi novio, el Karma es un dios, el Karma es la brisa
+    en mi cabello el fin de se-mana. Como esta persona tiene SERIOS problemas con
+    dejar ir a los suyos, juega una carta al azar del cementerio, aunque estas no
+    recuperan su efecto
   Lider: "L\xEDder"
   Faction: Falconia
 --- !u!114 &6210781551465195679
@@ -386,9 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbcb7fa0a2ab14542a08b3f7d14a0780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CC: {fileID: 0}
-  D: {fileID: 0}
-  S: {fileID: 0}
+  cementerioGriff: {fileID: 0}
   turn: 0
   Usada: 0
 --- !u!114 &311387979038805034

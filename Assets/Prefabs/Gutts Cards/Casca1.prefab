@@ -155,6 +155,7 @@ GameObject:
   - component: {fileID: 5774040148284816074}
   - component: {fileID: 6222753934923892608}
   - component: {fileID: 4837249671728364418}
+  - component: {fileID: 5647800267866762122}
   m_Layer: 6
   m_Name: Casca1
   m_TagString: Untagged
@@ -276,6 +277,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 5647800267866762122}
+        m_TargetAssemblyTypeName: CascaHabilidad, Assembly-CSharp
+        m_MethodName: Efecto
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3553454932940865172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,13 +304,15 @@ MonoBehaviour:
   Name: Casca
   OriginalPower: 4
   Power: 4
-  DescriptionNskill: "Otra v\xEDctima del desarrollo de personaje, pobrecita, caballero."
+  DescriptionNskill: "Otra v\xEDctima del desarrollo de personaje, pobrecita, caballero.
+    Esta aguerrida muchacha elimina la carta m\xE1s d\xE9bil del campo rival"
   Lider: no lider
   Faction: Sacrificios
   Type: plata
   Frange: 1
   Franja: Cuerpo a Cuerpo
-  Affected: 0
+  BustEffect: 0
+  WeatherEffect: 0
   Sumada: 0
   ShierkeAfectada: 0
   repartida: 0
@@ -504,8 +519,6 @@ MonoBehaviour:
   PartidaTerminada: 0
   griffithrend: 0
   guttsrend: 0
-  PHand: {fileID: 0}
-  EHand: {fileID: 0}
   PMelee: {fileID: 0}
   PDistance: {fileID: 0}
   PSiege: {fileID: 0}
@@ -629,6 +642,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manojugador: {fileID: 0}
+  manoenemiga: {fileID: 0}
   mazojugador: {fileID: 0}
+  mazoenemigo: {fileID: 0}
   ZonaDeCarta: {fileID: 0}
   ZonaDeDescrp: {fileID: 0}
+--- !u!114 &5647800267866762122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560637067181593745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7eb028720a6bd64291fcd6ee8937921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyCC: {fileID: 0}
+  EnemyD: {fileID: 0}
+  EnemyS: {fileID: 0}
+  jugable: 0

@@ -155,6 +155,7 @@ GameObject:
   - component: {fileID: -4079670555302639119}
   - component: {fileID: -3521793765195561463}
   - component: {fileID: -1578897421542382441}
+  - component: {fileID: 1763456154981002626}
   m_Layer: 6
   m_Name: Judeau3
   m_TagString: Untagged
@@ -276,6 +277,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 1763456154981002626}
+        m_TargetAssemblyTypeName: Judeau, Assembly-CSharp
+        m_MethodName: Efecto
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3553454932940865172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,13 +304,15 @@ MonoBehaviour:
   Name: Judeau
   OriginalPower: 4
   Power: 4
-  DescriptionNskill: "La descripci\xF3n gr\xE1fica de friendzoneado."
+  DescriptionNskill: "La descripci\xF3n gr\xE1fica de friendzoneado. No s\xE9 como
+    lo logra, pero  elimina la carta m\xE1s poderosa en el campo"
   Lider: no lider
   Faction: Sacrificios
   Type: plata
   Frange: 2
   Franja: Distancia
-  Affected: 0
+  BustEffect: 0
+  WeatherEffect: 0
   Sumada: 0
   ShierkeAfectada: 0
   repartida: 0
@@ -504,8 +519,6 @@ MonoBehaviour:
   PartidaTerminada: 0
   griffithrend: 0
   guttsrend: 0
-  PHand: {fileID: 0}
-  EHand: {fileID: 0}
   PMelee: {fileID: 0}
   PDistance: {fileID: 0}
   PSiege: {fileID: 0}
@@ -634,3 +647,22 @@ MonoBehaviour:
   mazoenemigo: {fileID: 0}
   ZonaDeCarta: {fileID: 0}
   ZonaDeDescrp: {fileID: 0}
+--- !u!114 &1763456154981002626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560637067181593745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3dcb9e50499a7f4b9c8fa1023561083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerCC: {fileID: 0}
+  PlayerD: {fileID: 0}
+  PlayerS: {fileID: 0}
+  EnemyCC: {fileID: 0}
+  EnemyD: {fileID: 0}
+  EnemyS: {fileID: 0}
+  jugable: 0
