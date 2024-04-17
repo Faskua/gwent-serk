@@ -388,8 +388,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Mule Wolflame\nCuando est\xE1n jugadas las 3 copias de Mule, se suman
-    2 puntos de poder a cada una"
+  m_Text: "Mule Wolflame\nSi est\xE1n jugadas 2 o m\xE1s cartas de Mule, cada una
+    tendr\xE1 3 de poder."
 --- !u!222 &243357494
 CanvasRenderer:
   m_ObjectHideFlags: 0

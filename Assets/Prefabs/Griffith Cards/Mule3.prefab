@@ -291,8 +291,8 @@ MonoBehaviour:
   Name: Mule Wolflame
   OriginalPower: 1
   Power: 1
-  DescriptionNskill: "jaja la ni\xF1era.Si se encuentran los 3 Mule en el campo se
-    le suma 2 de poder a cada uno"
+  DescriptionNskill: "jaja la ni\xF1era.Si se encuentran 2 o m\xE1s copias de Mule
+    en el campo, cada una tendr\xE1 3 de poder"
   Lider: no lider
   Faction: Falconia
   Type: plata

@@ -25,7 +25,6 @@ public class ClaseFranja : MonoBehaviour
     private GameObject EnemyHand;
     private int ComprobadordeRonda = 1;
     private int Ronda = 1;
-    private bool efectoMule;
     private bool efectogrunbeld;//booleano para parar la habilidad de grunbeld
     private int sumaparcial = 0;
     private bool selected = false; //para que no se ejecute el efecto sin que se hayan aceptado las cartas 
@@ -397,17 +396,25 @@ public class ClaseFranja : MonoBehaviour
             }
         }
         cantMule = compMule;
-        if(cantMule == 3)
+        if(cantMule >= 2)
         {
-        foreach(GameObject card in CardsinFrange) //si son 3, le sumo 2 de poder a cada uno
-        {
-            if(card.GetComponent<ClaseCarta>().Name == "Mule Wolflame" && efectoMule && selected)
+        foreach(GameObject card in CardsinFrange) //si son 2 o mas le doy 3 de poder
+            if(card.GetComponent<ClaseCarta>().Name == "Mule Wolflame" && selected)
             {
-                efectoMule = false;
-                card.GetComponent<ClaseCarta>().Power += 2;
+                card.GetComponent<ClaseCarta>().Power = 3;
+            }
+        }
+        else if(cantMule == 1)
+        {
+            foreach(GameObject card in CardsinFrange)  //sino la vuelvo 1
+        {
+            if(card.GetComponent<ClaseCarta>().Name == "Mule Wolflame" && selected)
+            {
+                card.GetComponent<ClaseCarta>().Power = 1;
             }
         }
         }
+        
 
         //efecto continuo de Clima
         if(AfectadoPorClima)

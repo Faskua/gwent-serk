@@ -289,15 +289,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: "Bar\xF3n Serpiente"
-  OriginalPower: 3
-  Power: 3
+  OriginalPower: 4
+  Power: 4
   DescriptionNskill: "No hay complicaci\xF3n aqu\xED, Mitad Bar\xF3n, Mitad Serpiente."
   Lider: no lider
   Faction: Falconia
   Type: plata
   Frange: 1
   Franja: Cuerpo a Cuerpo
-  Affected: 0
+  BustEffect: 0
+  WeatherEffect: 0
   Sumada: 0
   ShierkeAfectada: 0
   repartida: 1
@@ -504,8 +505,6 @@ MonoBehaviour:
   PartidaTerminada: 0
   griffithrend: 0
   guttsrend: 0
-  PHand: {fileID: 0}
-  EHand: {fileID: 0}
   PMelee: {fileID: 0}
   PDistance: {fileID: 0}
   PSiege: {fileID: 0}
