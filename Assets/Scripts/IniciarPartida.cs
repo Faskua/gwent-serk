@@ -55,6 +55,11 @@ public class IniciarPartida : MonoBehaviour
     {
         Application.Quit();
     }
+    public void AnimCarga()
+    {
+        Transition.SetTrigger("Start");
+        Invoke("Cargando", 1);
+    }
 
 
 //estos metodos no los voy a explicar, son para cambiar de escena
@@ -98,5 +103,8 @@ public class IniciarPartida : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    
+    public void Cargando()
+    {
+        SceneManager.LoadScene(11);
+    }
 }

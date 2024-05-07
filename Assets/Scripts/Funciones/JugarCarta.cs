@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class JugarCarta : MonoBehaviour
 {
+   public SetTurn TurnManager;
    public GameObject Card; //la carta a jugar
-   public bool Turn = true; //controlador del turno
+   public bool Turn; //controlador del turno
    public bool jugable = true;//booleano para controlar que no se juegue mas de una vez la carta
    public bool PartidaTerminada;
    public bool griffithrend; //jugadores rendidos
@@ -51,6 +52,7 @@ public class JugarCarta : MonoBehaviour
             Card.transform.position = PMelee.transform.position;
             jugable = false;
             sound.Play();
+            TurnManager.Turno = false;
             }
         }
 
@@ -62,6 +64,7 @@ public class JugarCarta : MonoBehaviour
                 Card.transform.position = PDistance.transform.position;
                 jugable = false;
                 sound.Play();
+                TurnManager.Turno = false;
             }
          }
 
@@ -73,6 +76,7 @@ public class JugarCarta : MonoBehaviour
             Card.transform.position = PSiege.transform.position;
             jugable = false;
             sound.Play();
+            TurnManager.Turno = false;
             }   
          }
 
@@ -84,6 +88,7 @@ public class JugarCarta : MonoBehaviour
             Card.transform.position = pCmelee.transform.position;
              jugable = false;
             sound.Play();
+            TurnManager.Turno = false;
             }   
          }
 
@@ -95,6 +100,7 @@ public class JugarCarta : MonoBehaviour
             Card.transform.position = pCdistance.transform.position;
              jugable = false;
             sound.Play();
+            TurnManager.Turno = false;
             }   
          }
 
@@ -106,6 +112,7 @@ public class JugarCarta : MonoBehaviour
             Card.transform.position = pCsiege.transform.position;
              jugable = false;
             sound.Play();
+            TurnManager.Turno = false;
             }   
          }
 
@@ -119,6 +126,7 @@ public class JugarCarta : MonoBehaviour
             Card.transform.position = EMelee.transform.position;
              jugable = false;
             sound.Play();
+            TurnManager.Turno = true;
             }   
          }
 
@@ -130,6 +138,7 @@ public class JugarCarta : MonoBehaviour
             Card.transform.position = EDistance.transform.position;
              jugable = false;
             sound.Play();
+            TurnManager.Turno = true;
             }   
          }
 
@@ -141,6 +150,7 @@ public class JugarCarta : MonoBehaviour
             Card.transform.position = ESiege.transform.position;
              jugable = false;
             sound.Play();
+            TurnManager.Turno = true;
             }   
          }
 
@@ -152,6 +162,7 @@ public class JugarCarta : MonoBehaviour
             Card.transform.position = eCmelee.transform.position;
              jugable = false;
             sound.Play();
+            TurnManager.Turno = true;
             }   
          }
 
@@ -163,6 +174,7 @@ public class JugarCarta : MonoBehaviour
             Card.transform.position = eCdistance.transform.position;
              jugable = false;
             sound.Play();
+            TurnManager.Turno = true;
             }   
          }
 
@@ -174,6 +186,7 @@ public class JugarCarta : MonoBehaviour
             Card.transform.position = eCsiege.transform.position;
              jugable = false;
             sound.Play();
+            TurnManager.Turno = true;
             }   
          }
 
@@ -184,8 +197,9 @@ public class JugarCarta : MonoBehaviour
             {
             Card.transform.SetParent(EDistance.transform, false);
             Card.transform.position = EDistance.transform.position;
-             jugable = false;
+            jugable = false;
             sound.Play();
+            TurnManager.Turno = false;
             }   
          }
 
@@ -197,6 +211,7 @@ public class JugarCarta : MonoBehaviour
             Card.transform.position = ESiege.transform.position;
              jugable = false;
             sound.Play();
+            TurnManager.Turno = false;
             }   
          }
 
@@ -207,7 +222,8 @@ public class JugarCarta : MonoBehaviour
                 Card.transform.SetParent(PDistance.transform, false);
                 Card.transform.position = PDistance.transform.position;
                 jugable = false;
-            sound.Play();
+                sound.Play();
+                TurnManager.Turno = true;
             }
          }
 
@@ -219,6 +235,7 @@ public class JugarCarta : MonoBehaviour
             Card.transform.position = PSiege.transform.position;
             jugable = false;
             sound.Play();
+            TurnManager.Turno = true;
             }   
          }
 
@@ -232,6 +249,7 @@ public class JugarCarta : MonoBehaviour
             Card.transform.position = PMelee.transform.position;
             jugable = false;
             sound.Play();
+            TurnManager.Turno = false;
             }
         } 
 
@@ -243,6 +261,7 @@ public class JugarCarta : MonoBehaviour
                 Card.transform.position = PDistance.transform.position;
                 jugable = false;
             sound.Play();
+               TurnManager.Turno = false;
             }
          } 
 
@@ -254,6 +273,7 @@ public class JugarCarta : MonoBehaviour
             Card.transform.position = EMelee.transform.position;
              jugable = false;
             sound.Play();
+            TurnManager.Turno = true;
             }   
          }
 
@@ -265,6 +285,7 @@ public class JugarCarta : MonoBehaviour
             Card.transform.position = EDistance.transform.position;
              jugable = false;
             sound.Play();
+            TurnManager.Turno = true;
             }   
          }
        } 
@@ -344,6 +365,7 @@ public class JugarCarta : MonoBehaviour
     }
    void Update()
     {
+      TurnManager = GameObject.FindGameObjectWithTag("TurnCounter").GetComponent<SetTurn>();
       PHand = GameObject.Find("PlayerHand");
       EHand = GameObject.Find("EnemyHand");
       guttsElige = GameObject.Find("CartasGutts").GetComponent<GuttsCards>().GuttsSelected;

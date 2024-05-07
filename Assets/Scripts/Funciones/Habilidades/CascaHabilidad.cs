@@ -9,10 +9,12 @@ public class CascaHabilidad : MonoBehaviour
     public ClaseFranja EnemyS;
     public bool jugable; 
     private bool selected = false; 
+    private bool Turn;
 
      public void Efecto()
      {
-        int cc = EnemyCC.Casca(); //recibo la carta mas debil de cada franja
+        if(Turn)
+        {int cc = EnemyCC.Casca(); //recibo la carta mas debil de cada franja
         int d = EnemyD.Casca();
         int s = EnemyS.Casca();
         int menor = Mathf.Min(cc, Mathf.Min(d, s)); // la comparo
@@ -31,12 +33,13 @@ public class CascaHabilidad : MonoBehaviour
         {
             EnemyS.AplicarCasca(menor);
             return;
-        }
+        }}
      }
 
 
     void Update()
     {
+        Turn = GameObject.Find("TurnCounter").GetComponent<SetTurn>().Turno;
         selected = GameObject.Find("CartasGutts").GetComponent<GuttsCards>().GuttsSelected;
         EnemyCC = GameObject.FindGameObjectWithTag("EnemyMelee").GetComponent<ClaseFranja>();
         EnemyD = GameObject.FindGameObjectWithTag("EnemyDistance").GetComponent<ClaseFranja>();

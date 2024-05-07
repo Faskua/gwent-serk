@@ -10,17 +10,18 @@ public class EjercitosHabilidad : MonoBehaviour
     private int poder;
     private bool selected = false;
     private bool selectedgriff = false;
+    private bool Turn;
 
     public void Efecto()
     {
         if(jugable)
         {
-        if(gameObject.GetComponent<ClaseCarta>().Name == "Soldados de la banda del Halcón" && selected)//\\
+        if(gameObject.GetComponent<ClaseCarta>().Name == "Soldados de la banda del Halcón" && selected && Turn)
         {
             poder = pS.Ejercitos();
             pS.AplicarEjercitos();
         }
-        if(gameObject.GetComponent<ClaseCarta>().Name == "Ejército Demoníaco" && selectedgriff)
+        if(gameObject.GetComponent<ClaseCarta>().Name == "Ejército Demoníaco" && selectedgriff && Turn == false)
         {
             poder = eS.Ejercitos();
             eS.AplicarEjercitos();
@@ -31,7 +32,7 @@ public class EjercitosHabilidad : MonoBehaviour
 
     void Update()
     {
-        
+        Turn = GameObject.Find("TurnCounter").GetComponent<SetTurn>().Turno;
        selected = GameObject.Find("CartasGutts").GetComponent<GuttsCards>().GuttsSelected;
        selectedgriff = GameObject.Find("CartasGriffith").GetComponent<GriffCards>().GrifSelected;
         jugable = gameObject.GetComponent<JugarCarta>().jugable;

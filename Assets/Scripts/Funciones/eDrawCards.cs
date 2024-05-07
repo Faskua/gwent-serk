@@ -71,9 +71,11 @@ public class eDrawCards : MonoBehaviour
     public void AnimClick()
     {
         if( Turn == false )
-        {animator.SetTrigger("ERepartir");
-        sEffect.Play();
-        Invoke("Clicked", 1);}
+        {
+            animator.SetTrigger("ERepartir");
+            sEffect.Play();
+            Invoke("Clicked", 1);
+        }
     }
     public void Clicked()
     {
@@ -129,7 +131,6 @@ public class eDrawCards : MonoBehaviour
     }
     void Start()
     {
-        
         Mazo.Add(Card1);
         Mazo.Add(Card2);
         Mazo.Add(Card3);
@@ -171,11 +172,11 @@ public class eDrawCards : MonoBehaviour
             card.GetComponent<ClaseCarta>().WeatherEffect = false;
             card.GetComponent<ClaseCarta>().repartida = false;
         }
+        Hand = GameObject.Find("EnemyHand");
        
     }
     void Update()
     {
-        Hand = GameObject.Find("EnemyHand");
         Ronda = GameObject.Find("GameManager").GetComponent<GameManager>().Ronda;
         Turn = GameObject.Find("TurnCounter").GetComponent<SetTurn>().Turno;
     }

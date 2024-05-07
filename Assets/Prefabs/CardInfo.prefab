@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 6814038781810884424}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.99124193}
-  m_LocalScale: {x: 0.41666663, y: 0.41666663, z: 0.41666663}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -228.53, y: -0.15346}
-  m_SizeDelta: {x: 162, y: 240}
+  m_SizeDelta: {x: 377, y: 525}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4758704196986134455
 CanvasRenderer:
@@ -66,18 +66,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 2230732570650464555, guid: 5b526c99abe480d4084728c7067c3c8c, type: 3}
+    m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Danan. Poder: 6. Descripci\xF3n: Una elfa psic\xF3loga al parecer super
-    poderosa que me arregl\xF3 el trauma de Casca (a medias). Permite robar 1 carta
-    del mazo. Facci\xF3n: Sacrificios. Tipo: oro"
+  m_Text: "Ni\xF1o Lunar. PODER: 2. DESCRIPCI\xD3N: Tengo sentimientos encontrados
+    con este ni\xF1o. Juega en la franja de Distancia enemiga pero te permite robar
+    2 carta del mazo.. FACCI\xD3N: Sacrificios. FRANJA: Distancia. TIPO: Esp\xEDa"

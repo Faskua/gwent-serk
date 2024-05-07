@@ -20,10 +20,25 @@ public class Amanecer : MonoBehaviour
     private ClaseClima ClimageeD;
     private ClaseClima ClimageeS;
     private bool jugable; //si se puede jugar la carta o no
+    private bool selected = false;
+    private bool grifselected = false;
+    private bool Turn;
 
     public void Efecto()
     {
-        if(jugable)
+        if(gameObject.GetComponent<ClaseCarta>().Faction == "Sacrificios" && jugable && selected && grifselected && Turn)
+        {
+            //activo el efecto de amanecer que tengo en todas las franjas
+            pCC.Amanecer();
+            eCC.Amanecer();
+            pD.Amanecer();
+            eD.Amanecer();
+            pS.Amanecer();
+            eS.Amanecer();
+
+            GoToCemetery();
+        }
+        if(gameObject.GetComponent<ClaseCarta>().Faction == "Falconia" && jugable && selected && grifselected && Turn == false)
         {
             //activo el efecto de amanecer que tengo en todas las franjas
             pCC.Amanecer();
@@ -94,6 +109,9 @@ public class Amanecer : MonoBehaviour
     }
     void Update()
     {
+        Turn = GameObject.Find("TurnCounter").GetComponent<SetTurn>().Turno;
+       grifselected = GameObject.Find("CartasGriffith").GetComponent<GriffCards>().GrifSelected;
+       selected = GameObject.Find("CartasGutts").GetComponent<GuttsCards>().GuttsSelected;
        jugable = gameObject.GetComponent<JugarCarta>().jugable;
        pCC = GameObject.FindGameObjectWithTag("PlayerMelee").GetComponent<ClaseFranja>(); //busco las zonas
        pD = GameObject.FindGameObjectWithTag("PlayerDistance").GetComponent<ClaseFranja>(); 

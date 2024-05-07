@@ -177,7 +177,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -241.9, y: 123.5}
-  m_SizeDelta: {x: 40, y: 50}
+  m_SizeDelta: {x: 180, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8935940217538945509
 CanvasRenderer:
@@ -288,8 +288,8 @@ MonoBehaviour:
   Name: Griffith
   DescriptionNskill: El Karma es mi novio, el Karma es un dios, el Karma es la brisa
     en mi cabello el fin de se-mana. Como esta persona tiene SERIOS problemas con
-    dejar ir a los suyos, juega una carta al azar del cementerio, aunque estas no
-    recuperan su efecto
+    dejar ir a los suyos, juega una carta al azar del cementerio, pero no utiliza
+    de nuevo su efecto.
   Lider: "L\xEDder"
   Faction: Falconia
 --- !u!114 &6210781551465195679

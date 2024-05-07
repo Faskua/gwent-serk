@@ -12,11 +12,12 @@ public class DananHabilidad : MonoBehaviour
     public ClaseFranja eS;
     public bool jugable;
     private bool selected = false;
+    private bool Turn;
     
 
     public void Efecto()
     {
-        if(jugable && selected)
+        if(jugable && selected && Turn)
         {
             //cant de poder en cada franja
             int p1 = pCC.Danan();
@@ -48,6 +49,7 @@ public class DananHabilidad : MonoBehaviour
 
     void Update()
     {
+        Turn = GameObject.Find("TurnCounter").GetComponent<SetTurn>().Turno;
        selected = GameObject.Find("CartasGutts").GetComponent<GuttsCards>().GuttsSelected;
        pCC = GameObject.FindGameObjectWithTag("PlayerMelee").GetComponent<ClaseFranja>(); 
        pD = GameObject.FindGameObjectWithTag("PlayerDistance").GetComponent<ClaseFranja>(); 

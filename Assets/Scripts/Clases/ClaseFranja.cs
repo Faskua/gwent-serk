@@ -50,6 +50,7 @@ public class ClaseFranja : MonoBehaviour
             if(Carta.GetComponent<ClaseCarta>().Name == "Casca")//si en la franja esta una casca instancio la carta del efecto y la muevo a la zona
             {
                 GameObject Gutts = Instantiate(cartagutts, new Vector2(0,0), Quaternion.identity);
+                Gutts.GetComponent<JugarCarta>().jugable = false;
                 Gutts.transform.SetParent(CuerpoaCuerpo.transform, false);
                 Gutts.transform.position = CuerpoaCuerpo.transform.position;
                 Cartas += 1;
@@ -101,6 +102,7 @@ public class ClaseFranja : MonoBehaviour
     }
     public void Irvine()
     {
+               Debug.Log("pincha");
         if(CardsinFrange.Count == 1 || CardsinFrange.Count > 1)
         {
             int menor = CardsinFrange[0].GetComponent<ClaseCarta>().Power; // es lo mismo que griffith
@@ -156,6 +158,7 @@ public class ClaseFranja : MonoBehaviour
         {
             if(CardsinFrange.Count < 4)
             {
+               Debug.Log("pincha");
                 if(CardsinFrange.Count == Franja)
                 {
                 foreach(GameObject carta in CardsinFrange) //manda al cementerio todas las cartas de la lista y la vacia

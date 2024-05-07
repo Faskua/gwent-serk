@@ -72,9 +72,11 @@ public class DrawCards : MonoBehaviour
     public void AnimClick() //es el metod de click pero mas tarde para darle tiempo a la animacion y el sonido
     {
         if(Turn)
-        {animator.SetTrigger("JRepartir");
-        Seffect.Play();
-        Invoke("OnClick", 1);}
+        {
+            animator.SetTrigger("JRepartir");
+            Seffect.Play();
+            Invoke("OnClick", 1);
+        }
     }
     public void OnClick()
     {
@@ -91,7 +93,7 @@ public class DrawCards : MonoBehaviour
             compCartas += 1;
             }
         }
-        robo = true;
+            robo = true;
         }
 
          if(robo2 == false && Ronda == 2)
@@ -104,7 +106,7 @@ public class DrawCards : MonoBehaviour
             verificadordeCarta();//reparte 2
             }
         }
-        robo2 = true;
+            robo2 = true;
         }
 
          if(robo3 == false && Ronda == 3)
@@ -117,7 +119,7 @@ public class DrawCards : MonoBehaviour
             verificadordeCarta();
             }//reparte 2
         }
-        robo3 = true;
+            robo3 = true;
         }
         }
     }
@@ -130,7 +132,6 @@ public class DrawCards : MonoBehaviour
     }
     void Start()
     {
-        
         Mazo.Add(Card1);
         Mazo.Add(Card2);
         Mazo.Add(Card3);
@@ -172,10 +173,10 @@ public class DrawCards : MonoBehaviour
             card.GetComponent<ClaseCarta>().BustEffect = false;
             card.GetComponent<ClaseCarta>().WeatherEffect = false;
         }
+        Hand = GameObject.Find("PlayerHand");
     }
     void Update()
     {
-        Hand = GameObject.Find("PlayerHand");
         Ronda = GameObject.Find("GameManager").GetComponent<GameManager>().Ronda;
         Turn = GameObject.Find("TurnCounter").GetComponent<SetTurn>().Turno;
     }

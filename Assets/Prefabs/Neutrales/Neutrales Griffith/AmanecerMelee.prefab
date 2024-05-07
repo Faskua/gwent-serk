@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7254172169811429290}
   - component: {fileID: 5774441439495646829}
   - component: {fileID: 2488089951224571021}
+  - component: {fileID: -4184905479395381599}
   - component: {fileID: 607747705277300151}
   - component: {fileID: 6794656936478809393}
   - component: {fileID: -6338083616255988259}
@@ -47,7 +48,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 40, y: 50}
+  m_SizeDelta: {x: 180, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5774441439495646829
 CanvasRenderer:
@@ -87,6 +88,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-4184905479395381599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5664656029312683538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69923c916925a3d4ab7289d957ace5ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Reverse: {fileID: 21300000, guid: cee640a763371544b80599ef9b9eb5dd, type: 3}
+  Foto: {fileID: 0}
 --- !u!114 &607747705277300151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,6 +394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ccaa1dcd57d66f4cba63448c1855250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TurnManager: {fileID: 0}
   Card: {fileID: 5664656029312683538}
   Turn: 1
   jugable: 1

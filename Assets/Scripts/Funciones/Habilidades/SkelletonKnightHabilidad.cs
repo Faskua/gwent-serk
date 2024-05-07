@@ -9,11 +9,12 @@ public class SkelletonKnightHabilidad : MonoBehaviour
    public ClaseFranja EnemyS;
    public bool jugable; 
    private bool selected = false; 
+   private bool Turn;
 
     public void Efecto()
     {
         int RandIndex = Random.Range(1, 3); //creo un numero random del 1 al 3
-        if(jugable && selected)
+        if(jugable && selected && Turn)
         {
             if(RandIndex == 1 && EnemyCC.Cartas != 0)
             {
@@ -50,6 +51,7 @@ public class SkelletonKnightHabilidad : MonoBehaviour
     
     void Update()
     {
+        Turn = GameObject.Find("TurnCounter").GetComponent<SetTurn>().Turno;
        selected = GameObject.Find("CartasGutts").GetComponent<GuttsCards>().GuttsSelected;
         EnemyCC = GameObject.FindGameObjectWithTag("EnemyMelee").GetComponent<ClaseFranja>();
         EnemyD = GameObject.FindGameObjectWithTag("EnemyDistance").GetComponent<ClaseFranja>();

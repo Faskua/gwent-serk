@@ -228,10 +228,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 3840, y: 2160}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -327,8 +327,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -741, y: -451}
-  m_SizeDelta: {x: 261.7311, y: 50.2405}
+  m_AnchoredPosition: {x: -1671.0791, y: -966.03955}
+  m_SizeDelta: {x: 350, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &365389815
 MonoBehaviour:
@@ -634,8 +634,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 766.8401, y: -451}
-  m_SizeDelta: {x: 261.7311, y: 50.2405}
+  m_AnchoredPosition: {x: 1721.4, y: -966.04}
+  m_SizeDelta: {x: 350, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &578845632
 MonoBehaviour:
@@ -776,10 +776,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 232333844}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -766.84247, y: 0.0012207}
-  m_SizeDelta: {x: 386.3148, y: 1080}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 362.13098, y: 0}
+  m_SizeDelta: {x: 725, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &606914722
 MonoBehaviour:
@@ -853,8 +853,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 766.8401, y: 413}
-  m_SizeDelta: {x: 320.27, y: 68.9985}
+  m_AnchoredPosition: {x: 1600, y: -324}
+  m_SizeDelta: {x: 505.13, y: 205.1603}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1036538714
 MonoBehaviour:
@@ -982,8 +982,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 47
+  m_fontSizeBase: 47
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1064,10 +1064,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 232333844}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0024414, y: -0.000015241}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1270667213
 MonoBehaviour:
@@ -1141,8 +1141,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.0799, y: -28.418}
-  m_SizeDelta: {x: 1137.2, y: 1023.2}
+  m_AnchoredPosition: {x: 0.00048828, y: -25.595}
+  m_SizeDelta: {x: 2047.1501, y: 2108.8105}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1498879091
 MonoBehaviour:
@@ -1179,20 +1179,20 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "C\xF3mo jugar\r\nPrimero que todo, empecemos con lo b\xE1sico. Al inicio
     de la partida robar\xE1s 10 cartas y antes de comenzar a jugar puedes seleccionar
-    hasta 2 cartas para devolver al mazo y se te repartir\xE1 la misma cantidad,
-    cuando est\xE9s conforme con tus cartas, presiona el bot\xF3n que tendr\xE1s
-    a tu derecha. Cada partida de GWENT-SERK consta de hasta 3 rondas. Estas terminan
+    hasta 2 de ellas para devolver al mazo y se te repartir\xE1 la misma cantidad,
+    cuando est\xE9s conforme con todas, presiona el bot\xF3n que tendr\xE1s a tu
+    derecha. Cada partida de GWENT-SERK consta de hasta 3 rondas. Estas terminan
     cuando ambos bandos pasan o se quedan sin cartas en su mano, para decidir el
     ganador de cada ronda se debe oprimir el bot\xF3n correspondiente (La imagen
-    de Gutts en la derecha). El objetivo de cada ronda es obtener m\xE1s puntos que
-    tu oponente.\n Los jugadores, por turnos, juegan cartas hasta que uno de los
-    dos pasa, lo que significa que no van a jugar m\xE1s cartas durante la ronda
-    (En la zona izquierda de tu pantalla est\xE1 el bot\xF3n para pasar). El otro
-    jugador puede jugar tantas cartas como quiera o pueda.\n Las cartas de unidad
-    se dividen en Oro y Plata, las de Oro aunque son muy pocas son inmunes a todo
-    tipo de clima, ya sea a favor o en contra. Al principio, puedes pensar en jugar
-    muchas cartas para asegurarte la ronda, pero piensa que solo podr\xE1s sacar
-    2 cartas durante la segunda ronda, y dos al llegar a la tercera. \n\n"
+    de Gutts en la derecha). El objetivo siempre es obtener m\xE1s puntos que tu
+    oponente.\n Los jugadores, por turnos, juegan hasta que uno de los dos pasa,
+    lo que significa que no van a jugar m\xE1s cartas durante la ronda (En la zona
+    izquierda de tu pantalla est\xE1 el bot\xF3n para pasar). El otro jugador puede
+    jugar tantas cartas como quiera o pueda.\n Las cartas de unidad se dividen en
+    Oro y Plata, las de Oro aunque son muy pocas son inmunes a todo tipo de clima,
+    ya sea a favor o en contra. Al principio, puedes pensar en jugar muchas cartas
+    para asegurarte la ronda, pero piensa que solo podr\xE1s sacar dos cartas durante
+    la segunda, y dos al llegar a la tercera. \n\n"
 --- !u!222 &1498879092
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1235,8 +1235,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -766.84, y: 413}
-  m_SizeDelta: {x: 320.27, y: 68.9985}
+  m_AnchoredPosition: {x: -1564.7161, y: 801.7246}
+  m_SizeDelta: {x: 503.2375, y: 149.8448}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1520356898
 MonoBehaviour:
@@ -1312,10 +1312,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 232333844}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 766.84, y: 0.0025024}
-  m_SizeDelta: {x: 386.3148, y: 1080}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -362.50012, y: 0}
+  m_SizeDelta: {x: 725, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1535185437
 MonoBehaviour:
@@ -1397,7 +1397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4971763179132837848, guid: 66dd8a3a53c877045bd5c24d135038e0, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -0.00097656
       objectReference: {fileID: 0}
     - target: {fileID: 4971763179132837848, guid: 66dd8a3a53c877045bd5c24d135038e0, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1433,7 +1433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4971763179132837848, guid: 66dd8a3a53c877045bd5c24d135038e0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 0.00046539
       objectReference: {fileID: 0}
     - target: {fileID: 4971763179132837848, guid: 66dd8a3a53c877045bd5c24d135038e0, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1550,8 +1550,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

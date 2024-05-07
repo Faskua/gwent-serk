@@ -31,8 +31,8 @@ public class JDevolver : MonoBehaviour
             manojugador.CartasDevueltas += 1; //suma 1 al contador de las cartas devueltas
             gameObject.GetComponent<ClaseCarta>().repartida = false;//permite que la carta destruida se pueda robar de nuevo
             mazojugador.verificadordeCarta();//se reparte una carta
-            Destroy(gameObject);//se destruye la carta, la descripcion y la carta zoomeada
-            Destroy(ZonaDeCarta.transform.GetChild(0).gameObject);
+            Destroy(gameObject);
+            Destroy(ZonaDeCarta.transform.GetChild(0).gameObject);//se destruye la carta, la descripcion y la carta zoomeada y la info
             Destroy(ZonaDeDescrp.transform.GetChild(0).gameObject);
         }
 

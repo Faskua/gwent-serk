@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 3133014409665149070}
   - component: {fileID: 7653563029197372621}
   - component: {fileID: 3169215666809330722}
+  - component: {fileID: 8198807986975230120}
   - component: {fileID: 5329582893060820928}
   - component: {fileID: 3553454932940865172}
   - component: {fileID: -975587170575003465}
@@ -180,7 +181,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -9.5, y: -197.5}
-  m_SizeDelta: {x: 40, y: 50}
+  m_SizeDelta: {x: 180, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7653563029197372621
 CanvasRenderer:
@@ -220,6 +221,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8198807986975230120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3560637067181593745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69923c916925a3d4ab7289d957ace5ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Reverse: {fileID: 21300000, guid: cee640a763371544b80599ef9b9eb5dd, type: 3}
+  Foto: {fileID: 0}
 --- !u!114 &5329582893060820928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,7 +316,7 @@ MonoBehaviour:
   WeatherEffect: 0
   Sumada: 0
   ShierkeAfectada: 0
-  repartida: 1
+  repartida: 0
 --- !u!50 &-975587170575003465
 Rigidbody2D:
   serializedVersion: 4
@@ -499,6 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ccaa1dcd57d66f4cba63448c1855250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TurnManager: {fileID: 0}
   Card: {fileID: 3560637067181593745}
   Turn: 1
   jugable: 1

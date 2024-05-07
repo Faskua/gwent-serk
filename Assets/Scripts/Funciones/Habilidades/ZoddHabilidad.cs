@@ -8,12 +8,13 @@ public class ZoddHabilidad : MonoBehaviour
     public ClaseFranja CC;
     public ClaseFranja D;
     public ClaseFranja S;
-    private bool selected = false;    
+    private bool selected = false;  
+    private bool Turn;  
 
 
     public void Efecto()
     {
-        if(jugable && selected)
+        if(jugable && selected && Turn == false)
         {
             int cc = CC.CardsinFrange.Count;
             int d = D.CardsinFrange.Count;
@@ -57,6 +58,7 @@ public class ZoddHabilidad : MonoBehaviour
 
     void Update()
     {
+        Turn = GameObject.Find("TurnCounter").GetComponent<SetTurn>().Turno;
         selected = GameObject.Find("CartasGriffith").GetComponent<GriffCards>().GrifSelected;
         jugable = gameObject.GetComponent<JugarCarta>().jugable;
         CC = GameObject.FindGameObjectWithTag("PlayerMelee").GetComponent<ClaseFranja>(); 

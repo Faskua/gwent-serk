@@ -12,9 +12,12 @@ public class Judeau : MonoBehaviour
     public ClaseFranja EnemyS;
     public bool jugable; 
     private bool selected = false; 
+    private bool Turn;
 
      public void Efecto()
      {
+        if(Turn && jugable)
+        {
         int pcc = PlayerCC.ObtenerMayor(); 
         int pd = PlayerD.ObtenerMayor();
         int ps = PlayerS.ObtenerMayor();
@@ -52,12 +55,13 @@ public class Judeau : MonoBehaviour
         {
             PlayerS.EliminarMayor(mayor);
             return;
-        }
+        }}
      }
 
 
     void Update()
     {
+        Turn = GameObject.Find("TurnCounter").GetComponent<SetTurn>().Turno;
         selected = GameObject.Find("CartasGutts").GetComponent<GuttsCards>().GuttsSelected;
         EnemyCC = GameObject.FindGameObjectWithTag("EnemyMelee").GetComponent<ClaseFranja>();
         EnemyD = GameObject.FindGameObjectWithTag("EnemyDistance").GetComponent<ClaseFranja>();

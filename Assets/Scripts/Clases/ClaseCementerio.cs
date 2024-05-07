@@ -7,6 +7,7 @@ public class ClaseCementerio : MonoBehaviour
     private GameObject Cardentry; //objeto que colisiona
      public List<GameObject> DeadCards;
      public GameObject Mano;
+     private SetTurn TurnCounter;
 
      private void OnCollisionEnter2D(Collision2D collision) //cuando colisionan mete las cartas en la lista del cemebterio 
      {
@@ -18,14 +19,19 @@ public class ClaseCementerio : MonoBehaviour
      {
         DeadCards.RemoveAt(0);
      }
+     void Start()
+    {
+        TurnCounter = GameObject.FindGameObjectWithTag("TurnCounter").GetComponent<SetTurn>();
+    }
 
      public void RegresarMuerto()
      {
         if(DeadCards.Count >= 1)
         {
-        int position = Random.Range(0, DeadCards.Count);
-        DeadCards[position].GetComponent<JugarCarta>().jugable = true;
-        DeadCards[position].GetComponent<JugarCarta>().PlayCard();
+            int position = Random.Range(0, DeadCards.Count);
+            DeadCards[position].GetComponent<JugarCarta>().jugable = true;
+            DeadCards[position].GetComponent<JugarCarta>().PlayCard();
+            TurnCounter.Turno = true;
         }
      }
 }
