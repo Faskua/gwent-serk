@@ -20,12 +20,12 @@ public class DananHabilidad : MonoBehaviour
         if(jugable && selected && Turn)
         {
             //cant de poder en cada franja
-            int p1 = pCC.Danan();
-            int p2 = pD.Danan();
-            int p3 = pS.Danan();
-            int p4 = eCC.Danan();
-            int p5 = eD.Danan();
-            int p6 = eS.Danan();
+            int p1 = pCC.Suma;
+            int p2 = pD.Suma;
+            int p3 = pS.Suma;
+            int p4 = eCC.Suma;
+            int p5 = eD.Suma;
+            int p6 = eS.Suma;
             //cant de cartas
             int C1 = pCC.Cartas;
             int C2 = pD.Cartas;

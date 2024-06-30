@@ -185,8 +185,8 @@ MonoBehaviour:
   Name: Amanecer
   OriginalPower: 0
   Power: 0
-  DescriptionNskill: Despeje. Elimina los efectos de las cartas de clima en la franja
-    propia de Asedio
+  DescriptionNskill: Despeje. Elimina todas las cartas de clima de todas las franjas.
+    Al usarse va directo al cementerio
   Lider: .
   Faction: Sacrificios
   Type: Clima

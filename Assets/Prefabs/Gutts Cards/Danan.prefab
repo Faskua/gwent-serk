@@ -317,8 +317,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Danan, Reina de los Elfos
-  OriginalPower: 6
-  Power: 6
+  OriginalPower: 5
+  Power: 5
   DescriptionNskill: "Una elfa psic\xF3loga al parecer super poderosa que me arregl\xF3
     el trauma de Casca (a medias). Iguala todas las cartas del tablero al promedio
     entre ellas"

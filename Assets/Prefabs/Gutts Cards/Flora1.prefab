@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Flora, La Hechicera del Bosque
-  OriginalPower: 1
+  OriginalPower: 5
   Power: 5
   DescriptionNskill: "Gran maestra, mejor distracci\xF3n. Si est\xE1 con Shierke
     la ayuda y aumenta su poder en 2 puntos y el suyo propio en 1"

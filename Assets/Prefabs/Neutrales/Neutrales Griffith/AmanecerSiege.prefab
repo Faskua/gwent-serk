@@ -185,8 +185,8 @@ MonoBehaviour:
   Name: Amanecer
   OriginalPower: 0
   Power: 0
-  DescriptionNskill: Despeje. Elimina todas las cartas de Clima en el campo y se
-    va al Cementerio
+  DescriptionNskill: Despeje. Elimina todas las cartas de clima de todas las franjas.
+    Al usarse va directo al cementerio
   Lider: .
   Faction: Falconia
   Type: Clima

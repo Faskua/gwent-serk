@@ -2637,7 +2637,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0cc6885fdfe4aa2438230c2629d5c5ea, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.519
+  m_Volume: 0.162
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2836,7 +2836,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.2824707, y: -0.12524414}
+  m_AnchoredPosition: {x: -0.28222656, y: -0.125}
   m_SizeDelta: {x: 0.56494, y: -0.25043}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1656424620
@@ -4208,9 +4208,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Griffith
-  DescriptionNskill: "El Karma es mi novio, el Karma es un dios, el Karma es la brisa
-    en mi cabello el fin de se-mana. Usa la carta m\xE1s d\xE9bil del rival en cada
-    franja como sacrificio y las elimina."
+  DescriptionNskill: El Karma es mi novio, el Karma es un dios, el Karma es la brisa
+    en mi cabello el fin de se-mana. Como esta persona tiene SERIOS problemas con
+    dejar ir a los suyos, juega una carta al azar del cementerio, pero no utiliza
+    de nuevo su efecto.
   Lider: "L\xEDder"
   Faction: Falconia
 --- !u!114 &3104731320769789302

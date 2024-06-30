@@ -124,15 +124,6 @@ public class ClaseFranja : MonoBehaviour
                 Cartas -= 1;
         }
     }
-    public int Danan() //con este metodo primero sumo todas las cartas de la franja y lo devuelvo para utilizarlo en otro script
-    {
-        int promedio = 0;
-        foreach(GameObject carta in CardsinFrange)
-        {
-            promedio += carta.GetComponent<ClaseCarta>().Power;
-        }
-        return promedio;
-    }
     public void AplicarDanan(int poder) //este poder que recibe es el promedio de todas las cartas del campo  y lo que hace es igualarlas a eso
     {
         foreach(GameObject carta in CardsinFrange)

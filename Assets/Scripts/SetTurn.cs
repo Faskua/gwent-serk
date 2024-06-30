@@ -14,7 +14,6 @@ public class SetTurn : MonoBehaviour
     public bool Guttsusado; // este y el de abajo es para ver si se usa al lider
     public bool Griffithusado;
     private int gutts = 1; //como el metodo para cambiar el turno si se usa al lider esta en el update, esto es para que se haga una sola vez si le sumo 1
-    private int griffith = 1;  //lo mismo
     public int Mano1 = 0; //cantidad de cartas de gutts
     private int Mano2 = 0; //cant de cartas de griffith
 

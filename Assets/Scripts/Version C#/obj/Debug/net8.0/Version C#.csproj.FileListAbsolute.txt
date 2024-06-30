@@ -1,0 +1,14 @@
+D:\Universidad\Programación\Proyecto\Version C#\obj\Debug\net8.0\Version C#.GeneratedMSBuildEditorConfig.editorconfig
+D:\Universidad\Programación\Proyecto\Version C#\obj\Debug\net8.0\Version C#.AssemblyInfoInputs.cache
+D:\Universidad\Programación\Proyecto\Version C#\obj\Debug\net8.0\Version C#.AssemblyInfo.cs
+D:\Universidad\Programación\Proyecto\Version C#\obj\Debug\net8.0\Version C#.csproj.CoreCompileInputs.cache
+D:\Universidad\Programación\Proyecto\Version C#\bin\Debug\net8.0\Version C#.exe
+D:\Universidad\Programación\Proyecto\Version C#\bin\Debug\net8.0\Version C#.deps.json
+D:\Universidad\Programación\Proyecto\Version C#\bin\Debug\net8.0\Version C#.runtimeconfig.json
+D:\Universidad\Programación\Proyecto\Version C#\bin\Debug\net8.0\Version C#.dll
+D:\Universidad\Programación\Proyecto\Version C#\bin\Debug\net8.0\Version C#.pdb
+D:\Universidad\Programación\Proyecto\Version C#\obj\Debug\net8.0\Version C#.dll
+D:\Universidad\Programación\Proyecto\Version C#\obj\Debug\net8.0\refint\Version C#.dll
+D:\Universidad\Programación\Proyecto\Version C#\obj\Debug\net8.0\Version C#.pdb
+D:\Universidad\Programación\Proyecto\Version C#\obj\Debug\net8.0\Version C#.genruntimeconfig.cache
+D:\Universidad\Programación\Proyecto\Version C#\obj\Debug\net8.0\ref\Version C#.dll
