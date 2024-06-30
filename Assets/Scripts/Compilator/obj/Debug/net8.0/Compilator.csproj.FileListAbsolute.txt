@@ -1,0 +1,15 @@
+D:\Universidad\Programación\Proyecto\Nueva carpeta\Gwent Berserk\Assets\Scripts\Compilator\bin\Debug\net8.0\Compilator.exe
+D:\Universidad\Programación\Proyecto\Nueva carpeta\Gwent Berserk\Assets\Scripts\Compilator\bin\Debug\net8.0\Compilator.deps.json
+D:\Universidad\Programación\Proyecto\Nueva carpeta\Gwent Berserk\Assets\Scripts\Compilator\bin\Debug\net8.0\Compilator.runtimeconfig.json
+D:\Universidad\Programación\Proyecto\Nueva carpeta\Gwent Berserk\Assets\Scripts\Compilator\bin\Debug\net8.0\Compilator.dll
+D:\Universidad\Programación\Proyecto\Nueva carpeta\Gwent Berserk\Assets\Scripts\Compilator\bin\Debug\net8.0\Compilator.pdb
+D:\Universidad\Programación\Proyecto\Nueva carpeta\Gwent Berserk\Assets\Scripts\Compilator\obj\Debug\net8.0\Compilator.GeneratedMSBuildEditorConfig.editorconfig
+D:\Universidad\Programación\Proyecto\Nueva carpeta\Gwent Berserk\Assets\Scripts\Compilator\obj\Debug\net8.0\Compilator.AssemblyInfoInputs.cache
+D:\Universidad\Programación\Proyecto\Nueva carpeta\Gwent Berserk\Assets\Scripts\Compilator\obj\Debug\net8.0\Compilator.AssemblyInfo.cs
+D:\Universidad\Programación\Proyecto\Nueva carpeta\Gwent Berserk\Assets\Scripts\Compilator\obj\Debug\net8.0\Compilator.csproj.CoreCompileInputs.cache
+D:\Universidad\Programación\Proyecto\Nueva carpeta\Gwent Berserk\Assets\Scripts\Compilator\obj\Debug\net8.0\Compilator.sourcelink.json
+D:\Universidad\Programación\Proyecto\Nueva carpeta\Gwent Berserk\Assets\Scripts\Compilator\obj\Debug\net8.0\Compilator.dll
+D:\Universidad\Programación\Proyecto\Nueva carpeta\Gwent Berserk\Assets\Scripts\Compilator\obj\Debug\net8.0\refint\Compilator.dll
+D:\Universidad\Programación\Proyecto\Nueva carpeta\Gwent Berserk\Assets\Scripts\Compilator\obj\Debug\net8.0\Compilator.pdb
+D:\Universidad\Programación\Proyecto\Nueva carpeta\Gwent Berserk\Assets\Scripts\Compilator\obj\Debug\net8.0\Compilator.genruntimeconfig.cache
+D:\Universidad\Programación\Proyecto\Nueva carpeta\Gwent Berserk\Assets\Scripts\Compilator\obj\Debug\net8.0\ref\Compilator.dll
