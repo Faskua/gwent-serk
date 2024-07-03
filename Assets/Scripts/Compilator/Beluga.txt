@@ -1,5 +1,5 @@
 card {
-	Type: "Oro",
+	Type: "Oro de laas marianas",
 	Name: "Beluga",
 	Faction: "Northern Realms",
 	Power: 10,

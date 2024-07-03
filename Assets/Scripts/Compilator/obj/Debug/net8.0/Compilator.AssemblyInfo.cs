@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Compilator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d1ea3a82bcf03a1c91b7e1784ba59b747276af66")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40effb95f87071902172cbab0c68e5cd6fe57249")]
 [assembly: System.Reflection.AssemblyProductAttribute("Compilator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Compilator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
