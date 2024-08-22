@@ -1,13 +1,50 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Transactions;
 
 public enum TokenType
 {
+    Int,     String,     
+    Boolean,    Operation,
+    Less,       Greater,
+    LessEqual, GreaterEqual,  
+    Assignation,    Semicolon,  
+    Comma,  Colon,  
+    Dot,    Symbol,
+    Loop,   Identifier,
+    LBracket,   RBracket,
+    LParen,     RParen,
+    LCurlyB,    RCurlyB,
+    Selector,
+
+
+    Card,   Name,
+    Type,   Faction,
+    Range,  Power,
+    Board,  Targets,
+
+    Effect,     Predicate, 
+    PostAction, OnActivation,
+    Action,     Params,
+    Source,     Single,
+    In,         Implication,
+
+
+
+    Number,     Text,   Bool,
+    
+}
+
+public enum IDType
+{
     Number,
     Text,
-    Keyword,
-    Identifier,
-    Symbol,
-    Unknwon,
+    Boolean,
+    Context, 
+    Targets,
+    Card,
+    Player,
+    Deck,
+    
 }
 
 public class CodeLocation
@@ -21,6 +58,16 @@ public class CodeLocation
         File = file;
         Line = line;
         Column = column;
+    }
+}
+
+public struct Variable
+{
+    public Expression? Value { get;}
+    public IDType IDType { get;}
+    public Variable(Expression? value, IDType idtype){
+        Value = value;
+        IDType = idtype;
     }
 }
 
@@ -53,12 +100,12 @@ public class TokenStream
 
     public bool End => position == tokens.Count-1;
 
-    public void MoveNext(int k)
+    public void MoveNext(int k = 1)
     {
         position += k;
     }
 
-    public void MoveBack(int k)
+    public void MoveBack(int k = 1)
     {
         position -= k;
     }
