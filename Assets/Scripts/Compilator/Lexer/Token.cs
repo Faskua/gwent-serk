@@ -1,61 +1,75 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Runtime.Serialization;
 using System.Transactions;
 
 public enum TokenType
 {
     Int,     String,     
-    Boolean,    Operation,
+    Boolean, 
     Less,       Greater,
     LessEqual, GreaterEqual,  
     Assignation,    Semicolon,  
     Comma,  Colon,  
     Dot,    Symbol,
-    Loop,   Identifier,
-    LBracket,   RBracket,
-    LParen,     RParen,
-    LCurlyB,    RCurlyB,
-    Selector,
+    If,   Identifier,
+    For,        While,
+    Else,   LBracket,   
+    RBracket,   LParen,     
+    RParen,     LCurlyB,
+    RCurlyB,    Selector,
+
+    Plus,   Minus,
+    Multip, Division,
+    Increase,   Decrease,
+    PlusEqual, MinusEqual,
+    Pow,
 
 
     Card,   Name,
     Type,   Faction,
     Range,  Power,
     Board,  Targets,
+    And,    Or,
+    Not,    Concat,
+    SpaceConcat,     Equals,
 
     Effect,     Predicate, 
     PostAction, OnActivation,
     Action,     Params,
     Source,     Single,
     In,         Implication,
+    EffParam,   Amount,
 
 
 
     Number,     Text,   Bool,
+
+    Unknown
     
 }
 
 public enum IDType
 {
     Number,
-    Text,
+    String,
     Boolean,
-    Context, 
-    Targets,
     Card,
-    Player,
     Deck,
+    Player,
+    Targets,
+    Predicate,
+    Context, 
+    Null
     
 }
 
 public class CodeLocation
 {
-    public string File;
     public int Line;
     public int Column;
 
-    public CodeLocation( string file, int line, int column)
+    public CodeLocation(int line, int column)
     {
-        File = file;
         Line = line;
         Column = column;
     }
@@ -83,6 +97,78 @@ public class Token
         Type = type;
         Location = location;
     }
+    public static Dictionary<string, TokenType> Types = new Dictionary<string, TokenType>(){
+        //Types
+        {"true", TokenType.Boolean},
+        {"false", TokenType.Boolean},
+        {"Text", TokenType.Text},
+        {"Number", TokenType.Number},
+        {"Bool", TokenType.Bool},
+
+        //Loop
+        {"if", TokenType.If},
+        {"else", TokenType.Else},
+        {"for", TokenType.For},
+        {"while", TokenType.While},
+
+        //Reserved words for DSL
+        {"card", TokenType.Card},
+        {"Name", TokenType.Name},
+        {"Type", TokenType.Type},
+        {"Faction", TokenType.Faction},
+        {"Range", TokenType.Range},
+        {"Power", TokenType.Power},
+        {"Board", TokenType.Board},
+        {"targets", TokenType.Targets},
+        {"effect", TokenType.Effect},
+        {"Effect", TokenType.EffParam},
+        {"Predicate", TokenType.Predicate},
+        {"PostAction", TokenType.PostAction},
+        {"OnActivation", TokenType.OnActivation},
+        {"Action", TokenType.Action},
+        {"Params", TokenType.Params},
+        {"Source", TokenType.Source},
+        {"Single", TokenType.Single},
+        {"Selector", TokenType.Selector},
+        {"in", TokenType.Text},
+        {"Amount", TokenType.Amount},
+
+        // Operators
+        {">", TokenType.Greater},
+        {"<", TokenType.Less},
+        {">=", TokenType.GreaterEqual},
+        {"<=", TokenType.LessEqual},
+        {"=>", TokenType.Implication},
+        {"+", TokenType.Plus},
+        {"-", TokenType.Minus},
+        {"*", TokenType.Multip},
+        {"/", TokenType.Division},
+        {"^", TokenType.Pow},
+        {"++", TokenType.Increase},
+        {"--", TokenType.Decrease},
+        {"+=", TokenType.PlusEqual},
+        {"-=", TokenType.MinusEqual},
+        {"&&", TokenType.And},
+        {"||", TokenType.Or},
+        {"==", TokenType.Equals},
+        {"!", TokenType.Not},
+        {"@", TokenType.Concat},
+        {"@@", TokenType.SpaceConcat},
+
+
+        //Punctuation
+        {"=", TokenType.Assignation},
+        {";", TokenType.Semicolon},
+        {",", TokenType.Comma},
+        {":", TokenType.Colon},
+        {".", TokenType.Dot},
+        {"(", TokenType.LParen},
+        {"[", TokenType.LBracket},
+        {"{", TokenType.LCurlyB},
+        {")", TokenType.RParen},
+        {"]", TokenType.RBracket},
+        {"}", TokenType.RCurlyB},
+    };
 }
 
 public class TokenStream 
