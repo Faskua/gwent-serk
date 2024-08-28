@@ -51,7 +51,7 @@ public class SavedEffect
                 scope.Define(name, Params[name]);
             }
         }
-        Action.ImplementAll(scope);
+        Action.ImplementAll();
         if(PostAction != null) PostAction.Implement(scope, this);
     }
 }
@@ -68,7 +68,7 @@ class ActionSave
         }
         foreach (Token ID in Params.Keys)
         {
-            IDType expected = Params[ID].Type(scope);
+            IDType expected = Params[ID].Type;
             if(SavedActions[Name].ContainsKey(ID.Value) && SavedActions[Name][ID.Value] == expected){ //Si son iguales tanto en el Saved como en Params
                 scope.Define(ID.Value, expected); // se define en el scope y se pasa al siguiente
                 continue;
@@ -78,14 +78,5 @@ class ActionSave
     }
 }
 
-public interface ICard{
-    string Name { get;}
-    int Power { get;}
-    string Faction { get;}
-    string Type { get;}
-    List<SavedEffect> effects { get;}
-}
 
-public interface IEffect{
 
-}

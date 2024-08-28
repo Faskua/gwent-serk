@@ -5,7 +5,7 @@ using System.Transactions;
 public enum TokenType
 {
     Int,     String,     
-    Boolean, 
+    True,   False, 
     Less,       Greater,
     LessEqual, GreaterEqual,  
     Assignation,    Semicolon,  
@@ -53,6 +53,7 @@ public enum IDType
     Number,
     String,
     Boolean,
+    Object,
     Card,
     Deck,
     Player,
@@ -99,8 +100,8 @@ public class Token
     }
     public static Dictionary<string, TokenType> Types = new Dictionary<string, TokenType>(){
         //Types
-        {"true", TokenType.Boolean},
-        {"false", TokenType.Boolean},
+        {"true", TokenType.True},
+        {"false", TokenType.False},
         {"Text", TokenType.Text},
         {"Number", TokenType.Number},
         {"Bool", TokenType.Bool},

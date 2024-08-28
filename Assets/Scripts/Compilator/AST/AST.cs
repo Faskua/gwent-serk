@@ -4,28 +4,29 @@ using System.Runtime.InteropServices;
 public abstract class DSL
 {
     // Tipo general que contiene cartas y efectos
-    public abstract void Validation(IScope scope); //para analizar la semantica
+    public abstract void Validation(IScope scope, out List<string> errors); //para analizar la semantica
 }
 
 public abstract class Instruction : DSL
 {
-    public abstract object Implement(IimplementScope scope);
+    public abstract object? Implement();
 }
 
 class BlockToDec : DSL
 {
-    List<Card> Cards { get; set;}
-    List<Effect> Effects { get; set;}
-    public BlockToDec(List<Card> cards, List<Effect> effects){
+    List<CardDSL> Cards { get; set;}
+    List<EffectDSL> Effects { get; set;}
+    public BlockToDec(List<CardDSL> cards, List<EffectDSL> effects){
         Cards = cards;
         Effects = effects;
     }
-    public override void Validation(IScope scope){
+    public override void Validation(IScope scope, out List<string> errors){
+        errors = [];
         foreach (var Effect in Effects){
-            Effect.Validation(scope.CreateChild());
+            Effect.Validation(scope.CreateChild(), out errors);
         }
         foreach (var Card in Cards){
-            Card.Validation(scope.CreateChild());
+            Card.Validation(scope.CreateChild(), out errors);
         }
     }
     public List<ICard> Evaluate(){
@@ -45,18 +46,19 @@ public class InsBLock : DSL{
         Targets = targets;
         Instructions = instructions;
     }
-    public void ImplementAll(IimplementScope scope){
+    public void ImplementAll(){
         foreach (var Instruction in Instructions){
-            Instruction.Implement(scope);
+            Instruction.Implement();
         }
     }
-    public override void Validation(IScope scope){
+    public override void Validation(IScope scope, out List<string> errors){
+        errors = [];
         //Primero revisar si esta def target y context
         if(!scope.CheckDefinition(Targets.Value)) scope.Define(Targets.Value, IDType.Deck);
         if(!scope.CheckDefinition(Context.Value)) scope.Define(Context.Value, IDType.Context);
 
         foreach(var instruction in Instructions){
-            instruction.Validation(scope);
+            instruction.Validation(scope, out errors);
         }
     }
 }
@@ -72,29 +74,30 @@ public class While : Instruction
         Instructions = instruc;
         Condition = condit;
     }
-    public override object Implement(IimplementScope scope)
+    public override object? Implement()
     {
-        while((bool)Condition.Implement(scope)) Instructions.ImplementAll(scope);
+        while((bool)Condition.Implement()) Instructions.ImplementAll();
         return null;
     }
 
-    public override void Validation(IScope scope)
+    public override void Validation(IScope scope, out List<string> errors)
     {
+        errors = [];
         IScope Child = scope.CreateChild(); //cre un hijo y hago Validation desde el 
-        Condition.CheckType(Child, IDType.Boolean);
-        Condition.Validation(Child);
-        Instructions.Validation(Child);
+        Condition.CheckType(IDType.Boolean);
+        Condition.Validation(Child, out errors);
+        Instructions.Validation(Child, out errors);
     }
 }
 
 public class For : Instruction
 {
-    public override object Implement(IimplementScope scope)
+    public override object Implement()
     {
         throw new NotImplementedException();
     }
 
-    public override void Validation(IScope scope)
+    public override void Validation(IScope scope, out List<string> errors)
     {
         throw new NotImplementedException();
     }
@@ -104,23 +107,24 @@ public class For : Instruction
 
 #region  Effect
 
-public class Effect : DSL
+public class EffectDSL : DSL
 {
     Expression Name { get;}
     string? name;
     Dictionary<Token, Token>? Params { get;}
     InsBLock Action { get;}
-    public Effect( Expression name, InsBLock action, Dictionary<Token, Token>? param){
+    public EffectDSL( Expression name, InsBLock action, Dictionary<Token, Token>? param){
         Name = name;
         Action = action;
         Params = param;
     }
 
-    public override void Validation(IScope scope){
-        Name.Validation(scope);
-        Name.CheckType(scope, IDType.String);
-        Action.Validation(scope.CreateChild());
-        this.name = (string)Name.Evaluate();
+    public override void Validation(IScope scope, out List<string> errors){
+        errors = [];
+        Name.Validation(scope, out errors);
+        Name.CheckType(IDType.String);
+        Action.Validation(scope.CreateChild(), out errors);
+        this.name = (string)Name.Implement();
         if(Params != null){
             scope.DefineParam(this.name, Params); //ya confirme que es un string
         }
@@ -143,14 +147,14 @@ public class Effect : DSL
 
 #region Card
 
-public class Card : DSL
+public class CardDSL : DSL
 {
     public Expression Type { get;}
     public Expression Name { get;}
     public Expression Power { get;}
     public List<Expression> Range { get;}
     public List<IEffect> Effects { get;}
-    public Card(Expression type, Expression name, Expression power, List<Expression> range, List<IEffect> effects){
+    public CardDSL(Expression type, Expression name, Expression power, List<Expression> range, List<IEffect> effects){
         Type = type;
         Name = name;
         Power = power;
@@ -158,16 +162,17 @@ public class Card : DSL
         Effects = effects;
     }
 
-    public override void Validation(IScope scope){
-        Type.Validation(scope);
-        Type.CheckType(scope, IDType.String);
-        Name.Validation(scope);
-        Name.CheckType(scope, IDType.String);
-        Power.Validation(scope);
-        Power.CheckType(scope, IDType.Number);
+    public override void Validation(IScope scope, out List<string> errors){
+        errors = [];
+        Type.Validation(scope, out errors);
+        Type.CheckType( IDType.String);
+        Name.Validation(scope, out errors);
+        Name.CheckType(IDType.String);
+        Power.Validation(scope, out errors);
+        Power.CheckType(IDType.Number);
         foreach (var range in Range){
-            range.Validation(scope);
-            range.CheckType(scope, IDType.String);
+            range.Validation(scope, out errors);
+            range.CheckType(IDType.String);
         }
 
     }
