@@ -5,8 +5,9 @@ public abstract class UnaryExp<T> : Expression<T>
     protected T Value;
     public override CodeLocation Location { get; protected set;}
     public override string ToString()=> Value.ToString();
-    public override void Validation(IScope scope, out List<string> errors){
+    public override bool Validation(out List<string> errors){
         errors = [];
+        return errors.Count == 0;
     }
 }
 
@@ -42,12 +43,13 @@ public class UnaryOp : Expression<object>
     }
     public override IDType Type => Id.Type;
 
-    public override void Validation(IScope scope, out List<string> errors)
+    public override bool Validation(out List<string> errors)
     { //es una unaria, deberia ser un numero
         errors = [];
-        if(Id.CheckType(IDType.Number) || Id.CheckType(IDType.Boolean)) return;
+        if(Id.CheckType(IDType.Number) || Id.CheckType(IDType.Boolean)) return true;
         else 
             errors.Add($"Wrong us for expression at line: {Id.Location.Line}, column: {Id.Location.Column}");
+        return false;
     }
     public override object? Implement()
     {

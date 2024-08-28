@@ -5,7 +5,7 @@ class Lexer{
     List<Token> tokens = [];
     Regex text = new Regex(@"[_a-zA-Z][_a-zA-Z0-9]*");
     Regex number = new Regex(@"\d+(\.\d+)?");
-    Regex symbol = new Regex(@">|<|>=|<=|=>|\+|-|\*|\/|\^|\+\+|--|\+=|-=|&&|==|\|\|!|@@|@|=|;|,|:|.|\(|\[|{|\)|]|}");
+    Regex symbol = new Regex(@">|<|>=|<=|=>|\+|-|\*|\/|\^|\+\+|--|\+=|-=|&&|==|!=|\|\|!|@@|@|=|;|,|:|.|\(|\[|{|\)|]|}");
     Regex Spaces = new Regex(@"[\s|\t]+");
 
     public List<Token> Tokenize(string input){

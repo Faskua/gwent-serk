@@ -5,8 +5,9 @@ public abstract class ToCall : Expression<object>
 {
     protected Token? Caller;
     protected Expression? Called;
-    public override void Validation(IScope scope, out List<string> errors){
+    public override bool Validation(out List<string> errors){
         errors = [];
+        return errors.Count == 0;
     }
     public override IDType Type => IDType.Object;
     public override CodeLocation Location { get => Caller.Location; protected set => throw new NotImplementedException(); } 
@@ -19,10 +20,7 @@ public class Method : ToCall
         Caller = token;
         Called = expression;
     }
-    public override void Validation(IScope scope, out List<string> errors)
-    {
-        base.Validation(scope, out errors);
-    }
+    public override bool Validation(out List<string> errors) => throw new NotImplementedException();
     public override object? Implement()
     {
         throw new NotImplementedException();

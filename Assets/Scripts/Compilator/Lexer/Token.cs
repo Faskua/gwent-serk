@@ -32,6 +32,7 @@ public enum TokenType
     And,    Or,
     Not,    Concat,
     SpaceConcat,     Equals,
+    NotEquals,
 
     Effect,     Predicate, 
     PostAction, OnActivation,
@@ -152,6 +153,7 @@ public class Token
         {"&&", TokenType.And},
         {"||", TokenType.Or},
         {"==", TokenType.Equals},
+        {"!=", TokenType.NotEquals},
         {"!", TokenType.Not},
         {"@", TokenType.Concat},
         {"@@", TokenType.SpaceConcat},

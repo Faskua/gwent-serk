@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 public abstract class DSL
 {
     // Tipo general que contiene cartas y efectos
-    public abstract void Validation(IScope scope, out List<string> errors); //para analizar la semantica
+    public abstract bool Validation( out List<string> errors); //para analizar la semantica
 }
 
 public abstract class Instruction : DSL
@@ -20,14 +20,15 @@ class BlockToDec : DSL
         Cards = cards;
         Effects = effects;
     }
-    public override void Validation(IScope scope, out List<string> errors){
+    public override bool Validation(out List<string> errors){
         errors = [];
         foreach (var Effect in Effects){
-            Effect.Validation(scope.CreateChild(), out errors);
+            Effect.Validation(out errors);
         }
         foreach (var Card in Cards){
-            Card.Validation(scope.CreateChild(), out errors);
+            Card.Validation(out errors);
         }
+        return errors.Count == 0;
     }
     public List<ICard> Evaluate(){
         foreach (var effect in Effects){ //gurado todos los efectos en la clase estatica
@@ -51,15 +52,16 @@ public class InsBLock : DSL{
             Instruction.Implement();
         }
     }
-    public override void Validation(IScope scope, out List<string> errors){
+    public override bool Validation(out List<string> errors){
         errors = [];
         //Primero revisar si esta def target y context
-        if(!scope.CheckDefinition(Targets.Value)) scope.Define(Targets.Value, IDType.Deck);
-        if(!scope.CheckDefinition(Context.Value)) scope.Define(Context.Value, IDType.Context);
+        //if(!scope.CheckDefinition(Targets.Value)) scope.Define(Targets.Value, IDType.Deck);
+        //if(!scope.CheckDefinition(Context.Value)) scope.Define(Context.Value, IDType.Context);
 
         foreach(var instruction in Instructions){
-            instruction.Validation(scope, out errors);
+            instruction.Validation(out errors);
         }
+        return errors.Count == 0;
     }
 }
 
@@ -80,13 +82,13 @@ public class While : Instruction
         return null;
     }
 
-    public override void Validation(IScope scope, out List<string> errors)
+    public override bool Validation(out List<string> errors)
     {
-        errors = [];
-        IScope Child = scope.CreateChild(); //cre un hijo y hago Validation desde el 
+        errors = []; //cre un hijo y hago Validation desde el 
         Condition.CheckType(IDType.Boolean);
-        Condition.Validation(Child, out errors);
-        Instructions.Validation(Child, out errors);
+        Condition.Validation(out errors);
+        Instructions.Validation(out errors);
+        return errors.Count == 0;
     }
 }
 
@@ -97,7 +99,7 @@ public class For : Instruction
         throw new NotImplementedException();
     }
 
-    public override void Validation(IScope scope, out List<string> errors)
+    public override bool Validation(out List<string> errors)
     {
         throw new NotImplementedException();
     }
@@ -119,15 +121,16 @@ public class EffectDSL : DSL
         Params = param;
     }
 
-    public override void Validation(IScope scope, out List<string> errors){
+    public override bool Validation(out List<string> errors){
         errors = [];
-        Name.Validation(scope, out errors);
+        Name.Validation(out errors);
         Name.CheckType(IDType.String);
-        Action.Validation(scope.CreateChild(), out errors);
+        Action.Validation(out errors);
         this.name = (string)Name.Implement();
         if(Params != null){
-            scope.DefineParam(this.name, Params); //ya confirme que es un string
+            //scope.DefineParam(this.name, Params); //ya confirme que es un string
         }
+        return errors.Count == 0;
     }
     public void ToEffectSaver(){
         List<string> param = [];
@@ -162,19 +165,21 @@ public class CardDSL : DSL
         Effects = effects;
     }
 
-    public override void Validation(IScope scope, out List<string> errors){
+    public override bool Validation(out List<string> errors){
         errors = [];
-        Type.Validation(scope, out errors);
+        List<string> aux = [];
+        if(!Type.Validation(out errors))aux.AddRange(errors);
         Type.CheckType( IDType.String);
-        Name.Validation(scope, out errors);
+        if(!Name.Validation(out errors)) aux.AddRange(errors);
         Name.CheckType(IDType.String);
-        Power.Validation(scope, out errors);
+        if(!Power.Validation(out errors)) aux.AddRange(errors);
         Power.CheckType(IDType.Number);
         foreach (var range in Range){
-            range.Validation(scope, out errors);
+            if(!range.Validation(out errors)) aux.AddRange(errors);
             range.CheckType(IDType.String);
         }
-
+        errors.AddRange(aux);
+        return errors.Count == 0;
     }
 }
 
