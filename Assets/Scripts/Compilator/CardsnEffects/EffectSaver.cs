@@ -57,23 +57,23 @@ public class SavedEffect
 }
 class ActionSave
 {
-    public Dictionary<string,Dictionary<string,IDType>?> SavedActions = [];
+    public Dictionary<string,Dictionary<string,Expression>?> SavedActions = [];
 
-    public void CheckParams(string Name, Dictionary<Token, Expression>? Params, IScope scope){
+    public void CheckParams(string Name, Dictionary<string, Expression>? Params, IScope scope){
         if(!SavedActions.ContainsKey(Name)) throw new Exception("Not Defined Effect");
 
-        if(Params == null){
-            if(SavedActions.ContainsKey(Name)) throw new Exception("Uncorrect Params");
-            return; //Si el diccionario es null y su nombre no esta entonces no hay nada que hacer
-        }
-        foreach (Token ID in Params.Keys)
+        // if(Params == null){
+        //     if(SavedActions.ContainsKey(Name)) throw new Exception("Uncorrect Params");
+        //     return; //no puede estar el effecto sin params
+        // }
+        foreach (string ID in Params.Keys)
         {
-            IDType expected = Params[ID].Type;
-            if(SavedActions[Name].ContainsKey(ID.Value) && SavedActions[Name][ID.Value] == expected){ //Si son iguales tanto en el Saved como en Params
-                scope.Define(ID.Value, expected); // se define en el scope y se pasa al siguiente
+            Expression expected = Params[ID];
+            if(SavedActions[Name].ContainsKey(ID) && SavedActions[Name][ID] == expected){ //Si son iguales tanto en el Saved como en Params
+                scope.Define(ID, expected); // se define en el scope y se pasa al siguiente
                 continue;
             }
-            throw new Exception("Something went wrong");
+            throw new Exception($"Params or Name definition are wrong with the action {Name}");
         }
     }
 }

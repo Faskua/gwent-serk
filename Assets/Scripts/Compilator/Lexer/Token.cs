@@ -99,6 +99,11 @@ public class Token
         Type = type;
         Location = location;
     }
+    public Token (Token token, string value){
+        Value = value;
+        Type = token.Type;
+        Location = token.Location;
+    }
     public static Dictionary<string, TokenType> Types = new Dictionary<string, TokenType>(){
         //Types
         {"true", TokenType.True},

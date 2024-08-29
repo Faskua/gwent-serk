@@ -1,8 +1,7 @@
 using System.Linq.Expressions;
 
-public abstract class Expression : Instruction
+public abstract class Expression : DSL
  {
-    public abstract CodeLocation Location{ get; protected set;}
     public abstract IDType Type { get;}
     //si no es tipo que necesita lanza un error
     public bool CheckType(IDType needed){
@@ -21,9 +20,8 @@ public interface IVisitable<T>{
 }
 public abstract class Expression<T> : Expression, IVisitable<T>{
     public virtual T Accept(IVisitor<T> visitor) => visitor.Visit(this);  
-    public override bool Validation(out List<string> errors){
-        errors = [];
-        return errors.Count == 0;
+    public override bool Validation(){
+        return Errors.Count == 0;
     }
 }
 

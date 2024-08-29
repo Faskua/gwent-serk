@@ -7,10 +7,10 @@ public interface IScope
     //Crea un contexto
     IScope CreateChild();
     //Devuelve el IdType de un id
-    IDType GetIdType(string id);
+    Expression GetExp(string id);
     //Recibe un id y revisa si esta definido
     bool CheckDefinition(string id);
-    void Define(string Name, IDType id);
+    void Define(string Name, Expression id);
 }
 
 public interface IimplementScope
@@ -29,18 +29,21 @@ class Scope : IScope
     //Contexto padre que puede ser null
     IScope? Parent;
     //variables en el scope
-    Dictionary<string, IDType> Variables = [];
+    Dictionary<string, Expression> Variables = [];
+    public Scope(IScope parent){
+        Parent = parent;
+    }
     public IScope CreateChild(){
-        var scope = new Scope();
-        scope.Parent = this;
+        var scope = new Scope(this);
         return scope;
     }
 
-    public void Define(string variable, IDType id){ //añade una variable al diccionario o cambia su valor si ya esta definida
+    public void Define(string variable, Expression id){ //añade una variable al diccionario o cambia su valor si ya esta definida
         if(!CheckDefinition(variable)){
             Variables.Add(variable, id);
         }
-        else Variables[variable] = id;
+        else if(Variables.ContainsKey(variable)) Variables[variable] = id;
+        else Parent.Define(variable, id);
 
     }
     public bool CheckDefinition(string id){
@@ -52,9 +55,10 @@ class Scope : IScope
         throw new NotImplementedException();
     }
 
-    public IDType GetIdType(string id){ //si no esta definido en el contexto lanza error
+    public Expression GetExp(string id){ //si no esta definido en el contexto lanza error
         if (!CheckDefinition(id)) throw new Exception("Id not defined");
-        return Variables[id];
+        if(Variables.ContainsKey(id)) return Variables[id];
+        else return Parent.GetExp(id);
     }
 }
 class ImplementScope : IimplementScope

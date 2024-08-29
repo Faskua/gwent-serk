@@ -16,16 +16,9 @@ public abstract class BinaryExpression<T> : Expression<T>
         Left = left;
         Operation = op;
     }
-    public override bool Validation(out List<string> error)
+    public override bool Validation()
     {
-        error = [];
-        if(!this.Validation(out List<string> errors)){
-            foreach (var item in errors){
-                error.Add(item);
-            }
-            return false;
-        }
-        else return true;
+        return this.Validation();
     }
 }
 
@@ -35,13 +28,12 @@ public class NumericalBinary : BinaryExpression<Int> //las operaciones binarias
     public NumericalBinary(Expression right, Expression left, Token op) : base(right, left, op){}
     public override IDType Type => IDType.Number;
 
-    public override bool Validation(out List<string> error)
+    public override bool Validation()
     {
-        error = [];
-        if(!operations.Contains(Operation.Type)) error.Add($"Unexpected operation in line: {Location.Line}, column: {Location.Column}");
-        if(!Left.CheckType(IDType.Number)) error.Add($"The expression at line: {Left.Location.Line}, column: {Left.Location.Column} is not a number");
-        if(!Right.CheckType(IDType.Number)) error.Add($"The expression at line: {Right.Location.Line}, column: {Right.Location.Column} is not a number");
-        return error.Count == 0;
+        if(!operations.Contains(Operation.Type)) Errors.Add($"Unexpected operation in line: {Location.Line}, column: {Location.Column}");
+        if(!Left.CheckType(IDType.Number)) Errors.Add($"The expression at line: {Left.Location.Line}, column: {Left.Location.Column} is not a number");
+        if(!Right.CheckType(IDType.Number)) Errors.Add($"The expression at line: {Right.Location.Line}, column: {Right.Location.Column} is not a number");
+        return Errors.Count == 0;
     }
 
     public override object? Implement()
@@ -74,12 +66,11 @@ public class BooleanBinary : BinaryExpression<bool>
     private List<TokenType> operations = new List<TokenType> {TokenType.And, TokenType.Or};
     public BooleanBinary(Expression right, Expression left, Token op) : base(right, left, op){}
     public override IDType Type => IDType.Boolean;
-    public override bool Validation( out List<string> error){
-        error = [];
-        if(!operations.Contains(Operation.Type)) error.Add($"Unexpected operator at line: {Location.Line}, column: {Location.Column}");
-        if(!Left.CheckType(IDType.Boolean)) error.Add($"The expression at line: {Left.Location.Line}, column: {Left.Location.Column} is not a boolean expression");
-        if(!Right.CheckType(IDType.Boolean)) error.Add($"The expression at line: {Right.Location.Line}, column: {Right.Location.Column} is not a boolean expression");
-        return error.Count == 0;
+    public override bool Validation(){
+        if(!operations.Contains(Operation.Type)) Errors.Add($"Unexpected operator at line: {Location.Line}, column: {Location.Column}");
+        if(!Left.CheckType(IDType.Boolean)) Errors.Add($"The expression at line: {Left.Location.Line}, column: {Left.Location.Column} is not a boolean expression");
+        if(!Right.CheckType(IDType.Boolean)) Errors.Add($"The expression at line: {Right.Location.Line}, column: {Right.Location.Column} is not a boolean expression");
+        return Errors.Count == 0;
     }
 
     public override object? Implement(){
@@ -109,13 +100,12 @@ public class BooleanExpression : BinaryExpression<bool>
         return base.Accept(visitor);
     }
     public override IDType Type => IDType.Boolean;
-    public override bool Validation(out List<string> error)
+    public override bool Validation()
     {
-        error = [];
-        if(!operations.Contains(Operation.Type)) error.Add($"Unexpected operator at line: {Location.Line}, column: {Location.Column}");    
-        if(!Right.CheckType(IDType.Number)) error.Add($"A number was expected at line: {Right.Location.Line}, column: {Right.Location.Column}");
-        if(!Left.CheckType(IDType.Number)) error.Add($"A number was expected at line: {Left.Location.Line}, column: {Left.Location.Column}");
-        return error.Count == 0;
+        if(!operations.Contains(Operation.Type)) Errors.Add($"Unexpected operator at line: {Location.Line}, column: {Location.Column}");    
+        if(!Right.CheckType(IDType.Number)) Errors.Add($"A number was expected at line: {Right.Location.Line}, column: {Right.Location.Column}");
+        if(!Left.CheckType(IDType.Number)) Errors.Add($"A number was expected at line: {Left.Location.Line}, column: {Left.Location.Column}");
+        return Errors.Count == 0;
     }
 
     public override object? Implement()
@@ -150,12 +140,11 @@ public class StringBinary : BinaryExpression<string>
     public override IDType Type => IDType.String;
     List<TokenType> operations = new List<TokenType> {TokenType.Concat, TokenType.SpaceConcat};
 
-    public override bool Validation(out List<string> error){
-        error = [];
-        if(!operations.Contains(Operation.Type)) error.Add($"Unexpected operation at line: {Location.Line}, column: {Location.Column}");
-        if(!Left.CheckType(IDType.String)) error.Add($"A string was expected at line: {Left.Location.Line}, column: {Left.Location.Column}");
-        if(!Right.CheckType(IDType.String)) error.Add($"A string was expected at line: {Right.Location.Line}, column: {Right.Location.Column}");
-        return error.Count == 0;
+    public override bool Validation(){
+        if(!operations.Contains(Operation.Type)) Errors.Add($"Unexpected operation at line: {Location.Line}, column: {Location.Column}");
+        if(!Left.CheckType(IDType.String)) Errors.Add($"A string was expected at line: {Left.Location.Line}, column: {Left.Location.Column}");
+        if(!Right.CheckType(IDType.String)) Errors.Add($"A string was expected at line: {Right.Location.Line}, column: {Right.Location.Column}");
+        return Errors.Count == 0;
     }
     public override object? Implement(){
         try{
