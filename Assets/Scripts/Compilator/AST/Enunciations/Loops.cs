@@ -1,3 +1,20 @@
+public class DebugLog : Statement
+{
+    Expression Value;
+    
+    public DebugLog(Expression value) {Value = value;}
+
+    public override CodeLocation Location => Value.Location;
+
+    public override void Implement(){
+        Console.WriteLine(Value.Implement());
+    }
+
+    public override bool Validation(){
+        if(!Value.Validation()) Errors.AddRange(Value.Errors);
+        return Errors.Count == 0;
+    }
+}
 public class IF : Statement
 {
     Statement Instructions;

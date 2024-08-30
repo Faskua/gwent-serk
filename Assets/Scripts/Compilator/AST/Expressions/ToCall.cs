@@ -13,8 +13,8 @@ public abstract class ToCall : Expression<object>
 }
 public class Method : ToCall
 {
-    public Expression[] Parameters;
-    public Method(Expression[] parameters, Token? token, Expression? expression){
+    public Expression[]? Parameters;
+    public Method(Token? token, Expression? expression, Expression[]? parameters){
         Parameters = parameters;
         Caller = token;
         Called = expression;

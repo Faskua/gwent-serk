@@ -32,7 +32,7 @@ public enum TokenType
     And,    Or,
     Not,    Concat,
     SpaceConcat,     Equals,
-    NotEquals,
+    NotEquals,  Context,
 
     Effect,     Predicate, 
     PostAction, OnActivation,
@@ -127,6 +127,7 @@ public class Token
         {"Power", TokenType.Power},
         {"Board", TokenType.Board},
         {"targets", TokenType.Targets},
+        {"context", TokenType.Context},
         {"effect", TokenType.Effect},
         {"Effect", TokenType.EffParam},
         {"Predicate", TokenType.Predicate},
@@ -183,6 +184,7 @@ public class TokenStream
 {
     List<Token> tokens;
     int position;
+    Token TokenPlus;
 
     public TokenStream(IEnumerable<Token> tokens)
     {
@@ -211,12 +213,50 @@ public class TokenStream
             position++;
         }
 
-        return position < tokens.Count;
+        return position < tokens.Count- 1;
+    }
+    public int NextNStay(){
+        if(position < tokens.Count - 1) return position + 1;
+        return -1;
+    }
+    public Token NextTokenStay(){
+        if(position < tokens.Count - 1) return tokens[position + 1];
+        return null;
+    }
+    public Token NextTokenMove(){
+        if(position < tokens.Count - 1){
+            position++;
+            return tokens[position];
+        }
+        return null;
     }
 
-    public bool Next( TokenType type )
+    public void Consume(TokenType type){
+        if( tokens[position + 1].Type == type) position++;
+        else{
+            Token token = tokens[position + 1];
+            throw new Exception($"Invalid Sintax Error. Unexpected Token at line {token.Location.Line}, column: {token.Location.Column}");
+        }
+    }
+    public void Consume(List<TokenType> types){
+        foreach (TokenType type in types){
+            Consume(type);
+        }
+    }
+    public void LookAhead(TokenType type){
+        LookAhead([type]);
+    }
+
+    public void LookAhead(List<TokenType>? types = null){
+        if(Position + 1 >= tokens.Count) throw new Exception($"Out of range at line: {tokens[tokens.Count-1].Location.Line}, column: {tokens[tokens.Count-1].Location.Column}");
+        if(types == null) {TokenPlus = tokens[position + 1];    return;}
+        if(types.Contains(tokens[Position + 1].Type)) TokenPlus = tokens[Position + 1];
+        else throw new Exception($"Unexpected Token at line: {tokens[Position+1].Location.Line}, column: {tokens[position+1].Location.Column}");;
+    }
+
+    public bool NextToken( TokenType type )
     {
-        if (position < tokens.Count-1 && LookAhead(1).Type == type)
+        if (position < tokens.Count-1 && GiveToken(1).Type == type)
         {
             position++;
             return true;
@@ -225,9 +265,9 @@ public class TokenStream
         return false;
     }
 
-    public bool Next(string value)
+    public bool NextToken(string value)
     {            
-        if (position < tokens.Count-1 && LookAhead(1).Value == value)
+        if (position < tokens.Count-1 && GiveToken(1).Value == value)
         {
             position++;
             return true;
@@ -241,7 +281,7 @@ public class TokenStream
         return tokens.Count - position > k;
     }
 
-    public Token LookAhead(int k = 0)
+    public Token GiveToken(int k = 0)
     {
         return tokens[position + k];
     }

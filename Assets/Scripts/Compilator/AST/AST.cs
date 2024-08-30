@@ -77,43 +77,50 @@ public abstract class Statement
 
 // #region  Effect
 
-// public class EffectDSL : DSL
-// {
-//     Expression Name { get;}
-//     string? name;
-//     Dictionary<Token, Token>? Params { get;}
-//     InsBLock Action { get;}
-//     public EffectDSL( Expression name, InsBLock action, Dictionary<Token, Token>? param){
-//         Name = name;
-//         Action = action;
-//         Params = param;
-//     }
+public class EffectDSL : DSL
+{
+    Expression Name { get;}
+    string? name;
+    Dictionary<string, Expression>? Params { get;}
+    Statement Action { get;}
+    public override CodeLocation Location { get => throw new NotImplementedException(); protected set => throw new NotImplementedException(); }
 
-//     public override bool Validation(){
-//         Name.Validation();
-//         Name.CheckType(IDType.String);
-//         Action.Validation();
-//         this.name = (string)Name.Implement();
-//         if(Params != null){
-//             //scope.DefineParam(this.name, Params); //ya confirme que es un string
-//         }
-//         this.Errors.AddRange(Name.Errors);
-//         this.Errors.AddRange(Action.Errors);
-//         return this.Errors.Count == 0;
-//     }
-//     public void ToEffectSaver(){
-//         List<string> param = [];
-//         if(Params != null){
-//             foreach(var token in Params.Keys){
-//                 param.Add(token.Value);
-//             }
-//         }
-//         string context = Action.Context.Value;
-//         string targets = Action.Targets.Value;
-//         SavedEffect saved = new SavedEffect(this.name, Action, targets, context, param); 
-//         EffectSaver.AddEffect(saved); //se guarda en la clase estatica 
-//     }
-// }
+    public EffectDSL( Expression name, Statement action, Dictionary<string, Expression>? param){
+        Name = name;
+        Action = action;
+        Params = param;
+    }
+
+    public override bool Validation(){
+        Name.Validation();
+        Name.CheckType(IDType.String);
+        Action.Validation();
+        this.name = (string)Name.Implement();
+        if(Params != null){
+            //scope.DefineParam(this.name, Params); //ya confirme que es un string
+        }
+        this.Errors.AddRange(Name.Errors);
+        this.Errors.AddRange(Action.Errors);
+        return this.Errors.Count == 0;
+    }
+    public void ToEffectSaver(){
+        List<string> param = [];
+        if(Params != null){
+            foreach(var name in Params.Keys){
+                param.Add(name);
+            }
+        }
+        // string context = Action.Context.Value;
+        // string targets = Action.Targets.Value;
+        // SavedEffect saved = new SavedEffect(this.name, Action, targets, context, param); 
+        // EffectSaver.AddEffect(saved); //se guarda en la clase estatica 
+    }
+
+    public override object? Implement()
+    {
+        throw new NotImplementedException();
+    }
+}
 
 // #endregion
 

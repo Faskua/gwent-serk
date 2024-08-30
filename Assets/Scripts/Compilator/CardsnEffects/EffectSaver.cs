@@ -23,8 +23,8 @@ public class SavedEffect
     public Dictionary<string,object?> Params { get;}
     //public EffectSelector Targets { get;}
     public SavedEffect? PostAction { get;}
-    InsBLock Action { get;}
-    public SavedEffect(string name, InsBLock action, string targetname, string context, List<string>  param){
+    Statement Action { get;}
+    public SavedEffect(string name, Statement action, string targetname, string context, List<string>  param){
         Name = name;
         TargetsNames = targetname;
         Context = context;
@@ -51,7 +51,7 @@ public class SavedEffect
                 scope.Define(name, Params[name]);
             }
         }
-        Action.ImplementAll();
+        Action.Implement();
         if(PostAction != null) PostAction.Implement(scope, this);
     }
 }

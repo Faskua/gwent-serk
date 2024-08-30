@@ -1,29 +1,73 @@
+effect {
+    Name: "Draw",
+    Action: (targets, context) => {
+        topCard = context.Deck.Pop();
+        context.Hand.Add(topCard);
+        context.Hand.Shuffle();
+        topCard = context.Hand[1^(2+3)];
+        bottomCard = context.Hand.Shuffle()[0];
+    }
+}
+
+effect {
+    Name: "Dam" @ "age",
+    Params: {
+        Amount: Number
+    },
+    Action: (targets, context) => {
+        for target in targets {
+            i = 0;
+            while (i++ < Amount) 
+            {
+                target.Power*=1;
+            }
+        };
+    }
+}
+
+effect {
+    Name: "Return"@@"to"@@ "44",
+    Action: (targets, context) => {
+        for target in targets {
+            owner = target.Owner;
+            deck = context.DeckOfPlayer(owner);
+            carta = deck.Shuffle()[0];
+            carta.Power *= 2;
+            deck.Push(target);
+            deck.Shuffle();
+            context.Board.Remove(target);
+        };
+    }
+}
+
 card {
-	Type: "Oro",
-	Name: "Beluga",
-	Faction: "Northern Realms",
-	Power: 10,
-	Range: ["Melee", "Ranged"],
-	OnActivation: [
-		{
-			Effect: {
-				Name: "Damage",
-				Amount: 5,
-				}
-			Selector:{
-				Source: "board",
-				Single: false,
-				Predicate: (unit) => unit.Faction == "Northern" @@ "Realms"
-				}
-			PostAction: {
-				Type: "ReturnToDeck",
-				Selector: {
-					Source: "parent",
-					Single: false,
-					Predicate: (unit) => unit.Power < 1
-					}
-				}
-			},
-			{
-				Effect: "Draw"
-			}
+    Type: "Oro",
+    Name: "Beluga",
+    Faction: "Northern Realms",
+    Power: 5 / (1-1),
+    Range: ["Melee", "Ranged"],
+    OnActivation: [
+        {
+            Effect: {
+                Name: "Damage",
+                Amount: 5,
+            },
+            Selector: {
+                Source: "board",
+                Single: false,
+                Predicate: (unit) => unit.Faction == "Northern" @@ "Realms"
+            },
+            PostAction: {
+                Effect: "ReturnToDeck",
+                Selector: {
+                    Source: "parent",
+                    Single: 3 == 5,
+                    Predicate: (unit) => unit.Power < 1
+                },
+            },
+            {
+                Effect: "Draw"
+            }
+        }
+    ]
+}	
