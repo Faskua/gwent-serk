@@ -20,7 +20,7 @@ public class SavedEffect
     public SavedEffect? Parent { get;}
     public string TargetsNames { get;}
     public string Context { get;}
-    public Dictionary<string,object?> Params { get;}
+    public Dictionary<string,Expression?> Params { get;}
     //public EffectSelector Targets { get;}
     public SavedEffect? PostAction { get;}
     Statement Action { get;}
@@ -29,20 +29,20 @@ public class SavedEffect
         TargetsNames = targetname;
         Context = context;
         Action = action;
-        Params = new Dictionary<string, object?>();
+        Params = new Dictionary<string, Expression?>();
         foreach (var paramname in param){
             Params.Add(paramname, null);
         }
     }
-    public void ParamValues(Dictionary<string, object> input){
+    public void ParamValues(Dictionary<string, Expression?> input){
         foreach (var name in input.Keys){
             if(Params.ContainsKey(name)){
                 Params[name] = input[name];
             }
         }
     }
-    public void Implement(IimplementScope? scope, SavedEffect? parent = null){ //ambos pueden ser nulos, el parent es para los postaction
-        if(scope == null) scope = new ImplementScope(null);
+    public void Implement(Scope scope, SavedEffect? parent = null){ //ambos pueden ser nulos, el parent es para los postaction
+        if(scope == null) scope = new Scope(null);
         //TODO: Antes de hacer lo de abajo hay que definir en el scope el context y  lo targets
         //scope.Define(Context, );
         //scope.Define(TargetsNames, );
@@ -59,7 +59,7 @@ class ActionSave
 {
     public Dictionary<string,Dictionary<string,Expression>?> SavedActions = [];
 
-    public void CheckParams(string Name, Dictionary<string, Expression>? Params, IScope scope){
+    public void CheckParams(string Name, Dictionary<string, Expression>? Params, Scope scope){
         if(!SavedActions.ContainsKey(Name)) throw new Exception("Not Defined Effect");
 
         // if(Params == null){

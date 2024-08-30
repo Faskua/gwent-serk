@@ -42,7 +42,7 @@ public class Property : ToCall
         Type type;
         if (called is string) type = typeof(string);
         else if (called is Int) type = typeof(Int);
-        else if(called is Card) type = typeof(Card);
+        else if(called is ICard) type = typeof(ICard);
         //if(called is GameList) type = typeof(GameList);
         else type = typeof(object);
 

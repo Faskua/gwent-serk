@@ -20,7 +20,7 @@ public class UnaryObj : UnaryExp<object>
         get{
             if(Value is int || Value is double) return IDType.Number;
             if(Value is string) return IDType.String;
-            if(Value is Card) return IDType.Card;
+            if(Value is ICard) return IDType.Card;
             //if(Value is List) return IDType.List;
             return IDType.Object;
         }

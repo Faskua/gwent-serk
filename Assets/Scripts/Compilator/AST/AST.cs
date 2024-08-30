@@ -82,10 +82,10 @@ public class EffectDSL : DSL
     Expression Name { get;}
     string? name;
     Dictionary<string, Expression>? Params { get;}
-    Statement Action { get;}
+    Action Action { get;}
     public override CodeLocation Location { get => throw new NotImplementedException(); protected set => throw new NotImplementedException(); }
 
-    public EffectDSL( Expression name, Statement action, Dictionary<string, Expression>? param){
+    public EffectDSL( Expression name, Action action, Dictionary<string, Expression>? param){
         Name = name;
         Action = action;
         Params = param;
@@ -94,13 +94,13 @@ public class EffectDSL : DSL
     public override bool Validation(){
         Name.Validation();
         Name.CheckType(IDType.String);
-        Action.Validation();
+        Action.Block.Validation();
         this.name = (string)Name.Implement();
         if(Params != null){
             //scope.DefineParam(this.name, Params); //ya confirme que es un string
         }
         this.Errors.AddRange(Name.Errors);
-        this.Errors.AddRange(Action.Errors);
+        this.Errors.AddRange(Action.Block.Errors);
         return this.Errors.Count == 0;
     }
     public void ToEffectSaver(){

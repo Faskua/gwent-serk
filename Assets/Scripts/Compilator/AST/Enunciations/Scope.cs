@@ -1,41 +1,50 @@
 using System.Buffers;
 
-public interface IScope
-{
-    //Recibe el nombre del efecto y el diccionario de los params
-    bool DefineParam(string Name, Dictionary<Token, Token> param);
-    //Crea un contexto
-    IScope CreateChild();
-    //Devuelve el IdType de un id
-    Expression GetExp(string id);
-    //Recibe un id y revisa si esta definido
-    bool CheckDefinition(string id);
-    void Define(string Name, Expression id);
-}
+//public interface IScope
+// {
+//     //Recibe el nombre del efecto y el diccionario de los params
+//     bool DefineParam(string Name, Dictionary<Token, Token> param);
+//     //Crea un contexto
+//     IScope CreateChild();
+//     //Devuelve el IdType de un id
+//     Expression GetExp(string id);
+//     //Recibe un id y revisa si esta definido
+//     bool CheckDefinition(string id);
+//     void Define(string Name, Expression id);
+// }
 
-public interface IimplementScope
-{
-    //Crea un contexto
-    IimplementScope CreateChild();
-    //Devuelve el IdType de un id
-    object? Value(string id);
-    //Recibe un id y revisa si esta definido
-    bool CheckDefinition(string id);
-    void Define(string Name, object Value);
-}
+// public interface IimplementScope
+// {
+//     //Crea un contexto
+//     IimplementScope CreateChild();
+//     //Devuelve el IdType de un id
+//     object? Value(string id);
+//     //Recibe un id y revisa si esta definido
+//     bool CheckDefinition(string id);
+//     void Define(string Name, object Value);
+// }
 
-class Scope : IScope
+public class Scope
 {
-    //Contexto padre que puede ser null
-    IScope? Parent;
+    static Scope? global;
+    Scope? Parent;
     //variables en el scope
     Dictionary<string, Expression> Variables = [];
-    public Scope(IScope parent){
+    public Scope(Scope parent){
         Parent = parent;
     }
-    public IScope CreateChild(){
+    public Scope CreateChild(){
         var scope = new Scope(this);
         return scope;
+    }
+    public static Scope Global{
+        get{
+            if(global == null){
+                global = new Scope(null);
+                global.Define("context", new Context());
+            }
+            return global;
+        }
     }
 
     public void Define(string variable, Expression id){ //añade una variable al diccionario o cambia su valor si ya esta definida
@@ -61,35 +70,35 @@ class Scope : IScope
         else return Parent.GetExp(id);
     }
 }
-class ImplementScope : IimplementScope
-{
-    Dictionary<string, object> Variables = [];
-    IimplementScope? Parent { get;}
+// class ImplementScope : IimplementScope
+// {
+//     Dictionary<string, object> Variables = [];
+//     IimplementScope? Parent { get;}
 
-    public ImplementScope(ImplementScope? parent){
-        Parent = parent;
-    }
-    public bool CheckDefinition(string id)
-    {
-        if(Variables.ContainsKey(id) || (Parent != null && Parent.CheckDefinition(id))) return true;
-        return false;
-    }
+//     public ImplementScope(ImplementScope? parent){
+//         Parent = parent;
+//     }
+//     public bool CheckDefinition(string id)
+//     {
+//         if(Variables.ContainsKey(id) || (Parent != null && Parent.CheckDefinition(id))) return true;
+//         return false;
+//     }
 
-    public object? Value(string id){
-        if(Variables.ContainsKey(id)) return Variables[id];
-        if(Parent != null) return Parent.Value(id);
-        return null;
-    }
+//     public object? Value(string id){
+//         if(Variables.ContainsKey(id)) return Variables[id];
+//         if(Parent != null) return Parent.Value(id);
+//         return null;
+//     }
 
-    public IimplementScope CreateChild() => new ImplementScope(this);
+//     public IimplementScope CreateChild() => new ImplementScope(this);
 
-    public void Define(string Name, object Value)
-    {
-        if(!CheckDefinition(Name)){ //Mirar si esta definida antes de añadirla
-            Variables.Add(Name, Value);
-            return;
-        }
-        Variables[Name] = Value; // si ya lo esta se cambia
-    }
-}
+//     public void Define(string Name, object Value)
+//     {
+//         if(!CheckDefinition(Name)){ //Mirar si esta definida antes de añadirla
+//             Variables.Add(Name, Value);
+//             return;
+//         }
+//         Variables[Name] = Value; // si ya lo esta se cambia
+//     }
+// }
 

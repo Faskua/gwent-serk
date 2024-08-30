@@ -1,20 +1,4 @@
-public class DebugLog : Statement
-{
-    Expression Value;
-    
-    public DebugLog(Expression value) {Value = value;}
 
-    public override CodeLocation Location => Value.Location;
-
-    public override void Implement(){
-        Console.WriteLine(Value.Implement());
-    }
-
-    public override bool Validation(){
-        if(!Value.Validation()) Errors.AddRange(Value.Errors);
-        return Errors.Count == 0;
-    }
-}
 public class IF : Statement
 {
     Statement Instructions;
@@ -86,10 +70,10 @@ public class For : Statement
 {
     Expression Collection;
     Statement Instructions;
-    IScope Scope;
+    Scope Scope;
     Token ID;
-    public For(Expression conditions, Statement instructions, IScope scope, Token token){
-        Collection = conditions;
+    public For(Expression collection, Statement instructions, Scope scope, Token token){
+        Collection = collection;
         Instructions = instructions; 
         Scope = scope;
         ID = token;

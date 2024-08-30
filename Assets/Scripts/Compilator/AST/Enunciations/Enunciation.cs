@@ -1,10 +1,13 @@
+using System.Data.Common;
+using System.Dynamic;
+
 public class Enunciation : Statement
 {
-    protected IScope Scope;
+    protected Scope Scope;
     public Expression Value;
     public Token Name;
     public Token Operation;
-    public Enunciation(Token name, IScope scope = null, Expression value = null, Token operation = null){
+    public Enunciation(Token name, Scope scope = null, Expression value = null, Token operation = null){
         Scope = scope;
         Value = value;
         Name = name;

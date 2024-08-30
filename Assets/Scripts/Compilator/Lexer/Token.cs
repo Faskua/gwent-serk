@@ -104,6 +104,8 @@ public class Token
         Type = token.Type;
         Location = token.Location;
     }
+
+    public bool Check(TokenType expected) => Type == expected;
     public static Dictionary<string, TokenType> Types = new Dictionary<string, TokenType>(){
         //Types
         {"true", TokenType.True},
