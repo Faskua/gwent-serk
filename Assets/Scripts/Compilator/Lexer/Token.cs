@@ -55,6 +55,7 @@ public enum IDType
     String,
     Boolean,
     Object,
+    List,
     Card,
     Deck,
     Player,

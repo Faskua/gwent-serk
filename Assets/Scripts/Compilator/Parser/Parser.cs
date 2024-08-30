@@ -3,7 +3,9 @@ using System.Dynamic;
 
 public class Parser
 {
+    //Tengo que tener un stack con los scope para controlar las variables
     public List<Token> tokens {get; private set;}
+    public List<string> Errores = [];
     public Parser(List<Token> tokens){ this.tokens = tokens;}
     #region Methods
     int position = 0;
@@ -111,6 +113,10 @@ public class Parser
         }
         else throw new Exception("Index out of range");
     }
+    //TODO
+    public Statement Enunciation(Token id){
+        throw new NotImplementedException();
+    }
     public Expression ParseNum(){
         List<string> Operations = ["+", "-", "*", "/", "^"];
         Consume(TokenType.Int);
@@ -184,7 +190,7 @@ public class Parser
         }
         return left;
     }
-    public Expression ParseExpr( Scope scope){
+    public Statement ParseSimple(){ //TODO
         // if(tokens[position].Type == TokenType.String) return ParseString();
         // if(tokens[position].Type == TokenType.True || tokens[position].Type == TokenType.False) return ParseBoolean();
         // if(tokens[position].Type == TokenType.LParen){
@@ -207,9 +213,15 @@ public class Parser
             LookAhead();
             if(TokenPlus.Type is TokenType.Assignation){
                 Consume(TokenType.Assignation);
-                LookAhead([]);
+                var statement = Enunciation(id);
+                return statement;
             }
+            throw new Exception($"= was expected at line: {TokenPlus.Location.Line}, column: {TokenPlus.Location.Column}");
         }
+        throw new Exception($"An error ocured at line: {TokenPlus.Location.Line}, column: {TokenPlus.Location.Column}");
+    }
+    public Expression ParseExp(){
+        throw new NotImplementedException();
     }
     public Statement ParseIf(){
         Token IF = TokenPlus;
@@ -234,7 +246,7 @@ public class Parser
         Token id = TokenPlus;
         Consume([TokenType.Identifier, TokenType.In]);
         LookAhead(TokenType.Identifier);
-        Expression collection = ParseExpr(Scope.Global);
+        Expression collection = ParseExp();
         LookAhead();
         if(TokenPlus.Type == TokenType.LCurlyB){
             Consume(TokenType.LCurlyB);
@@ -297,7 +309,7 @@ public class Parser
         Token context = TokenPlus;
         Consume(new List<TokenType>() {TokenType.Context, TokenType.LParen, TokenType.Implication});
         LookAhead();
-        if(TokenPlus.Type != TokenType.LCurlyB) return new Action(targets, context, ParseInst());
+        if(TokenPlus.Type != TokenType.LCurlyB) return new Action(targets, context, ParseSimple());
         Consume(TokenType.LCurlyB);
         Statement body = ParseBody();
         Consume(TokenType.RCurlyB);
@@ -323,7 +335,7 @@ public class Parser
                     Consume(TokenType.Semicolon);
                     break;
                 default:
-                    statements.Add(ParseExpr(Scope.Global));
+                    statements.Add(ParseSimple());
                     break;
             }
             LookAhead();
@@ -345,7 +357,7 @@ public class Parser
                 statements.Add(ParseWhile());
                 break;
             default:
-                statements.Add(ParseExpr(Scope.Global));
+                statements.Add(ParseSimple());
                 break;
         }
         Statement body = new EnunBlock(statements);
@@ -476,7 +488,7 @@ public class Parser
         return output;
     }
     public List<SavedEffect> ParseActivation(){
-
+        throw new NotImplementedException();
     }
 
     #endregion

@@ -41,7 +41,7 @@ public class Scope
         get{
             if(global == null){
                 global = new Scope(null);
-                global.Define("context", new Context());
+                global.Define("context", new GameContext());
             }
             return global;
         }
