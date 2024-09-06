@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 public class Action{
     Token Target { get; }
     Token Context { get; }
@@ -10,7 +13,7 @@ public class Action{
     }
 }
 
-public class GameContext : Expression
+public class GameContext : ExpressionDSL
 {
     public static GameContext? context;
     Board board;
@@ -29,14 +32,14 @@ public class GameContext : Expression
     }
 }
 
-public class Selector : Expression<object>
+public class Selector : ExpressionDSL<object>
 {
     Token selector;
-    Expression Source { get;}
-    Expression? Single { get;}
+    ExpressionDSL Source { get;}
+    ExpressionDSL? Single { get;}
     Predicate predicate { get;}
-    Expression Parent;
-    public Selector(Token selector, Expression source, Predicate predicate, Expression parent, Expression? single = null){
+    ExpressionDSL Parent;
+    public Selector(Token selector, ExpressionDSL source, Predicate predicate, ExpressionDSL parent, ExpressionDSL? single = null){
         this.selector = selector;
         this.predicate = predicate;
         Source = source;
@@ -56,10 +59,13 @@ public class Selector : Expression<object>
 
     public override bool Validation()
     {
-        Source.CheckType(IDType.String);
-        if(!Source.Validation()) this.Errors.AddRange(Source.Errors);
-        Single.CheckType(IDType.Boolean);
+        if(!Source.CheckType(IDType.String)) this.Errors.Add($"Unvalid Source at line: {Location.Line}, column: {Location.Column}");
+        else if(!Source.Validation()) this.Errors.AddRange(Source.Errors);
+        else if((string)Source.Implement() == "parent" && Parent is null) this.Errors.Add($"Parent not defined at line: {Location.Line}, column: {Location.Column}");
+
+        if(!Single.CheckType(IDType.Boolean)) this.Errors.Add($"Unvalid Single at line: {Location.Line}, column: {Location.Column}");
         if(!Single.Validation()) this.Errors.AddRange(Single.Errors);
+
         if(!predicate.Validation()) this.Errors.AddRange(predicate.Errors);
         
         if(Errors.Count != 0){
@@ -74,45 +80,99 @@ public class Selector : Expression<object>
     }
 }
 
-public class Predicate : Statement
+public class Predicate : ExpressionDSL<object>
 {
-    Token predi;
-    Expression expression;
+    Token predicate;
+    ExpressionDSL expression;
     Scope scope;
-    public Predicate(Token token, Expression expr, Scope scope){
-        predi = token;
+    public Predicate(Token token, ExpressionDSL expr, Scope scope){
+        predicate = token;
         expression = expr;
         this.scope = scope;
     }
-    public override CodeLocation Location => predi.Location;
 
-    public override void Implement()
-    {
+    public override CodeLocation Location { get => predicate.Location; protected set => throw new NotImplementedException(); }
+
+    public override IDType Type => throw new NotImplementedException();
+
+    public override object Implement(){
         throw new NotImplementedException();
     }
 
     public override bool Validation(){
-        if(expression.Type != IDType.Boolean) Errors.Add($"The Predicate at line: {predi.Location.Line},column: {predi.Location.Column} is not a boolean");
+        if(!expression.CheckType(IDType.Boolean)) Errors.Add($"The Predicate at line: {Location.Line},column: {Location.Column} is not a boolean");
         return Errors.Count == 0;
     }
 }
 
 class Board
 {
-
+    public Dictionary<string, List<ICard>> Campo;
+    public Player player;
+    public Player enemy;
+    public Board(Player player, Player enemy){
+        Campo.Add("MeleePlayer", player.Cards["Melee"]);
+        Campo.Add("RangePlayer", player.Cards["Range"]);
+        Campo.Add("SiegePlayer", player.Cards["Siege"]);
+        Campo.Add("MeleeClimagePlayer", player.Cards["MeleeClimage"]);
+        Campo.Add("RangeClimagePlayer", player.Cards["RangeClimage"]);
+        Campo.Add("SiegeClimagePlayer", player.Cards["SiegeClimage"]);
+        Campo.Add("PlayerGraveyard", player.Cards["Graveyard"]);
+        Campo.Add("MeleeEnemy", enemy.Cards["Melee"]);
+        Campo.Add("RangeEnemy", enemy.Cards["Range"]);
+        Campo.Add("SiegeEnemy", enemy.Cards["Siege"]);
+        Campo.Add("MeleeClimageEnemy", enemy.Cards["MeleeClimage"]);
+        Campo.Add("RangeClimageEnemy", enemy.Cards["RangeClimage"]);
+        Campo.Add("SiegeClimageEnemy", enemy.Cards["SiegeClimage"]);
+        Campo.Add("EnemyGraveyard", enemy.Cards["Graveyard"]);
+        this.player = player;
+        this.enemy = enemy;
+    }
 }
 
-class GameList
-{
-
+public class Faction{
+    public ICard Leader;
+    public string Name { get;}
+    public Faction(string name, ICard leader){
+        Name = name;
+        Leader = leader;
+    }
+    public void SaveFaction(){
+        Factions.AddFaction(this);
+    }
 }
 
-class Faction
-{
-
+public static class Factions{
+    public static Dictionary<string, Faction> factions { get; set;}
+    public static void AddFaction(Faction faction){
+        factions.Add(faction.Name, faction);
+    }
+    public static Faction GetFaction(string name){
+        if(factions.ContainsKey(name)){
+            return factions[name];
+        }
+        throw new Exception("Faction not defined");
+    }
 }
 
 class Player
 {
-
+    public Dictionary<string, List<ICard>> Cards;
+    public int Points;
+    public int MeleePoints;
+    public int RangePoints;
+    public int SiegePoints;
+    public Player(List<ICard> deck){
+        Cards.Add("Deck", deck);
+        Cards.Add("Melee", new List<ICard>());
+        Cards.Add("Range", new List<ICard>());
+        Cards.Add("Siege", new List<ICard>());
+        Cards.Add("Graveyard", new List<ICard>());
+        Cards.Add("MeleeClimage", new List<ICard>());
+        Cards.Add("RangeClimage", new List<ICard>());
+        Cards.Add("SiegeClimage", new List<ICard>());
+    }
+    // public void RefreshPoints(){
+    //     int aux = 0;
+    // }
 }

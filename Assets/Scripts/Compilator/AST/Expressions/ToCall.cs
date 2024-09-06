@@ -1,10 +1,11 @@
 using System.Globalization;
 using System.Runtime.CompilerServices;
+using System;
 
-public abstract class ToCall : Expression<object>
+public abstract class ToCall : ExpressionDSL<object>
 {
     protected Token? Caller;
-    protected Expression? Called;
+    protected ExpressionDSL? Called;
     public override bool Validation(){
         return Errors.Count == 0;
     }
@@ -13,8 +14,8 @@ public abstract class ToCall : Expression<object>
 }
 public class Method : ToCall
 {
-    public Expression[]? Parameters;
-    public Method(Token? token, Expression? expression, Expression[]? parameters){
+    public ExpressionDSL[]? Parameters;
+    public Method(Token? token, ExpressionDSL? expression, ExpressionDSL[]? parameters){
         Parameters = parameters;
         Caller = token;
         Called = expression;
@@ -29,7 +30,7 @@ public class Method : ToCall
 
 public class Property : ToCall
 {
-    public Property(Expression called, Token caller){
+    public Property(ExpressionDSL called, Token caller){
         Called = called;
         Caller = caller;
     }

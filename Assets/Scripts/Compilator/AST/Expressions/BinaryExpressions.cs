@@ -1,17 +1,19 @@
 using System.Runtime.InteropServices;
 using System.Security.AccessControl;
 using System.Transactions;
+using System;
+using System.Collections.Generic;
 
-public abstract class BinaryExpression<T> : Expression<T>
+public abstract class BinaryExpression<T> : ExpressionDSL<T>
 {
-    protected Expression Left { get; set;}
-    protected Expression Right { get; set;}
+    protected ExpressionDSL Left { get; set;}
+    protected ExpressionDSL Right { get; set;}
     protected Token Operation { get; set;}
     public override CodeLocation Location { get => Operation.Location; protected set => throw new NotImplementedException(); }
 
     public override string ToString() => $"{Left.ToString()} {Operation.Value} {Right.ToString()}";
 
-    public BinaryExpression(Expression right, Expression left, Token op){
+    public BinaryExpression(ExpressionDSL right, ExpressionDSL left, Token op){
         Right = right;
         Left = left;
         Operation = op;
@@ -25,7 +27,7 @@ public abstract class BinaryExpression<T> : Expression<T>
 public class NumericalBinary : BinaryExpression<Int> //las operaciones binarias
 {
     List<TokenType> operations = new List<TokenType> {TokenType.Plus, TokenType.Minus, TokenType.Multip, TokenType.Pow, TokenType.Division};
-    public NumericalBinary(Expression right, Expression left, Token op) : base(right, left, op){}
+    public NumericalBinary(ExpressionDSL right, ExpressionDSL left, Token op) : base(right, left, op){}
     public override IDType Type => IDType.Number;
 
     public override bool Validation()
@@ -64,7 +66,7 @@ public class NumericalBinary : BinaryExpression<Int> //las operaciones binarias
 public class BooleanBinary : BinaryExpression<bool>
 {
     private List<TokenType> operations = new List<TokenType> {TokenType.And, TokenType.Or};
-    public BooleanBinary(Expression right, Expression left, Token op) : base(right, left, op){}
+    public BooleanBinary(ExpressionDSL right, ExpressionDSL left, Token op) : base(right, left, op){}
     public override IDType Type => IDType.Boolean;
     public override bool Validation(){
         if(!operations.Contains(Operation.Type)) Errors.Add($"Unexpected operator at line: {Location.Line}, column: {Location.Column}");
@@ -95,7 +97,7 @@ public class BooleanExpression : BinaryExpression<bool>
     List<TokenType> operations = new List<TokenType> {  TokenType.Greater, TokenType.Less, 
                                                         TokenType.GreaterEqual, TokenType.LessEqual,
                                                         TokenType.Equals, TokenType.NotEquals};
-    public BooleanExpression(Expression right, Expression left, Token op) : base(right, left, op){}
+    public BooleanExpression(ExpressionDSL right, ExpressionDSL left, Token op) : base(right, left, op){}
     public override bool Accept(IVisitor<bool> visitor){
         return base.Accept(visitor);
     }
@@ -136,7 +138,7 @@ public class BooleanExpression : BinaryExpression<bool>
 
 public class StringBinary : BinaryExpression<string>
 {
-    public StringBinary(Expression right, Expression left, Token op) : base(right, left, op){}
+    public StringBinary(ExpressionDSL right, ExpressionDSL left, Token op) : base(right, left, op){}
     public override IDType Type => IDType.String;
     List<TokenType> operations = new List<TokenType> {TokenType.Concat, TokenType.SpaceConcat};
 

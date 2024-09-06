@@ -1,6 +1,9 @@
+using System;
+using System.Collections.Generic;
+
 public interface IEffect{
-    Expression Name { get;}
-    Dictionary<string, Expression> Params { get;}
+    ExpressionDSL Name { get;}
+    Dictionary<string, ExpressionDSL> Params { get;}
     Statement Action{ get;}
-    IEffect? PostAction { get;}
+    IEffect PostAction { get;}
 }

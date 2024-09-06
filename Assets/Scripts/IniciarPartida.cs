@@ -60,6 +60,10 @@ public class IniciarPartida : MonoBehaviour
         Transition.SetTrigger("Start");
         Invoke("Cargando", 1);
     }
+    public void AnimCreador(){
+        Transition.SetTrigger("Start");
+        Invoke("Creador", 1);
+    }
 
 
 //estos metodos no los voy a explicar, son para cambiar de escena
@@ -106,5 +110,8 @@ public class IniciarPartida : MonoBehaviour
     public void Cargando()
     {
         SceneManager.LoadScene(11);
+    }
+    public void Creador(){
+        SceneManager.LoadScene(12);
     }
 }

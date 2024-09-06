@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Serialization;
 using System.Transactions;
+using System;
+using System.Collections.Generic;
 
 public enum TokenType
 {
@@ -80,9 +82,9 @@ public class CodeLocation
 
 public struct Variable
 {
-    public Expression? Value { get;}
+    public ExpressionDSL? Value { get;}
     public IDType IDType { get;}
-    public Variable(Expression? value, IDType idtype){
+    public Variable(ExpressionDSL? value, IDType idtype){
         Value = value;
         IDType = idtype;
     }
@@ -247,7 +249,7 @@ public class TokenStream
         }
     }
     public void LookAhead(TokenType type){
-        LookAhead([type]);
+        LookAhead(new List<TokenType>(){type});
     }
 
     public void LookAhead(List<TokenType>? types = null){

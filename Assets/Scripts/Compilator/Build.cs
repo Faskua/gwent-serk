@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class Build : MonoBehaviour
 {
-    public string Code;
-    public StartProcess(){
-        Code = GameObject.Find("Input").GetComponent<InputField>().text;
-    }
+    string InputText = GameObject.Find("Input").GetComponent<InputField>.text;
+    Lexxer lexer = new Lexxer();
+    List<Token> tokens = lexer.Tokenize();
+    Parsel parser = new Parsel(tokens);
+    List<DSL> cardsnEffects = parser.Parse();
 }

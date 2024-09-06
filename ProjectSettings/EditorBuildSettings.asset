@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cargando.unity
     guid: 05518b24e49693b46bb07147899eedce
+  - enabled: 1
+    path: Assets/Scenes/Creador.unity
+    guid: 441e2b8b30892a34a8b3663938e0aad0
   m_configObjects: {}

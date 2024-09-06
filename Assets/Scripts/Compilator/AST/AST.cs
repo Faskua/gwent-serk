@@ -1,11 +1,13 @@
-#region ForUsing
 using System.Dynamic;
 using System.Runtime.InteropServices;
+using System;
+using System.Collections.Generic;
 
+#region ForUsing
 public abstract class DSL
 {
     // Tipo general que contiene cartas y efectos
-    public List<string> Errors = [];
+    public List<string> Errors = new List<string>();
     public abstract bool Validation(); //para analizar la semantica
     public abstract object? Implement();
     public abstract CodeLocation Location{ get; protected set;}
@@ -16,7 +18,7 @@ public abstract class Statement
     public abstract void Implement();
     public abstract bool Validation();
     public abstract CodeLocation Location{ get;}
-    public List<string> Errors = []; 
+    public List<string> Errors = new List<string>(); 
 }
 
 // public class BlockToDec : DSL
@@ -79,13 +81,13 @@ public abstract class Statement
 
 public class EffectDSL : DSL
 {
-    Expression Name { get;}
+    ExpressionDSL Name { get;}
     string? name;
-    Dictionary<string, Expression>? Params { get;}
+    Dictionary<string, ExpressionDSL>? Params { get;}
     Action Action { get;}
     public override CodeLocation Location { get => throw new NotImplementedException(); protected set => throw new NotImplementedException(); }
 
-    public EffectDSL( Expression name, Action action, Dictionary<string, Expression>? param){
+    public EffectDSL( ExpressionDSL name, Action action, Dictionary<string, ExpressionDSL>? param){
         Name = name;
         Action = action;
         Params = param;
@@ -104,7 +106,7 @@ public class EffectDSL : DSL
         return this.Errors.Count == 0;
     }
     public void ToEffectSaver(){
-        List<string> param = [];
+        List<string> param = new List<string>();
         if(Params != null){
             foreach(var name in Params.Keys){
                 param.Add(name);

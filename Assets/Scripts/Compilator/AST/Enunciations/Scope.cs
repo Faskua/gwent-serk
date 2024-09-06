@@ -1,4 +1,6 @@
 using System.Buffers;
+using System.Collections.Generic;
+using System;
 
 //public interface IScope
 // {
@@ -29,7 +31,7 @@ public class Scope
     static Scope? global;
     Scope? Parent;
     //variables en el scope
-    Dictionary<string, Expression> Variables = [];
+    Dictionary<string, ExpressionDSL> Variables = new Dictionary<string, ExpressionDSL>();
     public Scope(Scope parent){
         Parent = parent;
     }
@@ -47,7 +49,7 @@ public class Scope
         }
     }
 
-    public void Define(string variable, Expression id){ //añade una variable al diccionario o cambia su valor si ya esta definida
+    public void Define(string variable, ExpressionDSL id){ //añade una variable al diccionario o cambia su valor si ya esta definida
         if(!CheckDefinition(variable)){
             Variables.Add(variable, id);
         }
@@ -64,7 +66,7 @@ public class Scope
         throw new NotImplementedException();
     }
 
-    public Expression GetExp(string id){ //si no esta definido en el contexto lanza error
+    public ExpressionDSL GetExp(string id){ //si no esta definido en el contexto lanza error
         if (!CheckDefinition(id)) throw new Exception("Id not defined");
         if(Variables.ContainsKey(id)) return Variables[id];
         else return Parent.GetExp(id);

@@ -1,11 +1,12 @@
-
+using System;
+using System.Collections.Generic;
 public class IF : Statement
 {
     Statement Instructions;
-    Expression Condition;
+    ExpressionDSL Condition;
     Statement? Else;
     CodeLocation location;
-    public IF(Statement instructions, Expression booleanexp, CodeLocation loc, Statement? Else = null){
+    public IF(Statement instructions, ExpressionDSL booleanexp, CodeLocation loc, Statement? Else = null){
         Instructions = instructions;
         Condition = booleanexp;
         location = loc;
@@ -38,12 +39,12 @@ public class IF : Statement
 public class While : Statement
 {
     Statement Instructions { get;}
-    Expression Condition { get;}
+    ExpressionDSL Condition { get;}
     CodeLocation location;
 
     public override CodeLocation Location => location;
 
-    public While(Statement instruc, Expression condit, CodeLocation loc){
+    public While(Statement instruc, ExpressionDSL condit, CodeLocation loc){
         Instructions = instruc;
         Condition = condit;
         location = loc;
@@ -68,11 +69,11 @@ public class While : Statement
 
 public class For : Statement
 {
-    Expression Collection;
+    ExpressionDSL Collection;
     Statement Instructions;
     Scope Scope;
     Token ID;
-    public For(Expression collection, Statement instructions, Scope scope, Token token){
+    public For(ExpressionDSL collection, Statement instructions, Scope scope, Token token){
         Collection = collection;
         Instructions = instructions; 
         Scope = scope;

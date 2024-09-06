@@ -1,9 +1,12 @@
 
 using System.Net.Mime;
+using System.Collections.Generic;
+using System;
+using System.Linq;
 
 public static class EffectSaver
 {
-    public static HashSet<SavedEffect> Effects = [];
+    public static HashSet<SavedEffect> Effects = new HashSet<SavedEffect>();
     public static void AddEffect(SavedEffect effect){
         Effects.Add(effect);
     }
@@ -20,7 +23,7 @@ public class SavedEffect
     public SavedEffect? Parent { get;}
     public string TargetsNames { get;}
     public string Context { get;}
-    public Dictionary<string,Expression?> Params { get;}
+    public Dictionary<string,ExpressionDSL?> Params { get;}
     //public EffectSelector Targets { get;}
     public SavedEffect? PostAction { get;}
     Statement Action { get;}
@@ -29,12 +32,12 @@ public class SavedEffect
         TargetsNames = targetname;
         Context = context;
         Action = action;
-        Params = new Dictionary<string, Expression?>();
+        Params = new Dictionary<string, ExpressionDSL?>();
         foreach (var paramname in param){
             Params.Add(paramname, null);
         }
     }
-    public void ParamValues(Dictionary<string, Expression?> input){
+    public void ParamValues(Dictionary<string, ExpressionDSL?> input){
         foreach (var name in input.Keys){
             if(Params.ContainsKey(name)){
                 Params[name] = input[name];
@@ -57,9 +60,9 @@ public class SavedEffect
 }
 class ActionSave
 {
-    public Dictionary<string,Dictionary<string,Expression>?> SavedActions = [];
+    public Dictionary<string,Dictionary<string,ExpressionDSL>?> SavedActions = new Dictionary<string, Dictionary<string, ExpressionDSL>?>();
 
-    public void CheckParams(string Name, Dictionary<string, Expression>? Params, Scope scope){
+    public void CheckParams(string Name, Dictionary<string, ExpressionDSL>? Params, Scope scope){
         if(!SavedActions.ContainsKey(Name)) throw new Exception("Not Defined Effect");
 
         // if(Params == null){
@@ -68,7 +71,7 @@ class ActionSave
         // }
         foreach (string ID in Params.Keys)
         {
-            Expression expected = Params[ID];
+            ExpressionDSL expected = Params[ID];
             if(SavedActions[Name].ContainsKey(ID) && SavedActions[Name][ID] == expected){ //Si son iguales tanto en el Saved como en Params
                 scope.Define(ID, expected); // se define en el scope y se pasa al siguiente
                 continue;

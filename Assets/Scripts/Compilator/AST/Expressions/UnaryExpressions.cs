@@ -1,6 +1,8 @@
 using System.Transactions;
+using System;
+using System.Collections.Generic;
 
-public abstract class UnaryExp<T> : Expression<T>
+public abstract class UnaryExp<T> : ExpressionDSL<T>
 {
     protected T Value;
     public override CodeLocation Location { get; protected set;}
@@ -27,12 +29,12 @@ public class UnaryObj : UnaryExp<object>
     }
     public override object? Implement() => Value;
 }
-public class UnaryOp : Expression<object>
+public class UnaryOp : ExpressionDSL<object>
 {
-    public Expression Id { get;}
+    public ExpressionDSL Id { get;}
     public Token Operation { get;}
 
-    public UnaryOp(Expression id, Token op){
+    public UnaryOp(ExpressionDSL id, Token op){
         Id = id;
         Operation = op;
     }
@@ -74,7 +76,7 @@ public class UnaryVal : UnaryExp<Token>
         switch (Value.Type)
         {
             case TokenType.Int:
-                return double.Parse(Value.Value);
+                return new Int(double.Parse(Value.Value));
             case TokenType.String:
                 return Value.ToString();
             case TokenType.True:

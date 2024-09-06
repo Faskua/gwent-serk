@@ -1,13 +1,15 @@
 using System.Data.Common;
 using System.Dynamic;
+using System;
+using System.Collections.Generic;
 
 public class Enunciation : Statement
 {
     protected Scope Scope;
-    public Expression Value;
+    public ExpressionDSL Value;
     public Token Name;
     public Token Operation;
-    public Enunciation(Token name, Scope scope = null, Expression value = null, Token operation = null){
+    public Enunciation(Token name, Scope scope = null, ExpressionDSL value = null, Token operation = null){
         Scope = scope;
         Value = value;
         Name = name;
@@ -47,7 +49,7 @@ public class Enunciation : Statement
 
         }
     }
-    public Expression ReceiveValue(){
+    public ExpressionDSL ReceiveValue(){
         this.Implement();
         return Scope.GetExp(Name.Value);
     }
@@ -69,7 +71,7 @@ public class Enunciation : Statement
 
 public class EnunBlock : Statement
 {
-    List<Statement> Statements = [];    
+    List<Statement> Statements = new List<Statement>();    
     public EnunBlock(List<Statement> statements){ Statements = statements;}
     public override CodeLocation Location => throw new NotImplementedException();
 

@@ -1,8 +1,10 @@
 using System.Security.Principal;
 using System.Text.RegularExpressions;
+using System;
+using System.Collections.Generic;
 
-class Lexer{
-    List<Token> tokens = [];
+class Lexxer{
+    List<Token> tokens = new List<Token>();
     Regex text = new Regex(@"[_a-zA-Z][_a-zA-Z0-9]*");
     Regex number = new Regex(@"\d+(\.\d+)?");
     Regex symbol = new Regex(@">|<|>=|<=|=>|\+|-|\*|\/|\^|\+\+|--|\+=|-=|&&|==|!=|\|\|!|@@|@|=|;|,|:|.|\(|\[|{|\)|]|}");

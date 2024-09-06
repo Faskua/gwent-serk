@@ -1,74 +1,90 @@
+using System.Collections.Generic;
+
 public interface ICard{
-    Expression Name { get;}
-    Expression Faction { get;}
-    Expression Type { get;}
+    string Name { get;}
+    string Faction { get;}
+    double Power { get;}
+    double OriginalPower { get;}
+    string Type { get;}
     List<SavedEffect> Effects { get;}
 }
 public class Leader : ICard
 {
-    Expression name;
-    Expression faction;
-    Expression type;
+    string name;
+    string faction;
+    double power;
+    double ogPower;
+    string type;
     List<SavedEffect> effects;
 
-    public Leader(Expression Name, Expression Faction, Expression Type, List<SavedEffect> Effects){
+    public Leader(string Name, string Faction, double Power, string Type, List<SavedEffect> Effects){
         name = Name;
         faction = Faction;
         type = Type;
+        power = Power;
+        ogPower = Power;
         effects = Effects;
     }
-    public Expression Faction => faction;
+    public string Faction => faction;
 
     public List<SavedEffect> Effects => effects;
 
-    Expression ICard.Name => name;
+    string ICard.Name => name;
+    
+    public double Power => power;
+    public double OriginalPower => ogPower;
 
-    Expression ICard.Type => type;
+    string ICard.Type => type;
 }
 
 public class Golden : ICard
 {
-    Expression name;
-    Expression power;
-    Expression faction;
-    Expression type;
-    List<Expression> ranges;
+    string name;
+    double power;
+    double ogPower;
+    string faction;
+    string type;
+    List<string> ranges;
     List<SavedEffect> effects;
 
-    public Golden(Expression Name, Expression Power, Expression Faction, Expression Type, List<Expression> Ranges, List<SavedEffect> Effects){
+    public Golden(string Name, string Faction, double Power, string Type, List<string> Ranges, List<SavedEffect> Effects){
         name = Name;
         power = Power;
+        ogPower = Power;
         faction = Faction;
         type = Type;
         ranges = Ranges;
         effects = Effects;
     }
 
-    public Expression Name => name;
+    public string Name => name;
 
-    public Expression Power => power;
+    public double Power => power;
+    public double OriginalPower => ogPower;
 
-    Expression ICard.Faction => faction;
+    string ICard.Faction => faction;
 
-    Expression ICard.Type => type;
+    string ICard.Type => type;
 
-    public List<Expression> Ranges => ranges;
+    public List<string> Ranges => ranges;
 
     public List<SavedEffect> Effects => effects;
 }
 
 public class Silver : ICard
 {
-    Expression name;
-    Expression power;
-    Expression faction;
-    Expression type;
-    List<Expression> ranges;
+    string name;
+    double power;
+    double ogPower;
+    string faction;
+    string type;
+    List<string> ranges;
     List<SavedEffect> effects;
 
-    public Silver(Expression Name, Expression Power, Expression Faction, Expression Type, List<Expression> Ranges, List<SavedEffect> Effects){
+    public Silver(string Name, string Faction, double Power, string Type, List<string> Ranges, List<SavedEffect> Effects){
         name = Name;
         power = Power;
+        ogPower = Power;
         faction = Faction;
         type = Type;
         ranges = Ranges;
@@ -77,29 +93,32 @@ public class Silver : ICard
 
     public List<SavedEffect> Effects => effects;
 
-    Expression ICard.Name => name;
+    string ICard.Name => name;
     
-    public Expression Power => power;
+    public double Power => power;
+    public double OriginalPower => ogPower;
 
-    Expression ICard.Faction => faction;
+    string ICard.Faction => faction;
 
-    Expression ICard.Type => type;
+    public string Type => type;
 
-    public List<Expression> Ranges => ranges;
+    public List<string> Ranges => ranges;
 }
 
 public class Dummy : ICard
 {
-    Expression name;
-    Expression power;
-    Expression faction;
-    Expression type;
-    List<Expression> ranges;
+    string name;
+    double power;
+    double ogPower;
+    string faction;
+    string type;
+    List<string> ranges;
     List<SavedEffect> effects;
 
-    public Dummy(Expression Name, Expression Power, Expression Faction, Expression Type, List<Expression> Ranges, List<SavedEffect> Effects){
+    public Dummy(string Name, string Faction, double Power, string Type, List<string> Ranges, List<SavedEffect> Effects){
         name = Name;
         power = Power;
+        ogPower = Power;
         faction = Faction;
         type = Type;
         ranges = Ranges;
@@ -108,28 +127,33 @@ public class Dummy : ICard
 
     public List<SavedEffect> Effects => effects;
 
-    Expression ICard.Name => name;
+    string ICard.Name => name;
 
-    public Expression Power => power;
+    public double Power => power;
+    public double OriginalPower => ogPower;
 
-    Expression ICard.Faction => faction;
+    string ICard.Faction => faction;
 
-    Expression ICard.Type => type;
+    string ICard.Type => type;
 
-    public List<Expression> Ranges => ranges;
+    public List<string> Ranges => ranges;
 }
 
 public class Buff : ICard
 {
-    Expression name;
-    Expression faction;
-    Expression type;
-    List<Expression> ranges;
+    string name;
+    string faction;
+    double power;
+    double ogPower;
+    string type;
+    List<string> ranges;
     List<SavedEffect> effects;
 
-    public Buff(Expression Name, Expression Faction, Expression Type, List<Expression> Ranges, List<SavedEffect> Effects){
+    public Buff(string Name, string Faction, double Power, string Type, List<string> Ranges, List<SavedEffect> Effects){
         name = Name;
         faction = Faction;
+        power = Power;
+        ogPower = Power;
         type = Type;
         ranges = Ranges;
         effects = Effects;
@@ -137,26 +161,32 @@ public class Buff : ICard
 
     public List<SavedEffect> Effects => effects;
 
-    Expression ICard.Name => name;
+    string ICard.Name => name;
 
-    Expression ICard.Faction => faction;
+    string ICard.Faction => faction;
 
-    Expression ICard.Type => type;
+    string ICard.Type => type;
+    public double Power => power;
+    public double OriginalPower => ogPower;
 
-    public List<Expression> Ranges => ranges;
+    public List<string> Ranges => ranges;
 }
 
 public class Weather : ICard
 {
-    Expression name;
-    Expression faction;
-    Expression type;
-    List<Expression> ranges;
+    string name;
+    string faction;
+    double power;
+    double ogPower;
+    string type;
+    List<string> ranges;
     List<SavedEffect> effects;
 
-    public Weather(Expression Name, Expression Faction, Expression Type, List<Expression> Ranges, List<SavedEffect> Effects){
+    public Weather(string Name, string Faction, double Power, string Type, List<string> Ranges, List<SavedEffect> Effects){
         name = Name;
         faction = Faction;
+        power = Power;
+        ogPower = Power;
         type = Type;
         ranges = Ranges;
         effects = Effects;
@@ -164,11 +194,13 @@ public class Weather : ICard
 
     public List<SavedEffect> Effects => effects;
 
-    Expression ICard.Name => name;
+    string ICard.Name => name;
 
-    Expression ICard.Faction => faction;
+    string ICard.Faction => faction;
 
-    Expression ICard.Type => type;
+    string ICard.Type => type;
+    double ICard.Power => power;
+    public double OriginalPower => ogPower;
 
-    public List<Expression> Ranges => ranges;
+    public List<string> Ranges => ranges;
 }
