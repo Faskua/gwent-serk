@@ -6,6 +6,7 @@ public interface ICard{
     double Power { get;}
     double OriginalPower { get;}
     string Type { get;}
+    List<string> Ranges { get;}
     List<SavedEffect> Effects { get;}
 }
 public class Leader : ICard
@@ -33,8 +34,10 @@ public class Leader : ICard
     
     public double Power => power;
     public double OriginalPower => ogPower;
+    public List<string> Ranges => new List<string>();
 
     string ICard.Type => type;
+
 }
 
 public class Golden : ICard

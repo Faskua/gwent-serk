@@ -126,37 +126,44 @@ public class EffectDSL : DSL
 
 // #endregion
 
-// #region Card
+#region Card
 
-// public class CardDSL : DSL
-// {
-//     public Expression Type { get;}
-//     public Expression Name { get;}
-//     public Expression Power { get;}
-//     public List<Expression> Range { get;}
-//     public List<IEffect> Effects { get;}
-//     public CardDSL(Expression type, Expression name, Expression power, List<Expression> range, List<IEffect> effects){
-//         Type = type;
-//         Name = name;
-//         Power = power;
-//         Range= range;
-//         Effects = effects;
-//     }
+public class CardDSL : DSL
+{
+    public ExpressionDSL Type { get;}
+    public ExpressionDSL Name { get;}
+    public ExpressionDSL Power { get;}
+    public List<ExpressionDSL> Range { get;}
+    public List<IEffect> Effects { get;}
+    public override CodeLocation Location { get => throw new NotImplementedException(); protected set => throw new NotImplementedException(); }
 
-//     public override bool Validation(){
-//         if(!Type.Validation())  this.Errors.AddRange(Type.Errors);
-//         Type.CheckType( IDType.String);
-//         if(!Name.Validation()) this.Errors.AddRange(Name.Errors);
-//         Name.CheckType(IDType.String);
-//         if(!Power.Validation()) this.Errors.AddRange(Power.Errors);
-//         Power.CheckType(IDType.Number);
-//         foreach (var range in Range){
-//             if(!range.Validation()) this.Errors.AddRange(range.Errors);
-//             range.CheckType(IDType.String);
-//         }
-//         return this.Errors.Count == 0;
-//     }
-// }
+    public CardDSL(ExpressionDSL type, ExpressionDSL name, ExpressionDSL power, List<ExpressionDSL> range, List<IEffect> effects){
+        Type = type;
+        Name = name;
+        Power = power;
+        Range= range;
+        Effects = effects;
+    }
 
-// #endregion
+    public override bool Validation(){
+        if(!Type.Validation())  this.Errors.AddRange(Type.Errors);
+        Type.CheckType( IDType.String);
+        if(!Name.Validation()) this.Errors.AddRange(Name.Errors);
+        Name.CheckType(IDType.String);
+        if(!Power.Validation()) this.Errors.AddRange(Power.Errors);
+        Power.CheckType(IDType.Number);
+        foreach (var range in Range){
+            if(!range.Validation()) this.Errors.AddRange(range.Errors);
+            range.CheckType(IDType.String);
+        }
+        return this.Errors.Count == 0;
+    }
+
+    public override object Implement()
+    {
+        throw new NotImplementedException();
+    }
+}
+
+#endregion
 

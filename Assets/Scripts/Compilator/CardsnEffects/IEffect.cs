@@ -6,4 +6,5 @@ public interface IEffect{
     Dictionary<string, ExpressionDSL> Params { get;}
     Statement Action{ get;}
     IEffect PostAction { get;}
+    public void Implement();
 }

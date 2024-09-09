@@ -17,6 +17,14 @@ public static class EffectSaver
     }
 }
 
+public static class CardSaver
+{
+    public static List<ICard> Cards = new List<ICard>();
+    public static void AddCard(ICard card){
+        Cards.Add(card);
+    }
+}
+
 public class SavedEffect
 {
     public string Name { get;}
