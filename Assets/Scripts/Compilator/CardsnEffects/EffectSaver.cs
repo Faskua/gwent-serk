@@ -19,8 +19,8 @@ public static class EffectSaver
 
 public static class CardSaver
 {
-    public static List<ICard> Cards = new List<ICard>();
-    public static void AddCard(ICard card){
+    public static List<CardModel> Cards = new List<CardModel>();
+    public static void AddCard(CardModel card){
         Cards.Add(card);
     }
 }

@@ -2,30 +2,6 @@ using System.Buffers;
 using System.Collections.Generic;
 using System;
 
-//public interface IScope
-// {
-//     //Recibe el nombre del efecto y el diccionario de los params
-//     bool DefineParam(string Name, Dictionary<Token, Token> param);
-//     //Crea un contexto
-//     IScope CreateChild();
-//     //Devuelve el IdType de un id
-//     Expression GetExp(string id);
-//     //Recibe un id y revisa si esta definido
-//     bool CheckDefinition(string id);
-//     void Define(string Name, Expression id);
-// }
-
-// public interface IimplementScope
-// {
-//     //Crea un contexto
-//     IimplementScope CreateChild();
-//     //Devuelve el IdType de un id
-//     object? Value(string id);
-//     //Recibe un id y revisa si esta definido
-//     bool CheckDefinition(string id);
-//     void Define(string Name, object Value);
-// }
-
 public class Scope
 {
     static Scope? global;
@@ -72,35 +48,4 @@ public class Scope
         else return Parent.GetExp(id);
     }
 }
-// class ImplementScope : IimplementScope
-// {
-//     Dictionary<string, object> Variables = [];
-//     IimplementScope? Parent { get;}
-
-//     public ImplementScope(ImplementScope? parent){
-//         Parent = parent;
-//     }
-//     public bool CheckDefinition(string id)
-//     {
-//         if(Variables.ContainsKey(id) || (Parent != null && Parent.CheckDefinition(id))) return true;
-//         return false;
-//     }
-
-//     public object? Value(string id){
-//         if(Variables.ContainsKey(id)) return Variables[id];
-//         if(Parent != null) return Parent.Value(id);
-//         return null;
-//     }
-
-//     public IimplementScope CreateChild() => new ImplementScope(this);
-
-//     public void Define(string Name, object Value)
-//     {
-//         if(!CheckDefinition(Name)){ //Mirar si esta definida antes de añadirla
-//             Variables.Add(Name, Value);
-//             return;
-//         }
-//         Variables[Name] = Value; // si ya lo esta se cambia
-//     }
-// }
 

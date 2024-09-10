@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using System.Linq.Expressions;
+#nullable enable
 
 public class Parsel
 {
@@ -12,6 +13,7 @@ public class Parsel
     public List<string> Errores = new List<string>();
     Stack<Scope> Scopes;
     public Parsel(List<Token> tokens){ this.tokens = tokens;}
+    
     #region Methods
     int position = 0;
     Token TokenPlus { get; set;}
@@ -393,9 +395,9 @@ public class Parsel
         return body;
     }
     public EffectDSL ParseEffect(){
-        ExpressionDSL Name = null;
-        Dictionary<string, ExpressionDSL> Params = null;
-        Action Action = null;;
+        ExpressionDSL? Name = null;
+        Dictionary<string, ExpressionDSL>? Params = null;
+        Action? Action = null;;
         Consume(new List<TokenType>() { TokenType.Effect, TokenType.LCurlyB});
         var expected1 = new List<TokenType>() {TokenType.Name, TokenType.Params, TokenType.Action};
         var expected2 = new List<TokenType>() {TokenType.Comma, TokenType.RCurlyB};
@@ -420,17 +422,12 @@ public class Parsel
         
     #region Card
 
-    public ICard ParseCard(){
+    public CardDSL ParseCard(){
         ExpressionDSL? Name = null;
-        string name = "";
         ExpressionDSL? Power = null;
-        double power = 0;
         ExpressionDSL? Type = null;
-        string type = "";
         ExpressionDSL? Faction = null;
-        string faction = "";
         List<ExpressionDSL>? Ranges = null;
-        List<string> ranges = new List<string>();
         List<SavedEffect>? Activation = null;
 
         List<TokenType> needed = new List<TokenType>(){TokenType.Name, TokenType.Power, TokenType.Type, TokenType.Faction, TokenType.Range, TokenType.OnActivation};
@@ -453,70 +450,8 @@ public class Parsel
             LookAhead();
         }
         Consume(TokenType.RCurlyB);
-        if(Name is not null){
-            if(Name.Validation()) name = (string)Name.Implement();
-            else Errores.AddRange(Name.Errors);
-        }
-        if(Power is not null){
-            if(Power.Validation()) power = ((Int)Power.Implement()).Value;
-            else Errores.AddRange(Power.Errors);
-        }
-        if(Type is not null){
-            if(Type.Validation()) type = (string)Type.Implement();
-            else Errores.AddRange(Type.Errors);
-        }if(Faction is not null){
-            if(Faction.Validation()) faction = (string)Faction.Implement();
-            else Errores.AddRange(Faction.Errors);
-        }
-        if(Ranges.Count > 0){
-            foreach(var rango in Ranges){
-                if(rango.Validation()) ranges.Add((string)rango.Implement());
-                else Errores.AddRange(rango.Errors);
-            }
-        }
 
-        if(faction == "Sacrificios" || faction == "Falconia"){
-            switch(type){
-                    case "Leader":
-                        if(Name != null && Faction != null && Activation != null){ 
-                        ICard card = new Leader(name, faction, power, type, Activation);
-                        return card;
-                        }
-                        else throw new Exception("There are Parameters to fill");
-                    case "Golden":
-                        if(Name != null && Power != null && Faction != null && Ranges != null && Activation != null){ 
-                        ICard card = new Golden(name, faction, power, type, ranges, Activation);
-                        return card;
-                        }
-                        else throw new Exception("There are Parameters to fill");
-                    case "Silver":
-                        if(Name != null && Power != null && Faction != null && Ranges != null && Activation != null){ 
-                        ICard card = new Silver(name, faction, power, type, ranges, Activation);
-                        return card;
-                        }
-                        else throw new Exception("There are Parameters to fill");
-                    case "Dummy":
-                        if(Name != null && Power != null && Faction != null && Ranges != null && Activation != null){ 
-                        ICard card = new Dummy(name, faction, power, type, ranges, Activation);
-                        return card;
-                        }
-                        else throw new Exception("There are Parameters to fill");
-                    case "Buff":
-                        if(Name != null && Faction != null && Ranges != null && Activation != null){ 
-                        ICard card = new Buff(name, faction, power, type, ranges, Activation);
-                        return card;
-                        }
-                        else throw new Exception("There are Parameters to fill");
-                    default:
-                        if(Name != null && Faction != null && Ranges != null && Activation != null){ 
-                        ICard card = new Weather(name, faction, power, type, ranges, Activation);
-                        return card;
-                        }
-                        else throw new Exception("There are Parameters to fill");
-                }
-        }
-        else Errores.Add($"Unvalid Faction at line: {Faction.Location.Line}, column: {Faction.Location.Column}");
-        return null;
+        return new CardDSL(Type, Name, Power, Faction, Ranges, Activation);
     }
     public ExpressionDSL ParsePower(){
         Consume(new List<TokenType>(){TokenType.Power, TokenType.Colon});

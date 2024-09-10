@@ -107,7 +107,7 @@ public class Predicate : ExpressionDSL<object>
 
 class Board
 {
-    public Dictionary<string, List<ICard>> Campo;
+    public Dictionary<string, List<CardModel>> Campo;
     public Player player;
     public Player enemy;
     public Board(Player player, Player enemy){
@@ -157,20 +157,20 @@ public static class Factions{
 
 class Player
 {
-    public Dictionary<string, List<ICard>> Cards;
+    public Dictionary<string, List<CardModel>> Cards;
     public int Points;
     public int MeleePoints;
     public int RangePoints;
     public int SiegePoints;
-    public Player(List<ICard> deck){
+    public Player(List<CardModel> deck){
         Cards.Add("Deck", deck);
-        Cards.Add("Melee", new List<ICard>());
-        Cards.Add("Range", new List<ICard>());
-        Cards.Add("Siege", new List<ICard>());
-        Cards.Add("Graveyard", new List<ICard>());
-        Cards.Add("MeleeClimage", new List<ICard>());
-        Cards.Add("RangeClimage", new List<ICard>());
-        Cards.Add("SiegeClimage", new List<ICard>());
+        Cards.Add("Melee", new List<CardModel>());
+        Cards.Add("Range", new List<CardModel>());
+        Cards.Add("Siege", new List<CardModel>());
+        Cards.Add("Graveyard", new List<CardModel>());
+        Cards.Add("MeleeClimage", new List<CardModel>());
+        Cards.Add("RangeClimage", new List<CardModel>());
+        Cards.Add("SiegeClimage", new List<CardModel>());
     }
     // public void RefreshPoints(){
     //     int aux = 0;

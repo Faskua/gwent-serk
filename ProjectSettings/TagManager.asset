@@ -24,6 +24,10 @@ TagManager:
   - eClimageS
   - PlayerCemetery
   - EnemyCemetery
+  - BuildButton
+  - InputCode
+  - InputDes
+  - CardImage
   layers:
   - Default
   - TransparentFX

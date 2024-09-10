@@ -133,15 +133,17 @@ public class CardDSL : DSL
     public ExpressionDSL Type { get;}
     public ExpressionDSL Name { get;}
     public ExpressionDSL Power { get;}
-    public List<ExpressionDSL> Range { get;}
-    public List<IEffect> Effects { get;}
+    public ExpressionDSL Faction { get; }
+    public List<ExpressionDSL> Ranges { get;}
+    public List<SavedEffect> Effects { get;}
     public override CodeLocation Location { get => throw new NotImplementedException(); protected set => throw new NotImplementedException(); }
 
-    public CardDSL(ExpressionDSL type, ExpressionDSL name, ExpressionDSL power, List<ExpressionDSL> range, List<IEffect> effects){
+    public CardDSL(ExpressionDSL type, ExpressionDSL name, ExpressionDSL power, ExpressionDSL faction, List<ExpressionDSL> range, List<SavedEffect> effects){
         Type = type;
         Name = name;
         Power = power;
-        Range= range;
+        Faction = faction;
+        Ranges = range;
         Effects = effects;
     }
 
@@ -152,16 +154,94 @@ public class CardDSL : DSL
         Name.CheckType(IDType.String);
         if(!Power.Validation()) this.Errors.AddRange(Power.Errors);
         Power.CheckType(IDType.Number);
-        foreach (var range in Range){
+        if(!Faction.Validation()) this.Errors.AddRange(Faction.Errors);
+        Faction.CheckType(IDType.String);
+        foreach (var range in Ranges){
             if(!range.Validation()) this.Errors.AddRange(range.Errors);
             range.CheckType(IDType.String);
         }
         return this.Errors.Count == 0;
     }
 
-    public override object Implement()
-    {
-        throw new NotImplementedException();
+    public override object Implement(){
+        if(!Validation()){ 
+            ErrorThrower.RangeError(this.Errors);
+            return null;
+        }
+        else{
+            string name = (string)Name.Implement();
+            double power = ((Int)Power.Implement()).Value;
+            string faction = (string)Faction.Implement();
+            string type = (string)Type.Implement();
+            List<string> ranges = new List<string>();
+            foreach (var range in Ranges){
+                string Range = (string)range.Implement();
+                if( !(Range == "Melee" || Range == "Distance" || Range == "Siege") ) ErrorThrower.AddError($"Unvalid range value at line: {range.Location.Line}, column: {range.Location.Column}");
+                else ranges.Add(Range);
+            }
+            if(faction == "Sacrificios" || faction == "Falconia"){
+                switch(type){
+                    case "Leader":
+                        if(Name != null && Faction != null && Effects != null){ 
+                        ICard card = new Leader(name, faction, 0, type, Effects);
+                        return card;
+                        }
+                        else {
+                            ErrorThrower.AddError($"There are Parameters to fill with card at line: {Type.Location.Line}, column: {Type.Location.Column}");
+                            return null;
+                        }
+                        case "Golden":
+                        if(Name != null && Power != null && Faction != null && Ranges != null){ 
+                        ICard card = new Golden(name, faction, power, type, ranges, Effects);
+                        return card;
+                        }
+                        else {
+                            ErrorThrower.AddError($"There are Parameters to fill with card at line: {Type.Location.Line}, column: {Type.Location.Column}");
+                            return null;
+                        }
+                    case "Silver":
+                        if(Name != null && Power != null && Faction != null && Ranges != null){ 
+                        ICard card = new Silver(name, faction, power, type, ranges, Effects);
+                        return card;
+                        }
+                        else {
+                            ErrorThrower.AddError($"There are Parameters to fill with card at line: {Type.Location.Line}, column: {Type.Location.Column}");
+                            return null;
+                        }
+                    case "Dummy":
+                        if(Name != null && Power != null && Faction != null && Ranges != null && Effects != null){ 
+                        ICard card = new Dummy(name, faction, power, type, ranges, Effects);
+                        return card;
+                        }
+                        else {
+                            ErrorThrower.AddError($"There are Parameters to fill with card at line: {Type.Location.Line}, column: {Type.Location.Column}");
+                            return null;
+                        }
+                    case "Buff":
+                        if(Name != null && Faction != null && Ranges != null && Effects != null){ 
+                        ICard card = new Buff(name, faction, power, type, ranges, Effects);
+                        return card;
+                        }
+                        else {
+                            ErrorThrower.AddError($"There are Parameters to fill with card at line: {Type.Location.Line}, column: {Type.Location.Column}");
+                            return null;
+                        }
+                    default:
+                        if(Name != null && Faction != null && Ranges != null && Effects != null){ 
+                        ICard card = new Weather(name, faction, power, type, ranges, Effects);
+                        return card;
+                        }
+                        else {
+                            ErrorThrower.AddError($"There are Parameters to fill with card at line: {Type.Location.Line}, column: {Type.Location.Column}");
+                            return null;
+                        }
+                }
+            }
+            else{
+                ErrorThrower.AddError($"Unvalid faction value at line: {Faction.Location.Line}, column: {Faction.Location.Column}");
+                return null;
+            }
+        }
     }
 }
 

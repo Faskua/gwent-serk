@@ -15,7 +15,7 @@ public class CardModel : MonoBehaviour
     
     public List<SavedEffect> Effects;
 
-    public void CulturalAppropiation(ICard card, Sprite picture, string description){
+    public CardModel(ICard card, Sprite picture, string description){
         Name = card.Name;
         Power = card.Power;
         OriginalPower = Power;
