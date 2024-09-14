@@ -24,15 +24,19 @@ public class IF : Statement
         if ( Else != null){
             isvalid = isvalid && Else.Validation();
             this.Errors.AddRange(Else.Errors);
+            ErrorThrower.RangeError(Errors);
         }
         if (!Condition.CheckType(IDType.Boolean)){
             this.Errors.Add($"A boolean expressions is expected at line: {Condition.Location.Line}, column: {Condition.Location.Column}");
+            ErrorThrower.RangeError(Errors);
             return false;
         }
         else if(!Condition.Validation()){
             this.Errors.AddRange(Condition.Errors);
+            ErrorThrower.RangeError(Errors);
             return false;
         }
+        ErrorThrower.RangeError(Errors);
         return isvalid;
     }
 }
@@ -54,6 +58,7 @@ public class While : Statement
         if(!Condition.CheckType(IDType.Boolean)) Errors.Add($"A boolean expressions is expected at line: {Condition.Location.Line}, column: {Condition.Location.Column}");
         if(!Condition.Validation()) Errors.AddRange(Condition.Errors);
         if(!Instructions.Validation()) Errors.AddRange(Instructions.Errors);
+        ErrorThrower.RangeError(Errors);
         return Errors.Count == 0;
     }
     public override void Implement()
@@ -63,6 +68,7 @@ public class While : Statement
         }
         catch(InvalidCastException){
             Errors.Add($"The while condition at line: {Condition.Location.Line}, column: {Condition.Location.Column} is not a boolean expression");
+            ErrorThrower.RangeError(Errors);
         }
     }
 }
@@ -89,8 +95,9 @@ public class For : Statement
         }
         catch(InvalidCastException){
             Errors.Add($"A collection was expected at line: {Collection.Location.Line}, column: {Collection.Location.Column}");
+            ErrorThrower.RangeError(Errors);
         }
-        if(Scope.CheckDefinition(ID.Value)) Errors.Add($"Id already at us at line: {ID.Location.Line}, column: {ID.Location.Column}");
+        if(Scope.CheckDefinition(ID.Value)) Errors.Add($"Id already at us at line: {ID.Location.Line}, column: {ID.Location.Column}"); ErrorThrower.RangeError(Errors);
 
         while(collection.MoveNext()){
             Scope.Define(ID.Value, new UnaryObj(collection.Current, new CodeLocation(-1, -1)));
@@ -105,6 +112,7 @@ public class For : Statement
         //TODO: tengo que revisar esto, en el libro de referencia dice algo de que el id deberia ser de tipo lista pero esa no la tengo y no se muy bien cual seria
         if(Collection.CheckType(IDType.Boolean)) Errors.Add($"A boolean expressions is expected at line: {Collection.Location.Line}, column: {Collection.Location.Column}");
 
+        ErrorThrower.RangeError(Errors);
         return Errors.Count == 0;
     }
 }

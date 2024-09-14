@@ -49,6 +49,7 @@ public class UnaryOp : ExpressionDSL<object>
         if(Id.CheckType(IDType.Number) || Id.CheckType(IDType.Boolean)) return true;
         else 
             Errors.Add($"Wrong us for expression at line: {Id.Location.Line}, column: {Id.Location.Column}");
+            ErrorThrower.RangeError(Errors);
         return false;
     }
     public override object? Implement()
@@ -59,7 +60,8 @@ public class UnaryOp : ExpressionDSL<object>
             case "-":
                 return new Int(-((Int)Id.Implement()).Value);
             default:
-                throw new Exception($"Unrecognized operation at line: {Operation.Location.Line}, column: {Operation.Location.Column}");
+                ErrorThrower.AddError($"Unrecognized operation at line: {Operation.Location.Line}, column: {Operation.Location.Column}");
+                return null;
 
         }
     }
@@ -84,7 +86,8 @@ public class UnaryVal : UnaryExp<Token>
             case TokenType.False:
                 return false; 
             default:
-                throw new Exception($"Unexpected Token at line: {Location.Line}, column: {Location.Column}");
+                ErrorThrower.AddError($"Unexpected Token at line: {Location.Line}, column: {Location.Column}");
+                return null;
         }
     }
     public override IDType Type{
@@ -99,7 +102,8 @@ public class UnaryVal : UnaryExp<Token>
                 case TokenType.False:
                     return IDType.Boolean;
                 default:
-                    throw new Exception($"Unexpected Token at line: {Location.Line}, column: {Location.Column}");
+                    ErrorThrower.AddError($"Unexpected Token at line: {Location.Line}, column: {Location.Column}");
+                    return IDType.Object;
             }
        }
     }

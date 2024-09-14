@@ -10,8 +10,10 @@ public class CardModel : MonoBehaviour
     public double OriginalPower;
     public string Description;
     public string Type;
+    public string Range;
     public List<string> Ranges;
     public string Faction;
+    public int Franja;
     
     public List<SavedEffect> Effects;
 
@@ -21,11 +23,21 @@ public class CardModel : MonoBehaviour
         OriginalPower = Power;
         Description = description;
         Type = card.Type;
+        Range = Ranges[0];
         Ranges = card.Ranges;
         Faction = card.Faction;
         gameObject.GetComponent<Image>().sprite = picture;
         Effects = card.Effects;
+        switch(Range){
+            case "Melee":
+                Franja = 1;
+                break;
+            case "Distance":
+                Franja = 2;
+                break;
+            case "Siege":
+                Franja = 3;
+                break;
+        }
     }
-
-
 }

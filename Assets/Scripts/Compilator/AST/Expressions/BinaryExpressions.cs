@@ -35,6 +35,7 @@ public class NumericalBinary : BinaryExpression<Int> //las operaciones binarias
         if(!operations.Contains(Operation.Type)) Errors.Add($"Unexpected operation in line: {Location.Line}, column: {Location.Column}");
         if(!Left.CheckType(IDType.Number)) Errors.Add($"The expression at line: {Left.Location.Line}, column: {Left.Location.Column} is not a number");
         if(!Right.CheckType(IDType.Number)) Errors.Add($"The expression at line: {Right.Location.Line}, column: {Right.Location.Column} is not a number");
+        ErrorThrower.RangeError(Errors);
         return Errors.Count == 0;
     }
 
@@ -58,7 +59,8 @@ public class NumericalBinary : BinaryExpression<Int> //las operaciones binarias
             }
         }
         catch(Exception){
-            throw new Exception($"Unrecognized Operation at line: {Location.Line}, column: {Location.Column}");
+            ErrorThrower.AddError($"Unrecognized Operation at line: {Location.Line}, column: {Location.Column}");
+            return null;
         }
     }
 }
@@ -72,6 +74,7 @@ public class BooleanBinary : BinaryExpression<bool>
         if(!operations.Contains(Operation.Type)) Errors.Add($"Unexpected operator at line: {Location.Line}, column: {Location.Column}");
         if(!Left.CheckType(IDType.Boolean)) Errors.Add($"The expression at line: {Left.Location.Line}, column: {Left.Location.Column} is not a boolean expression");
         if(!Right.CheckType(IDType.Boolean)) Errors.Add($"The expression at line: {Right.Location.Line}, column: {Right.Location.Column} is not a boolean expression");
+        ErrorThrower.RangeError(Errors);
         return Errors.Count == 0;
     }
 
@@ -87,7 +90,8 @@ public class BooleanBinary : BinaryExpression<bool>
             }
         }
         catch(Exception){
-            throw new Exception($"Unrecognized Operation at line: {Location.Line}, column: {Location.Column}");
+            ErrorThrower.AddError($"Unrecognized Operation at line: {Location.Line}, column: {Location.Column}");
+            return null;
         }
     }
 }
@@ -107,6 +111,7 @@ public class BooleanExpression : BinaryExpression<bool>
         if(!operations.Contains(Operation.Type)) Errors.Add($"Unexpected operator at line: {Location.Line}, column: {Location.Column}");    
         if(!Right.CheckType(IDType.Number)) Errors.Add($"A number was expected at line: {Right.Location.Line}, column: {Right.Location.Column}");
         if(!Left.CheckType(IDType.Number)) Errors.Add($"A number was expected at line: {Left.Location.Line}, column: {Left.Location.Column}");
+        ErrorThrower.RangeError(Errors);
         return Errors.Count == 0;
     }
 
@@ -131,7 +136,8 @@ public class BooleanExpression : BinaryExpression<bool>
             }
         }
         catch(Exception){
-            throw new Exception($"Unrecognized Operation at line: {Location.Line}, column: {Location.Column}");
+            ErrorThrower.AddError($"Unrecognized Operation at line: {Location.Line}, column: {Location.Column}");
+            return null;
         }
     }
 }
@@ -146,6 +152,7 @@ public class StringBinary : BinaryExpression<string>
         if(!operations.Contains(Operation.Type)) Errors.Add($"Unexpected operation at line: {Location.Line}, column: {Location.Column}");
         if(!Left.CheckType(IDType.String)) Errors.Add($"A string was expected at line: {Left.Location.Line}, column: {Left.Location.Column}");
         if(!Right.CheckType(IDType.String)) Errors.Add($"A string was expected at line: {Right.Location.Line}, column: {Right.Location.Column}");
+        ErrorThrower.RangeError(Errors);
         return Errors.Count == 0;
     }
     public override object? Implement(){
@@ -157,7 +164,9 @@ public class StringBinary : BinaryExpression<string>
                 else return null;
         }
         catch{
-            throw new Exception($"Unrecognized Operation at line: {Location.Line}, column: {Location.Column}");
+            
+            ErrorThrower.AddError($"Unrecognized Operation at line: {Location.Line}, column: {Location.Column}");
+            return null;
         }
     }
 }

@@ -28,6 +28,7 @@ TagManager:
   - InputCode
   - InputDes
   - CardImage
+  - CompilingErrors
   layers:
   - Default
   - TransparentFX

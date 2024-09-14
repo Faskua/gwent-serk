@@ -51,6 +51,9 @@ public class Property : ToCall
         {
             return type.GetProperty(Caller.Value).GetValue(called);
         }
-        else throw new Exception($"Property not found at line: {Caller.Location.Line}, column: {Caller.Location.Column}");
+        else {
+            ErrorThrower.AddError($"Property not found at line: {Caller.Location.Line}, column: {Caller.Location.Column}");
+            return null;
+        }
     }
 }

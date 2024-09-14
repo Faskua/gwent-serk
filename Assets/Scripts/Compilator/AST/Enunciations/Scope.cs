@@ -43,7 +43,7 @@ public class Scope
     }
 
     public ExpressionDSL GetExp(string id){ //si no esta definido en el contexto lanza error
-        if (!CheckDefinition(id)) throw new Exception("Id not defined");
+        if (!CheckDefinition(id)) {ErrorThrower.AddError("Id not defined"); return null;}
         if(Variables.ContainsKey(id)) return Variables[id];
         else return Parent.GetExp(id);
     }

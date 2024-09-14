@@ -1,9 +1,5 @@
-using System.Data.Common;
-using System.Dynamic;
-using System.Collections;
 using System.Collections.Generic;
 using System;
-using System.Linq.Expressions;
 #nullable enable
 
 public class Parsel
@@ -12,7 +8,7 @@ public class Parsel
     public List<Token> tokens {get; private set;}
     public List<string> Errores = new List<string>();
     Stack<Scope> Scopes;
-    public Parsel(List<Token> tokens){ this.tokens = tokens;}
+    public Parsel(List<Token> tokens){ this.tokens = tokens; }
     
     #region Methods
     int position = 0;
@@ -60,7 +56,7 @@ public class Parsel
         if( tokens[position + 1].Type == type) position++;
         else{
             Token token = tokens[position + 1];
-            throw new Exception($"Invalid Sintax Error. Unexpected Token at line {token.Location.Line}, column: {token.Location.Column}");
+            ErrorThrower.AddError($"Invalid Sintax Error. Unexpected Token at line {token.Location.Line}, column: {token.Location.Column}");
         }
     }
     public void Consume(List<TokenType> types){
@@ -73,10 +69,10 @@ public class Parsel
     }
 
     public void LookAhead(List<TokenType>? types = null){
-        if(Position + 1 >= tokens.Count) throw new Exception($"Out of range at line: {tokens[tokens.Count-1].Location.Line}, column: {tokens[tokens.Count-1].Location.Column}");
+        if(Position + 1 >= tokens.Count) ErrorThrower.AddError($"Out of range at line: {tokens[tokens.Count-1].Location.Line}, column: {tokens[tokens.Count-1].Location.Column}");
         if(types == null) {TokenPlus = tokens[position + 1];    return;}
         if(types.Contains(tokens[Position + 1].Type)) TokenPlus = tokens[Position + 1];
-        else throw new Exception($"Unexpected Token at line: {tokens[Position+1].Location.Line}, column: {tokens[position+1].Location.Column}");;
+        else ErrorThrower.AddError($"Unexpected Token at line: {tokens[Position+1].Location.Line}, column: {tokens[position+1].Location.Column}");;
     }
 
     public bool NextToken( TokenType type )
@@ -118,11 +114,24 @@ public class Parsel
             position ++;
             return tokens[k];
         }
-        else throw new Exception("Index out of range");
+        else {ErrorThrower.AddError("Index out of range"); return null;}
     }
     //TODO
     public Statement Enunciation(Token id){
         throw new NotImplementedException();
+    }
+    public List<DSL> Parse(){
+        List<DSL> CardsNEffects = new List<DSL>();
+        while(!(End)){
+            LookAhead();
+            if(TokenPlus.Type == TokenType.Card){
+                CardsNEffects.Add(ParseCard());
+            }
+            if(TokenPlus.Type == TokenType.Effect){
+                CardsNEffects.Add(ParseEffect());
+            }
+        }
+        return CardsNEffects;
     }
     public ExpressionDSL ParseNum(){
         List<string> Operations = new List<string>(){"+", "-", "*", "/", "^"};
@@ -197,23 +206,7 @@ public class Parsel
         }
         return left;
     }
-    public Statement ParseSimple(){ //TODO
-        // if(tokens[position].Type == TokenType.String) return ParseString();
-        // if(tokens[position].Type == TokenType.True || tokens[position].Type == TokenType.False) return ParseBoolean();
-        // if(tokens[position].Type == TokenType.LParen){
-        //     Consume(TokenType.LParen);
-        //     Expression expression = ParseExpr();
-        //     Consume(TokenType.RParen);
-        //     if(!expression.Validation()){
-        //         string error = "";
-        //             foreach (var item in expression.Errors){
-        //                 error+=item;
-        //                 error+="\n";
-        //             }
-        //         throw new Exception(error);
-        //     }
-        //     return expression;
-        // }\
+    public Statement ParseSimple(){ 
         if (Scopes.Count == 0) Scopes.Push(Scope.Global);
         if(TokenPlus.Type == TokenType.Identifier){
             Token id = TokenPlus;
@@ -226,6 +219,7 @@ public class Parsel
                 LookAhead();
                 if(TokenPlus.Type != TokenType.Semicolon) Errores.Add($"A ; was expected at line: {TokenPlus.Location.Line}, column: {TokenPlus.Location.Column}");
                 Statement statement = new Enunciation(id, Scopes.Peek(), expression);
+                ErrorThrower.RangeError(Errores);
                 return statement;
             }
             
@@ -285,19 +279,7 @@ public class Parsel
     }
     #endregion
 
-    public List<DSL> Parse(){
-        List<DSL> CardsNEffects = new List<DSL>();
-        LookAhead();
-        while(TokenPlus.Type == TokenType.Card || TokenPlus.Type == TokenType.Effect){
-            if(TokenPlus.Type == TokenType.Card){
-                CardsNEffects.Add(ParseCard());
-            }
-            if(TokenPlus.Type == TokenType.Effect){
-                CardsNEffects.Add(ParseEffect());
-            }
-        }
-        return CardsNEffects;
-    }
+    
 
     #region Effect
     public ExpressionDSL ParseName(){
@@ -357,6 +339,7 @@ public class Parsel
                     LookAhead();
                     if(!TokenPlus.Check(TokenType.Semicolon)){
                         Errores.Add($"A ; was expected at line: {TokenPlus.Location.Line}, column: {TokenPlus.Location.Column}");
+                        ErrorThrower.RangeError(Errores);
                         continue;
                     }
                     Consume(TokenType.Semicolon);
@@ -366,6 +349,7 @@ public class Parsel
                     LookAhead();
                     if(!TokenPlus.Check(TokenType.Semicolon)){ 
                         Errores.Add($"A ; was expected at line: {TokenPlus.Location.Line}, column: {TokenPlus.Location.Column}");
+                        ErrorThrower.RangeError(Errores);
                         continue;
                     }
                     Consume(TokenType.Semicolon);
@@ -375,6 +359,7 @@ public class Parsel
                     LookAhead();
                     if(!TokenPlus.Check(TokenType.Semicolon)) {
                         Errores.Add($"A ; was expected at line: {TokenPlus.Location.Line}, column: {TokenPlus.Location.Column}");
+                        ErrorThrower.RangeError(Errores);
                         continue;
                     }
                     Consume(TokenType.Semicolon);
@@ -384,6 +369,7 @@ public class Parsel
                     LookAhead();
                     if(!TokenPlus.Check(TokenType.Semicolon)) {
                         Errores.Add($"A ; was expected at line: {TokenPlus.Location.Line}, column: {TokenPlus.Location.Column}");
+                        ErrorThrower.RangeError(Errores);
                         continue;
                     }
                     Consume(TokenType.Semicolon);
@@ -416,7 +402,8 @@ public class Parsel
         }
         Consume(TokenType.RCurlyB);
         if(Name != null && Action != null) return new EffectDSL(Name, Action, Params);
-        throw new Exception($"Invalid declaration of the Effect");
+        ErrorThrower.AddError($"Invalid declaration of the Effect");
+        return null;
     }
     #endregion
         

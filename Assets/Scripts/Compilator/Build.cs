@@ -8,6 +8,7 @@ public class Build : MonoBehaviour
     public string description = "";
     public InputField code;
     public InputField descrp;
+    public Text Errors;
     private Image image;
 
     public void Building(){
@@ -20,21 +21,20 @@ public class Build : MonoBehaviour
         foreach (DSL Object in CardsnEffects){
             if( Object is CardDSL ){
                 ICard card = (ICard)Object.Implement();
-                CardModel Card = new CardModel(card, image.sprite, description);
-                CardSaver.AddCard(Card);
+                CardSaver.AddCard(card, description, image.sprite);
             }
             if( Object is EffectDSL ){
                 SavedEffect effect = (SavedEffect)Object.Implement();
                 EffectSaver.AddEffect(effect);
             }
         }
+        Errors.text = ErrorThrower.ThrowNReset();
     }
     void Start(){
         description = "Esta carta es aburrida y no tiene descripción";
         code = GameObject.FindWithTag("InputCode").GetComponent<InputField>();
-        Debug.Log($"code encontrado: {code != null}");
         descrp = GameObject.FindWithTag("InputDes").GetComponent<InputField>();
-        Debug.Log($"descrp encontrado: {descrp != null}");
         image = GameObject.FindWithTag("CardImage").GetComponent<Image>();
+        Errors = GameObject.FindWithTag("CompilingErrors").GetComponent<Text>();
     }
 }

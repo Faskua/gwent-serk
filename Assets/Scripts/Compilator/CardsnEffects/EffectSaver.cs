@@ -3,6 +3,8 @@ using System.Net.Mime;
 using System.Collections.Generic;
 using System;
 using System.Linq;
+using UnityEngine;
+using UnityEngine.UI;
 
 public static class EffectSaver
 {
@@ -12,16 +14,16 @@ public static class EffectSaver
     }
     public static SavedEffect Search(string name){
         SavedEffect? output = Effects.FirstOrDefault(e => e.Name == name);
-        if (output == null) throw new Exception("Effect not found");
+        if (output == null) ErrorThrower.AddError("Effect not found");
         return output;
     }
 }
 
 public static class CardSaver
 {
-    public static List<CardModel> Cards = new List<CardModel>();
-    public static void AddCard(CardModel card){
-        Cards.Add(card);
+    public static List<(ICard, string, Sprite)> Cards = new List<(ICard, string, Sprite)>();
+    public static void AddCard(ICard card, string descripción, Sprite image){
+        Cards.Add((card, descripción, image));
     }
 }
 
@@ -34,8 +36,8 @@ public class SavedEffect
     public Dictionary<string,ExpressionDSL?> Params { get;}
     //public EffectSelector Targets { get;}
     public SavedEffect? PostAction { get;}
-    Statement Action { get;}
-    public SavedEffect(string name, Statement action, string targetname, string context, List<string>  param){
+    Action Action { get;}
+    public SavedEffect(string name, Action action, string targetname, string context, List<string>  param){
         Name = name;
         TargetsNames = targetname;
         Context = context;
@@ -62,7 +64,7 @@ public class SavedEffect
                 scope.Define(name, Params[name]);
             }
         }
-        Action.Implement();
+        Action.Block.Implement();
         if(PostAction != null) PostAction.Implement(scope, this);
     }
 }
@@ -71,7 +73,7 @@ class ActionSave
     public Dictionary<string,Dictionary<string,ExpressionDSL>?> SavedActions = new Dictionary<string, Dictionary<string, ExpressionDSL>?>();
 
     public void CheckParams(string Name, Dictionary<string, ExpressionDSL>? Params, Scope scope){
-        if(!SavedActions.ContainsKey(Name)) throw new Exception("Not Defined Effect");
+        if(!SavedActions.ContainsKey(Name)) ErrorThrower.AddError("Not Defined Effect");
 
         // if(Params == null){
         //     if(SavedActions.ContainsKey(Name)) throw new Exception("Uncorrect Params");
@@ -84,7 +86,7 @@ class ActionSave
                 scope.Define(ID, expected); // se define en el scope y se pasa al siguiente
                 continue;
             }
-            throw new Exception($"Params or Name definition are wrong with the action {Name}");
+            ErrorThrower.AddError($"Params or Name definition are wrong with the action {Name}");
         }
     }
 }

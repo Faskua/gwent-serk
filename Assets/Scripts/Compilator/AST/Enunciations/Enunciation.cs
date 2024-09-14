@@ -42,7 +42,8 @@ public class Enunciation : Statement
                     Scope.Define(Name.Value, new NumericalBinary(decrease, Scope.GetExp(Name.Value), new Token(Operation, "-")));
                     break;
                 default:
-                    throw new Exception($"Invalid enunciation at line: {Operation.Location.Line}, column: {Operation.Location.Column}");
+                    ErrorThrower.AddError($"Invalid enunciation at line: {Operation.Location.Line}, column: {Operation.Location.Column}");
+                    break;
             }
         }
         catch(NullReferenceException){

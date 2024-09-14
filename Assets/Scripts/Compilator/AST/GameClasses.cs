@@ -1,13 +1,14 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 
 public class Action{
-    Token Target { get; }
-    Token Context { get; }
+    public Token Targets { get; }
+    public Token Context { get; }
     public Statement Block { get; }
 
     public Action(Token target, Token context, Statement block){
-        Target = target;
+        Targets = target;
         Context = context;
         Block = block;
     }
@@ -67,15 +68,10 @@ public class Selector : ExpressionDSL<object>
         if(!Single.Validation()) this.Errors.AddRange(Single.Errors);
 
         if(!predicate.Validation()) this.Errors.AddRange(predicate.Errors);
+
+        ErrorThrower.RangeError(this.Errors);
         
-        if(Errors.Count != 0){
-            string error = "";
-            foreach (var item in Errors){
-                error += item;
-                error += "\n=";
-            }
-            throw new Exception(error);
-        }
+        if(Errors.Count != 0) return false;
         return true;
     }
 }
@@ -101,6 +97,7 @@ public class Predicate : ExpressionDSL<object>
 
     public override bool Validation(){
         if(!expression.CheckType(IDType.Boolean)) Errors.Add($"The Predicate at line: {Location.Line},column: {Location.Column} is not a boolean");
+        ErrorThrower.AddError($"The Predicate at line: {Location.Line},column: {Location.Column} is not a boolean");
         return Errors.Count == 0;
     }
 }
@@ -151,7 +148,8 @@ public static class Factions{
         if(factions.ContainsKey(name)){
             return factions[name];
         }
-        throw new Exception("Faction not defined");
+        ErrorThrower.AddError("Faction not defined");
+        return null;
     }
 }
 

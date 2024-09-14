@@ -45,7 +45,7 @@ class Lexxer{
             line ++;
             column = 0;
         }
-        if(Comillas) throw new Exception($"Missing clousing quote at line: {last.line}, column: {last.column}");
+        if(Comillas) ErrorThrower.AddError($"Missing clousing quote at line: {last.line}, column: {last.column}");
         return tokens;
     }
     void AddToken(string match, int line, ref int column, TokenType type = TokenType.Unknown){

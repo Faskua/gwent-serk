@@ -11,7 +11,10 @@ public struct Int
     public Int Multip(Int value) => new Int(Value * value.Value);
     public Int Pow(Int value) => new Int(Math.Pow(Value, value.Value));
     public Int Division(Int value){
-        if(value.Value == 0) throw new Exception("Invalid operation. Attempt to divide by 0. Espabila");
+        if(value.Value == 0) {
+            ErrorThrower.AddError("Invalid operation. Attempt to divide by 0. Espabila");
+            return this;
+        }
         else return new Int(Value / value.Value);
     }
     public Int Opposite() => new Int(-Value);
